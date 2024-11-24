@@ -9,10 +9,10 @@ if ( !defined( 'news_security' ) )
 define( 'DS', DIRECTORY_SEPARATOR );
 $dbconfig = array(
     'hostname' => 'localhost',
-    'username' => 'novinres_54sd89s',
-    'password' => 'J2PgMd$nyLy=',
+    'username' => 'no99d89s',
+    'password' => 'J2PgM',
     'perfix' => '',
-    'database' => 'novinres_jnbs8d7jhas7665a'
+    'database' => 'novinr7jhas7665a'
 
 );
 $perfix          = $dbconfig['perfix'];
