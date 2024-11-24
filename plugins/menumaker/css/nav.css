@@ -1,0 +1,291 @@
+﻿/* General inav styling */
+.inav {
+	/* Layout & positioning */
+	display: block;
+	position: relative;
+margin:0 auto;
+    width:100%;
+	border: 1px solid #3797cc;
+	padding: 2px;
+	list-style: none;
+	line-height: 2;
+	vertical-align: baseline;
+	border-radius: 2px;
+text-align:right;
+	/* Background & effects */
+	background: #6db3da;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);height: 52px;
+}
+
+	/* The list elements which contain the links */
+	.inav>li {
+		/* Layout & positioning */
+		display: block;
+		float: right;
+		position: relative;
+		margin: 1px;
+		padding: 0;
+		border-top: 1px solid #3797cc;
+		border-bottom: 1px solid #3797cc;
+	}
+
+	/* The inavigation links */
+	.inav>li>a {
+		/* Layout & positioning */
+		display: block;
+		position: relative;
+		top: 0px;
+		padding: 8px 20px;
+		border-left: 1px solid #ddd;
+		border-right: 1px solid #fff;
+
+		/* Typography */
+		font-size: 13px;
+		text-decoration: none;
+		color: #777;
+		text-shadow: 0 1px 0 #fff;
+		
+
+		/* Background & effects */
+		background: #eee; /* Background for IE9 & older browsers */
+		background: -webkit-linear-gradient(bottom, #ececec, #f3f3f3); /* Background for Chrome & Safari */
+		background: -moz-linear-gradient(bottom, #eee, #f7f7f7); /* Background for Firefox */
+		background: -o-linear-gradient(bottom, #eee, #f7f7f7); /* Background for Opera */
+		background: -ms-linear-gradient(bottom, #eee, #f7f7f7); /* Background for IE10 */
+		box-shadow: inset 0 1px 0 #fff;
+	}
+
+	/* The hover state of the links */
+	.inav>li>a:hover, .inav>li:hover>a {
+		color: #308cbf;
+		background: #fcfcfc;
+	}
+
+	.inav>li:first-child>a {
+		border-left: 0;
+		border-top-left-radius: 1px;
+		border-bottom-left-radius: 1px;
+	}
+
+	.inav>li:last-child>a {
+		border-right: 0;
+		border-top-right-radius: 1px;
+		border-bottom-right-radius: 1px;
+	}
+
+	.inav>li:first-child {
+		border-left: 1px solid #3797cc;
+		border-top-left-radius: 1px;
+		border-bottom-left-radius: 1px;
+	}
+
+	.inav>li:last-child {
+		border-right: 1px solid #3797cc;
+		border-top-right-radius: 1px;
+		border-bottom-right-radius: 1px;
+	}
+
+		/* General submenu styling */
+		.inav>li>ul, .inav ul ul {
+			/* Layout & positioning */
+			display: block;
+			position: absolute;
+			list-style: none;
+			margin: 0;
+			padding: 2px;
+			border: 1px solid #3797cc;
+			border-radius: 2px;
+
+			/* Background & effects */
+			background: #6db3da;
+			box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+			opacity: 0;
+			/* The fade-slide effect, created by changing the position and the opacity */
+			-webkit-transition: top .15s ease-in, opacity .15s ease-in;
+			-ms-transition: top .15s ease-in, opacity .15s ease-in;
+			-moz-transition: top .15s ease-in, opacity .15s ease-in;
+			-o-transition: top .15s ease-in, opacity .15s ease-in;
+		}
+
+		/* Level 1 submenu positioning */
+		.inav>li>ul {
+			top: 70px;
+			right: -9999px;
+		}
+
+		.inav>li:hover>ul {
+			top: 40px;
+			opacity: 1;
+			right: -3px;
+		}
+
+		/* Level 2+ submenus positioning */
+		.inav ul ul {
+			right: 105px;
+			top: 30px;
+		}
+
+		.inav ul li:hover>ul {
+			opacity: 1;
+			top: -4px;
+		}
+
+		.inav>li li {
+			display: block;
+			position: relative;
+		}
+
+		/* A little hack which stops the level 1 submenus from hiding when the mouse is not on the parent link anymore */
+		.inav>li>ul::after {
+			 content: "";
+			 position: absolute;
+			 top: 0px;
+			 right: 0px;
+			 width: 100%;
+			 height: 15px;
+			 background: transparent;
+			 background: rgba(0, 0, 0 , 0);
+			 top: -15px;
+		}
+
+		/* The same hack for level 2+ submenus */
+		.inav ul ul::after {
+		 content: "";
+		 position: absolute;
+		 top: 0px;
+		 right: -12px;
+		 width: 14px;
+		 height: 100%;
+		 background: transparent;
+		 background: rgba(0, 0, 0, 0);
+		 cursor: pointer;
+		}
+
+		/* The little arrow from the top of the level 1 submenu */
+		.inav>li>ul>li:first-child::after {
+			 content: "";
+			 position: absolute;
+			 top: -6px;
+			 right: 20px;
+			 width: 5px;
+			 height: 5px;
+			 background: #6db3da;
+			 -webkit-transform: rotate(45deg);
+			 -ms-transform: rotate(45deg);
+			 -moz-transform: rotate(45deg);
+			 -o-transform: rotate(45deg);
+			 border-top: 1px solid #3797cc;
+			 border-left: 1px solid #3797cc;
+			 box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3),
+			 			 inset 1px 0 0 rgba(255, 255, 255, .3);
+		}
+
+		.inav>li>ul>li:first-child::before {
+			 content: "";
+			 position: absolute;
+			 top: 0px;
+			 right: 10px;
+			 width: 30px;
+			 height: 1px;
+			 background: #3797cc;
+			 z-index: 999;
+		}
+
+		/* The little arrow for the level 2+ submenus */
+		.inav ul li>ul>li:first-child::after {
+			 content: "";
+			 position: absolute;
+			 top: 10px;
+			 right: -7px;
+			 width: 5px;
+			 height: 5px;
+			 background: #6db3da;
+			 -webkit-transform: rotate(-45deg);
+			 -ms-transform: rotate(-45deg);
+			 -moz-transform: rotate(-45deg);
+			 -o-transform: rotate(-45deg);
+			 border-top: 1px solid #3797cc;
+			 border-left: 1px solid #3797cc;
+			 box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+		}
+
+		/* The submenu links */
+		.inav ul li a {
+			/* Layout */
+			display: block;
+			position: relative;
+			border-bottom: 1px solid #ddd;
+			border-top: 1px solid #fff;
+			padding: 6px 10px 6px 20px;
+			background: #eee;
+			background: -webkit-linear-gradient(bottom, #ececec, #f3f3f3);
+			background: -moz-linear-gradient(bottom, #eee, #f7f7f7);
+			background: -o-linear-gradient(bottom, #eee, #f7f7f7);
+			background: -ms-linear-gradient(bottom, #eee, #f7f7f7);
+			font-size: 12px;
+			text-decoration: none;
+			width: 170px;
+			color: #777;
+		}
+
+		.inav ul li a:hover, .inav ul li:hover>a {
+			color: #308cbf;
+			background: #fcfcfc;
+		}
+
+		.inav ul li:first-child>a {
+			border-top: 1px solid #3797cc;
+		}
+
+		.inav ul li:last-child>a {
+			border-bottom: 1px solid #3797cc;
+		}
+
+		.inav ul li {
+			border-left: 1px solid #3797cc;
+			border-right: 1px solid #3797cc;
+		}
+
+		.inav>.dropdown>a {
+			padding-right: 25px;
+		}
+
+		/* The arrow indicating a level 1 submenu  */
+		.inav>.dropdown>a::after {
+			 content: "";
+			 position: absolute;
+			 top: 14px;
+			 right: 9px;
+			 width: 0px;
+			 height: 0px;
+			 color: #777;
+			 border: 4px solid transparent;
+			 border-top: 4px solid #777;
+		}
+
+		/* Changing the color of the arrow on hover */
+		.inav>.dropdown>a:hover::after, .inav>.dropdown:hover>a::after {
+			border-top: 4px solid #308cbf;
+		}
+
+		/* The arrow which indicates a level 2+ submenu  */
+		.inav ul .dropdown>a::after {
+			 content: "";
+			 position: absolute;
+			 top: 11px;
+			 right: 5px;
+			 width: 0px;
+			 height: 0px;
+			 color: #777;
+			 border: 3px solid transparent;
+			 border-left: 3px solid #777;
+		}
+
+		/* Changing the color of the arrow on hover */
+		.inav ul .dropdown:hover>a::after, .inav ul .dropdown a:hover::after {
+			border-left: 3px solid #308cbf;
+		}
+			.inav ul img{float: right;
+padding-left: 7px;}
+	.inav li img{float: right;
+padding-left: 7px;}

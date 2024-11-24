@@ -1,0 +1,66 @@
+/* v-black-ltr Dropdown Menu
+-----------------------------------*/
+.v-black-ltr, .v-black-ltr ul {
+    list-style: none;
+	width: 160px;
+	margin: 0;
+	padding: 0;
+}
+.v-black-ltr {
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+.v-black-ltr li {
+	position: relative;
+}
+.v-black-ltr ul {
+	position: absolute;
+	top: 0;
+	left: 159px;
+	width: 160px;
+	display: none;
+	z-index: 999;
+}
+.v-black-ltr a {
+	display: block;
+	height: 2.9em;
+	line-height: 2.9em;
+	padding: 0 0.8em;
+}
+.v-black-ltr ul li a {
+	overflow: hidden;
+}
+.v-black-ltr li:hover > ul {
+	display: block;
+}
+.v-black-ltr li.parent > a {
+	background-image: url(../images/arrow-right2.gif);
+	background-position: 148px center;
+	background-repeat: no-repeat;
+}
+
+.v-black-ltr, .v-black-ltr ul {
+	-webkit-box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+	-moz-box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+	box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+}
+
+.v-black-ltr, .v-black-ltr ul {
+	border-bottom: 1px solid #555;
+}
+.v-black-ltr li {
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#818181), to(#676767));
+	background: -moz-linear-gradient(#818181, #676767);
+	background: linear-gradient(#818181, #676767);
+	background: #818181;
+}
+.v-black-ltr li a {
+	color: #fff;
+	border: 1px solid #555;
+	border-bottom: none;
+	font-family: Tahoma;
+	text-decoration: none;
+}
+.v-black-ltr li:hover {
+	background: #676767;
+}

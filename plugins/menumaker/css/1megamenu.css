@@ -1,0 +1,215 @@
+.menu-container {
+width:100%;
+    margin: 0 auto;
+    background: #e9e9e9;z-index: 1000000000000;
+}
+
+.menu-mobile {
+    display: none;
+    padding: 20px;
+}
+
+.menu-mobile:after {
+    content: "\f394";
+    font-family: "Ionicons";
+    font-size: 2.5rem;
+    padding: 0;
+    float: right;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-25%);
+    -ms-transform: translateY(-25%);
+    transform: translateY(-25%);
+}
+
+.menu-dropdown-icon:before {
+    content: "\f489";
+    font-family: "Ionicons";
+    display: none;
+    cursor: pointer;
+    float: right;
+    padding: 1.5em 2em;
+    background: #fff;
+    color: #333;
+}
+
+.imegamenu > ul {
+    margin: 0 auto;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    /* IF .imegamenu position=relative -> ul = container width, ELSE ul = 100% width */
+    box-sizing: border-box;
+}
+
+.imegamenu > ul:before,
+.imegamenu > ul:after {
+    content: "";
+    display: table;
+}
+
+.imegamenu > ul:after {
+    clear: both;
+}
+
+.imegamenu > ul > li {
+    float: right;
+    background: #e9e9e9;
+    padding: 0;
+    margin: 0;
+}
+
+.imegamenu > ul > li a {
+    text-decoration: none;
+    padding:10% 15%;
+    display: block;
+}
+
+.imegamenu > ul > li:hover {
+    background: #f0f0f0;
+}
+
+.imegamenu > ul > li > ul {
+    display: none;
+    width: 100%;
+    background: #f0f0f0;
+    padding: 20px;
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+	text-align: right;
+	direction: rtl;
+}
+
+.imegamenu > ul > li > ul:before,
+.imegamenu > ul > li > ul:after {
+    content: "";
+    display: table;
+}
+
+.imegamenu > ul > li > ul:after {
+    clear: both;
+}
+
+.imegamenu > ul > li > ul > li {
+    margin: 0;
+    padding-bottom: 0;
+    list-style: none;
+    width: 25%;
+    background: none;
+    float: right;
+}
+
+.imegamenu > ul > li > ul > li a {
+    color: #777;
+    padding: .2em 0;
+    width: 95%;
+    display: block;
+    border-bottom: 2px solid #868686;
+	font-size: 18px;
+padding: 0px 0px 8px 0px
+}
+
+.imegamenu > ul > li > ul > li > ul {
+    display: block;
+    padding: 0;
+    margin: 10px 0 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.imegamenu > ul > li > ul > li > ul:before,
+.imegamenu > ul > li > ul > li > ul:after {
+    content: "";
+    display: table;
+}
+
+.imegamenu > ul > li > ul > li > ul:after {
+    clear: both;
+}
+
+.imegamenu > ul > li > ul > li > ul > li {
+    float: right;
+    width: 100%;
+	padding: 3px 0;
+	margin: 0;
+	font-size: 14px;
+}
+
+.imegamenu > ul > li > ul > li > ul > li a {
+    border: 0;font-size: 14px;
+}
+
+.imegamenu > ul > li > ul.normal-sub {
+    width: 300px;
+    right: auto;
+    padding: 10px 20px;
+}
+
+.imegamenu > ul > li > ul.normal-sub > li {
+    width: 100%;
+}
+
+.imegamenu > ul > li > ul.normal-sub > li a {
+    border: 0;
+    padding: 1em 0;
+}
+
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+Mobile style's
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media only screen and (max-width: 959px) {
+    .menu-container {
+        width: 100%;
+    }
+    .menu-mobile {
+        display: block;
+    }
+    .menu-dropdown-icon:before {
+        display: block;
+    }
+    .imegamenu > ul {
+        display: none;
+    }
+    .imegamenu > ul > li {
+        width: 100%;
+        float: none;
+        display: block;
+    }
+    .imegamenu > ul > li a {
+        padding: 1.5em;
+        width: 100%;
+        display: block;
+		text-align: center;
+		direction: rtl;
+    }
+    .imegamenu > ul > li > ul {
+        position: relative;
+    }
+    .imegamenu > ul > li > ul.normal-sub {
+        width: 100%;
+    }
+    .imegamenu > ul > li > ul > li {
+        float: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .imegamenu > ul > li > ul > li:first-child {
+        margin: 0;
+    }
+    .imegamenu > ul > li > ul > li > ul {
+        position: relative;
+    }
+    .imegamenu > ul > li > ul > li > ul > li {
+        float: none;
+    }
+    .imegamenu .show-on-mobile {
+        display: block;
+    }
+}

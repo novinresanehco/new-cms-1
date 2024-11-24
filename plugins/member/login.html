@@ -1,0 +1,44 @@
+<!-- IF Error -->
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="fa" http-equiv="Content-Language">
+</head>
+<!-- IF Error --><div class="box2" align="right">
+[ErrorMsg]</div>
+<!-- ENDIF Error -->
+<!-- IF Succeed --><div class="box" align="right">
+[Msg]</div>
+<!-- ENDIF Succeed -->
+<!-- IF login_form -->
+<form action="index.php?plugins=memeber&method=login" method="post">
+<div align="center">
+<table  dir="rtl" cellpadding="0"  width="590">
+<tbody>
+<tr>
+<td  width="19%" height="22">نام کاربری:</td>
+<td colspan="2">
+<input  name="user" tabindex="1" value="" size="20" dir="ltr"></td>
+</tr>
+<tr>
+<td height="22" width="19%">کلمه عبور:</td>
+<td colspan="2">
+<input  name="pass" tabindex="2" type="password" dir="ltr" size="20"></td>
+</tr>
+<!-- IF LoginSec -->
+<tr>
+<td height="11" width="19%" style="height: 6px">كد امنيتي:</td>
+<td style="width: 160px"><INPUT  name=samaneh  tabindex="3" size="20"></td>
+<td><span id=CMSimg style="cursor:hand"  onclick=CMSimg("New")>
+<img style="cursor:hand" onclick=CMSimg("New") border="0" src="img.php" id="imageCMS" ></span></td>
+</tr><!-- ENDIF LoginSec -->
+<tr>
+<td height="11" width="19%" style="height: 5px">&nbsp;</td>
+<td style="width: 160px">
+<INPUT name=submit  tabindex="4" size="20" type="submit" value="ورود"></td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table>
+</form>
+
+<!-- ENDIF login_form -->

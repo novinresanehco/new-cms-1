@@ -1,0 +1,28 @@
+						<!-- Sponsors -->
+        <section class="pabg">
+            <div class="overflow-sponsors" style='background: url("theme/core/avax/img/slide/slides/13.jpg") rgb(248, 248, 248) repeat fixed 0% 0%;'>
+                <div class="container paddings">
+
+                   <h2 style="color: rgb(255, 255, 255); text-align: center; direction: rtl;">اخبار تکنولوژی</h2>
+                   
+                    <!-- Sponsors -->
+                    <ul id="sponsors">
+					 <!-- Sponsor -->
+                        <li data-toggle="tooltip" title data-original-title="Tooltip Hover">
+                            <img src="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg"  style="max-width: 250px;"><a href="http://127.0.0.1/cms2/post/54-چند+ویژگی+یک+وبلاگ+نویس+موفق.php"  class="fancybox" ><div class="overlay"></div></a>
+                        </li>  
+						
+                        <!-- Item Sponsor -->  
+					 <!-- Sponsor -->
+                        <li data-toggle="tooltip" title data-original-title="Tooltip Hover">
+                            <img src="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg"  style="max-width: 250px;"><a href="http://127.0.0.1/cms2/post/53-4+روش+مهم+درآمدزایی+برندهای+مهم.php"  class="fancybox" ><div class="overlay"></div></a>
+                        </li>  
+						
+                        <!-- Item Sponsor -->  
+                    </ul>
+                    <!-- End Sponsors --> 
+
+                </div>
+            </div>
+        </section>
+        <!-- End Sponsors -->

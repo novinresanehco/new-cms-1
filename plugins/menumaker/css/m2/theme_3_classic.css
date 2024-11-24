@@ -1,0 +1,157 @@
+/* Animated Horizontal Dropdown Menu (Theme 3) - Classic */
+body{
+	margin:0;
+	}
+/* ========== THE MAIN FONT ========== */
+@font-face{
+	font-family:"BebasNeue";
+	src:url('../font/BebasNeue.eot');
+	src:url('../font/BebasNeue.eot?#iefix') format('embedded-opentype'),
+		url('../font/BebasNeue.ttf') format('truetype'),
+		url('../font/BebasNeue.svg#svgFontName') format('svg');
+	}	
+/* ========== MAIN DIV THAT HOLDS THE ENTIRE MENU ========== */
+.menu_container{
+	margin-top:150px; /* separates 150px from top */
+	height:90px; /* height, main links have a height of 45px and dropdown links have a height of 45px, 45px+45px=90px */
+	border-bottom:solid 1px #CCC;
+	-webkit-box-shadow:0 0 6px #BBBBBB;
+	-moz-box-shadow:0 0 6px #BBBBBB;
+	box-shadow:0 0 6px #BBBBBB;
+	/* background color */
+	background:#F5F5F5;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F5F5F5), to(#EEE));
+	background:-webkit-linear-gradient(top, #F5F5F5, #EEE);
+	background:-moz-linear-gradient(top, #F5F5F5, #EEE);
+	background:-ms-linear-gradient(top, #F5F5F5, #EEE);
+	background:-o-linear-gradient(top, #F5F5F5, #EEE);
+	}
+/* ========== BIG ORANGE LINE ========== */
+.menu{
+	width:100%; /* full width */
+	height:45px; /* height, all elements will inherit this height */
+	/* background color */
+	background:#F90;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F90), to(#F60));
+	background:-webkit-linear-gradient(top, #F90, #F60);
+	background:-moz-linear-gradient(top, #F90, #F60);
+	background:-ms-linear-gradient(top, #F90, #F60);
+	background:-o-linear-gradient(top, #F90, #F60);
+	}
+/* ========== DIV THAT HOLDS THE MAIN LINKS IN THE CENTER ========== */
+.menu_center{
+	width:1020px; /* width */
+	height:100%; /* full height */
+	margin:0 auto; /* go to the middle of the screen */
+	}
+/* ========== MAIN LINKS ========== */	
+.menu ul{
+	width:auto; /* width auto */
+	height:100%; /* full height */
+	position:relative;
+	margin:0; /* removes the space added by default */
+	padding:0; /* removes the space added by default */
+	float:left;
+	list-style:none;
+	}
+.menu ul li{
+	height:100%; /* full height */
+	float:left; /* go left */
+	}
+.menu ul li a{
+	display:block;
+	height:100%; /* full height */
+	padding:0 15px; /* separates from inside, 15px from left and right side */
+	font-family:"BebasNeue"; /* call font */
+	font-size:24px; /* font size */
+	color:#FFF; /* text color */
+	text-decoration:none;
+	line-height:50px;
+	}
+.menu ul li, .menu ul li a{
+	-webkit-transition:all 0.2s linear;
+	-moz-transition:all 0.2s linear;
+	-ms-transition:all 0.2s linear;
+	-o-transition:all 0.2s linear;
+	transition:all 0.2s linear;
+	}
+/* ========== MAIN LINKS ON MOUSEOVER AND WHEN THE MAIN LINK HAS CLASS '.selected' ========== */				
+.menu ul li:hover, .menu ul li.selected{
+	background:#F5F5F5;
+	}
+.menu ul li:hover > a, .menu ul li.selected > a{
+	color:#999;
+	}
+/* ========== WHEN THE MAIN LINK HAS CLASS '.selected' ========== */	
+.menu ul:hover li.selected{
+	/* background color */
+	background:#F90;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F90), to(#F60));
+	background:-webkit-linear-gradient(top, #F90, #F60);
+	background:-moz-linear-gradient(top, #F90, #F60);
+	background:-ms-linear-gradient(top, #F90, #F60);
+	background:-o-linear-gradient(top, #F90, #F60);
+	}
+.menu ul:hover li.selected > a{
+	color:#FFF; /* text color */
+	}
+.menu ul li:hover.selected{
+	background:#F5F5F5; /* background color */
+	}
+.menu ul li:hover.selected > a{
+	color:#999; /* text color */
+	}			
+/* ========== HORIZONTAL DROPDOWN MENU ========= */
+.menu ul ul{
+	width:1020px; /* width */
+	position:absolute;
+	left:0;
+	/* background color, for proper operation on old browsers, the background color of dropdown menu must be defined */
+	background:#F5F5F5;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F5F5F5), to(#EEE));
+	background:-webkit-linear-gradient(top, #F5F5F5, #EEE);
+	background:-moz-linear-gradient(top, #F5F5F5, #EEE);
+	background:-ms-linear-gradient(top, #F5F5F5, #EEE);
+	background:-o-linear-gradient(top, #F5F5F5, #EEE);
+	border:none;
+	}
+.menu ul ul.visible{
+	z-index:1;
+	}
+.menu ul li:hover ul{
+	z-index:2;
+	}
+/* ========== LINKS IN DROPDOWN MENU ========== */	
+.menu ul ul li{
+	border:none;
+	}
+.menu ul ul li a{
+	padding:0 11px; /* separates from inside, 11px from left and right side */
+	font-family:Arial,Helvetica,sans-serif; /* call font */
+	font-style:italic; /* font style */
+	font-size:16px; /* font size */
+	color:#999; /* text color */
+	}
+/* ========== LINKS IN DROPDOWN MENU ON MOUSEOVER ========== */
+.menu ul ul li:hover{
+	border:none;
+	background:none;
+	}
+.menu ul ul li:hover a{
+	color:#F90;
+	text-shadow:0 0 6px #CCC;
+	}
+/* ========== WHEN LINK IN DROPDOWN MENU HAS CLASS '.selected' ========== */	
+.menu ul ul li a.selected{
+	color:#F90; /* text color */
+	text-shadow:0 0 6px #CCC;	
+	}
+.menu ul ul:hover li a.selected{
+	color:#999; /* text color */
+	text-shadow:none;
+	}
+.menu ul ul li:hover a.selected{
+	color:#F90; /* text color */
+	text-shadow:0 0 6px #CCC;
+	}
+/* LizardTheme/December2012 */

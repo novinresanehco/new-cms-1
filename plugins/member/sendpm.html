@@ -1,0 +1,94 @@
+<!-- IF Error -->
+<div class=error>[Msg]</div><!-- ENDIF Error -->
+<!-- IF Succeed --><div class=success>[Msg]</div><!-- ENDIF Succeed -->
+<script language="javascript">function insertSmiley(smiley){var textArea = document.getElementById("text");var canCreateTextRange = textArea.createTextRange;if (canCreateTextRange){textArea.focus(textArea.caretPos);textArea.caretPos = document.selection.createRange().duplicate();selectedTextLength = textArea.caretPos.text.length};smiley = " " + smiley + " ";if (canCreateTextRange){textArea.caretPos.text = smiley}else{textArea.value += smiley}};function hoverSmiley(smiley, state){if (state == 'in'){smiley.style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=&#1776;)"}else{smiley.style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=&#1777;)"}}</script>
+<!-- IF Form -->
+<br><center>
+<form action=index.php?plugins=member&method=sendpm&task=send method=post autocomplete=on>
+<table   cellpadding="2" cellspacing="1" width="80%">
+<tr>
+<td  width="30%" >عنوان:</td>
+
+<td  width="70%" >
+<INPUT 
+ name=title  tabindex="1" lang=fa-IR value="[title]" ></td>
+</tr>
+<tr>
+<td  width="30%">نام کاربری گیرنده:</td>
+<td  width="70%" >
+<INPUT 
+ name=reciver tabindex="1" value="[reciver]" ></td>
+</tr>
+<tr>
+<td  width="30%" >متن پیام:</td>
+<td  width="70%" >
+<textarea id=text  name=text tabindex="1" size="22" rows="10" cols="10" style="height: 75; width: 365;" lang=fa-IR>[text]</textarea></td>
+</tr>
+</tr>
+
+<tr>
+<td  width="100%"  colspan="2">
+<table border="0" cellpadding="5" cellspacing="0" width="100" id="table1"><tr align="center" valign="middle"><td>
+	&nbsp;</td><td>
+	&nbsp;</td><td width="4">
+	&nbsp;</td><td>
+	&nbsp;</td><td>
+	&nbsp;</td><td>
+	&nbsp;</td><td width="4">
+	&nbsp;</td><td width="4">
+	&nbsp;</td><td width="4">
+	<a href=javascript:insertSmiley(":D")>
+	<img src="[theme_url]smilies/icon_biggrin.gif" alt="Very Happy" title="Very Happy" border="0"></a></td>
+	<td width="26">
+	<a href=javascript:insertSmiley(":x")>
+	<img src="[theme_url]smilies/icon_mad.gif" alt="Mad" title="Mad" border="0"></a></td><td>
+	<a href=javascript:insertSmiley(":shock:")>
+	<img src="[theme_url]smilies/icon_eek.gif" alt="Shocked" title="Shocked" border="0"></a></td><td>
+	<a href=javascript:insertSmiley(":P")>
+	<img src="[theme_url]smilies/icon_razz.gif" alt="Razz" title="Razz" border="0"></a></td><td>
+	<a href=javascript:insertSmiley(":)")>
+	<img src="[theme_url]smilies/icon_smile.gif" alt="Smile" title="Smile" border="0"></a></td><td>
+	<a href=javascript:insertSmiley(":roll:")>
+	<img src="[theme_url]smilies/icon_rolleyes.gif" alt="Rolling Eyes" title="Rolling Eyes" border="0"></a></td><td>
+	<a href=javascript:insertSmiley(":?")>
+	<img src="[theme_url]smilies/icon_confused.gif" alt="Confused" title="Confused" border="0"></a></td><td>
+	<a href=javascript:insertSmiley(":idea:")>
+	<img src="[theme_url]smilies/icon_idea.gif" alt="Idea" title="Idea" border="0"></a></td><td>
+	<a href=javascript:insertSmiley(":(")>
+	<img src="[theme_url]smilies/icon_sad.gif" alt="Sad" title="Sad" border="0"></a></td><td>
+	<a href=javascript:insertSmiley(":?:")>
+	<img src="[theme_url]smilies/icon_question.gif" alt="Question" title="Question" border="0"></a></td></tr><tr align="center" valign="middle"><td>
+		&nbsp;</td><td>
+		&nbsp;</td><td width="4">
+		&nbsp;</td><td>
+		&nbsp;</td><td>
+		&nbsp;</td><td>
+		&nbsp;</td><td width="4">
+		&nbsp;</td><td width="4">
+		&nbsp;</td><td width="4">
+		<a href=javascript:insertSmiley(":oops:")>
+		<img src="[theme_url]smilies/icon_redface.gif" alt="Embarassed" title="Embarassed" border="0"></a></td>
+		<td width="26">
+		<a href=javascript:insertSmiley(":cry:")>
+		<img src="[theme_url]smilies/icon_cry.gif" alt="Crying or Very sad" title="Crying or Very sad" border="0"></a></td><td>
+		<a href=javascript:insertSmiley(":evil:")>
+		<img src="[theme_url]smilies/icon_evil.gif" alt="Evil or Very Mad" title="Evil or Very Mad" border="0"></a></td><td>
+		<a href=javascript:insertSmiley(":kuss:")>
+		<img src="[theme_url]smilies/icon_twisted.gif" alt="Kuss" title="Kuss" border="0"></a></td><td>
+		<a href=javascript:insertSmiley(":lol:")>
+		<img src="[theme_url]smilies/icon_lol.gif" alt="Laughing" title="Laughing" border="0"></a></td><td>
+		<a href=javascript:insertSmiley(":o")>
+		<img src="[theme_url]smilies/icon_surprised.gif" alt="Surprised" title="Surprised" border="0"></a></td><td>
+		<a href=javascript:insertSmiley(":wink:")>
+		<img src="[theme_url]smilies/icon_wink.gif" alt="Wink" title="Wink" border="0"></a></td><td>
+		<a href=javascript:insertSmiley(":arrow:")>
+		<img src="[theme_url]smilies/icon_arrow.gif" alt="Arrow" title="Arrow" border="0"></a></td><td>
+		<a href=javascript:insertSmiley(":!:")>
+		<img src="[theme_url]smilies/icon_exclaim.gif" alt="Exclamation" title="Exclamation" border="0"></a></td><td>
+		<a href=javascript:insertSmiley("8)")>
+		<img src="[theme_url]smilies/icon_cool.gif" alt="Cool" title="Cool" border="0"></a></td></tr></table>
+<p align="center">
+<INPUT type=submit  name=send tabindex="1" size="13" value="ارسال">
+</table></center>
+<!-- ENDIF Form -->
+

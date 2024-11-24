@@ -1,0 +1,47 @@
+<div class="container clearfix">
+		<div class="sixteen columns">
+
+						<div class="caption-container m-bot-20">
+							<div class="caption-text-container">اخبار تکنولوژی</div>
+							<div class="content-container-white caption-bg clearfix"></div>
+							<div class="carousel-navi jcarousel-scroll">
+								<div class="jcarousel-prev"></div>
+								<div class="jcarousel-next"></div>
+							</div>
+						</div>
+			
+		</div>
+	</div>	
+		<div class="jcarousel container latest-work-jc m-bot-35" >
+			<ul>
+				
+				<li class="four columns">
+						<div class="content-container-white hover-item">
+							<div class="view view-first">
+								<img src="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg" alt="Ipsum" >
+								<div class="abs">
+									<a href="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg" class="lightbox zoom info"></a><a href="http://127.0.0.1/cms2/post/54-چند+ویژگی+یک+وبلاگ+نویس+موفق.php" class="link info"></a>
+								</div>	
+							</div>
+							<div class="lw-item-caption-container">
+								<a class="a-invert" href="http://127.0.0.1/cms2/post/54-چند+ویژگی+یک+وبلاگ+نویس+موفق.php" ><span class="bold">چند ویژگی یک وبلاگ نویس موفق</span></a>
+								<div class="item-caption">1394-10-21</div>
+							</div>
+						</div>
+				</li>
+				<li class="four columns">
+						<div class="content-container-white hover-item">
+							<div class="view view-first">
+								<img src="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg" alt="Ipsum" >
+								<div class="abs">
+									<a href="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg" class="lightbox zoom info"></a><a href="http://127.0.0.1/cms2/post/53-4+روش+مهم+درآمدزایی+برندهای+مهم.php" class="link info"></a>
+								</div>	
+							</div>
+							<div class="lw-item-caption-container">
+								<a class="a-invert" href="http://127.0.0.1/cms2/post/53-4+روش+مهم+درآمدزایی+برندهای+مهم.php" ><span class="bold">4 روش مهم درآمدزایی برندهای مهم</span></a>
+								<div class="item-caption">1394-10-21</div>
+							</div>
+						</div>
+				</li>
+			</ul>
+		</div>

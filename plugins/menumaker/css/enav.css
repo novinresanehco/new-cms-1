@@ -1,0 +1,128 @@
+﻿/*** enavigation Layout ***/
+
+.enav {
+	position: relative;
+	display: inline-block;
+	list-style: none;
+	margin: 0;
+	padding: 19px 12px 19px;
+	border-radius: 10px;
+	background: rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .2);
+	line-height: 1;width: 100%;
+}
+
+.enav>li {
+	display: inline;
+	position: relative;
+	margin: 0p;
+	padding: 0;float: right;
+}
+
+
+/*** enavigation Links Styling ***/
+
+.enav>li>a {
+	/*** Layout styling ***/
+	
+	padding: 15px 25px 15px 25px;
+	box-shadow: 0px 2px 0px rgba(0, 0, 0, .05);
+	border-right: 1px solid rgba(90, 90, 90, .1);
+	background: #f0f0f0; /* Background for Internet Explorer 6-9 and other older browsers */
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url('../img/white_texture.png'); /* Background for Webkit browsers (Google Chrome and Apple Safari) */
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url('../img/white_texture.png'); /* Background for Internet Explorer 10+ */
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url('../img/white_texture.png'); /* Background for Mozilla Firefox */
+	background: -o-linear-gradient(top, rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url('../img/white_texture.png'); /* Background for Opera */
+	
+	/*** Text styling ***/
+	
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: normal;
+	color: #797977;
+	text-transform: uppercase;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, .3);
+}
+
+/*** The hover state of the enavigation links ***/
+
+.enav>li>a:hover {
+	background: #fafafa; /* Background for Internet Explorer 6-9 and other older browsers */
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, .4), rgba(255, 255, 255, .4)), url('../img/white_texture.png'); /* Background for Webkit browsers (Google Chrome and Apple Safari) */
+	background: -o-linear-gradient(top, rgba(255, 255, 255, .4), rgba(255, 255, 255, .4)), url('../img/white_texture.png'); /* Background for Internet Explorer 10+ */
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, .4), rgba(255, 255, 255, .4)), url('../img/white_texture.png'); /* Background for Mozilla Firefox */
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, .4), rgba(255, 255, 255, .4)), url('../img/white_texture.png'); /* Background for Opera */
+	color: #6AB5C8;
+	text-shadow: none;
+}
+
+/*** The rounded corners for the first enavigation link ***/
+
+.enav>li:first-child >*{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: none;
+}
+
+/*** The rounded corners for the last enavigation link ***/
+
+.enav>li:last-child >*{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+/*** Styling for the dropdown link list ***/
+
+.enav li ul {
+	list-style: none;
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 25px;
+	text-align:right;
+	width: 140px; /*** CHANGE THIS IF YOU WANT A LARGER DROPDOWN ***/
+	
+	margin: 0;
+	padding: 16px 0px 0px 0px;
+}
+
+.enav li:hover>ul {
+	display: block; /*** Displays the dropdown on hover ***/
+}
+
+
+.enav ul li {
+	display: block;
+	padding: 10px 0px 10px 0px;
+	background: rgba(0, 0, 0, .1);
+	cursor: pointer;
+}
+.enav ul li:hover {
+background: rgba(0, 0, 0, .15);
+}
+
+.enav ul li a {
+	text-transform: uppercase;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, .3);
+	font-size: 12px;
+	color: #797977;
+	font-weight: normal;
+	padding: 12px 30px 12px 25px;
+}
+
+
+.enav ul li a:hover {
+	color: #ffffff;
+	text-shadow: none;
+}
+
+.enav ul li:last-child{
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+		.enav ul img{float: right;
+padding: 7px;}
+	.enav li img{float: right;
+padding: 0px;;}

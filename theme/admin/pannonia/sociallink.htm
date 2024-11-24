@@ -1,0 +1,166 @@
+<script>
+    function tab_2() {
+        $("#editing_area").hide();
+        connect('pages/listsociallinks.php', "r", 'ajax_tabs_1_content',
+            loadingt, '');
+    }
+
+    function Mform(method) {
+        if (method == "new_sociallink") {
+            hideid("editing_area");
+            var title = gi("sociallink_title").value;
+            var url = gi("sociallink_url").value;
+            var icon = gi("sociallink_icon").value;
+            connect('pages/sociallink.php', "task=add_sociallink&title=" +
+                title + "&url=" + url + "&icon=" + icon, 'ajax_tabs_0_content',
+                loadingt, '');
+        }
+        if (method == "edit_sociallink") {
+            showid("editing_sociallink");
+            var edit_title = gi("edit1").value;
+            var edit_url = gi("edit2").value;
+            var edit_icon = gi("edit3").value;
+            var editing_id = gi("edit_id").value;
+            connect('pages/sociallink.php', "task=edit_sociallink&edit_title=" +
+                edit_title + "&edit_url=" + edit_url + "&edit_icon=" +
+                edit_icon + "&editing_id=" + editing_id,
+                'ajax_tabs_1_content_1', loadingt, 'edit_sociallink');
+        }
+    }
+
+    function editsociallink(id) {
+        showid("editing_area");
+        var title = gi("ajax_edit_title_" + id).value;
+        var url = gi("ajax_edit_url_" + id).value;
+        var icon = gi("ajax_edit_icon_" + id).value;
+        gi("edit1").value = title;
+        gi("edit2").value = url;
+        gi("edit3").value = icon;
+        gi("edit_id").value = id;
+    }
+
+    function delsociallink(id) {
+        hideid("editing_area");
+        var msg =
+            "آيا از حذف اين لينك اطمينان داريد؟\nعمليات حذف برگشت پذير نميباشد.";
+        bootbox.confirm(msg, function (result) {
+            if (result) {
+                connect('pages/sociallink.php',
+                    "task=delete_sociallink&id=" + id,
+                    'ajax_tabs_1_content_1', loadingt, 'delete_sociallink');
+            }
+        });
+    }
+</script>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <form onsubmit="Mform('new_sociallink');return false" method=post>
+                        <table border="0" width="100%" class="tbl" id="tabs_0_content">
+                            <tr>
+                                <td colspan="2" id="ajax_tabs_0_content"></td>
+                            </tr>
+                            <tr>
+                                <td width="25%">عنوان لينك :</td>
+                                <td width="73%">
+                                    <input class="input-xlarge" type="text" name="sociallink_title" id="sociallink_title"
+                                    size="59">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="25%">آدرس لينك :</td>
+                                <td width="73%">
+                                    <input class="input-xlarge ltr" type="text" name="sociallink_url" id="sociallink_url"
+                                    size="59" dir="ltr">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="25%">آیکن :</td>
+                                <td width="73%">
+                                    <input class="input-xlarge" type="text" name="sociallink_icon" id="sociallink_icon"
+                                    size="59" dir="rtl">
+                                </td>
+                                <td>
+                                    <a href="mfm.php?mode=standalone&amp;field=sociallink_icon" class='browsefile'>
+                                        <img src="../theme/admin/samaneh/images/icon/image.gif" alt="درج از لیست" title="درج از لیست"
+                                        />
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>
+                                        <input onclick="Mform('new_sociallink');return false;" type="submit" name="submit"
+                                        value="ثبت لينك" class="btn btn-success">
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <table border="0" width="100%" class="tbl" id="tabs_1_content">
+                        <tr>
+                            <td>
+                                <div id=edit>
+                                    <div id="ajax_tabs_1_content_1"></div>
+                                    <form onsubmit="Mform('edit_sociallink');return false" method=post>
+                                        <table border="0" width="100%" class="tbl" id="editing_area">
+                                            <tr>
+                                                <td width="25%">عنوان لينك :</td>
+                                                <td width="74%">
+                                                    <input class="input-xlarge" type="text" name="edit1" id="edit1" size="59">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="25%">آدرس لينك :</td>
+                                                <td width="74%">
+                                                    <input class="input-xlarge ltr" type="text" name="edit2" id="edit2" size="59" dir="ltr">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="25%">آیکن :</td>
+                                                <td width="74%">
+                                                    <input class="input-xlarge" type="text" name="edit3" id="edit3" size="59" dir="rtl">
+                                                </td>
+                                                <td>
+                                                    <a href="mfm.php?mode=standalone&amp;field=edit3" class="browsefile">
+                                                        <img src="../theme/admin/samaneh/images/icon/image.gif" alt="درج از لیست" title="درج از لیست"
+                                                        />
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <center>
+                                                        <input type="hidden" name="edit_id" id="edit_id" value="">
+                                                        <input onclick="Mform('edit_sociallink');return false;" type="submit" name="submitnews"
+                                                        value="ثبت تغييرات" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                </div>
+                        </tr>
+                        <tr>
+                            </td>
+                            <td id="ajax_tabs_1_content">
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

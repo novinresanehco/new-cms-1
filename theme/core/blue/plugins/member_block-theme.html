@@ -1,0 +1,51 @@
+<!-- IF Member -->
+<center>
+<img src="files/avatars/[avatar]"  style="width: 50%;height: 50%;"></center><br>
+<b>[name]</b> خوش آمديد! 
+
+<hr style="border: 1px dotted rgb(0, 0, 0);" width="90%" align="center" size="1">
+<img src="[theme_url]/img/li.gif">  
+<a href="index.php?plugins=member&method=profile">صفحه كاربري</a><br>
+<img src="[theme_url]/img/li.gif">  
+<a href="index.php?plugins=member&method=profile&task=edit">ويرايش پروفايل</a><br>
+<img src="[theme_url]/img/li.gif">  
+<a title="شما [msg] پیام خوانده نشده دارید!" href="index.php?plugins=member&method=inbox">پیام 
+های خصوصی (<b>[msg]</b>)</a><br>
+<img src="[theme_url]/img/li.gif">  
+<a href="index.php?plugins=member&method=outbox">صندوق خروجی</a><br>
+<img src="[theme_url]/img/li.gif"><a href="index.php?plugins=member&method=sendpm"> 
+ارسال پیغام خصوصی</a><br>
+<img src="[theme_url]/img/li.gif">  
+<a href="index.php?plugins=member&method=logout">خروج از سیستم</a>
+<!-- ENDIF Member -->
+<!-- IF Guest --><form autocomplete="on" method="post" action="index.php?plugins=member&method=login">
+                <div class="login-form">
+            <div class="form-group">
+              <input name="user" class="form-control login-field" placeholder="Enter your name" id="login-name" type="text">
+              <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+
+            <div class="form-group">
+              <input class="form-control login-field" name="pass" placeholder="Password" id="login-pass" type="password">
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+<input value="ورود" name="submit"  class="btn btn-primary btn-lg btn-block" type="submit">
+            <a class="login-link" href="index.php?plugins=member&method=signup">عضویت </a>
+			<a class="login-link" href="index.php?plugins=member&method=forget">كلمه عبور را فراموش كرده ام </a>
+          </div>
+<!-- IF LoginSec -->
+<tr>
+<td width="65" height="26">كد امنيتي:</td>
+<td height="26"><INPUT  name="samaneh"  tabindex="3" size="13"></td>
+</td>
+</tr>
+<tr>
+<td colspan=2><center><span id="CMSimg" style="cursor:hand"  onclick=CMSimg("New") colspan=2>
+<img style="cursor:hand" onclick=CMSimg("New") border="0" src="img.php" id="imageCMS" ></td></td>
+</span></center>
+</tr>
+<!-- ENDIF LoginSec -->
+</tbody>
+</table>
+</form>
+<!-- ENDIF Guest -->

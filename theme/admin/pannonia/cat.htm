@@ -1,0 +1,270 @@
+<script>
+    var editing = false;
+
+    function tab_2() {
+        $.ajax({
+            url: 'pages/cat.php',
+            data: 'task=listing&type=1',
+            type: 'POST',
+            success: function (result) {
+                $('#core_1_holder').html(result);
+                $("#ecore").select2({
+                    placeholder: "انتخاب کنید",
+                    allowClear: false
+                });
+            },
+            error: function () {
+                bootbox.alert('خطا در ارتباط با سرور');
+            }
+        });
+        //core_1_ajax
+    }
+
+    function tab_3() {
+        connect('pages/listcats.php', "r", 'ajax_tabs_2_content',
+            loadingt, '');
+			$.ajax({
+            url: 'pages/cat.php',
+            data: 'task=listing&type=2',
+            type: 'POST',
+            success: function (result) {
+                $('#core_2_holder').html(result);
+                $("#core").select2({
+                    placeholder: "انتخاب کنید",
+                    allowClear: false
+                });
+            },
+            error: function () {
+                bootbox.alert('خطا در ارتباط با سرور');
+            }
+        });
+    }
+
+    function Mform(method) {
+        if (method == "subject") {
+            hideid("editing_area");
+            var subject = gi("subject").value;
+            var ensubject = gi("ensubject").value;
+            connect('pages/cat.php', "task=addsubject&subject=" +
+                subject + "&ensubject=" + ensubject,
+                'ajax_tabs_0_content', loadingt, '');
+        }
+        if (method == "sub_subject") {
+            hideid("editing_area");
+            var sub_subject = gi("sub_subject").value;
+            var sub_ensubject = gi("sub_ensubject").value;
+            var ecore = gi("ecore").value;
+            connect('pages/cat.php',
+                "task=add_sub_subject&sub_subject=" + sub_subject +
+                "&sub_ensubject=" + sub_ensubject + "&core=" + ecore,
+                'ajax_tabs_1_content', loadingt, '');
+        }
+        if (method == "edit_subject") {
+            showid("editing_area");
+            var edit_sub = gi("edit1").value;
+            var edit_ensub = gi("edit2").value;
+            var editing_id = gi("edit_id").value;
+            var core = gi("core").value;
+            var coreid = gi("sub_edit_id").value;
+            if (coreid == 0 && core != 0) 
+			{
+                bootbox.confirm(
+                    "شما در حال تغيير يك شاخه اصلي به يك زير موضوع هستيد<br />در صورتي كه اين شاخه داراي زير موضوع باشد،هركدام از زير موضوع ها خود به عنوان يك شاخه اصلي تلقي خواهند شد.<br />آيا تمايل به ايجاد چنين تغييري داريد؟",
+                    function (result) {
+                        if (result) {
+                            connect('pages/cat.php', "task=edit_subject&edit_sub=" +
+							edit_sub + "&edit_ensub=" + edit_ensub + "&core=" +
+							core + "&editing_id=" + editing_id,
+							'ajax_tabs_2_content_2', loadingt, 'edit_cat');
+									}
+                    });
+            }
+			else
+			{
+				connect('pages/cat.php', "task=edit_subject&edit_sub=" +
+                edit_sub + "&edit_ensub=" + edit_ensub + "&core=" +
+                core + "&editing_id=" + editing_id,
+                'ajax_tabs_2_content_2', loadingt, 'edit_cat');
+			}
+        }
+    }
+
+    function editcat(id, coreid) {
+        showid("editing_area");
+        var title = gi("ajax_edit_title_" + id).value;
+        var entitle = gi("ajax_edit_entitle_" + id).value;
+        gi("edit1").value = title;
+        gi("edit2").value = entitle;
+        gi("edit_id").value = id;
+        gi("sub_edit_id").value = coreid;
+        gi("cat_list_" + coreid).selected = true;
+        $("#core").select2({
+            placeholder: "انتخاب کنید",
+            allowClear: false
+        });
+    }
+
+    function delcat(id, coreid) {
+        hideid("editing_area");
+        if (coreid == 0) {
+            var msg =
+                "اين شاخه ممكن است داراي تعدادي موضوع باشد<br />با حذف اين شاخه هر يك از موضوعات به عنوان يك شاخه اصلي تلقي خواهند شد.<br />عمليات حذف شاخه برگشت پذير نميباشد";
+        } else {
+            var msg =
+                "اين موضوع ممكن است داراي تعدادي مطلب بلاشد<br />حذف اين موضوع موجب حذف تمامي مطالب موجود در اين موضوع خواهد شد.<br />عمليات حذف برگشت پذير نمي باشد<br />آيا از ادامه عمليات اطمينان داريد؟";
+        }
+        bootbox.confirm(msg, function (result) {
+            if (result) {
+                connect('pages/cat.php', "task=delete_subject&id=" + id,
+                    'ajax_tabs_2_content_2', loadingt, 'edit_cat');
+            }
+        });
+    }
+</script>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <table border="0" width="100%" class="tbl" id="tabs_0_content">
+                        <tr>
+                            <td colspan="2" id="ajax_tabs_0_content"></td>
+                        </tr>
+                        <tr>
+			<td><label data-original-title="عنوان فارسی موضوع"  data-placement="left" class="tip" for="star" style="float: right;">عنوان موضوع</label>
+						
+                             </td>
+                            <td width="50px">
+                                <input class="input-xlarge" type="text" name="subject" id="subject" size="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50px">
+				<label data-original-title="عنوان انگلیسی موضوع/مفید برای موتورهای جست و جو"  data-placement="left" class="tip" for="star" style="float: right;">عنوان انگليسي موضوع</label>
+							</td>
+                            <td>
+                                <input class="input-xlarge" type="text" name="ensubject" id="ensubject" size="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <center>
+                                    <input onclick="Mform('subject');return false;" type="submit" name="submit" value="ثبت موضوع"
+                                    class="btn btn-success">
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <form onsubmit="Mform('sub_subject');return false" method=post>
+                        <table border="0" width="100%" class="tbl" id="tabs_1_content">
+                            <tr>
+                                <td colspan="2" id="ajax_tabs_1_content"></td>
+                            </tr>
+                            <tr>
+							<td width="190px"><label data-original-title="عنوان فارسی زير موضوع"  data-placement="left" class="tip" for="star" style="float: right;">عنوان زير موضوع</label>
+							
+                               </td>
+                                <td>
+                                    <input class="input-xlarge" type="text" name="sub_subject" id="sub_subject" size="20">
+                                </td>
+                            </tr>
+                            <tr>
+							 <td width="190px"><label data-original-title="عنوان انگليسي زير موضوع/مفید برای موتورهای جست و جو"  data-placement="left" class="tip" for="star" style="float: right;">عنوان انگليسي زير موضوع</label>
+							
+                               </td>
+                                <td>
+                                    <input class="input-xlarge" type="text" name="sub_ensubject" id="sub_ensubject" size="20">
+                                </td>
+                            </tr>
+                            <tr>
+							
+							<td width="190px"><label data-original-title="انتخاب سرشاخه موضوع"  data-placement="left" class="tip" for="star" style="float: right;">موضوع اصلي</label>
+							
+                                <td id="core_1_ajax" dir="ltr">
+                                    <div class="controls" id="core_1_holder" style="margin-right:18px;">
+                                        درحال بارگزاری...
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>
+                                        <input onclick="Mform('sub_subject');return false;" type="submit" name="submitnews"
+                                        value="ثبت زير موضوع" class="btn btn-success">
+                                    </center>
+									<br>
+									<div class="alert alert-info" style="margin-top: 16px;">
+	                        <button type="button" class="close" data-dismiss="alert">×</button>
+	                       <strong>توجه :</strong> 
+                        
+                     برای ساخت زیر شاخه یا زیر مجموعه های تو در تو از باکس " موضوع اصلی " زیر شاخه مورد نظر را انتخاب کنید
+	                    </div>
+                                </td>
+                            </tr>
+							
+
+                        </table>
+                    </form>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <table border="0" width="100%" class="tbl" id="tabs_2_content">
+                        <tr>
+                            <td>
+                                <div id=edit>
+                                    <div id="ajax_tabs_2_content_2"></div>
+                                    <form onsubmit="Mform('edit_subject');return false" method=post>
+                                        <table border="0" width="100%" class="tbl" id="editing_area" style=display:none>
+                                            <tr>
+                                                <td width="150px">عنوان&nbsp;:</td>
+                                                <td>
+                                                    <input class="input-xlarge" type="text" name="edit1" id="edit1" size="20">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>عنوان انگليسي :</td>
+                                                <td>
+                                                    <input class="input-xlarge" type="text" name="edit2" id="edit2" size="20">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>موضوع اصلي :</td>
+                                                <td id="core_2_ajax">
+												<div class="controls" id="core_2_holder" style="margin-right:18px">
+												[core2]
+												</div>
+												</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <center>
+                                                        <input type="hidden" name="edit_id" id="edit_id" value="">
+                                                        <input type="hidden" name="sub_edit_id" id="sub_edit_id" value="">
+                                                        <input onclick="Mform('edit_subject');return false;" type="submit" name="submitnews"
+                                                        value="ثبت تغييرات" class="btn btn-success">
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                </div>
+                        </tr>
+                        <tr>
+                            </td>
+                            <td id="ajax_tabs_2_content">
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

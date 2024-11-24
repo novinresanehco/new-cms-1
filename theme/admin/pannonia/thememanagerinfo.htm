@@ -1,0 +1,42 @@
+<form action="" method="post" class="pluginData" id="pluginInfo_[id]">
+    <table cellspacing="4" cellpadding="4">
+        <tr>
+            <td width="150px">نام ماژول</td>
+            <td>[name]</td>
+        </tr>
+        <tag:fields>
+            <tr>
+                <td>[title]</td>
+                <td>[input]</td>
+            </tr>
+        </tag:fields>
+        <tr>
+            <td colspan=2 align="center"><input class="btn btn-success" type="submit" value="ثبت تنظیمات" /></td>
+        </tr>
+    </table>
+</form>
+<script>
+    // $(".colorpicker").colorpicker({limit: 'websafe'});
+    $( ".pluginData" ).submit( function()
+    {
+        tinyMCE.triggerSave();
+        var formId = $( this ).attr( "id" ).split( "_" )[1];
+        var formData = $( this ).serialize();
+        $( "#postionDataBox_" + formId ).val( $.base64.encode( formData ) );
+        //$( ".ui-dialog-content" ).dialog( "close" );
+        $.facebox.close();
+        return false;
+    } );
+    $( ".browseicon" ).click( function()
+    {
+        var id = $( this ).attr( 'href' ).replace( 'iconmanager.php?field=', '' );
+        var theme = '<div class="iconmanagerarea"><div id="icons-202020" class="iconmanager"></div><div style="clear:both"></div></div>';
+        jQuery.fancybox( theme.replace( '202020', id ) );
+        addIcon( id, '[site]', true );
+        return false;
+    } );
+    $( '.editor' ).each( function()
+    {
+        tinyMCE.execCommand( 'mceAddEditor', false, $( this ).attr( 'id' ) )
+    } );
+</script>

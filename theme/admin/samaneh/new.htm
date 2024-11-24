@@ -1,0 +1,274 @@
+<form action="" onsubmit="return false;" method="post" id="newfrm">
+    <div id="displaybox"></div>
+<div id="div_1">
+    <table style="width: 100%" id="postfrm">
+        <tr>
+            <td>
+                <label class=hand for="title">عنوان مطلب :</label>
+            </td>
+            <td width="200" colspan="3">
+                <input class="rinput" name="title" id="title" size="59" lang="fa-IR">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class=hand for="entitle">نام انگلیسی :</label>
+            </td>
+            <td width="200" colspan="3">
+                <input class="rinput" name="entitle" id="entitle" size="59" lang="fa-IR">
+            </td>
+			
+        </tr>
+        <tr>
+            <td>
+                <label class=hand for="timage">آدرس تصویر:</label>
+            </td>
+            <td width="200" colspan="2">
+                <input style="direction:ltr" class="rinput" type="text" name="timage" id="timage" size="59">
+            </td>
+			<td>
+				<a href="javascript:BrowseFiles('mfm.php?mode=standalone&amp;field=timage');">
+				<img src="../theme/admin/samaneh/images/icon/image.gif" alt="درج از لیست" title="درج از لیست" />
+				</a>
+			</td>
+        </tr>
+        <tr>
+            <td><span class=hand>نویسنده :</span>
+            </td>
+            <td width="200" colspan="3">
+                <input class="rinput" name="author" id="author" size="59" value="[fullname]" onFocus="this.blur()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label class=hand for="core">موضوع مطلب :</label>
+            </td>
+            <td width="200" colspan="3">[core]</td>
+        </tr>
+        <td colspan="4">
+            <textarea dir=rtl class="editor" name="text" id="text" style="height: 193; width: 428;" cols="10" rows="10"><tag:SError>[text]</tag:SError></textarea>
+        </td>
+        </tr>
+        <tr id="fullarea">
+            <td id="refull" colspan="4">
+                <textarea dir=rtl id="fulltext" class="editor" name="fulltext" style="height: 193; width: 427" cols="10" rows="10"><tag:fSError>[fulltext]</tag:fSError></textarea>
+            </td>
+            </td>
+            </td>
+        </tr>
+        <tr id="fullpr">
+            <td>
+                <label class=hand for="context">متن ادامه مطلب :</label>
+            </td>
+            <td>
+                <input onblur="clickrecall(this, 'ادامه مطلب');" onfocus="clickclear(this, 'ادامه مطلب');" type="text" name="context" id="context" size="20" value="ادامه مطلب" class="srinput">
+                </span>
+<a href="#quickhelp" onclick="alert('درج کد اچ تی ام ال مانند کد عکس نیز مجاز است.')">؟</a>
+            </td>
+            <td>
+                <label class=hand for="hits">بازدید ادامه مطلب:</label>
+            </td>
+            <td>
+                <input type="text" name="hits" id="hits" size="20" value="0" class="srinput" dir="ltr">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" id="fulltextlink" style="font-weight:bold">
+			<a id="delfulltextlink" href="#" onclick="$('#fullpr').hide();$('#delfulltextlink').hide();$('#addfulltextlink').show();$('#fullarea').hide();return false;">حذف ادامه مطلب</a>
+			<a id="addfulltextlink" class="hideclass" href="#" onclick="$('#fullpr').show();$('#addfulltextlink').hide();$('#delfulltextlink').show();$('#fullarea').show();return false;">افزودن ادامه مطلب</a>
+			</td>
+        </tr>
+		
+        <tr>
+            <td width="41%">
+               کلمات کلیدی:
+            </td>
+            <td colspan="2">
+                <input type="text" name="keywords" id="keywords" class="rinput" dir="ltr">
+            </td>
+        </tr>
+        <tr>
+            <td width="41%">
+               توضیح:
+            </td>
+            <td colspan="2">
+				<input type="text" name="description" id="description" class="rinput" dir="ltr">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">موضوعات مرتبط:
+                <br>
+                <div style="border: 0pt none; height: 88px;  overflow: auto">[subject]</div>
+                <div></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+        </tr>
+    </table>
+</div>
+<div id="div_2" style="display:none">
+    <table border="0" width="95%">
+        <tr>
+            <td width="41%">&nbsp;</td>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41%">وضعیت:</td>
+            <td colspan="2">
+                <select class="select" size="1" name="show" id="show" dir="rtl">
+                    <option value="1" selected>عادی</option>
+                    <option value="2">همیشه در صفحه نخست [چسبانک]</option>
+                    <option value="4">ذخیره در پیش نویس</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td width="41%">نظرات:</td>
+            <td colspan="2">
+                <select name="scomments" id="scomments" class="select" size="1" dir="rtl">
+                    <option selected value="1">فعال</option>
+                    <option value="2">غیر فعال</option>
+                    <option value="3">نمایش پس از تایید</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="checkbox" name="star" id="star" checked>
+                <label for="star">امتیاز دهی فعال باشد</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input type="checkbox" name="webdir" id="webdir" checked>
+                <label for="webdir">ثبت مطلب در دایرکتوری</label>
+            </td>
+        </tr>
+        <tr>
+            <td height="33" width="41%">
+                <input onclick="toggle('expire')" type="checkbox" name="expirech" id="expirech" value="1">
+                <label for="expirech">مطلب دارای تاریخ انقضا باشد</label>
+            </td>
+            <td height="33" colspan="2">
+                <div id="expire">[expiredate]</div>
+            </td>
+        </tr>
+        <tr>
+            <td height="35" width="41%">
+                <input onclick="toggle('showbox')" type="checkbox" name="postch" id="postch" value="1">
+                <label for="postch">ارسال به اینده</label>
+            </td>
+            <td height="35" colspan="2">
+                <div id="showbox">[posttime]</div>
+            </td>
+        </tr>
+        <tr>
+            <td width="41%">
+               محدویت گذر واژه
+            </td>
+            <td colspan="2">
+                <div id="password">
+                    <input type="text" name="postpassword" id="postpassword" size="20" class="srinput" dir="ltr">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="41%">
+                محدویت گذر واژه ادامه مطلب
+            </td>
+            <td colspan="2">
+                <div id=fullpassword>
+                    <input type="text" name="fullpasswordi" id="fullpasswordi" size="20" class="srinput" dir="ltr">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="41%">تگ های مطلب:</td>
+            <td width="50%">
+                <input type="text" name="keys" id="keys" size="40" class="rinput" dir="rtl">
+            </td>
+            <td width="7%"><span id="keysid"></span>
+            </td>
+        </tr>
+        <tr>
+            <td width="41%">لینک ها:</td>
+            <td colspan="2">
+                <select name="reg" id="reg" class="select" size="1">
+                    <option selected value="1">نمایش برای عموم کاربران</option>
+                    <option value="2">نمایش فقط برای کاربران عضو</option>
+                </select>
+            </td>
+        </tr>
+        </tr>
+    </table>
+</div>
+<div>
+    <center>
+        <table border="0" width="65%" id="sendbtn">
+            <tr>
+                <td colspan="4" align="center" height="28">
+                    <input type="button" name="submitnews" id="submitnews" value="ارسال مطلب" class="inp">
+                </td>
+            </tr>
+        </table>
+    </center>
+</div>
+<div id="div_3" style="display:none">
+    <div id="ajax_tabs_3_content"></div>
+	<table border="0" width="100%" class="tbl" id="tabs_2_content_in">
+    <tr>
+        <td bgcolor="#d1dde0" height="26" align="center">
+<b>عنوان فیلد</b>
+        </td>
+        <td bgcolor="#d1dde0" height="26" align="center">
+<b>مقدار فیلد</b>
+        </td>
+        <td bgcolor="#d1dde0" height="26" align="center">
+<b>تگ فیلد</b>
+        </td>
+    </tr>
+    <tag:postfields>
+        <tr>
+            <td bgcolor="#f3f7f8" height="26" align="center">
+                <input type="hidden" value="[type]">[title]</td>
+            <td bgcolor="#f3f7f8" height="26" align="center">[field]</td>
+            <td bgcolor="#f3f7f8" height="26" align="center">
+			<a href="#" onclick="alert('از این تگ می توانید در قالب مطلب استفاده نمایید.');return false;">[[name]]</a>
+			</td>
+        </tr>
+    </tag:postfields>
+</table>
+</div>
+</form>
+<script language="javascript">
+	function tab_3() 
+	{
+        //connect('pages/postfields.php', "task=listing&read=true", 'ajax_tabs_3_content', sload, '');
+    }
+	$("#submitnews").click(function(){
+		 $("#displaybox").html("در ارتباط با سرور...");
+		 if( $("#delfulltextlink").is(":visible") )
+		 {
+			var data = $("#newfrm").serialize() + '&text=' + encodeURIComponent( tinyMCE.get('text').getContent() ) + '&fulltext='  + encodeURIComponent( tinyMCE.get('fulltext').getContent() );
+		 }
+		 else
+		 {
+			var data = $("#newfrm").serialize() + '&text=' + encodeURIComponent( tinyMCE.get('text').getContent() ) + '&fulltext=';
+		 }
+		$.ajax({
+		  url: "pages/postnew.php",
+		  type: "post",
+		  data: data,
+		  success: function(msg)
+		  {
+			   $("#displaybox").html(msg);
+		  },
+		  error:function(){
+			  alert("failure");
+			  $("#displaybox").html('مشکل در ارتباط با سرور');
+		  }   
+		}); 
+	
+	});
+</script>

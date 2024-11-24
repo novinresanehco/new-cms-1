@@ -1,0 +1,25 @@
+﻿<script>
+    function Mform(action) {
+
+        connect('pages/site-map.php', 'task=update_map', 'ImanMoodi', loadingt,
+            '');
+    }
+</script>
+
+<form onsubmit="Mform('update_map');return false" method=post>
+
+    <div id="ImanMoodi"></div>
+
+    بعد از ارسال پست جديد بايد روي به روزرساني نقشه كليك كنيد تا اطلاعات پست جديد در
+    نقشه ثبت شود.
+    <br>در صورتي كه تازه اين ماژول را نصب كرده ايد براي ساختن نقشه روي به روزرساني نقشه
+    كليك كنيد.
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+        <input onclick="Mform2('update_map');return false;" class="btn btn-success" type="submit"
+        name="submit" value=" به روزرساني نقشه ">
+    </center>
+</form>

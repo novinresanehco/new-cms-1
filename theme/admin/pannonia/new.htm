@@ -1,0 +1,370 @@
+<style>
+    label
+    {
+        display: -webkit-inline-box;
+        margin-right:5px;
+    }
+</style>
+<form action="" onsubmit="return false;" method="post" id="newfrm">
+    <div class="actions-wrapper">
+        <div class="widget">
+            <div class="tabbable">
+
+                <!-- default tabs -->
+                <ul class="nav nav-tabs right-aligned-tabs">
+                    <tag:tabs>
+                        <li class="[current]"><a id="tab_[id]" class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                        </li>
+                    </tag:tabs>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        <div id="displaybox"></div>
+                        <table style="width: 100%" id="postfrm">
+									
+						
+                            <tr>
+                                <td>
+                            <label data-original-title="مختصر و نماینگر محتوی مطلب"  data-placement="left" class="tip hand" for="title">عنوان مطلب :</label>
+                                </td>
+                                <td width="200" colspan="3">
+<input type="text" class="input-xxlarge" name="title" id="title" size="59" lang="fa-IR">
+                                </td>
+                            </tr>
+							
+                            <tr>
+                                <td>
+                                    <label  data-original-title="عنوان انگلیسی مطلب برای شناسایی هرچه بهتر مطلب در موتورهای جست و جو"  data-placement="left" class="tip hand" for="entitle">نام انگلیسی :</label>
+                                </td>
+                                <td width="200" colspan="3">
+                                    <input type="text" class="input-xxlarge ltr" name="entitle" id="entitle" size="59" lang="fa-IR"  title="">
+                                </td>
+
+                            </tr>
+                           <tr>
+                                <td>
+                                    <label data-original-title="تصویر شاخص مطلب/ تصویر نمایانگر نوع مطلب"  data-placement="left" class="tip hand" for="timage">آدرس تصویر:</label>
+                                </td>
+                                <td width="200" colspan="2">
+								<div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="افزودن فایل از مرکز فایلها" href="mfm.php?mode=standalone&amp;field=timage" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xxlarge ltr" type="text" name="timage" id="timage" size="59" style="text-align: left;" title="">
+					</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class=hand>نویسنده :</span>
+                                </td>
+                                <td width="200" colspan="3">
+                                    <input type="text" class="input-xxlarge" name="author" id="author" size="59" value="[fullname]" onFocus="this.blur()">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label data-original-title="موضوع اصلی مطلب "  data-placement="left" class="tip hand" for="core">موضوع مطلب :</label>
+                                </td>
+                                <td width="200" colspan="3"><div class="controls" style="margin-right:20px;">[core]</div></td>
+                            </tr>
+							
+                            <td colspan="4">
+                                <textarea dir=rtl class="editor" name="text" id="text" style="height: 193; width: 428;" cols="10" rows="10">
+                  <tag:SError>[text]</tag:SError>
+                                </textarea>
+                            </td>
+                            </tr>
+                            <tr id="fullarea">
+                                <td id="refull" colspan="4">
+                                    <textarea dir=rtl id="fulltext" class="editor" name="fulltext" style="height: 193; width: 427" cols="10" rows="10">
+                    <tag:fSError>[fulltext]</tag:fSError>
+                                    </textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" id="fulltextlink" style="font-weight:bold">
+                                    <a id="delfulltextlink" href="#" onclick="$( '.fullpr' ).hide();
+        $( '#delfulltextlink' ).hide();
+        $( '#addfulltextlink' ).show();
+        $( '#fullarea' ).hide();
+        return false;">حذف ادامه مطلب</a>
+                                    <a id="addfulltextlink" style="display:none" href="#" onclick="$( '.fullpr' ).show();
+        $( '#addfulltextlink' ).hide();
+        $( '#delfulltextlink' ).show();
+        $( '#fullarea' ).show();
+        return false;">افزودن ادامه مطلب</a>
+                                </td>
+                            </tr>
+<tr class="control-group">
+                               <td>
+							   <label data-original-title="در صورت مرتبط بودن مطلب با موضوعات دیگر ,موضوع را مشخص کنید/موضوع فرعی"  data-placement="left" class="tip">موضوعات مرتبط :</label>
+
+                                </td>
+                                <td width="200" colspan="3">
+                        <style>
+						ul ul{
+
+    border: 0px solid #F8F7F7;
+    margin-right: 5px;
+    margin-top: 0px;
+}
+	.cat ul ul{
+    list-style-type: none;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+.cat ul ul{
+padding-right: 4%;
+border-color: #94C0D2;
+border-style: dotted;
+border-width: 1px;
+padding: 8px;width: 80.7%;
+background-color: rgba(234, 244, 249, 0.38);
+}
+.cat ul ul ul{
+margin-top: 20px;
+}
+.cat ul li label{
+display:inline;float: none;
+}
+						</style>
+                                <ul class="cat">
+                                  
+                                        [subject]
+                                    
+                                </ul>
+                           </td>
+                            </tr>
+							<div >
+                            <tr class="control-group">
+							
+							 
+							 
+                                <td>
+                                  <label data-original-title="keywords/کلمات کلیدی مطلب/نمایش در کد صفحه"  data-placement="left" class="tip"> کلمات کلیدی:</label> 
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="keywords" id="keywords" class="tip input-xlarge" style="width: 50%;" dir="ltr" title="">
+                                </td>
+                            </tr>
+                            <tr >
+							
+							
+                                <td>
+                                    <label data-original-title="description/توضیح مختری از مطلب/نمایش در کد"  data-placement="left" class="tip"> توضیح:</label>
+                                </td>
+                                <td colspan="2">
+                                    <input type="text" name="description" id="description" class="input-xlarge" style="width: 50%;" dir="ltr">
+                                </td>
+                            </tr>
+                          <tr>
+                                <td>
+								
+								<label data-original-title="Tag/کلیدواژه های متنی/نمایش در پایان مطلب"  data-placement="left" class="tip"> تگ های مطلب</label>
+								
+                                    
+                                </td>
+                                <td colspan="2">
+								<input type="text" id="tags4" class="tags"  name="keys" >
+                                    
+                                </td>
+                            </tr>
+							 <tr class="control-group">
+							<td colspan="3" >
+                                    <input type="checkbox" class="styled"  name="webdir" id="webdir" checked>
+                                    <label data-original-title="مطالب مفید و کلیدی خود رابرای بهتر دیده شدن با انتخاب این گزینه در دایرکتوری ثبت کنید"  data-placement="left" class="tip" for="webdir">ثبت مطلب در دایرکتوری</label>
+                                </td>
+								</tr>
+                           </div>
+                        </table>
+                        <center>
+                            <table border="0" width="65%" id="sendbtn">
+                                <tr>
+                                    <td colspan="4" align="center" height="28">
+                                        <input type="button" name="submitnews" id="submitnews" value="ارسال مطلب" class="btn btn-success">
+                                    </td>
+                                </tr>
+                            </table>
+                        </center>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        <table border="0" width="95%">
+						<style>
+						.select2-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    min-width: 22%;
+}
+						</style>
+                            <tr>
+<td><label data-original-title="تعیین نوع نمایش مطلب ارسالی"  data-placement="left" class="tip">وضعیت</label></td>
+                                <td colspan="2">
+                                    <div class="controls" style="margin-right:20px;">
+                                        <select class="select2" size="1" name="show" id="show" dir="rtl">
+                                            <option value="1" selected>عادی</option>
+                                            <option value="2">همیشه در صفحه نخست [چسبانک]</option>
+                                            <option value="4">ذخیره در پیش نویس</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label data-original-title="تعیین وضعیت نمایش نظرات مطلب"  data-placement="left" class="tip">نظرات</label></td>
+                                <td colspan="2">
+                                    <div class="controls" style="margin-right:20px;">
+                                        <select name="scomments" id="scomments" class="select2" size="1" dir="rtl">
+                                            <option selected value="1">فعال</option>
+                                            <option value="2">غیر فعال</option>
+                                            <option value="3">نمایش پس از تایید</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="control-group">
+                                <td colspan="3">
+                                    <input type="checkbox" class="styled"  name="star" id="star"  checked>
+                                    <label data-original-title="در صورت پشتیبانی قالب فعال ,  میتوان برای مطلب امتیاز دهی داشت"  data-placement="left" class="tip" for="star" style="float: right;">امتیاز دهی فعال باشد</label>
+                                </td>
+                            </tr>
+                            <tr  class="control-group">
+                                <td height="33">
+                                    <input onclick="toggle( 'expire' )" type="checkbox" class="styled"  name="expirech" id="expirech" value="1" >
+                                    <label for="expirech">مطلب دارای تاریخ انقضا باشد</label>
+                                </td>
+                                <td height="33" colspan="2">
+                                    <div id="expire"><div class="controls" style="margin-right:20px;">[expiredate]</div></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="35">
+                                    <input onclick="toggle( 'showbox' )" type="checkbox" class="styled"  name="postch" id="postch" value="1">
+                                    <label for="postch">ارسال به اینده</label>
+                                </td>
+                                <td colspan="2">
+                                    <div id="showbox"><div class="controls" style="margin-right:20px;">[posttime]</div></div>
+                                </td>
+                            </tr>
+                            <tr  class="control-group">
+                                <td>
+								<label data-original-title="رمز گذاری برای کل مطلب"  data-placement="left" class="tip" for="postpassword" style="float: right;">محدویت گذر واژه</label>
+                                </td>
+                                <td colspan="2">
+                                    <div id="password">
+                                        <input type="text" name="postpassword" id="postpassword" size="20" class="input-xlarge" dir="ltr">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+								
+<label data-original-title="رمز گذاری برای نمایش ادامه مطلب"  data-placement="left" class="tip" for="star" style="float: right;"> محدویت گذر واژه ادامه مطلب</label>
+								
+                                   
+                                </td>
+                                <td colspan="2">
+                                    <div id=fullpassword>
+                                        <input type="text" name="fullpasswordi" id="fullpasswordi" size="20" class="input-xlarge" dir="ltr">
+                                    </div>
+                                </td>
+                            </tr>
+                           
+                            <tr>
+							
+							 <td>
+	<label data-original-title="ایجاد حق دسترسی برای لینکهای درج شده در مطلب"  data-placement="left" class="tip" for="star" style="float: right;">لینک ها</label>
+                               </td>
+                                <td colspan="2">
+                                    <div class="controls" style="margin-right:20px;">
+                                        <select name="reg" id="reg" class="select2" size="1">
+                                            <option selected value="1">نمایش برای عموم کاربران</option>
+                                            <option value="2">نمایش فقط برای کاربران عضو</option>
+                                        </select>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        <div id="ajax_tabs_3_content"></div>
+                        <table border="0" width="100%" class="table table-striped" id="tabs_2_content_in">
+                            <tr>
+                                <td align="center">
+                                    <b>عنوان فیلد</b>
+                                </td>
+                                <td align="center">
+                                    <b>مقدار فیلد</b>
+                                </td>
+                                <td align="center">
+                                    <b>تگ فیلد</b>
+                                </td>
+                            </tr>
+                            <tag:postfields>
+                                <tr>
+                                    <td align="center">
+                                        <input type="hidden" value="[type]">[title]</td>
+                                    <td align="center">[field]</td>
+                                    <td align="center">
+                                        <a href="#" onclick="bootbox.alert( 'از این تگ می توانید در قالب مطلب استفاده نمایید.' );
+        return false;">[[name]]</a>
+                                    </td>
+                                </tr>
+                            </tag:postfields>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script language="javascript">
+    function tab_3()
+    {
+        //connect('pages/postfields.php', "task=listing&read=true", 'ajax_tabs_3_content', sload, '');
+    }
+
+    $( "#submitnews" ).click( function()
+    {
+
+        $( "#displaybox" ).html( "در ارتباط با سرور..." );
+        if ( $( "#delfulltextlink" ).is( ":visible" ) )
+        {
+            var data = $( "#newfrm" )
+                    .serialize() + '&text=' + encodeURIComponent( tinyMCE.get( 'text' )
+                    .getContent() ) + '&fulltext=' + encodeURIComponent( tinyMCE.get( 'fulltext' )
+                    .getContent() );
+        }
+        else
+        {
+            var data = $( "#newfrm" )
+                    .serialize() + '&text=' + encodeURIComponent( tinyMCE.get( 'text' )
+                    .getContent() ) + '&fulltext=';
+        }
+
+        $( ".editor" ).each( function( index, name )
+        {
+            if ( $( name ).attr( 'name' ) !== 'text' && $( name ).attr( 'name' ) !== 'fulltext' )
+            {
+                data += '&' + $( name ).attr( 'name' ) + '=' + encodeURIComponent( tinyMCE.get( $( name ).attr( 'id' ) ).getContent() );
+            }
+        } );
+        $.ajax( {
+            url: "pages/postnew.php",
+            type: "post",
+            data: data,
+            success: function( msg )
+            {
+                $( "#displaybox" ).html( msg );
+            },
+            error: function()
+            {
+                bootbox.alert( "failure" );
+                $( "#displaybox" ).html( 'مشکل در ارتباط با سرور' );
+            }
+        } );
+
+    } );
+</script>

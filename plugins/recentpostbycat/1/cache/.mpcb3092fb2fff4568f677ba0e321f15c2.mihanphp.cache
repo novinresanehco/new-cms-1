@@ -1,0 +1,14 @@
+
+                    <li class="item-work">
+                       <div class="hover">
+                            <img src="http://127.0.0.1/irancms/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg" alt="Image"/>                               
+                             <a href="http://127.0.0.1/irancms/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg" class="fancybox" title="Image"><div class="overlay"></div></a>
+                        </div>                                   
+                        <div class="info-work">
+                             <a target="_blank"  href="http://127.0.0.1/irancms/post/39-5+نمونه+از+کسانی+که+برای+موفقیت+در+مسیر+کارآفرینی+باید+در+کنار+خود+داشته+باشید.asp" title="1394-04-21"><h4>5 نمونه از کسانی که برای موفقیت در مسیر کارآفرینی باید در کنار خود داشته باشید</h4></a>
+                            <div class="icons-work">
+                                <i class="fa fa-tablet" data-toggle="tooltip" title data-original-title="Responsive Desing"></i>
+                                <i class="fa fa-desktop" data-toggle="tooltip" title data-original-title="Retina Display"></i> 
+                            </div>
+                        </div>  
+                    </li>  

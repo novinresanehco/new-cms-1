@@ -1,0 +1,1 @@
+alert('menu 1 is selected remove this file from menumaker/js/menu1.js and also styles.config.php');

@@ -1,0 +1,30 @@
+<h2>ويرايش منو</h2>
+<form method="post" action="[moduleurl]&do=savemenu">
+    <p>
+        <label for="edit-menu-title">عنوان</label>
+        <input type="text" name="title" id="edit-menu-title" value="[title]">
+    </p>
+    <p>
+        <label for="edit-menu-url">پيوند</label>
+        <input type="text" name="url" id="edit-menu-url" value="[url]">
+    </p>
+    <p>
+        <label for="edit-menu-class">آیکن</label>
+    <div class="typeahead-append">
+        <ul class="search-options" style="right:2px">
+
+            <li><a rel="edit-menu-class" title="" class="advanced-option tip addicon" data-original-title="افزودن از منبع"></a></li>
+
+        </ul>
+        <input class="ltr" type="text" name="class" id="edit-menu-class" value="[class]">
+    </div>
+</p>
+<input type="hidden" name="menu_id" value="[id]">
+</form>
+<div class="iconmanagerarea"><div id="icons-edit-menu-class" class="iconmanager"></div><div style="clear:both"></div></div>
+<script>
+    $( ".addicon" ).click( function() {
+        addIcon( $( this ).attr( 'rel' ), '[site]' );
+        return false;
+    } );
+</script>

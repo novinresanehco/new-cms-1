@@ -1,0 +1,328 @@
+<script>
+    function Mform(action) {
+        if (action == "saveautolinker") {
+            var title = gi("title")
+                    .value;
+            var url = gi("url")
+                    .value;
+            var form = gi("sform")
+                    .value;
+            var list = gi("list")
+                    .value;
+            var time2 = gi("time2")
+                    .value;
+            var time3 = gi("time3")
+                    .value;
+            var timeban = gi("timeban")
+                    .value;
+            connect('pages/autolinker.php', "task=save&title=" + title +
+                    "&url=" + url + "&list=" + list + "&time2=" + time2 + "&time3=" +
+                    time3 + "&timeban=" + timeban + "&sform=" + form,
+                    'ajax_tabs_0_content', loadingt, '');
+        }
+    }
+
+    function dellink(id) {
+        var msg = "آيا از حذف اين لینک اطمينان داريد؟<br />عمليات حذف برگشت پذير نميباشد.";
+        bootbox.confirm(msg, function(result)
+        {
+            if (result)
+            {
+                setTimeout('document.location.href="autolinker.php?del=' + id + '"', 1);
+            }
+        });
+    }
+</script>
+<style type="text/css">
+    .style3 {
+        color: #008000;
+        font-weight: bold;
+    }
+</style>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <table border="0" width="95%" class="tbl" id="tabs_1_content">
+                        <tr>
+                            <td id="ajax_tabs_1_content">
+                                <div align="center" dir="rtl">[msgs]</div>
+                                <div align="right" dir="rtl">
+                                    <table border="1" width="99%" id="table1" class="table table-striped">
+                                        <tr>
+                                            <td><span lang="fa">عنوان و لینک و توضیحات</span>
+                                            </td>
+                                            <td><span lang="fa">تاریخ ثبت</span>
+                                            </td>
+                                            <td width="103"><span lang="fa">بروز رسانی</span>
+                                            </td>
+                                            <td width="53"><span lang="fa">وضعیت</span>
+                                            </td>
+                                            <td width="53"><span lang="fa">کاربر</span>
+                                            </td>
+                                            <td><span lang="fa">عملیات</span>
+                                            </td>
+                                        </tr>
+
+
+                                        <tag:linkerS>
+                                            <tr>
+                                                <td><a title="[desc]" target="_blank" href="http://www.[url]?[id]">[title]</a>
+                                                </td>
+                                                <td>[cdate]</td>
+                                                <td>[update]</td>
+                                                <td>[stats1]</td>
+                                                <td><a target="_blank" title="ارسال پیام به این کاربر" href="[site]index.php?module=member&action=sendpm&?task=send&user=[user]&title=autolinker">[user]</a>
+                                                </td>
+                                                <td><b><font color="red"><a title="حذف این لینک" onclick="dellink('[id]')" href="javascript:void([id])"> X </a></font></b>|<b><font color="red"><a title="مسدود کردن برای همیشه" href="[site]panel/autolinker.php?ban=[id]"> B </a></font></b>
+                                                    |
+                                                    <b><font color="red"><a title="غیرفعال کردن این لینک تا دریافت یک ورودی" href="[site]panel/autolinker.php?dis=[id]"> D </a></font></b>
+                                                    |
+                                                    <b><font color="red"><a title="مخفی کردن این لینک تا دریافت یک ورودی" href="[site]panel/autolinker.php?hid=[id]"> H </a></font></b>
+                                                    |
+                                                    <b><font color="red"><a title="فعال کردن این لینک" href="[site]panel/autolinker.php?sho=[id]"> E </a></font></b>
+                                                </td>
+                                            </tr>
+
+                                        </tag:linkerS>
+                                    </table>
+                                    <br />
+                                    <br><span style="background-color: #00FF00" lang="fa">فعال</span>
+                                    <span style="background-color: #00FF00"></span>
+                                    <span style="background-color: #00FF00" lang="fa"></span>= لینک فعال است
+                                    <br><span style="background-color: #FF8C8C" lang="fa">مسدود</span><span style="background-color: #FF8C8C"> </span> 
+                                    <span style="background-color: #FF8C8C" lang="fa"></span>= لینک مسدود شده است به علت تخلف ! قابل ادد و فعال شدن نیست الا توسط مدیر
+                                    <br><span style="background-color: #00FFFF" lang="fa">در انتظار </span> = لینک مخفی است و با دریافت اولین ورودی مجاز فعال می شود
+                                    <br><span style="background-color: #C0C0C0" lang="fa">غیر فعال</span>
+                                    <span style="background-color: #C0C0C0"></span>
+                                    <span style="background-color: #C0C0C0" lang="fa"></span>= عنوان در حال نمایش است اما لینک ندارد و با اولین ورودی مجاز فعال می شود
+                                    <br>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <tag:setlinker>
+                    <div class="tab-pane" id="tab2">
+                        <tag:setlinker>
+                            <form onsubmit="Mform('saveautolinker');
+        return false" method=post>
+                                <table border="0" width="90%" class="tbl" id="tabs_0_content">
+                                    <tr>
+                                        <td colspan="2" id="ajax_tabs_0_content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table>
+                                                <tr>
+                                                    <td width="250px">آدرس سایت :</td>
+                                                    <td>
+                                                        <input id="url" name="url" type="text" dir="ltr" class="input-xlarge ltr" value="[url]" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        عنوان سایت :</td>
+                                                    <td>
+                                                        <input id="title" name="title" type="text" dir="rtl" class="input-xlarge" value="[title]" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        فرم تبادل لینک:</td>
+                                                    <td>
+                                                        <div class="controls" style="margin-right:20px;">
+                                                            <select dir="rtl" id="sform" name="sform" class="select2">
+                                                                <option value="1" [sformch1]>فعال</option>
+                                                                <option value="0" [sformch0]>غیرفعال</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        نمایش لینک ها بر اساس:</td>
+                                                    <td>
+                                                        <div class="controls" style="margin-right:20px;">
+                                                            <select dir="rtl" id="list" name="list" class="select2">
+                                                                <option value="1" [listch1]>تعداد ورودی</option>
+                                                                <option value="0" [listch0]>تاریخ ورودی</option>
+                                                            </select>نوع و ترتیب نمایش لینک ها</div></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        زمان فعال بودن لینک پس از آخرین ورودی مجاز:</td>
+                                                    <td>
+                                                        <div class="controls" style="margin-right:20px;">
+                                                            <select dir="rtl" id="time2" name="time2" style="height: 22px" class="select2">
+                                                                <option value="[time2]">[time2] روز</option>
+                                                                <option value="1">1 روز</option>
+                                                                <option value="2">2 روز</option>
+                                                                <option value="3">3 روز</option>
+                                                                <option value="4">4 روز</option>
+                                                                <option value="5">5 روز</option>
+                                                                <option value="6">6 روز</option>
+                                                                <option value="7">7 روز</option>
+                                                                <option value="8">8 روز</option>
+                                                                <option value="9">9 روز</option>
+                                                                <option value="10">10 روز</option>
+                                                                <option value="11">11 روز</option>
+                                                                <option value="12">12 روز</option>
+                                                                <option value="13">13 روز</option>
+                                                                <option value="14">14 روز</option>
+                                                                <option value="15">15 روز</option>
+                                                                <option value="16">16 روز</option>
+                                                                <option value="17">17 روز</option>
+                                                                <option value="18">18 روز</option>
+                                                                <option value="19">19 روز</option>
+                                                                <option value="20">20 روز</option>
+                                                                <option value="21">21 روز</option>
+                                                                <option value="22">22 روز</option>
+                                                                <option value="23">23 روز</option>
+                                                                <option value="24">24 روز</option>
+                                                                <option value="25">25 روز</option>
+                                                                <option value="26">26 روز</option>
+                                                                <option value="27">27 روز</option>
+                                                                <option value="28">28 روز</option>
+                                                                <option value="29">29 روز</option>
+                                                                <option value="30">30 روز</option>
+                                                                <option value="40">40 روز</option>
+                                                                <option value="50">50 روز</option>
+                                                                <option value="60">60 روز</option>
+                                                                <option value="70">70 روز</option>
+                                                                <option value="80">80 روز</option>
+                                                                <option value="90">90 روز</option>
+                                                                <option value="9999">نامحدود</option>
+                                                            </select>
+
+                                                            <span class="style3"></span><span class="style2">پس از گذشت 
+                                                                این زمان لینک غیرفعال می شود تا ورودی مجازی دریافت شود</span></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        زمان حذف لینک پس از آخرین ورودی مجاز:</td>
+                                                    <td>
+                                                        <div class="controls" style="margin-right:20px;">
+                                                            <select dir="rtl" id="time3" name="time3" class="select2">
+                                                                <option value="[time3]">[time3] روز</option>
+                                                                <option value="1">1 روز</option>
+                                                                <option value="2">2 روز</option>
+                                                                <option value="3">3 روز</option>
+                                                                <option value="4">4 روز</option>
+                                                                <option value="5">5 روز</option>
+                                                                <option value="6">6 روز</option>
+                                                                <option value="7">7 روز</option>
+                                                                <option value="8">8 روز</option>
+                                                                <option value="9">9 روز</option>
+                                                                <option value="10">10 روز</option>
+                                                                <option value="11">11 روز</option>
+                                                                <option value="12">12 روز</option>
+                                                                <option value="13">13 روز</option>
+                                                                <option value="14">14 روز</option>
+                                                                <option value="15">15 روز</option>
+                                                                <option value="16">16 روز</option>
+                                                                <option value="17">17 روز</option>
+                                                                <option value="18">18 روز</option>
+                                                                <option value="19">19 روز</option>
+                                                                <option value="20">20 روز</option>
+                                                                <option value="21">21 روز</option>
+                                                                <option value="22">22 روز</option>
+                                                                <option value="23">23 روز</option>
+                                                                <option value="24">24 روز</option>
+                                                                <option value="25">25 روز</option>
+                                                                <option value="26">26 روز</option>
+                                                                <option value="27">27 روز</option>
+                                                                <option value="28">28 روز</option>
+                                                                <option value="29">29 روز</option>
+                                                                <option value="30">30 روز</option>
+                                                                <option value="40">40 روز</option>
+                                                                <option value="50">50 روز</option>
+                                                                <option value="60">60 روز</option>
+                                                                <option value="70">70 روز</option>
+                                                                <option value="80">80 روز</option>
+                                                                <option value="90">90 روز</option>
+                                                                <option value="9999">نامحدود</option>
+                                                            </select>
+
+                                                            <span class="style2">پس از گذشت این زمان لینک از لیست حذف میشود تا 
+                                                                ورودی مجازی دریافت شود</span> </div>
+                                                        <br>
+                                                    </td>
+                                                <tr>
+                                                    <td>
+
+
+                                                        زمان توقف برای ثبت لینک جدید:</td>
+                                                    <td>
+                                                        <div class="controls" style="margin-right:20px;">
+                                                            <select dir="rtl" id="timeban" name="timeban" class="select2">
+                                                                <option value="[timeban]">[timeban] دقیقه</option>
+                                                                <option value="1">1 دقیقه</option>
+                                                                <option value="2">2 دقیقه</option>
+                                                                <option value="3">3 دقیقه</option>
+                                                                <option value="4">4 دقیقه</option>
+                                                                <option value="5">5 دقیقه</option>
+                                                                <option value="6">6 دقیقه</option>
+                                                                <option value="7">7 دقیقه</option>
+                                                                <option value="8">8 دقیقه</option>
+                                                                <option value="9">9 دقیقه</option>
+                                                                <option value="10">10 دقیقه</option>
+                                                                <option value="11">11 دقیقه</option>
+                                                                <option value="12">12 دقیقه</option>
+                                                                <option value="13">13 دقیقه</option>
+                                                                <option value="14">14 دقیقه</option>
+                                                                <option value="15">15 دقیقه</option>
+                                                                <option value="20">20 دقیقه</option>
+                                                                <option value="25">25 دقیقه</option>
+                                                                <option value="30">30 دقیقه</option>
+                                                                <option value="40">40 دقیقه</option>
+                                                                <option value="50">50 دقیقه</option>
+                                                                <option value="60">1 ساعت</option>
+                                                                <option value="120">2 ساعت</option>
+                                                                <option value="180">3 ساعت</option>
+                                                                <option value="360">6 ساعت</option>
+                                                                <option value="720">12 ساعت</option>
+                                                                <option value="1440">24 ساعت</option>
+                                                            </select>
+
+                                                            <span class="style2">زمان توقف کاربر برای ثبت لینک بعدی
+                                                                <strong>(این بخش همانند سیستم ضد اسپام عمل می کند)</strong></span></div>
+                                                        <br>
+                                                        </font>
+                                                        <br />نکته:<font color="red">(زمان حذف نباید کمتر از زمان فعال باشد)</font>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+
+
+
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                    <center>
+                                        <br />
+                                        <input onclick="Mform('saveautolinker');
+        return false;" type="submit" name="submit" value="ذخیره تنظیمات" class="table table-striped">
+                                        <br />
+                                    </center>
+                                    </td>
+                                    </tr>
+                                </table>
+                            </form>
+                    </div>
+                </tag:setlinker>
+            </div>
+        </div>
+    </div>
+</div>

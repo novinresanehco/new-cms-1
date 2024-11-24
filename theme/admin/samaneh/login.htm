@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="fa">
+<title>samaneh :: ورود به سيستم</title>
+<link rel="stylesheet" type="text/css" href="../theme/admin/samaneh/login.css">
+</head>
+
+<body>
+<div align="center">
+<form action=login.php method=post>
+<div class="login">
+<center><img border="0" src="images/logo.png"></center><table style="margin-top:40px" align="center" cellpadding="0" cellspacing="3" width="450" height="142">
+	<tr>
+		<td height="19" width="70">
+		
+		<img border="0" src="images/breadcrumb_separator_arrow_1_dot.png" width="10" height="5">نام کاربری :
+		
+		</td>
+		<td height="19" width="371" colspan="2">
+<input name="username">		</td>
+	</tr>
+	<tr>
+		<td height="21" width="70">
+		
+		<img border="0" src="images/breadcrumb_separator_arrow_1_dot.png" width="10" height="5">کلمه عبور :
+		
+		</td>
+		<td height="21" width="371" colspan="2">
+		
+		<input name="password"  type="password"></td>
+	</tr>
+	<tag:ifsec>
+	<tr>
+	<td height="19" width="157">
+	کد امنیتی :</td>
+	<td height="19" width="131" style="width: 0">
+	<input name="img" >
+	</td>
+	<td height="19" width="131" style="width: 65px">
+	<img border="0" src="../img.php?code_section=[rand]"></td>
+	</tr></tag:ifsec>
+
+	<tr>
+		<td height="17" width="441" colspan="3">
+		
+		<img border="0" src="images/breadcrumb_separator_arrow_1_dot.png" width="10" height="5"><a href="../index.php?plugins=member&amp;method=forget" target="_blank">فراموشی کلمه عبور<span lang="en-us"> 
+		!</span></a></td>
+	</tr>
+		<tr>
+		<td height="17" width="441" colspan="3">
+		
+		<tag:ifmsg><img border="0" src="images/breadcrumb_separator_arrow_1_dot.png" width="10" height="5">
+		[msg]</tag:ifmsg></td>
+	</tr>
+
+	<tr>
+		<td height="25" width="441" colspan="3">
+		
+		<p align="center">
+		<input name="submit" type="submit" value="ورود" size="20" >
+				
+		</td>
+	</tr>
+	<tr>
+		<td height="49" width="444" colspan="3" valign="bottom">
+		
+		<p align="center"><span lang="en-us">Programmed And Designed By Mihan 
+		Php Group</span></td>
+	</tr>
+</table>
+</div>
+</div>
+</body>
+
+</html>

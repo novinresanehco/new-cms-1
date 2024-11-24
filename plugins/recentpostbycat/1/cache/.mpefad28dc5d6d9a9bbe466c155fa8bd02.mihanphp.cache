@@ -1,0 +1,45 @@
+					 <!-- Works Carousel -->
+        <section class="paddings borders section-gray pattern-portfolios" style='background: url("theme/core/avax/img/slide/slides/4.jpg") rgb(248, 248, 248) repeat fixed 0% 0%;'>
+         
+                <!-- Title Heading -->                
+                <h2 class="text-center">اخبار تکنولوژی</h2>               
+                <!-- End Title Heading --> 
+                <!-- Items Works -->
+                <ul id="works" class="works padding-top-mini">
+
+			 <!-- Item Work -->
+                    <li class="item-work">
+                       <div class="hover">
+                            <img src="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg" alt="Image"/>                               
+                             <a href="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg" class="fancybox" title="Image"><div class="overlay"></div></a>
+                        </div>                                   
+                       <a target="_blank"  href="http://127.0.0.1/cms2/post/54-چند+ویژگی+یک+وبلاگ+نویس+موفق.php" title="1394-10-21"> <div class="info-work">
+                            <h4> چند ویژگی یک وبلاگ نویس موفق</h4>
+                            <p>1394-10-21</p>
+                            <div class="icons-work">
+                                <i class="fa fa-tablet" data-toggle="tooltip" title data-original-title="Responsive Desing"></i>
+                                <i class="fa fa-desktop" data-toggle="tooltip" title data-original-title="Retina Display"></i> 
+                            </div>
+                       </a> </div>  
+                    </li>  
+                    <!-- Item Work -->
+			 <!-- Item Work -->
+                    <li class="item-work">
+                       <div class="hover">
+                            <img src="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg" alt="Image"/>                               
+                             <a href="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg" class="fancybox" title="Image"><div class="overlay"></div></a>
+                        </div>                                   
+                       <a target="_blank"  href="http://127.0.0.1/cms2/post/53-4+روش+مهم+درآمدزایی+برندهای+مهم.php" title="1394-10-21"> <div class="info-work">
+                            <h4> 4 روش مهم درآمدزایی برندهای مهم</h4>
+                            <p>1394-10-21</p>
+                            <div class="icons-work">
+                                <i class="fa fa-tablet" data-toggle="tooltip" title data-original-title="Responsive Desing"></i>
+                                <i class="fa fa-desktop" data-toggle="tooltip" title data-original-title="Retina Display"></i> 
+                            </div>
+                       </a> </div>  
+                    </li>  
+                    <!-- Item Work -->
+                </ul>
+                <!-- End Items Works -->
+        </section>
+        <!-- End Works Carousel-->

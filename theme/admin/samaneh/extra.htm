@@ -1,0 +1,130 @@
+<script>
+var samanehfirst= false;
+var editing = false;
+function tab_3()
+{
+	if(editing==false)
+	{
+		return "prevent|ابتدا يك بلوك را جهت ويرايش انتخاب كنيد.";
+	}
+}
+function tab_2()
+{
+	connect('pages/listpage.php',"task=listing",'ajax_tabs_1_content',loadingt,'');
+}
+function Mform(method)
+{
+	if(method == "new_page")
+	{
+	var title     = gi("page_title").value;
+	var show	  = gi("page_show").value;
+	var text	  = tinyMCE.get('text').getContent();
+	connect('pages/page.php',"task=add_page&title="+title+"&show="+show+"&text="+text,'ajax_tabs_0_content',loadingt,'');
+	}
+
+	if(method == "edit_page")
+	{
+	var title     = gi("edit_page_title").value;
+	var show	  = gi("edit_page_show").value;
+	var text	  = tinyMCE.get('edit_text').getContent();
+	var id		  = gi("edit_page_id").value;
+	connect('pages/page.php',"task=edit_page&title="+title+"&show="+show+"&text="+text+"&id="+id,'ajax_tabs_2_content',loadingt,'');
+	editing = false;
+	}
+}
+function editpage(id)
+{
+	editing = true;
+	$('#tab_3').trigger('click');
+	editing = true;
+	var title   = gi("ajax_edit_title_"+id).value;
+	var show 	= gi("ajax_edit_users_"+id).value;
+	var text 	= gi("ajax_edit_text_"+id).value;
+	gi("edit_page_title").value = title;
+	gi("edit_page_id").value = id;
+	tinyMCE.get('edit_text').setContent(text);
+	gi("edit_page_show_"+show).selected = true;
+	editing = false;
+}
+function delpage(id)
+{
+	hideid("editing_area");
+	var msg = "آيا از حذف اين صفحه اطمينان داريد؟\nعمليات حذف برگشت پذير نميباشد.";
+	if(confirm(msg))
+	{
+		connect('pages/page.php',"task=delete_page&id="+id,'ajax_tabs_1_content_1',loadingt,'edit_page');
+	}
+}
+
+</script>
+<div id="div_1"> 
+<form onsubmit="Mform('new_page');return false" method=post>
+<table border="0" width="100%" class="tbl" id="tabs_0_content">
+<tr>
+<td colspan="2" id="ajax_tabs_0_content"></td>
+</tr>
+<tr>
+<td width="29%">عنوان صفحه :</td>
+<td width="69%"><input class="rinput" type="text" name="page_title" id="page_title"></td>
+</tr>
+<tr>
+<td width="29%">قابل نمایش برای: </td>
+<td width="69%">
+<select name="page_show" id="page_show" class="select" size="1">
+<option selected value="2">برای عموم کاربران</option>
+<option value="3">فقط کاربران مهمان</option>
+<option value="1">فقط برای کاربران عضو</option>
+</select>
+</td>
+</tr>
+<tr>
+<td width="99%" colspan="2"><textarea dir=rtl class="editor" name="text" id="text" style="height: 193; width: 428;" cols="10" rows="10"></textarea></td>
+</tr>
+<tr>
+<td colspan="2"><center>
+<input onclick="Mform('new_page');return false;" type="submit" name="submit" value="ايجاد صفحه" class="inp"></center></td>
+</tr>
+</table></form>
+
+</div>
+<div id="div_2" style="display:none">
+<table border="0" width="100%" class="tbl" id="tabs_1_content">
+<tr>
+<td id="ajax_tabs_1_content_1"></td>
+</tr><tr>
+<td id="ajax_tabs_1_content"></td>
+</tr>
+</table>
+</div>
+<div id="div_3" style="display:none">
+
+<form onsubmit="Mform('edit_page');return false" method=post>
+<table border="0" width="100%" class="tbl" id="tabs_2_content">
+<tr>
+<td colspan="2" id="ajax_tabs_2_content"></td>
+</tr>
+<tr>
+<td width="29%">عنوان صفحه :</td>
+<td width="69%"><input class="rinput" type="text" name="edit_page_title" id="edit_page_title"></td>
+</tr>
+<tr>
+<td width="29%">قابل نمایش برای: </td>
+<td width="69%">
+<select name="edit_page_show" id="edit_page_show" class="select" size="1">
+<option value="1" id="edit_page_show_1">فقط برای کاربران عضو</option>
+<option selected value="2" id="edit_page_show_2">برای عموم کاربران</option>
+<option value="3" id="edit_page_show_3">فقط کاربران مهمان</option>
+
+</select>
+</td>
+</tr>
+<tr>
+<td width="99%" colspan="2"><textarea dir=rtl class="editor" name="edit_text" id="edit_text" style="height: 193; width: 428;" cols="10" rows="10"></textarea></td>
+</tr>
+<tr>
+<td colspan="2"><center>
+<input onclick="Mform('edit_page');return false;" type="submit" name="submit" value="ويرايش صفحه" class="inp"></center></td>
+</tr>
+</table><input type="hidden" name="edit_page_id" id="edit_page_id" value=""></form>
+
+</div>

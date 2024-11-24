@@ -1,0 +1,536 @@
+﻿<script>
+    var samanehfirst = false;
+    var editing = false;
+    var editing2 = false;
+    function tab_3()
+    {
+        connect('pages/listpics.php', "task=listing", 'ajax_tabs_1_content', loadingt, '');
+    }
+    function tab_6()
+    {
+        connect('pages/listpics.php', "task=listingcats", 'ajax_tabs_4_content', loadingt, '');
+    }
+    function tab_4()
+    {
+        if (editing == false)
+        {
+            return 'prevent|ابتدا يك تصویر را جهت ويرايش انتخاب كنيد.';
+        }
+    }
+    function tab_7()
+    {
+        if (editing2 == false)
+        {
+            return 'prevent|ابتدا يک دسته را جهت ويرايش انتخاب كنيد.';
+        }
+    }
+    function tab_89()
+    {
+        //gi('div_inside_'+i).style.display = 'none';
+        gi('ul1').style.display = 'none';
+
+        //gi('div_inside_'+i).style.display = '';
+        gi('ul2').style.display = '';
+    }
+    function tab_8()
+    {
+
+        //gi('div_inside_'+i).style.display = '';
+        gi('ul1').style.display = '';
+
+        //gi('div_inside_'+i).style.display = 'none';
+        gi('ul2').style.display = 'none';
+
+        return false;
+    }
+
+    function Mform2(action) {
+        if (action == "new_image")
+        {
+            var title = gi("image_title").value;
+            var show = gi("image_show").value;
+            var img = gi("image_img").value;
+            var img2 = gi("image_img2").value;
+            var star = gi("image_star").value;
+            var text = gi("image_text").value;
+            var cat = gi("image_cat").value;
+            connect('pages/gallery.php', "task=add_image&title=" + title + "&img=" + img + "&thumb=" + img2 + "&show=" + show + "&cat=" + cat + "&rezash_text=" + text + "&star=" + star, 'ajax_tabs_0_content', loadingt, '');
+        }
+
+        if (action == "edit_image")
+        {
+            var title = gi("edit_image_title").value;
+            var show = gi("edit_image_show").value;
+            var img = gi("edit_image_img").value;
+            var img2 = gi("edit_image_img2").value;
+            var star = gi("edit_image_star").value;
+            var text = gi("edit_image_text").value;
+            var cat = gi("edit_image_cat").value;
+            var iid = gi("edit_image_id").value;
+            connect('pages/gallery.php', "task=edit_image&title=" + title + "&img=" + img + "&thumb=" + img2 + "&show=" + show + "&cat=" + cat + "&rezash_text=" + text + "&star=" + star + "&id=" + iid, 'ajax_tabs_2_content', loadingt, '');
+            editing = false;
+        }
+
+        if (action == "new_cat")
+        {
+            var title = gi("cat_title").value;
+            var show = gi("cat_show").value;
+            var img = gi("cat_img").value;
+            var star = gi("cat_star").value;
+            var text = gi("cat_text").value;
+            var cat = gi("cat_cat").value;
+            var cajax = gi("cat_ajax").value;
+            connect('pages/gallery.php', "task=add_cat&title=" + title + "&img=" + img + "&show=" + show + "&cat=" + cat + "&cajax=" + cajax + "&rezash_text=" + text + "&star=" + star, 'ajax_tabs_3_content', loadingt, '');
+        }
+
+        if (action == "edit_cat")
+        {
+            var title = gi("edit_cat_title").value;
+            var show = gi("edit_cat_show").value;
+            var img = gi("edit_cat_img").value;
+            var text = gi("edit_cat_text").value;
+            var star = gi("edit_cat_star").value;
+            var cat = gi("edit_cat_cat").value;
+            var cajax = gi("edit_cat_ajax").value;
+            var iid = gi("edit_cat_id").value;
+            connect('pages/gallery.php', "task=edit_cat&title=" + title + "&img=" + img + "&show=" + show + "&cat=" + cat + "&cajax=" + cajax + "&rezash_text=" + text + "&star=" + star + "&id=" + iid, 'ajax_tabs_5_content', loadingt, '');
+            editing2 = false;
+        }
+
+        if (action == "sub_setting")
+        {
+            var num_columns = gi("num_columns").value;
+            var num_rows = gi("num_rows").value;
+            connect('pages/gallery.php', "task=sub_setting&num_columns=" + num_columns + "&num_rows=" + num_rows, 'ajax_tabs_10_content', loadingt, '');
+        }
+
+    }
+    function editpic(id)
+    {
+        editing = true;
+        $('#tab_4').trigger('click');
+
+        samanehfirst = true;
+        editing = true;
+        var title = gi("ajax_edit_title_" + id).value;
+        var show = gi("ajax_edit_users_" + id).value;
+        var image = gi("ajax_edit_image_" + id).value;
+        var thumb = gi("ajax_edit_thumb_" + id).value;
+        var text = gi("ajax_edit_text_" + id).value;
+        var cat = gi("ajax_edit_cat_" + id).value;
+
+
+
+        gi("edit_image_title").value = title;
+        gi("edit_image_img").value = image;
+        gi("edit_image_img2").value = thumb;
+        gi("edit_image_text").value = text;
+
+
+        $('#edit_image_cat option[value="' + cat + '"]').prop('selected', true);
+
+        gi("edit_image_id").value = id;
+        gi("edit_image_show_" + show).selected = true;
+//gi("edit_image_show").value = show;
+        editing = false;
+    }
+    function delpic(id) {
+        hideid("editing_area");
+        var msg = "آيا از حذف اين تصویر اطمينان داريد؟<br />عمليات حذف برگشت پذير نميباشد.";
+        bootbox.confirm(msg, function(result) {
+            if (result)
+            {
+                connect('pages/gallery.php', "task=delete_image&id=" + id, 'ajax_tabs_1_content_1', loadingt, 'edit_page');
+            }
+        });
+
+    }
+
+
+
+
+    function editcat(id)
+    {
+        editing2 = true;
+        $('#tab_7').trigger('click');
+
+        samanehfirst = true;
+        editing2 = true;
+        var title = gi("ajax_edit_cat_title_" + id).value;
+        var show = gi("ajax_edit_cat_users_" + id).value;
+        var image = gi("ajax_edit_cat_image_" + id).value;
+        var text = gi("ajax_edit_cat_text_" + id).value;
+        var cat = gi("ajax_edit_cat_cat_" + id).value;
+        var cajax = gi("ajax_edit_cat_ajax_" + id).value;
+        var star = gi("ajax_edit_cat_star_" + id).value;
+
+        if (star == 1)
+        {
+            star = 1;
+        }
+        else
+        {
+            star = 2;
+        }
+        gi("edit_cat_title").value = title;
+        gi("edit_cat_img").value = image;
+        gi("edit_cat_text").value = text;
+        gi("edit_cat_cat_" + cat).selected = true;
+        gi("edit_cat_ajax_" + cajax).selected = true;
+        gi("edit_cat_id").value = id;
+        gi("edit_cat_show_" + show).selected = true;
+        gi("edit_cat_star_" + star).selected = true;
+        editing2 = false;
+    }
+
+
+    function delcat(id) {
+        hideid("editing_area");
+        var msg = "آيا از حذف اين دسته اطمينان داريد؟<br />عمليات حذف برگشت پذير نميباشد.";
+        bootbox.confirm(msg, function(result) {
+            if (result)
+            {
+                connect('pages/gallery.php', "task=delete_cat&id=" + id, 'ajax_tabs_5_content', loadingt, 'edit_page');
+            }
+        });
+
+    }
+
+    function stopw()
+    {
+        gi('sh').style.display = '';
+        mess = parent.rezash.document.body.innerHTML;
+        gi("reza").innerHTML = mess;
+        if (!document.all) {
+            window.frames['rezash'].stop()
+        } else {
+            window.frames['rezash'].document.execCommand('Stop')
+        }
+    }
+
+    function doupload()
+    {
+        hideid('sh');
+        gi('reza').value = '<center><img border="0" src="../../theme/admin/samaneh/images/loading.gif"><br>لطفا صبر کنید<br></center>';
+    }
+
+</script>
+<div class="tab-content">
+    <div class="tab-pane active" id="tab2">
+        <form onsubmit="Mform2('new_image');
+        return false" method=post>
+            <table border="0" class="tbl" id="tabs_0_content" style="width: 90%">
+                <tr>
+                    <td colspan="2" id="ajax_tabs_0_content"></td>
+                </tr>
+                <tr>
+                    <td width="29%">عنوان تصویر :</td>
+                    <td width="69%"><input class="input-xlarge" type="text" name="image_title" id="image_title"></td>
+                </tr>
+                <tr>
+                    <td width="29%">فایل تصویر :</td>
+                    <td width="69%"><div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=image_img" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="image_img" id="image_img" size="59">
+					</div></td>
+
+                </tr>
+                <tr>
+                    <td width="29%">فایل تصویر (thumbnail):</td>
+                    <td width="69%"><div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=image_img2" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="image_img2" id="image_img2" size="59">
+					</div></td>
+                </tr>
+                <tr>
+                    <td width="29%">قابل نمایش برای: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;"><select name="image_show" id="image_show" class="select2" size="1">
+                                <option selected value="2">برای عموم کاربران</option>
+                                <option value="3">فقط کاربران مهمان</option>
+                                <option value="1">فقط برای کاربران عضو</option>
+                            </select></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">دسته بندی: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;"><select name="image_cat" id="image_cat" class="select2" size="1">
+                                [cats]
+                            </select></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">توضیحات: </td>
+                    <td width="69%"><textarea name="image_text" id="image_text" style="height: 100px;width:300px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><center>
+                    <input onclick="Mform2('new_image');
+        return false;" type="submit" name="submit" value="ایجاد تصویر" class="btn btn-success"></center></td>
+                </tr>
+            </table></form>
+
+    </div>
+
+    <div class="tab-pane" id="tab3">
+        <table border="0" width="100%" class="tbl" id="tabs_1_content">
+            <tr>
+                <td id="ajax_tabs_1_content_1"></td>
+            </tr><tr>
+                <td id="ajax_tabs_1_content"></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+
+    <div class="tab-pane" id="tab4">
+
+        <form onsubmit="Mform('edit_image');
+        return false" method=post>
+            <table border="0" class="tbl" id="tabs_0_content" style="width: 90%">
+                <tr>
+                    <td colspan="2" id="ajax_tabs_2_content"></td>
+                </tr>
+                <tr>
+                    <td width="29%">عنوان تصویر :</td>
+                    <td width="69%"><input class="input-xlarge" type="text" name="edit_image_title" id="edit_image_title"></td>
+                </tr>
+                <tr>
+                    <td width="29%">فایل تصویر :</td>
+					<td width="69%"><div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=edit_image_img" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="edit_image_img" id="edit_image_img" size="59">
+					</div></td>
+					
+                </tr>
+                <tr>
+                    <td width="29%">فایل تصویر (thumbnail):</td>
+					
+					
+					<td width="69%"><div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=edit_image_img2" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="edit_image_img2" id="edit_image_img2" size="59">
+					</div></td>
+                </tr>
+                <tr>
+                    <td width="29%">قابل نمایش برای: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;"><select name="edit_image_show" id="edit_image_show" class="select2" size="1">
+                                <option selected value="2" id="edit_image_show_2">برای عموم کاربران</option>
+                                <option value="3" id="edit_image_show_3">فقط کاربران مهمان</option>
+                                <option value="1" id="edit_image_show_1">فقط برای کاربران عضو</option>
+                            </select></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">دسته بندی: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;">
+                            <select name="edit_image_cat" id="edit_image_cat" class="select2" size="1">
+                                [cats]
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">توضیحات: </td>
+                    <td width="69%"><textarea name="edit_image_text" id="edit_image_text" style="height: 100px;width:300px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><center>
+                    <input onclick="Mform2('edit_image');
+        return false;" type="submit" name="submit" value="ویرایش تصویر" class="btn btn-success"></center></td>
+                </tr>
+            </table><input type="hidden" name="edit_image_id" id="edit_image_id" value=""></form>
+
+    </div>
+
+    <div class="tab-pane" id="tab5"> 
+        <form onsubmit="Mform2('new_cat');
+        return false" method=post>
+            <table border="0" class="tbl" id="tabs_4_content" style="width: 90%">
+                <tr>
+                    <td colspan="2" id="ajax_tabs_3_content"></td>
+                </tr>
+                <tr>
+                    <td width="29%">عنوان دسته :</td>
+                    <td width="69%"><input class="input-xlarge" type="text" name="cat_title" id="cat_title"></td>
+                </tr>
+                <tr>
+                    <td width="29%">فایل تصویر (thumbnail):</td>
+					<td width="69%"><div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=cat_img" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="cat_img" id="cat_img" size="59">
+					</div></td>
+
+                </tr>
+                <tr>
+                    <td width="29%">قابل نمایش برای: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;"><select name="cat_show" id="cat_show" class="select2" size="1">
+                                <option selected value="2">برای عموم کاربران</option>
+                                <option value="3">فقط کاربران مهمان</option>
+                                <option value="1">فقط برای کاربران عضو</option>
+                            </select></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">دسته بندی: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;">
+                            <select name="cat_cat" id="cat_cat" class="select2" size="1">
+                                <option value="zero"> -- بدون دسته بندی -- </option>
+                                [cats]
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">نمايش آژاكسي: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;"><select name="cat_ajax" id="cat_ajax" class="select2" size="1">
+                                <option selected value="1">فعال</option>
+                                <option value="2">غیر فعال</option>
+                            </select></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">توضیحات: </td>
+                    <td width="69%"><input class="input-xlarge" type="text" name="cat_text" id="cat_text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><center>
+                    <input onclick="Mform2('new_cat');
+        return false;" type="submit" name="submit" value="ایجاد دسته" class="btn btn-success"></center></td>
+                </tr>
+            </table></form>
+
+    </div>
+
+
+
+    <div class="tab-pane" id="tab6">
+        <table border="0" width="100%" class="tbl" id="tabs_5_content">
+            <tr>
+                <td id="ajax_tabs_4_content_1"></td>
+            </tr><tr>
+                <td id="ajax_tabs_4_content"></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="tab-pane" id="tab7"> 
+        <form onsubmit="Mform2('edit_cat');
+        return false" method=post>
+            <table border="0" class="tbl" id="tabs_5_content" style="width: 90%">
+                <tr>
+                    <td colspan="2" id="ajax_tabs_5_content"></td>
+                </tr>
+                <tr>
+                    <td width="29%">عنوان دسته :</td>
+                    <td width="69%"><input class="input-xlarge" type="text" name="edit_cat_title" id="edit_cat_title"></td>
+                </tr>
+                <tr>
+                    <td width="29%">فایل تصویر (thumbnail):</td>
+
+                    <td width="69%">
+					<div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=edit_cat_img" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="edit_cat_img" id="edit_cat_img" size="59">
+					</div>
+					</td>
+
+                </tr>
+                <tr>
+                    <td width="29%">قابل نمایش برای: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;"><select name="edit_cat_show" id="edit_cat_show" class="select2" size="1">
+                                <option id="edit_cat_show_2" value="2">برای عموم کاربران</option>
+                                <option id="edit_cat_show_3" value="3">فقط کاربران مهمان</option>
+                                <option id="edit_cat_show_1" value="1">فقط برای کاربران عضو</option>
+                            </select></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">دسته بندی: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;"><select name="edit_cat_cat" id="edit_cat_cat" class="select2" size="1">
+                                <option value="zero" id="edit_cat_cat_0"> -- بدون دسته بندی -- </option>
+                                <tag:cats>
+                                    <option value="[id]" id="edit_cat_cat_[id]">[title]</option>
+                                </tag:cats>
+                            </select></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">نمايش آژاكسي: </td>
+                    <td width="69%">
+                        <div class="controls" style="margin-right:20px;"><select name="edit_cat_ajax" id="edit_cat_ajax" class="select2" size="1">
+                                <option  id="edit_cat_ajax_1" value="1">فعال</option>
+                                <option  id="edit_cat_ajax_2" value="2">غیر فعال</option>
+                            </select></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="29%">توضیحات: </td>
+                    <td width="69%"><input class="input-xlarge" type="text" name="edit_cat_text" id="edit_cat_text"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><center>
+                    <input onclick="Mform2('edit_cat');
+        return false;" type="submit" name="submit" value="ویرایش دسته" class="btn btn-success"></center></td>
+                </tr>
+            </table><input type="hidden" name="edit_cat_id" id="edit_cat_id" value=""></form>
+
+    </div>
+
+
+    <div class="tab-pane" id="tab8"> 
+
+        <form onsubmit="Mform2('sub_setting');
+        return false" method=post>
+            <table border="0" class="tbl" id="tabs_0_content" style="width: 90%">
+                <tr>
+                    <td colspan="2" id="ajax_tabs_10_content"></td>
+                </tr>
+                <tr>
+                    <td width="29%">تعداد ستون ها :</td>
+                    <td width="69%"><input class="input-xlarge ltr" type="text" name="num_columns" id="num_columns" value="[num_columns]"></td>
+                </tr>
+                <tr>
+                    <td width="29%">تعداد سطر ها :</td>
+                    <td width="69%"><input class="input-xlarge ltr" type="text" name="num_rows" id="num_rows" value="[num_rows]"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><center>
+                    <input onclick="Mform2('sub_setting');
+        return false;" type="submit" name="submit" value="ویرایش تنظیمات" class="btn btn-success"></center></td>
+                </tr>
+            </table></form>
+
+    </div>
+</div>

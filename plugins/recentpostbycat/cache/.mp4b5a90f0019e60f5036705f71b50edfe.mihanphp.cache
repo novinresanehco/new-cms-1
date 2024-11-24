@@ -1,0 +1,36 @@
+					<div class="title-section">
+					<h1>اخبار تکنولوژی</h1>
+				</div>
+				<div id="owl-demo" class="owl-carousel owl-theme">
+          
+				
+					<div class="item news-item">
+						<div class="inner-item">
+							<img alt="" src="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg">
+							<div class="hover-item">
+								<ul>
+									<li><a class="autor" href="#"><i class="fa fa-user"></i>اخبار تکنولوژی</a></li>
+									<li><a class="date" href="#"><i class="fa fa-clock-o"></i> 1394-10-21</a></li>
+								</ul>
+							</div>
+						</div>
+						<h5>چند ویژگی یک وبلاگ نویس موفق </h5>
+						<a class="read-more" href="http://127.0.0.1/cms2/post/54-چند+ویژگی+یک+وبلاگ+نویس+موفق.php">اطلاعات بیشتر<i class="fa fa-arrow-right"></i></a>
+					</div>
+					
+					<div class="item news-item">
+						<div class="inner-item">
+							<img alt="" src="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg">
+							<div class="hover-item">
+								<ul>
+									<li><a class="autor" href="#"><i class="fa fa-user"></i>اخبار تکنولوژی</a></li>
+									<li><a class="date" href="#"><i class="fa fa-clock-o"></i> 1394-10-21</a></li>
+								</ul>
+							</div>
+						</div>
+						<h5>4 روش مهم درآمدزایی برندهای مهم </h5>
+						<a class="read-more" href="http://127.0.0.1/cms2/post/53-4+روش+مهم+درآمدزایی+برندهای+مهم.php">اطلاعات بیشتر<i class="fa fa-arrow-right"></i></a>
+					</div>
+					
+				 
+				</div>

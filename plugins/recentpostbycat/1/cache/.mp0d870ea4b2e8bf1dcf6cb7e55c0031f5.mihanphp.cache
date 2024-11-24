@@ -1,0 +1,20 @@
+<!-- if first-->
+                    <li>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 padding-top-mini">
+                                   <h2 class="title-subtitle">
+                                       چند ویژگی یک وبلاگ نویس موفق
+                                        <span>اخبار تکنولوژی</span>
+                                   </h2>
+                                    <p class="delay2"><p>وبلاگ نویسی هم همانند سایر مشاغل یک حرفه میباشد که برای موفق شدن در آن باید فرد دارای ویژگی هایی باشد.<br /><br />&nbsp;<br /><br /></p></p>
+                                   
+                                    <a class="btn btn-lg btn-primary delay4" href="http://127.0.0.1/cms2/post/54-چند+ویژگی+یک+وبلاگ+نویس+موفق.php">ادامه مطلب</a>
+                                </div>
+                                <div class="col-md-6">
+                                   <img src="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg" alt="" class="img-responsive">
+                                </div>
+                           </div> 
+                        </div> 
+                    </li>
+<!-- End if first-->

@@ -1,0 +1,214 @@
+<link rel="stylesheet" href="[siteurl]plugins/menumaker/css/style.css">
+<!--[if lte IE 8]>
+<script type="text/javascript" src="[siteurl]plugins/menumaker/js/html5.js"></script>
+<![endif]-->
+<script>
+    var itemPerPage = 24;
+    var _BASE_URL = '[moduleurl]';
+    var current_group_id = '[group_id]';
+    function bindPageAction()
+    {
+        $( ".menupPagination li" ).click( function()
+        {
+            var type = $( this ).attr( "rel" );
+            $( '.menuselected' ).removeClass( 'menuselected' );
+            $( this ).addClass( 'menuselected' );
+            var page = parseInt( $( this ).html() );
+            $( "[rel*=screenshot_" + type + "]" ).hide();
+            var start = ( page - 1 ) * itemPerPage;
+            var end = start + itemPerPage;
+            $( "[rel*=screenshot_" + type + "]" ).slice( start, end ).fadeIn();
+        } );
+    }
+    $( document ).ready( function() {
+        $( ".menutype" ).change( function() {
+            var type = $( this ).attr( "rel" );
+
+            $( ".menuscreenshot" ).hide();
+
+            //pagination
+            var totalItems = $( "[rel*=screenshot_" + type + "]" ).length;
+            var totalPages = Math.ceil( totalItems / itemPerPage );
+            $( "[rel*=screenshot_" + type + "]" ).slice( 0, itemPerPage ).fadeIn();
+            $( ".menupPagination li" ).remove();
+            for ( i = 1; i <= totalPages; i++ )
+            {
+                $( ".menupPagination" ).append( '<li rel="' + type + '">' + i + '</li>' );
+            }
+            bindPageAction();
+        } );
+
+        $( ".shotimg" ).click( function() {
+            $( ".shotimg" ).css( "border", "" );
+            $( this ).css( "border", "2px red solid" );
+            var menuclass = $( this ).attr( "rel" );
+            $( "#menu-group-style" ).val( menuclass );
+        } );
+        bindPageAction();
+    } );
+</script>
+<div id="section">
+    <ul id="menu-group">
+        <tag:groups>
+            <li id="group-[id]">
+                <a href="#">
+                    [title]
+                </a>
+            </li>
+        </tag:groups>
+    </ul>
+    <div class="clear"></div>
+
+    <form method="post" id="form-menu" action="[moduleurl]&do=savemenuposition">
+        <div class="ns-row" id="ns-header">
+            <div class="ns-actions">امكانات</div>
+            <div class="ns-class">آیکون</div>
+            <div class="ns-url">پيوند</div>
+            <div class="ns-title">عنوان</div>
+        </div>
+        [menu_ul]
+        <div id="ns-footer">
+            <button type="submit" class="button green small" id="btn-save-menu">بروزرساني فهرست</button><!-- IF groupl1 -->&nbsp; &nbsp; <button type="submit" class="button red small" id="delete-group">حذف فهرست</button><!-- ENDIF groupl1 -->
+        </div>
+    </form>
+</div>
+<br clear="all">
+<div class="clear"></div>
+<div id="aside">
+
+    <div class="box">
+        <h2>اضافه منو</h2>
+        <section>
+            <form id="form-add-menu" method="post" action="[moduleurl]&do=addmenu">
+                <p>
+                    <label for="menu-title">عنوان</label>
+                    <input type="text" name="title" id="menu-title">
+                </p>
+                <p>
+                    <label for="menu-url">پيوند</label>
+                    <input type="text" name="url" id="menu-url">
+                </p>
+                <p>
+                    <label for="menu-class">آیکن</label>
+                <div class="typeahead-append">
+                    <ul class="search-options" style="right:2px">
+
+                        <li><a rel="menu-class" title="" class="advanced-option tip addicon" data-original-title="افزودن از منبع"></a></li>
+                    </ul>
+                    <input class="ltr" type="text" name="class" id="menu-class">
+                    <div class="iconmanagerarea"><div id="icons-menu-class" class="iconmanager"></div><div style="clear:both"></div></div>
+
+                </div>
+                </p>
+                <p class="buttons">
+                    <input type="hidden" name="group_id" value="[group_id]">
+                    <button id="add-menu" type="submit" class="button green small">اضافه منو</button>
+                </p>
+                <script>
+                    $( ".addicon" ).click( function() {
+                        addIcon( $( this ).attr( 'rel' ), '[site]' );
+                        return false;
+                    } );
+                </script>
+            </form>
+        </section>
+    </div>
+    <div class="box">
+        <h2>مديريت فهرست كنوني</h2>
+        <section>
+            (شناسه: <b>[group_id]</b>)
+            <br clear="all">
+            <br clear="all">
+            كد منو در قالب : <input disabled="true" readonly="true" value="&#91;nsmenu-[group_id]&#93;" dir=ltr style="width: 100px; height: 30px; text-align: center;" />
+            <br clear="all">
+            <br clear="all">
+            عنوان : <input type="text" id="edit-group-input" value="[group_title]" />
+            <br clear="all">
+            <br clear="all">
+            <div>قالب منو :  <hr />
+                <tag:themetypes>
+
+
+
+                    <label class="menulabel" for="themetype_[value]">[title]<input [checked] style="opacity: 0;" name="themetype[]" id="themetype_[value]" class="styled menutype" rel="[value]" type="radio"></label>
+					
+                </tag:themetypes>
+                <br /><br />
+                <tag:menuscreenshots>
+                    <div class="menuscreenshot" style="display:[display]" rel="screenshot_[type]">
+                        <img src="[image]" class="shotimg" style="[border]" width="100px" height="100px" rel="[style]" />
+                    </div>
+                </tag:menuscreenshots>
+                <hr />
+                <ul class="menupPagination">
+                    <li>1</li>
+                </ul>
+                <input type="hidden" id="menu-group-style" value="[selectedclass]" />
+                <!--
+                <select id="menu-group-style">
+                <tag:menustyles><option value="[value]" [selected]>[title]</option>
+                </tag:menustyles></select>
+                -->
+            </div>
+            <br clear="all">
+            <br clear="all">
+            <div><button type="submit" class="button green small" id="save-group-option">بروزرساني</button></div>
+        </section>
+    </div>
+</div>
+<div class="clear"></div>
+<div>
+    <div class="box" style="width: 49%; float: right;">
+        <h2>اضافه صفحات به منو</h2>
+        <section>
+            <div style="overflow: scroll; height: 200px; border: 1px inset #555; padding: 5px; line-height: 19px;">
+                [pages]
+            </div>
+            <br clear="all">
+            <div><button type="submit" class="button green small" id="add-page-butt">اضافه به منو</button></div>
+        </section>
+    </div>
+    <div class="box" style="width: 49%; float: left;">
+        <h2>اضافه مطالب به منو</h2>
+        <section>
+            <div style="overflow: scroll; height: 200px; border: 1px inset #555; padding: 5px; line-height: 19px;">
+                <tag:datas><b>[title]</b>[options]
+                </tag:datas>
+            </div>
+            <br clear="all">
+            <div><button type="submit" class="button green small" id="add-data-butt">اضافه به منو</button></div>
+        </section>
+    </div>
+    <div class="box" style="width: 49%; float: right;">
+        <h2>افزودن پلاگین ها به منو</h2>
+        <section>
+            <div style="overflow: scroll; height: 200px; border: 1px inset #555; padding: 5px; line-height: 19px;">
+                [plugins]
+            </div>
+            <br clear="all">
+            <div><button type="submit" class="button green small" id="add-plugin-butt">اضافه به منو</button></div>
+        </section>
+    </div>
+</div>
+
+<div id="loading">
+    <img src="[siteurl]plugins/menumaker/images/ajax-loader.gif" alt="Loading">
+    در حال پردازش ...
+</div>
+<script src="[siteurl]plugins/menumaker/js/jquery.1.4.1.min.js"></script>
+<script>
+                    var jQueryTemp = jQuery.noConflict( true );
+                    var jQueryOriginal = jQuery || jQueryTemp;
+                    if ( window.jQuery )
+                    {
+                        console.log( 'Original jQuery: ', jQuery.fn.jquery );
+                        console.log( 'Second jQuery: ', jQueryTemp.fn.jquery );
+                    }
+</script>
+<script src="[siteurl]plugins/menumaker/js/interface-1.2.js"></script>
+<script src="[siteurl]plugins/menumaker/js/inestedsortable.js"></script>
+<script src="[siteurl]plugins/menumaker/js/menu.js"></script>
+<script>
+                    //window.jQuery = window.$ = jQueryTemp;
+                    //window.jQuery = window.$ = jQueryOriginal;
+</script>

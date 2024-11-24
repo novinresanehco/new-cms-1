@@ -1,0 +1,66 @@
+/* v-red-ltr Dropdown Menu
+-----------------------------------*/
+.v-red-ltr, .v-red-ltr ul {
+    list-style: none;
+	width: 160px;
+	margin: 0;
+	padding: 0;
+}
+.v-red-ltr {
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+.v-red-ltr li {
+	position: relative;
+}
+.v-red-ltr ul {
+	position: absolute;
+	top: 0;
+	left: 159px;
+	width: 160px;
+	display: none;
+	z-index: 999;
+}
+.v-red-ltr a {
+	display: block;
+	height: 2.9em;
+	line-height: 2.9em;
+	padding: 0 0.8em;
+}
+.v-red-ltr ul li a {
+	overflow: hidden;
+}
+.v-red-ltr li:hover > ul {
+	display: block;
+}
+.v-red-ltr li.parent > a {
+	background-image: url(../images/arrow-right2.gif);
+	background-position: 148px center;
+	background-repeat: no-repeat;
+}
+
+.v-red-ltr, .v-red-ltr ul {
+	-webkit-box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+	-moz-box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+	box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+}
+
+.v-red-ltr, .v-red-ltr ul {
+	border-bottom: 1px solid #A55555;
+}
+.v-red-ltr li {
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#E86F6F), to(#D16767));
+	background: -moz-linear-gradient(#E86F6F, #D16767);
+	background: linear-gradient(#E86F6F, #D16767);
+	background: #E86F6F;
+}
+.v-red-ltr li a {
+	color: #fff;
+	border: 1px solid #A55555;
+	border-bottom: none;
+	font-family: Tahoma;
+	text-decoration: none;
+}
+.v-red-ltr li:hover {
+	background: #D16767;
+}

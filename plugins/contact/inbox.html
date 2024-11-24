@@ -1,0 +1,81 @@
+<div id="msgloading" style="display:none"></div>
+<div id="msgarea" style="display:none">
+<div style="float:right;width:200px;">نام و نام خانوادگی : </div>
+<div id="msgfullname"></div>
+<div style="clear:both;margin-bottom:10px"></div>
+<div style="float:right;width:200px;">پست الکترونیک : </div>
+<div id="msgemail"></div>
+<div style="clear:both;margin-bottom:10px"></div>
+<div style="float:right;width:200px;">تلفن : </div>
+<div id="msgetell"></div>
+<div style="clear:both;margin-bottom:10px"></div>
+<div style="float:right;width:200px;">وب سایت : </div>
+<div id="msgsite"></div>
+<div style="clear:both;margin-bottom:10px"></div>
+متن پیام : 
+<br /><br />
+<div style="width:97%;padding:10px;background:#f3f7f8;border-radius:5px;word-wrap: break-word; white-space: -moz-pre-wrap;white-space: pre-wrap;" id="msgcontent">سلام</div>
+<hr />
+</div>
+<table border="0" width="100%" class="table table-striped" id="tabs_2_content_in">
+    <thead>
+        <th>
+<b>نام و نام خانوادگی</b>
+        </th>
+        <th>
+<b>پست الکترونیک</b>
+        </th>
+        <th>
+<b>عملیات</b>
+        </th>
+</thead>
+    <tag:listtr>
+        <tr>
+            <td>
+			<a href="#" class="readcontact" rel="[id]">[name]</a>
+			</td>
+            <td>[email]</td>
+            <td>&nbsp;
+                <a class="confirm" href="plugins.php?plugin=contact&delete&id=[id]">
+                    <img border='0' src='../theme/admin/samaneh/images/tCMS.gif'>
+                </a>
+            </td>
+        </tr>
+    </tag:listtr>
+</table>
+<script language="javascript">
+$(".readcontact").click( function() {
+	var id = $( this ).attr( "rel" );
+	$("#msgloading").html(loadingt);
+	$("#msgloading").fadeIn();
+	$("#msgarea").slideUp();
+	$.ajax({
+	type : 'post',
+	url : '',
+	data : 'id=' + id,
+	success : function(msg)
+	{
+		var msgvars = msg.split('<samaneh/>');
+		if ( msgvars.length != 5)
+		{
+			alert('متاسفانه مشکلی در بارگزاری صفحه رخ داد.');
+		}
+		else
+		{
+			$("#msgfullname").html( msgvars[0] );
+			$("#msgemail").html( msgvars[1] );
+			$("#msgetell").html( msgvars[2] );
+			$("#msgsite").html( "<a href='" + msgvars[3] + "' target='_blank'>" + msgvars[3] + "</a>" );
+			$("#msgcontent").html( msgvars[4] );
+			$("#msgloading").fadeOut();
+			$("#msgarea").slideDown();
+		}
+	},
+	error : function()
+	{
+		alert('متاسفانه مشکلی در بارگزاری صفحه رخ داد.');
+	}
+	});
+	return false;
+});
+</script>

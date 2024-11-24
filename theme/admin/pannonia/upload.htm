@@ -1,0 +1,178 @@
+<script>
+    function tab_3() {
+        //connect('pages/listups.php',"r",'ajax_tabs_2_content',loadingt,'');
+        //connect('mfm.php',"r",'ajax_tabs_2_content',loadingt,'');
+    }
+
+    function Mform(method) {
+        formats = rajax(gi("formats").value);
+        one = rajax(gi("one").value);
+        total = rajax(gi("total").value);
+        random = rajax(gi("random").value);
+        nums = rajax(gi("nums").value);
+        connect('pages/uc.php', 'formats=' + formats + '&one=' + one +
+            '&total=' + total + '&random=' + random + '&nums=' + nums,
+            'ajax_tabs_0_content', loadingt, "");
+    }
+
+    function stopw() {
+        gi('sh').style.display = '';
+        mess = parent.rezash.document.body.innerHTML;
+        gi("reza").innerHTML = mess;
+        if (!document.all) {
+            window.frames['rezash'].stop()
+        } else {
+            window.frames['rezash'].document.execCommand('Stop')
+        }
+    }
+
+    function doupload() {
+				document.getElementById("uploadfrm").submit();
+                hideid('sh');
+                gi('reza').value =
+                    '<center><img border="0" src="../theme/admin/samaneh/images/loading.gif"><br>لطفا صبر کنید<br></center>';
+    }
+
+    function delfile(name) {
+        bootbox.confirm('آیا از حذف اين فایل اطمینان دارید؟', function (result) {
+            if (result) {
+                connect('pages/manup.php', 'task=delete&name=' + name,
+                    'ajax_tabs_2_content', loadingt, '');
+            }
+        });
+    }
+</script>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+				
+                    <form onsubmit="Mform('rezash');return false;">
+                        <table border="0" width="100%" class="tbl" id="tabs_0_content">
+                            <tr>
+                                <td colspan=2 id="ajax_tabs_0_content"></td>
+                            </tr>
+                            <tr>
+                                <td width="150px">فرمتهای مجاز&nbsp; :</td>
+                                <td>
+                                    <textarea rows="2" name="formats" id="formats" cols="20" dir="ltr" class="input-xlarge">[formats]</textarea>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>حداکثر حجم هرفایل:</td>
+                                <td>
+                                    <input type="text" name="one" id="one" size="20" value="[one]" dir="ltr" class="input-xlarge">- کیلوبایت</td>
+                            </tr>
+
+                            <tr>
+                                <td>حداکثر حجم مجموعه فایل ها:</td>
+                                <td>
+                                    <input type="text" name="total" id="total" size="20" value="[total]" dir="ltr" class="input-xlarge"><span lang="en-us"> 
+- </span>کیلوبایت</td>
+                            </tr>
+
+                            <tr>
+                                <td>انتخاب نام تصادفی:</td>
+                                <td>
+									<div class="controls" style="margin-right:20px;width:300px;">
+										<select size="1" name="random" id="random" class="select2">
+											<option value="1" [one_1]>بله</option>
+											<option value="2" [one_2]>خیر</option>
+										</select>
+									</div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>تعداد فرم های آپلود:</td>
+                                <td>
+                                    <input type="text" name="nums" id="nums" size="20" value="[nums]" dir="ltr" class="input-xlarge"><span lang="en-us"> 
+- </span>حداكثر 10</td>
+                            </tr>
+
+                            <tr>
+
+                                <tr>
+                                    <td width="169">&nbsp;</td>
+                                    <td>
+                                        <input type="submit" value="ثبت تنظيمات" name="submit" class="btn btn-success">
+                                    </td>
+                                </tr>
+
+                        </table>
+                    </form>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <form method="POST" enctype="multipart/form-data" action="pages/upload.php" target="rezash" id="uploadfrm">
+                        <table border="0" width="100%" class="tbl" id="tabs_1_content">
+                            <tr>
+                                <td id="ajax_tabs_1_content"></td>
+                            </tr>
+                            <tr>
+                                <td width="98%">
+                                    <div id=reza></div>
+                                    <div id=sh style="display:''">
+                                        <center>
+                                            <tag:numfiles>
+                                                <input class="btn btn-success" type="file" name="mfile[]" size="65"><span lang="en-us">
+</tag:numfiles>
+</span>
+                                                <br>
+                                                <input class="btn btn-success" onclick="doupload();" type="submit" value="آپلود کن" name="submit">
+                                                <input class="btn btn-success" type="reset" value="از اول" name="B2">
+                                                <br>
+                                    </div>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="98%" align=center>
+                                    <iframe style="display:none" name="rezash" onload="stopw()" marginwidth="0" marginheight="0"
+                                    border="0" frameborder="0" height="184" width="516"
+                                    src="pages/index.html" scrolling="no">
+                                    </iframe>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </form>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <iframe src="mfm.php?field=alert&mode=standalone" width="80%" height="400px;" border="0px"
+                    style="border:0px"></iframe>
+                    <table border="0" width="100%" class="tbl" id="tabs_2_content">
+                        <tr>
+                            <td>
+                                <div id=edit>
+                                    <div id="ajax_tabs_2_content_2"></div>
+                                    <table border="0" width="100%" class="tbl" id="editing_area" style=display:none>
+                                        <tr>
+                                            <td width="25%">&nbsp;</td>
+                                            <td width="74%">&nbsp;</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                        </tr>
+                        <tr>
+                            </td>
+                            <td id="ajax_tabs_2_content">
+                            </td>
+
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<!-- IF CommentList -->
+<tag:comments>
+
+<div class="comment" style="background-color:#EDEFF0;border:1px #EDEFF0;border-radius:5px;padding:10px;width:100%">
+  <div class="name"><span style="font-weight:bold">[name]</span></div> 
+  <div class="content">
+  <!-- IF avatar -->
+<img src="[avatarurl]" width="100px" height="100px" /> <br />
+<!-- ENDIF avatar -->
+  [text]
+	<!-- IF Ans --> 
+	<div class=reply style="display: block; background: none repeat scroll 0 0 #F4F4F4;border-top: 1px solid #AAAAAA; margin: 5px;padding: 5px;" align="right"><strong>» [reply_name] </strong>: [answer]</div>
+	<!-- ENDIF Ans -->
+	</div>
+</div>
+<br />
+</tag:comments>
+
+<!-- IF havecomment -->
+ <!-- ENDIF havecomment -->
+<!-- ENDIF CommentList -->
+<!-- IF CommentForm -->
+<!-- IF Success -->
+<div class="success">[msg]</div>
+<!-- ENDIF Success -->
+<!-- IF Error -->
+<div class="error">[msg]</div>
+<!-- ENDIF Error -->
+<br />
+
+<form action="" method="post">
+<center>
+<div class="sendcomment" style="direction:rtl;text-align:right;border:1px solid;border-color: #438D5A;background-color: #C5E0EE;border-radius:5px;padding:10px;">
+
+  <div class="author">
+  </div> 
+  <div class="info">    
+  <div class="fixed"></div> 
+  <div class="content"><div style="float:right;width:150px;padding-bottom:10px">نام و نام خانوادگي : </div><div style="padding-bottom:10px"><input id=namebox type="text" class=input name="name" value="[fullname]" size="40" dir="rtl"/></div>
+		<div style="float:right;width:150px;padding-bottom:10px">پست الکترونيک : </div><div style="padding-bottom:10px"><input id=namebox type="text" class=input name="email" value="[email]" size="40" dir="rtl"/></div>
+		<div style="float:right;width:150px;padding-bottom:10px">آدرس وب : </div><div style="padding-bottom:10px"><input id=namebox type="text" value="[url]" class=input name="url" size="40" dir="rtl"/></div>
+		<div style="float:right;width:150px;padding-bottom:10px">کد امنيتي : </div><div style="padding-bottom:10px"><input id=namebox value="" type="text" class=input name="mihancms" size="40" dir="rtl"/>
+		<span id="Rashimg" class="hand">
+<img border="0" style="padding-right:90px" src="[site]img.php?rand=[rand]" id="imagerash"></span>
+		</div>
+		<div style="float:right;width:150px">نظر : </div><div style="padding-bottom:10px"><textarea class=input name="comment" rows="7" cols="54">[comment]</textarea></div>
+		<input type="hidden" name="poid" value="[poid]" />
+		<center>
+		<input type="submit" name="sendcmt" value="ارسال نظر" />
+		</center>
+
+  </div>
+  </div> 
+    <div class="fixed"></div> 
+</div></center></form>
+<script>
+$(document).ready(function() {
+$("#Smileys ")
+});
+</script>
+<!-- ENDIF CommentForm -->

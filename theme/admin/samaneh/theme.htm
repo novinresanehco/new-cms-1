@@ -1,0 +1,38 @@
+<script>
+function Mform(method,id){
+if(method == "theme")
+{
+connect('pages/theme.php',"task=core&id="+id,'ajax_tabs_0_content',loadingt,'');
+}
+
+if(method == "admin_theme")
+{
+connect('pages/theme.php',"task=admin&id="+id,'ajax_tabs_1_content',loadingt,'');
+}
+}
+</script>
+<div id="div_1"> 
+<table border="0" width="100%" class="tbl" id="tabs_0_content" height="30">
+<tr>
+<td colspan="3" id="ajax_tabs_0_content"></td>
+</tr>
+<tag:themelist>
+<tr>
+<td width="17%" height="15">
+نام قالب :</td>
+<td width="18%" height="15">
+[theme_name]</td>
+<td width="64%" height="15">
+<input onclick="Mform('theme','[theme_name]');return false;" type="submit" name="submit0" value="انتخاب قالب پيش فرض" class="inp">
+</td>
+</tr>
+<tr>
+<td colspan="3">
+<center>
+<hr color="#0000FF">
+</center></td>
+</tr>
+</tag:themelist>
+</table>
+
+</div>

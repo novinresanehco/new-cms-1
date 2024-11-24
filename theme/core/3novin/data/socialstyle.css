@@ -1,0 +1,47 @@
+﻿
+#buttons {
+	width: 520px;
+	height: 480px;
+	margin: 80px auto 0 auto;
+	padding: 0 40px 0 80px;
+	background: url(images/buttons-bg.png) center center no-repeat;
+}
+
+.button {
+	float: left;
+	width: 90px;
+	height: 126px;
+	margin: 0 0 20px 20px;
+}
+
+.popup {
+	width: 90px;
+	height: 31px;
+	padding: 3px 0 5px 0;
+	background: url(images/popup.png) top center no-repeat;
+	color: #fff;
+	font-size: 13px;
+	line-height: 13px;
+	font-family: Georgia, serif;
+	opacity: 0;
+	filter:alpha(opacity=0);
+}
+
+.button a {
+	position: relative;
+	width: 90px;
+	height: 82px;
+	display: block;
+}
+.button a:hover { top: 0px; }
+
+
+a.facebook { background: url(images/facebook.jpg) top center no-repeat; }
+a.facebook:hover { background: url(images/facebook-pushed.jpg) top center no-repeat; }
+
+a.twitter { background: url(images/twitter.jpg) top center no-repeat; }
+a.twitter:hover { background: url(images/twitter-pushed.jpg) top center no-repeat; }
+
+a.googleplus { background: url(images/googleplus.jpg) top center no-repeat; }
+a.googleplus:hover { background: url(images/googleplus-pushed.jpg) top center no-repeat; }
+

@@ -1,0 +1,24 @@
+<div class="module">
+			<div>
+				<div>
+					<div>
+													<h3>ایران سی ام اس</h3>
+											<div class="rightcolomon">
+    <div class="items_list">
+	     							<div class="news_item">
+			<div class="itemsubtitle"></div>
+			<div class="itemtitle"><a href="[firstUrl]"><h2>[firstTitle]</h2></a><small>[firstDate]</small></div>
+			<div class="itemintro">
+									<a href="[firstUrl]">
+			<img src="[firstImage]" alt="[firstTitle]"/>
+			</a>[firstText]</div>
+			</div>
+	        </div>
+</div>
+<ul class="leftcolomon">
+
+	</ul>
+					</div>
+				</div>
+			</div>
+		</div>

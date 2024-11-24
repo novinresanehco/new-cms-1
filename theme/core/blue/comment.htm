@@ -1,0 +1,109 @@
+<style type="text/css">
+    .style1 {
+        color: #FF0000;
+    }
+    .style2 {
+        color: #008000;
+    }
+    .reply {
+        border-top: 1px solid #aaa;
+        background: #F4F4F4;
+        margin: 5px;
+        padding: 5px;
+    }
+</style>
+
+</head>
+
+<body>
+    <div align="center">
+        <div class="core">
+            <div class="dmenu">
+                <tag:comments>
+                    <div class="comments">
+                        <p align="right">نويسنده : [name]</p>
+                        <p align="right">
+                        <hr color="#660033" size="1">
+                        <p align="right">[body]
+                            <br>
+                            <br>
+                            <!-- IF Ans -->
+                        <div class=reply style="display: block;" align="right"><strong>»</strong> جواب از <strong>[reply_name] </strong>[نام كاربري :‌
+                            <span class="style2">[reply_user]</span>] : [answer]
+                        </div>
+                        <!-- ENDIF Ans -->
+                    </div>
+                </tag:comments>
+            </div>
+            <div class="formc">
+                <!-- IF Error -->
+                <div class="error">[msg]</div>
+                <!-- ENDIF Error -->
+                <!-- IF Success -->
+                <div class="success">[msg]</div>
+                <!-- ENDIF Success -->
+                <!-- IF CommentForm -->
+                <form name="Contactform" action="" method="post">
+                    <table cellpadding="0" cellspacing="3" id="cform" style="direction: rtl;">
+                        <tr>
+                            <td height="13" style="text-align: right;width: 119px">نام و نام خانوادگي </td>
+                            <td style=" width:100%; height:13;" colspan="4">
+                                <input style="float:right" type='text' name="name" value="[fullname]" />
+                                <input type='hidden' name="task" value="new" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="13" style="width: 119px; text-align: right">پست الکترونیک </td>
+                            <td style=" width:100%; height:13" colspan="4">
+                                <input style="float:right;direction:ltr" type='text'  name="email" size="20" dir="ltr" value="[email]" [disable]>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="13" style="width: 119px; text-align: right">وب سایت </td>
+                            <td style=" width:100%; height:13;" colspan="4">
+                                <input  style="float:right;direction:ltr" type='text' name="site" size="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="181" style="width: 119px; text-align: right;float: right">پیام </td>
+                            <td style=" width:100%; height:181;" colspan="4">
+                                <textarea style="float:right;" rows="12" cols="40" name="comment" id="comment" ></textarea>
+                                <br>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>كد امنيتي </td>
+							<br>
+                            <td>
+                                <INPUT  style="float:right;" name=samaneh tabindex="5">
+                            </td>
+                            <td>
+                                <span id="CMSimg" class="hand">
+                                    <img border="0" src="[site]img.php?rand=[rand]" id="imageCMS"></span>
+                            </td>
+
+                        </tr>
+<!-- IF activation -->
+                        <tr>
+                            <td>
+                                <span class="style1">*</span> نظرات اين مطلب بعد از تاييد نمايش داده خواهند شد.
+                                
+                            </td>
+                        </tr><!-- ENDIF activation -->
+						
+                        <td style=" width:100%; height:23;" colspan="4">
+                            <p align="center"><br>
+                                <input name="T3" id="submit" type="submit" value="ارسال" size="20">
+                                <input name="T3" id="submit" type="submit" value="پاک کن" size="20">
+                                
+                                
+
+                        </td>
+                        </tr>
+                    </table>
+                </form>
+                <!-- ENDIF CommentForm -->
+            </div>
+        </div>
+    </div>

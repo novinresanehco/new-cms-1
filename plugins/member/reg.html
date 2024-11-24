@@ -1,0 +1,110 @@
+<!-- IF Error --><div class="box2" align="right">
+	[ErrorMsg]</div>
+<!-- ENDIF Error -->
+<!-- IF Succeed --><div class="box" align="right">
+	[Msg]</div>
+<!-- ENDIF Succeed -->
+<!-- IF signup_form -->
+<form action="index.php?plugins=memeber&method=signup&task=dopost" method="post" name="mp">
+<div align="center">
+<table  dir="rtl" cellpadding="0" height="250" width="590">
+<tbody>
+<tr>
+<td align="center" valign="top"><table  border="0" width="100%">
+<tbody>
+<tr>
+<td height="22" width="19%">نام و نام خانوادگي :*</td>
+<td colspan="3" width="84%">
+<input  name="name" tabindex="1" lang="fa-ir" value="[reg_name]" size="20"></td>
+</tr>
+<tr>
+<td height="22" width="19%">نام کاربری:*</td>
+<td colspan="2">
+<input  name="user" tabindex="2" value="[reg_user]" size="20" dir="ltr"></td>
+<td></td></tr>
+<tr>
+<td height="22" width="19%">آدرس ایمیل:*</td>
+<td colspan="2">
+<input  name="email" tabindex="3" dir="ltr" value="[reg_email]" size="20"></td>
+<td></td>
+</tr>
+<tr>
+<td height="22" width="19%">کلمه عبور:*</td>
+<td colspan="3">
+<input  name="pass" tabindex="4" type="password" dir="ltr" size="20"></td>
+</tr>
+<tr>
+<td height="6" width="19%">تکرار کلمه عبور:*</td>
+<td colspan="3">
+<input  name="re_pass" tabindex="5" type="password" dir="ltr" size="20"></td></tr>
+
+<tr>
+<td height="3" width="19%">نام قابل نمايش :</td>
+<td colspan="3">
+<input  name="show" tabindex="6" dir="rtl" size="20" lang="fa-ir" value="[reg_show]"></td></tr>
+
+<tr>
+<td height="2" width="19%">شناسه ياهو :</td>
+<td colspan="3">
+<input  name="yahoo" tabindex="7" dir="ltr" size="20" value="[reg_yahoo]"></td></tr>
+
+<tr>
+<td width="19%">شناسه Gmail :</td>
+<td colspan="3">
+<input  name="gmail" tabindex="8" size="20" dir="ltr" value="[reg_gmail]"></td></tr>
+
+<tr>
+<td width="19%">تلفن :</td>
+<td colspan="3">
+<input  name="tell" tabindex="9" dir="ltr" size="20" value="[reg_tell]"></td></tr>
+
+<tr>
+<td width="19%">درباره من :</td>
+<td colspan="3">
+<textarea rows="5" name="text_about" cols="29"  lang="fa-ir" tabindex="10">[reg_text_about]</textarea></td></tr>
+<tag:regfields>
+<tr>
+<td width="19%">[title] :</td>
+<td colspan="3">
+<input  name="[name]" tabindex="9" dir="ltr" size="20" value="[value]"></td></tr>
+</tag:regfields>
+<tr>
+<td height="11" width="19%">كد امنيتي:</td>
+<td><INPUT class=inp1 name=samaneh  tabindex="11" size="20"></td>
+<td><span id=CMSimg>
+<img style="cursor:hand" onclick=CMSimg("New") border="0" src="img.php" id="imageCMS" ></span></td>
+<td><a href="#samaneh" onclick=CMSimg("New")>تغییر</a></td></tr>
+
+</tbody></table>
+<table  border="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<td height="22"><center><b>قوانین</b></center> 
+<hr color="#247eac"></td>
+</tr>
+<tr>
+<td height="22">[register_rulles]
+</td>
+</tr>
+<tr>
+<td height="22"><center><b>حقوق</b><hr color="#247eac"></center></td>
+</tr>
+<tr>
+<td height="22">1- عدم نمایش آدرس ایمیل و کلمه عبور
+شم</td>
+</tr>
+</tbody></table>
+<div>
+&nbsp;
+</div></td></tr>
+<tr>
+<td align="center" valign="top"><b>امکانات</b><hr color="#247eac"></td></tr>
+<tr>
+<td align="center" valign="top">
+<p align="right">» ارسال پیام 
+خصوصی به سایر کاربران عضو<br>» صفحه شخصی <br></p></td></tr>
+<tr>
+<td align="center" valign="top">
+<input  name="submit" value="قبول قوانین و عضویت" tabindex="12" type="submit"></td></tr>
+</tbody></table></div>
+</form>		<!-- ENDIF signup_form -->

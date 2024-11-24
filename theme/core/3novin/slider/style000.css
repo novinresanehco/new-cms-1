@@ -1,0 +1,92 @@
+ /* Slider */
+ 
+    /* Home Page Slider */
+    #slider{
+        display:block;
+        clear:both;
+        padding:0px;
+        position:relative; 
+	width:540px;
+	height:300px;
+	margin:0 10px;
+	overflow:hidden; 
+	padding:0;
+    }
+
+    .sub#slider{
+	margin-left:-10px;
+    }        
+        
+    #slider_area{
+        overflow:hidden;
+	width:800px;
+        margin:0 auto;
+        position:absolute;
+        z-index:1;
+    }
+        
+    .slide{
+	width:800px;
+	position:relative;
+	overflow:hidden;
+    }
+
+    /* slider title */
+    .slide b.title{
+	font-size:14px;
+    }
+    
+    .slide .image{
+        margin:0;
+        padding:0;
+        border:1px solid white;
+        position:relative;
+	z-index:5;
+    }
+    
+    
+    .slide_bakcground{
+	height:302px;
+    }
+        
+    /* slider right side */
+    #slider_area .desc{
+	width:780px;
+        position:absolute;
+        z-index:6;
+        bottom:0;
+        margin:0px;
+        font-size:12px; 
+	padding: 10px; 
+	font-weight:normal;
+	font-size:12px; 
+    }
+        
+    #slider_area .desc a{ 
+	text-decoration:underline;
+    }
+
+    #slider_area .desc a:hover{ 
+	text-decoration:none;
+    }
+    
+    
+    /* prev and next buttons*/
+    /* prev and next buttons*/
+    .prev 
+ , 
+    .next {
+	cursor:pointer; 
+	padding:0px;
+	margin:100px 520px 0 1px;
+	width:20px;
+	position:absolute;
+	top:0;
+	z-index:6;
+    }
+    
+    .next {
+	right:1px;
+	margin:100px -1px 0 0;	
+    }
+

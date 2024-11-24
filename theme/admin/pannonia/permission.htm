@@ -1,0 +1,121 @@
+<script>
+    var editing = false;
+
+    function tab_2() {
+        if (editing == false) {
+            return "prevent|ابتدا يك كاربر را جهت ويرايش انتخاب كنيد.";
+        }
+
+    }
+
+    function Mform(method) {
+        if (method == "edit_user") {
+            editing = false;
+            var CMS = gv("accsess_admin_acc");
+            if (CMS == 1)
+                elm = ['accsess_admin_acc', [samaneh_elements]];
+            else
+                elm = ['sendpost', 'sendcomment', 'accsess_admin_acc'];
+            elen = elm.length;
+            var re = '';
+            var thisd;
+            var andv;
+            var query = '';
+            for (var mp = 0; mp < elen; mp++) {
+                if (gi(elm[mp])) {
+                    re += 's' + elm[mp] + '=gi("' + elm[mp] + '").value; \n';
+                    thisd = gv(elm[mp]);
+                    if (mp != (elen - 1)) {
+                        andv = '&'
+                    } else {
+                        andv = ''
+                    }
+                    query += elm[mp] + '=' + thisd + andv;
+                }
+            }
+            eval(re);
+            var asamaneh = gv("samaneh_usr_id");
+            connect('pages/member.php', "task=update&" + query + "&usrid=" +
+                asamaneh, 'ajax_tabs_1_content', loadingt, '');
+
+        }
+    }
+
+    function edituser(id) {
+        editing = true;
+        $("#tab_2").trigger("click");
+		$.ajax({
+			url : 'pages/permissoin.php',
+			data: 'task=permission&user=' + id,
+			type: 'POST',
+			success : function( result )
+			{
+				$("#ajax_tabs_1_content").html( result );
+				$(".select2").select2({
+                placeholder: "انتخاب کنید",
+                allowClear: false
+				});
+			},
+			error: function()
+			{
+				bootbox.alert('خطا در ارتباط با سرور.');
+			}
+		});
+        
+        editing = false;
+    }
+
+    function priv() {
+        var t = gv("accsess_admin_acc");
+        if (t == 1) {
+            showid("samaneh_admin_tbl");
+            hideid("samaneh_user_tbl");
+        } else {
+            showid("samaneh_user_tbl");
+            hideid("samaneh_admin_tbl");
+        }
+    }
+</script>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]">
+                        <a id="tab_[id]" class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <table border="0" width="100%" class="tbl" id="tabs_0_content">
+                        <tr>
+                            <td id="ajax_tabs_0_content_0"></td>
+                        </tr>
+                        <tr>
+                            <td id="ajax_tabs_0_content"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <form onsubmit="Mform('edit_user');return false" method=post>
+                        <table border="0" width="100%" class="tbl" id="tabs_1_content">
+                            <tr>
+                                <td colspan="2" id="ajax_tabs_1_content"></td>
+                            </tr>
+
+                        </table>
+                        <input type="hidden" name="edit_user_id" id="edit_user_id"
+                        value="">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    connect('pages/listusers.php',
+        "permission4samaneh=true&task=listing&page=[page]",
+        'ajax_tabs_0_content', loadingt, '');
+</script>

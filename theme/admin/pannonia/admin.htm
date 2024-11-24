@@ -1,0 +1,344 @@
+<!-- Action tabs -->
+<div class="actions-wrapper">
+    <div class="actions">
+
+        <div id="user-stats">
+            <ul class="round-buttons">
+                <permission:newsletter><li><div class="depth"><a href="newsletter.php" title="خبرنامه" class="tip"><i class="icon-list-alt" ></i></a></div><span class="label label-info">خبرنامه</span></li></permission:newsletter>
+                <permission:filemanager><li><div class="depth"><a href="uc.php" title="مدیریت فایلها" class="tip"><i class="icon-folder-open"></i></a></div><span class="label label-info">مدیریت فایلها</span></li></permission:filemanager>
+                <permission:inbox><li><div class="depth"><a href="inbox.php" title="صندوق پیام" class="tip"><i class="icon-envelope-alt"></i></a></div><span class="label label-info">صندوق پیام</span></li></permission:inbox>
+                <permission:member><li><div class="depth"><a href="member.php" title="مدیریت اعضا" class="tip"><i class="icon-group"></i></a></div><span class="label label-info">مدیریت اعضا</span></li></permission:member>
+                <permission:block><li><div class="depth"><a href="blocks.php" title="مدیریت بلوک ها" class="tip"><i class="icon-indent-left"></i></a></div><span class="label label-info">لیست سیاه</span></li></permission:block>
+                <permission:extra><li><div class="depth"><a href="extra.php" title="صفحات اضافی" class="tip"><i class="icon-paste"></i></a></div><span class="label label-info">صفحات اضافی</span></li></permission:extra>
+                <permission:simplelink><li><div class="depth"><a href="simplelink.php" title="پیوندها" class="tip"><i class="icon-link"></i></a></div><span class="label label-info">پیوندها</span></li></permission:simplelink>
+                <permission:cat><li><div class="depth"><a href="cat.php" title="مدیریت دسته بندی ها" class="tip"><i class="icon-sitemap"></i></a></div><span class="label label-info">دسته بندیها</span></li></permission:cat>
+                <permission:comment><li><div class="depth"><a href="comment.php" title="نظرات" class="tip"><i class="icon-comment"></i></a></div><span class="label label-info">نظرات</span></li></permission:comment>
+                <permission:backup><li><div class="depth"><a href="backup.php" title="پشتیبان گیری" class="tip"><i class="icon-save"></i></a></div><span class="label label-info">پشتیبان گیری</span></li></permission:backup>
+                <permission:setting><li><div class="depth"><a href="setting.php" title="تنظیمات" class="tip"><i class="icon-cogs"></i></a></div><span class="label label-info">تنظیمات</span></li></permission:setting>
+                <permission:editposts><li><div class="depth"><a href="postmgr.php" title="مدیریت مطالب" class="tip"><i class="icon-tasks"></i></a></div><span class="label label-info">مدیریت مطالب</span></li></permission:editposts>
+                <permission:rssreader><li><div class="depth"><a href="#" title="خبر خوان" class="tip"><i class="icon-rss"></i></a></div><span class="label label-info">خبر خوان</span></li></permission:rssreader>
+                <permission:thememanager><li><div class="depth"><a href="thememanager.php" title="قالب ساز" class="tip"><i class="icon-fire"></i></a></div><span class="label label-info">قالب ساز</span></li></permission:thememanager>
+                <permission:counter><li><div class="depth"><a href="#" title="مشاهده آمار" class="tip"><i class="icon-signal"></i></a></div><span class="label label-info">مشاهده آمار</span></li></permission:counter>
+                <permission:newpost><li><div class="depth"><a href="new.php" title="ارسال مطلب" class="tip"><i class="icon-plus"></i></a></div><span class="label label-info">ارسال مطلب</span></li></permission:newpost>
+            </ul>
+        </div>
+
+        <div id="quick-actions">
+
+            <!-- Simple chart -->
+            <div class="row-fluid">						
+                <div class="span4">
+                    <div class="widget">
+                        <div class="navbar"><div class="navbar-inner"><h6>آمار بازدید</h6></div></div>
+                        <div class="well body">
+                            <span style="padding-right:5px">بازدید امروز</span><span class="badge badge-warning">[today]</span>
+                            <br>
+                            <span style="padding-right:5px">بازدید کننده امروز</span><span class="badge badge-warning">[yes]</span>
+                            <br>
+                            <span style="padding-right:5px">بازدید ماه</span><span class="badge badge-warning">[month]</span>
+                            <br>
+                            <span style="padding-right:5px">ماه قبل</span><span class="badge badge-warning">[pmonth]</span>
+                            <br>
+                            <span style="padding-right:5px">بازدید سال</span><span class="badge badge-warning">[year]</span>
+                            <br>
+                            <span style="padding-right:5px">بازدید سال قبل</span><span class="badge badge-warning">[pyear]</span>
+                            <br>
+                            <span style="padding-right:5px">بازدید کل</span><span class="badge badge-warning">[total]</span>
+                            <br>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="span4">
+                    <div class="widget">
+                        <div class="navbar"><div class="navbar-inner"><h6> آمار پلاگینها</h6></div></div>
+                        <div class="well body">
+                            <plugin:sendpost>
+                                <span style="padding-right:5px">تعداد مطالب منتظر تایید کاربران</span><span class="badge badge-warning">[sendpostPending]</span>
+                                <br></plugin:sendpost><plugin:simplelink>
+                                <span style="padding-right:5px">تعداد کل لینک ها</span><span class="badge badge-warning">[countLinks]</span>
+                                <br></plugin:simplelink><plugin:poll>
+                                <span style="padding-right:5px">نظر سنجی های فعال</span><span class="badge badge-warning">[activePolls]</span>
+                                <br></plugin:poll>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="span4">
+                    <div class="widget">
+                        <div class="navbar"><div class="navbar-inner"><h6>آمار مدیریت</h6></div></div>
+                        <div class="well body">
+
+                            <span style="padding-right:5px">تعداد پیام ها</span><span class="badge badge-warning">[unreadMessages]</span>
+                            <br>
+                            <permission:comment>
+                                <span style="padding-right:5px">تعداد نظرات تایید نشده</span><span class="badge badge-warning">[pendingComments]</span>
+                                <br></permission:comment>
+                            <span style="padding-right:5px">تعداد پست ها</span><span class="badge badge-warning">[totalPosts]</span>
+                            <br>
+                            <span style="padding-right:5px">تعداد دسته ها</span><span class="badge badge-warning">[totalCategories]</span>
+                            <br>
+                            <span style="padding-right:5px">تعداد مدیران</span><span class="badge badge-warning">[totalAdmins]</span>
+                            <tag:permission:newsletter>
+                                <br>
+                                <span style="padding-right:5px">تعداد ایمیلهای ثبت شده در خبرنامه</span><span class="badge badge-warning">[mailingListMembers]</span>
+                            </tag:permission:newsletter>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <!-- /simple chart -->
+
+        </div>
+        <div id="kar">
+
+
+
+            <!-- Some controlы -->
+
+            <div class="row-fluid">	
+
+                <!-- Table with navbar elements -->
+                <div class="widget">
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <h6>وظایف و کارها</h6>
+                        </div>
+                    </div>
+                    <div class="table-overflow">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th style='width:20px'>#</th>
+                                    <th>کار</th>
+                                    <th style='text-align:center;width:170px'>زمان</th>
+                                    <th style='width:70px'>عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tag:jobs>
+                                <tr>
+                                    <td>[row]</td>
+                                    <td>[title]</td>
+                                    <td class='ltr' style='text-align:center;'>[time]</td>
+                                    <td>
+                                        <ul class="table-controls">
+                                            <li><a href="plugins.php?plugin=jobs&act=edit&id=[jobID]" class="tip fancybox" title="ویرایش"><i class="fam-pencil"></i></a> </li>
+                                            <li><a href="index.php?removeJob=[jobID]#kar" class="tip confirm" title="حذف"><i class="fam-cross"></i></a> </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tag:jobs>
+                            </tbody>
+                        </table>
+                        <a href="plugins.php?plugin=jobs&act=new" class="fancybox">
+                            <button type="button" style="float:right" class="btn btn-success"><b class="icon-plus"></b>افزودن کار جدید</button>
+                        </a>
+                    </div>
+                </div>
+                <!-- /table with navbar elements -->
+
+
+            </div>
+
+
+
+            <!-- /some controlы -->
+
+        </div>
+        <!--Vitrin-->
+        <div id="vitrin">
+
+            <!-- Span 4 | Span 8 -->
+            <div class="row-fluid">
+                <div class="span4">
+                    <ul class="nav nav-list well-white">
+                        <li class="nav-header">آخرین اخبار</li>
+                        <li><a href="#" class="dialog">Custom Dialog</a></li>
+                        <li><a href="#" class="multiple-dialogs">Multiple Dialogs</a></li>
+                        <li><a href="#" class="dialog-close">Programmatic Close</a></li>
+                        <li><a href="#" class="generic-modal">Generic Modal</a></li>
+                        <li><a href="#" class="dynamic">Dynamic Content</a></li>
+                        <li><a href="#" class="icons-explicit">Iconified buttons (explicit)</a></li>
+                        <li><a href="#" class="icons-override">Override alert and confirm icons (programmatic)</a></li>
+                        <li><a href="#" class="no-close-button">Don&rsquo;t close if callback returns false</a></li>
+                        <li><a href="#" class="prompt-default">Prompt with default value</a></li>
+                    </ul>  
+                </div>
+
+                <div class="span8">
+                    <div class="widget">
+
+
+                        <!-- With titles -->
+                        <div class="media row-fluid">
+
+                            <div class="span3">
+
+                                <div class="widget">
+                                    <div class="well">
+                                        <div class="view">
+                                            <a href="../theme/admin/pannonia/img/demo/big.jpg" class="view-back lightbox"></a>
+                                            <img src="../theme/admin/pannonia/img/demo/media/1.png" alt="" />
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="#" title="" class="item-title">گفتگو آنلاین</a>
+                                            <p class="item-buttons">
+                                                <a href="#" class="btn btn-info tip" title="خرید"><i class=" icon-shopping-cart"></i></a>
+                                                <a href="#" class="btn btn-danger tip" title="جزییات"><i class=" icon-align-justify"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="widget">
+                                    <div class="well">
+                                        <div class="view">
+                                            <a href="../theme/admin/pannonia/img/demo/big.jpg" class="view-back lightbox"></a>
+                                            <img src="../theme/admin/pannonia/img/demo/media/2.png" alt="" />
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="#" title="" class="item-title">فرم ساز</a>
+                                            <p class="item-buttons">
+                                                <a href="#" class="btn btn-info tip" title="خرید"><i class=" icon-shopping-cart"></i></a>
+                                                <a href="#" class="btn btn-danger tip" title="جزییات"><i class=" icon-align-justify"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="span3">
+                                <div class="widget">
+                                    <div class="well">
+                                        <div class="view">
+                                            <a href="../theme/admin/pannonia/img/demo/big.jpg" class="view-back lightbox"></a>
+                                            <img src="../theme/admin/pannonia/img/demo/media/3.png" alt="" />
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="#" title="" class="item-title">گالری تصاویر 2</a>
+                                            <p class="item-buttons">
+                                                <a href="#" class="btn btn-info tip" title="خرید"><i class=" icon-shopping-cart"></i></a>
+                                                <a href="#" class="btn btn-danger tip" title="جزییات"><i class=" icon-align-justify"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="widget">
+                                    <div class="well">
+                                        <div class="view">
+                                            <a href="../theme/admin/pannonia/img/demo/big.jpg" class="view-back lightbox"></a>
+                                            <img src="../theme/admin/pannonia/img/demo/media/4.png" alt="" />
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="#" title="" class="item-title">آب و هوا</a>
+                                            <p class="item-buttons">
+                                                <a href="#" class="btn btn-info tip" title="خرید"><i class=" icon-shopping-cart"></i></a>
+                                                <a href="#" class="btn btn-danger tip" title="جزییات"><i class=" icon-align-justify"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="span3">
+                                <div class="widget">
+                                    <div class="well">
+                                        <div class="view">
+                                            <a href="../theme/admin/pannonia/img/demo/big.jpg" class="view-back lightbox"></a>
+                                            <img src="../theme/admin/pannonia/img/demo/media/5.png" alt="" />
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="#" title="" class="item-title">پرداخت آنلاین</a>
+                                            <p class="item-buttons">
+                                                <a href="#" class="btn btn-info tip" title="خرید"><i class=" icon-shopping-cart"></i></a>
+                                                <a href="#" class="btn btn-danger tip" title="جزییات"><i class=" icon-align-justify"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="widget">
+                                    <div class="well">
+                                        <div class="view">
+                                            <a href="../theme/admin/pannonia/img/demo/big.jpg" class="view-back lightbox"></a>
+                                            <img src="../theme/admin/pannonia/img/demo/media/6.png" alt="" />
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="#" title="" class="item-title">تبادل لینک هوشمند</a>
+                                            <p class="item-buttons">
+                                                <a href="#" class="btn btn-info tip" title="خرید"><i class=" icon-shopping-cart"></i></a>
+                                                <a href="#" class="btn btn-danger tip" title="جزییات"><i class=" icon-align-justify"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="span3">
+                                <div class="widget">
+                                    <div class="well">
+                                        <div class="view">
+                                            <a href="../theme/admin/pannonia/img/demo/big.jpg" class="view-back lightbox"></a>
+                                            <img src="../theme/admin/pannonia/img/demo/media/7.png" alt="" />
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="#" title="" class="item-title">تبلیغات در سایت</a>
+                                            <p class="item-buttons">
+                                                <a href="#" class="btn btn-info tip" title="خرید"><i class=" icon-shopping-cart"></i></a>
+                                                <a href="#" class="btn btn-danger tip" title="جزییات"><i class=" icon-align-justify"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="widget">
+                                    <div class="well">
+                                        <div class="view">
+                                            <a href="../theme/admin/pannonia/img/demo/big.jpg" class="view-back lightbox"></a>
+                                            <img src="../theme/admin/pannonia/img/demo/media/8.png" alt="" />
+                                        </div>
+                                        <div class="item-info">
+                                            <a href="#" title="" class="item-title">تحلیل دقیق آمار</a>
+                                            <p class="item-buttons">
+                                                <a href="#" class="btn btn-info tip" title="خرید"><i class=" icon-shopping-cart"></i></a>
+                                                <a href="#" class="btn btn-danger tip" title="جزییات"><i class=" icon-align-justify"></i></a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /with titles -->
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /span 4 | span 8 -->
+
+
+        </div>
+        <!--/Vitrin-->
+        <ul class="action-tabs">
+            <li><a href="#user-stats" title="">دسترسی سریع</a></li>
+            <li><a href="#quick-actions" title="">آمار سایت</a></li>
+            <li><a href="#kar" title="" >یاداوری وظایف</a></li>
+            <li><a href="#vitrin" title="" >ویترین</a></li>
+        </ul>
+    </div>
+</div>
+<!-- /action tabs -->

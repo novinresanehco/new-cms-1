@@ -1,0 +1,152 @@
+@import url(css00000.css);.clearfix:after{content:"";display:table;clear:both;}::-webkit-input-placeholder{color:#fff;}:-moz-placeholder{color:#fff;}::-moz-placeholder{color:#fff;}:-ms-input-placeholder{color:#fff;}div.navflipin{width:100%;}div.navflipin ul ul{visibility:hidden;position:absolute;z-index:2;right: 134px;
+text-align: right;}div.navflipin ul li:hover>ul{visibility:visible;-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-backface-visibility:visible!important;-webkit-animation-name:flipInX;-moz-backface-visibility:visible!important;-moz-animation-name:flipInX;-o-backface-visibility:visible!important;-o-animation-name:flipInX;backface-visibility:visible!important;animation-name:flipInX;}div.navflipin ul{background:#fff;box-shadow:0px 0px 9px rgba(0,0,0,0.30);padding:0 10px;list-style:none;position:relative;display:inline-table;}div.navflipin ul:after{content:"";clear:both;display:block;}div.navflipin ul li{float:right;}div.navflipin ul li:hover{background:#b400ff;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;	}div.navflipin ul li:hover a{color:#fff;}div.navflipin ul li a{display:block;padding:15px 18px;color:#757575;text-decoration:none;}div.navflipin ul ul{background:#b400ff;border-radius:0px;padding:0;position:absolute;top:100%;z-index:99999999999;}div.navflipin ul ul li{float:none;border-top:1px solid #c545fb;position:relative;z-index:99999999999;}div.navflipin ul ul li a{padding:15px 30px;color:#757575;}div.navflipin ul ul li a:hover{background:#c545fb;-webkit-transition:all 0.3s ease-out;-moz-transition:all 0.3s ease-out;-o-transition:all 0.3s ease-out;transition:all 0.3s ease-out;	}div.navflipin ul ul ul{position:absolute;left:100%;top:0;}div.navflipin ul ul ul li a{display:block;min-width:85px;text-align:center;}body{-webkit-backface-visibility:hidden;}.animated{}@-webkit-keyframes flipInX {
+    0% {
+        -webkit-transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    } 40% {
+        -webkit-transform: perspective(400px) rotateX(-10deg);
+    }
+
+    70% {
+        -webkit-transform: perspective(400px) rotateX(10deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+.navflipin ul img{float: right;
+padding-left: 7px;}
+@-moz-keyframes flipInX {
+    0% {
+        -moz-transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    40% {
+        -moz-transform: perspective(400px) rotateX(-10deg);
+    }
+
+    70% {
+        -moz-transform: perspective(400px) rotateX(10deg);
+    }
+
+    100% {
+        -moz-transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+@-o-keyframes flipInX {
+    0% {
+        -o-transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    40% {
+        -o-transform: perspective(400px) rotateX(-10deg);
+    }
+
+    70% {
+        -o-transform: perspective(400px) rotateX(10deg);
+    }
+
+    100% {
+        -o-transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+@keyframes flipInX {
+    0% {
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) rotateX(-10deg);
+    }
+
+    70% {
+        transform: perspective(400px) rotateX(10deg);
+    }
+
+    100% {
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.animated.flipInX {
+}
+
+/* col2 */
+div.navflipin .col2 {
+	width: 302px;
+}
+
+div.navflipin .col2 li {
+	width: 150px;
+	float: left !important;
+	border-left: 1px solid #c545fb;
+}
+
+div.navflipin .col2 li a {
+	text-align: center;
+}
+
+/* col3 */
+div.navflipin .col3 {
+	width: 453px;
+}
+
+div.navflipin .col3 li {
+	width: 150px;
+	float: left !important;
+	border-left: 1px solid #c545fb;
+}
+
+div.navflipin .col3 li a {
+	text-align: center;
+}
+
+/* col4 */
+div.navflipin .col4 {
+	width: 604px;
+}
+
+div.navflipin .col4 li {
+	width: 150px;
+	float: left !important;
+	border-left: 1px solid #c545fb;
+}
+
+div.navflipin .col4 li a {
+	text-align: center;
+}
+
+/* Form */
+div.navflipin ul li ul.form {
+	width: 234px;
+}
+div.navflipin ul li ul form {
+	padding: 10px;
+}
+
+div.navflipin form input {
+	width: 200px;
+	padding: 7px;
+	margin-bottom: 10px;
+	font-size: 13px;
+	background: #c545fb;
+	border: 0;
+	color: #fff;
+}
+
+div.navflipin form button {
+	padding: 7px 10px;
+	border: 0;
+	background: #c545fb;	
+	color: #fff;
+	font-size: 13px;
+	float: right;
+}

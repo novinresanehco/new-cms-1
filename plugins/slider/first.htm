@@ -1,0 +1,759 @@
+<style>
+    .menutype
+    {
+        float: right;
+        margin-left: 10px;
+    }
+    .menulabel
+    {
+        float: right;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 2px;
+    }
+    .box {
+        background: none repeat scroll 0 0 #FAFAFA;
+        border: 1px solid #E5E5E5;
+        margin-bottom: 10px;
+    }
+
+    .box h2 {
+        border-bottom: 1px solid #EEEEEE;
+        color: #902452;
+        font: bold 12px Tahoma,sans-serif;
+        margin: 0;
+        padding: 10px;
+    }
+    section {
+        padding: 10px;
+    }
+
+    form p label {
+        color: #555555;
+        cursor: pointer;
+        display: block;
+        font: bold 11px Tahoma,sans-serif;
+        margin-left: 10px;
+        padding: 4px 2px;
+        vertical-align: middle;
+    }
+    #slider-title,#slider-link,#editlink,#edittitle, #editdescription, #slider-url, #slider-description, #slider-thumbnail, #editthumbnail, #editsliderurl {
+        width: 90%;
+    }
+
+    form p {
+        clear: right;
+        margin-bottom: 0;
+        padding: 3px 0;
+        width: 100%;
+    }
+    form input[type="text"], form input[type="email"], form input[type="password"], form select, form textarea {
+        border: 1px solid #DDDDDD;
+        padding: 5px 4px;
+    }
+    input, button, select, textarea {
+        font: 11px/15px Tahoma,sans-serif;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+    form p {
+        clear: right;
+        margin-bottom: 0;
+        padding: 3px 0;
+        width: 100%;
+    }
+    .button.green {
+        background: linear-gradient(#75AE5C, #649552) repeat scroll 0 0 transparent;
+        border: 1px solid #3B6E22;
+    }
+    .button.small {
+        font-weight: normal;
+        padding: 4px 5px;
+        text-shadow: none;
+    }
+    .button {
+        box-shadow: 0 1px 1px rgba(255, 255, 255, 0.4) inset, 1px 1px 1px #EEEEEE;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font: bold 11px Tahoma,sans-serif;
+        margin: 0 3px 0 1px;
+        outline: medium none;
+        overflow: visible;
+        padding: 5px 6px;
+        text-align: center;
+        vertical-align: baseline;
+        width: auto;
+    }
+    .sliderscreenshot {
+        float: right;
+        margin: 8px;
+    }
+    .sliderscreenshot img {
+        border: 2px solid white;
+        border-radius: 5px 5px 5px 5px;
+        cursor: pointer;
+    }
+    .sliderscreenshot img:hover {
+        border: 2px solid red;
+    }
+    .activescreenshot {
+        border: 2px solid red;
+    }
+    /* modal box
+    ------------------------------------------------------------------------- */
+    #gbox {
+        position: absolute;
+        position: fixed;
+        display: none;
+        z-index: 10002;
+        width: 370px;
+        border: 1px solid #acacac;
+        color: #222;
+        background: #fff;
+        -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    #gbox_header {
+        padding: 5px 10px;
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+        text-shadow: 1px 1px 0 #fff;
+    }
+    #gbox h2 {
+        font: 15px Arial, sans-serif;
+        font-weight: bold;
+        color: #333;
+        border-bottom: 1px dashed #eaeaea;
+        margin: 0 0 10px;
+        padding: 0 0 8px;
+    }
+    #gbox_content {
+        padding: 15px 12px;
+        overflow: auto;
+        max-height: 400px;
+    }
+    #gbox_footer {
+        padding: 10px 15px;
+        border-top: 1px solid #eee;
+        background: #f9f9f9;
+        text-align: left;
+    }
+    #gbox_footer button {
+        border: 1px solid #aaa;
+        background: #eee;
+        background: -webkit-gradient(linear, 0 0, 0 bottom, from(#eee), to(#ddd));
+        background: -moz-linear-gradient(#eee, #ddd);
+        background: linear-gradient(#eee, #ddd);
+        font: 11px Tahoma, sans-serif;
+        margin-right: 7px;
+        padding: 6px 9px;
+        outline: none;
+        cursor: pointer;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(255, 255, 255, .4), 1px 1px 1px #eee;
+        -moz-box-shadow: inset 0 1px 1px rgba(255, 255, 255, .4), 1px 1px 1px #eee;
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, .4), 1px 1px 1px #eee;
+    }
+    #gbox_footer button:hover {
+        opacity: 0.9;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+        filter: alpha(opacity=90);
+    }
+    button#gbox_ok {
+        color: #fff;
+        font-weight: bold;
+        border: 1px solid #3b6e22;
+        background: #75ae5c;
+        background: -webkit-gradient(linear, 0 0, 0 bottom, from(#75ae5c), to(#649552));
+        background: -moz-linear-gradient(#75ae5c, #649552);
+        background: linear-gradient(#75ae5c, #649552);
+    }
+    #gbox_form input[type="text"] {
+        width: 95%;
+    }
+    #gbox_bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        background: #ddd;
+        opacity: 0.6;
+        z-index: 10001;
+        cursor: pointer;
+    }
+    #gbox_loading {
+        font-size: 18px;
+    }
+    #gbox input[type="text"] {
+        width: 95%;
+    }
+    .ns-row {
+        background: linear-gradient(#F9F9F9, #F5F5F5) repeat scroll 0 0 transparent;
+        border: 1px solid #D5D5D5;
+        border-radius: 3px 3px 3px 3px;
+        box-shadow: 0 1px 0 #FFFFFF inset;
+        font: 11px/18px Tahoma,sans-serif;
+        padding: 7px 10px;
+        position: relative;
+    }
+    #ns-header {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: medium none;
+        color: #555555;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 8px 10px;
+    }
+    .ns-class {
+        left: 60px;
+        width: 100px;
+    }
+    ul#sortable
+    {
+        list-style-type:none;
+        margin: 0;
+        padding: 0;
+    }
+    ul#sortable li
+    {
+        margin-top: 2px;
+    }
+    .mp-thumb
+    {
+        border: 1px solid #D5D5D5;
+        border-radius:5px;
+        width:50px;
+        float:right;
+        display:block;
+    }
+    .mp-url
+    {
+        float:right;
+        padding-right:20px;
+        text-align:right;
+        width:300px;
+    }
+    .mp-actions
+    {
+        float:left;
+    }
+    .mp-thumb img
+    {
+        width:50px;
+        height:50px;
+        border-radius:5px;
+    }
+    .h100
+    {
+        height:50px;
+    }
+    .hiddenbox
+    {
+        display: none;
+    }
+    .ui-sortable-placeholder { 
+        background: #0000C0 !important; 
+        display: block !important;
+        visibility: visible !important;
+        background: #F6FCB2 !important;
+        width: auto !important;
+        opacity: 0.8;
+    }
+
+</style>
+<script>
+    var _BASE_URL = '[moduleurl]';
+    jQuery( document.body ).on( 'change', '#thumbnailckbx', function( event ) {
+        if ( $( this ).is( ":checked" ) )
+        {
+            $( "#slider-thumbnail" ).attr( "disabled", true );
+        }
+        else
+        {
+            $( "#slider-thumbnail" ).attr( "disabled", false );
+        }
+    } );
+    jQuery( document.body ).on( 'change', '#editthumbnailckbx', function( event ) {
+        if ( $( this ).is( ":checked" ) )
+        {
+            $( "#editthumbnail" ).attr( "disabled", true );
+        }
+        else
+        {
+            $( "#editthumbnail" ).attr( "disabled", false );
+        }
+    } );
+    $( document ).ready( function() {
+        $( ".slidertype" ).change( function() {
+            var type = $( this ).attr( "rel" );
+
+            $( ".sliderscreenshot" ).hide();
+            $( "[rel*=screenshot_" + type + "]" ).fadeIn();
+        } );
+        $( ".shotimg" ).click( function() {
+            $( ".shotimg" ).css( "border", "" );
+            $( this ).css( "border", "2px red solid" );
+            var sliderclass = $( this ).attr( "rel" );
+            $( "#slider-group-style" ).val( sliderclass );
+        } );
+        /* Save slider group options
+         ------------------------------------------------------------------------- */
+        $( '#save-slider-option' ).click( function() {
+            var slider_width = $( '#slider-thn-width' ).val();
+            var slider_height = $( '#slider-thn-height' ).val();
+            var slider_style = $( "#slider-group-style" ).val();
+            if ( slider_width && slider_height )
+            {
+                $.ajax( {
+                    type : 'POST',
+                    url : site_url( '&do=update' ),
+                    data : 'width=' + slider_width + '&height=' + slider_height + '&style=' + slider_style,
+                    success : function( data ) {
+                        if ( data.success ) {
+                            gbox.show( {
+                                content : '<h2>تبريك</h2>تنظيمات گالری بدرستي بروزرساني گرديد ',
+                                autohide : 3000
+                            } );
+                            $( '#group-' + current_group_id + ' a' ).text( title );
+                        } else {
+                            gbox.show( {
+                                content : '<h2>بروز خطا</h2> خطا در بروزرساني تنظيمات گالری . '
+                            } );
+                        }
+                    }
+                } );
+
+            } else {
+                gbox.show( {
+                    content : '<h2>بروز خطا</h2> خطا در بروزرساني تنظيمات گالری . ',
+                    autohide : 3000
+                } );
+            }
+            $( '#loading' ).hide();
+            return false;
+        } );
+    } );
+
+    /* same as site_url() in php
+     ------------------------------------------------------------------------- */
+    function site_url( url ) {
+        return _BASE_URL + url;
+    }
+    jQuery( function( $ ) {
+        $( "#sortable" ).sortable();
+        /* global ajax setup
+         ------------------------------------------------------------------------- */
+        $.ajaxSetup( {
+            type : 'GET',
+            datatype : 'json',
+            timeout : 20000
+        } );
+        $( '#loading' ).ajaxStart( function() {
+            $( this ).show();
+        } );
+        $( '#loading' ).ajaxStop( function() {
+            $( this ).hide();
+        } );
+        /* modal box 
+         ------------------------------------------------------------------------- */
+        gbox = {
+            defaults : {
+                autohide : false,
+                buttons : {
+                    'بستن' : function() {
+                        gbox.hide();
+                    }
+                }
+            },
+            init : function() {
+                var winHeight = $( window ).height();
+                var winWidth = $( window ).width();
+                var box =
+                        '<div id="gbox">' +
+                        '<div id="gbox_content"></div>' +
+                        '</div>' +
+                        '<div id="gbox_bg"></div>';
+
+                $( 'body' ).append( box );
+
+                $( '#gbox' ).css( {
+                    top : '15%',
+                    left : winWidth / 2 - $( '#gbox' ).width() / 2
+                } );
+
+                $( '#gbox_close, #gbox_bg' ).click( gbox.hide );
+            },
+            show : function( options ) {
+                var options = $.extend( { }, this.defaults, options );
+                switch ( options.type ) {
+                    case 'ajax':
+                        $.ajax( {
+                            type : 'GET',
+                            datatype : 'html',
+                            url : options.url,
+                            success : function( data ) {
+                                options.content = data;
+                                gbox._show( options );
+                            }
+                        } );
+                        break;
+                    default:
+                        this._show( options );
+                        break;
+                }
+            },
+            _show : function( options ) {
+                $( '#gbox_footer' ).remove();
+                if ( options.buttons ) {
+                    $( '#gbox' ).append( '<div id="gbox_footer"></div>' );
+                    $.each( options.buttons, function( k, v ) {
+                        $( '<button></button>' ).text( k ).click( v ).appendTo( '#gbox_footer' );
+                    } );
+                }
+
+                $( '#gbox, #gbox_bg' ).fadeIn();
+                $( '#gbox_content' ).html( options.content );
+                $( '#gbox_content input:first' ).focus();
+                if ( options.autohide ) {
+                    setTimeout( function() {
+                        gbox.hide();
+                    }, options.autohide );
+                }
+            },
+            hide : function() {
+                $( '#gbox' ).fadeOut( function() {
+                    $( '#gbox_content' ).html( '' );
+                    $( '#gbox_footer' ).remove();
+                } );
+                $( '#gbox_bg' ).fadeOut();
+            }
+        };
+        gbox.init();
+        $( "#editimage" ).submit( function()
+        {
+            $.ajax( {
+                type : 'POST',
+                url : site_url( '&do=edit' ),
+                data : $( this ).serialize(),
+                success : function( data )
+                {
+                    if ( data.success )
+                    {
+                        gbox.show( {
+                            content : '<h2>تبريك</h2>تصویر با موفقیت ویرایش شد. ',
+                            autohide : 3000
+                        } );
+                        $( "#url_" + data.id ).html( data.url );
+                        $( "#picture_" + data.id ).attr( 'href', data.url );
+                        $( "#picture_" + data.id ).attr( 'data-link', data.link );
+                        $( "#picture_" + data.id ).attr( 'title', data.title );
+                        $( "#picture_" + data.id ).attr( 'rel', data.description );
+                        $( "#thumbnail_" + data.id ).attr( 'rel', data.thumbnail );
+                    }
+                    else
+                    {
+                        gbox.show( {
+                            content : '<h2>بروز خطا</h2> ' + data.error
+                        } );
+                    }
+                },
+                error : function()
+                {
+                    gbox.show( {
+                        content : '<h2>بروز خطا</h2> خطا در ارتباط با سرور '
+                    } );
+                }
+            } );
+            return false;
+        } );
+        $( "#addtoslider" ).submit( function() {
+            $.ajax( {
+                type : 'POST',
+                url : site_url( '&do=insert' ),
+                data : $( this ).serialize(),
+                success : function( data )
+                {
+                    if ( data.success )
+                    {
+                        gbox.show( {
+                            content : '<h2>تبريك</h2>تصویر با موفقیت درج شد. ',
+                            autohide : 3000
+                        } );
+                        $( "ul#sortable" ).prepend( '<li class="sortable" id="image_' + data.id + '"><div class="ns-row h100"><div class="mp-thumb"><a class="picture_' + data.id + '" title="' + data.title + '" target="_blank" href="' + data.url + '" rel="' + data.description + '"><img id="thumbnail_' + data.id + '" src="' + data.thumbnail + '" /></a></div><div id="url_' + data.id + '" class="mp-url">' + data.url + '</div><div class="mp-actions"><a class="edit-image" href="#"><img alt="ویرایش" rel="' + data.id + '" class="editimage" src="[pluginurl]images/edit.png"></a><a class="delete-image" href="#"><img alt="حذف" rel="' + data.id + '" class="delimage" src="[pluginurl]images/cross.png"></a></div></div></li>' );
+                        setDelHandeler();
+                    }
+                    else
+                    {
+                        gbox.show( {
+                            content : '<h2>بروز خطا</h2> ' + data.error
+                        } );
+                    }
+                },
+                error : function()
+                {
+                    gbox.show( {
+                        content : '<h2>بروز خطا</h2> خطا در ارتباط با سرور '
+                    } );
+                }
+            } );
+            return false;
+        } );
+        function setDelHandeler()
+        {
+            $( ".editimage" ).click( function()
+            {
+                var id = $( this ).attr( 'rel' );
+                $( "#editid" ).val( id );
+                $( "#edittitle" ).val( $( '#picture_' + id ).attr( 'title' ) );
+                $( "#editlink" ).val( $( '#picture_' + id ).attr( 'data-link' ) );
+                $( "#editdescription" ).val( $( '#picture_' + id ).attr( 'rel' ) );
+                $( "#editsliderurl" ).val( $( '#picture_' + id ).attr( 'href' ) );
+                $( "#editthumbnail" ).val( $( '#thumbnail_' + id ).attr( 'src' ) );
+                $( "#editbox" ).slideDown();
+                $( 'html, body' ).animate( {
+                    scrollTop : $( "#editbox" ).offset().top - 50
+                }, 500 );
+
+                return false;
+            } );
+            $( ".delimage" ).click( function() {
+                var id = $( this ).attr( 'rel' );
+                bootbox.confirm( 'آیا از حذف تصویر اطمینان دارید ؟', function( result )
+                {
+                    if ( result )
+                    {
+                        $.ajax( {
+                            type : 'POST',
+                            url : site_url( '&do=delete' ),
+                            data : 'id=' + id,
+                            success : function( data )
+                            {
+                                if ( data.success )
+                                {
+                                    gbox.show( {
+                                        content : '<h2>تبريك</h2>تصویر با موفقیت حذف شد. ',
+                                        autohide : 3000
+                                    } );
+                                    $( "#image_" + id ).remove();
+                                }
+                                else
+                                {
+                                    gbox.show( {
+                                        content : '<h2>بروز خطا</h2> ' + data.error
+                                    } );
+                                }
+                            },
+                            error : function()
+                            {
+                                gbox.show( {
+                                    content : '<h2>بروز خطا</h2> خطا در ارتباط با سرور '
+                                } );
+                            }
+                        } );
+                    }
+                } );
+                return false;
+
+            } );
+        }
+        setDelHandeler();
+        $( "#submit-sort" ).click( function() {
+            var senddata = 'id=mp';
+            $( '#sortable' ).find( "li" ).each( function() {
+                senddata += "&posdata[]=" + $( this ).attr( "id" ).split( "_" )[1];
+            } );
+            $.ajax( {
+                type : 'POST',
+                url : site_url( '&do=sort' ),
+                data : senddata,
+                success : function( data )
+                {
+                    if ( data.success )
+                    {
+                        gbox.show( {
+                            content : '<h2>تبريك</h2>تغییرا ذخیره شد. ',
+                            autohide : 3000
+                        } );
+                    }
+                    else
+                    {
+                        gbox.show( {
+                            content : '<h2>بروز خطا</h2> ' + data.error
+                        } );
+                    }
+                },
+                error : function()
+                {
+                    gbox.show( {
+                        content : '<h2>بروز خطا</h2> خطا در ارتباط با سرور '
+                    } );
+                }
+            } );
+            return false;
+        } );
+    } );
+</script>
+<div class="box">
+    <h2>تصاویر اسلایدر</h2>
+    <section>
+        <ul id="sortable">
+            <tag:images>
+                <li class="sortable" id="image_[id]">
+                    <div class="ns-row h100">
+                        <div class="mp-thumb">
+                            <a data-link="[link]" id="picture_[id]" target="_blank" href="[url]" title="[title]" rel="[description]"><img id="thumbnail_[id]" src="[thumbnail]" /></a>
+                        </div>
+                        <div class="mp-url" id="url_[id]">[title]</div><br> <div class="mp-url" id="url_[id]">[description]</div>
+                        <div class="mp-actions">
+                            <a class="edit-image" href="#">
+                                <img alt="ویرایش" rel='[id]' class='editimage' src="[pluginurl]images/edit.png">
+                            </a>
+                            <a class="delete-image" href="#">
+                                <img alt="حذف" rel='[id]' class='delimage' src="[pluginurl]images/cross.png">
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </tag:images>
+        </ul>
+        <p class="buttons">
+            <button style="margin-top: 10px" id="submit-sort" class="button green small" type="submit">ثبت تغییرات</button>
+        </p>
+    </section>
+</div>
+<div id="editbox" class="box hiddenbox">
+    <h2>ویرایش تصویر</h2>
+    <section>
+        <form id="editimage" action="" method="post">
+            <p>
+                <label for="edittitle">عنوان تصویر</label>
+                <input type="text" name="edittitle" id="edittitle">
+                <input id="editid" type="hidden" name="editid">
+            </p>
+            <p>
+                <label for="editlink">لینک تصویر</label>
+                <input type="text" name="editlink" id="editlink">
+            </p>
+            <p>
+                <label for="editdescription">توضیح تصویر</label>
+                <input type="text" name="editdescription" id="editdescription">
+            </p>
+            <p>
+                <label for="slider-url">آدرس تصویر</label>
+				
+				
+				<div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=editsliderurl" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="editurl" id="editsliderurl" size="59">
+					</div>
+            </p>
+            <p>
+                <label for="slider-thumbnail">آدرس thumbnail</label>
+				
+				
+				
+				<div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=editthumbnail" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="editthumbnail" id="editthumbnail" size="59">
+					</div>
+            </p>
+            <label><input type="checkbox" value="on" name="editthumbnailckbx" id="editthumbnailckbx"> <span>ایجاد خودکار thumbnail</span></label>
+            <p class="buttons">
+                <button id="add-slider" class="button green small" type="submit">ویرایش تصویر</button>
+            </p>
+        </form>
+    </section>
+</div>
+<div class="box">
+    <h2>افزودن تصویر</h2>
+    <section>
+        <form id="addtoslider" action="" method="post">
+            <p>
+                <label for="slider-title">عنوان تصویر</label>
+                <input id="slider-title" type="text" name="title">
+            </p>
+            <p>
+                <label for="slider-link">لینک تصویر</label>
+                <input id="slider-link" type="text" name="link">
+            </p>
+            <p>
+                <label for="slider-description">توضیح تصویر</label>
+                <input id="slider-description" type="text" name="description">
+            </p>
+            <p>
+                <label for="slider-url">آدرس تصویر</label>
+				
+				<div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=slider-url" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="url" id="slider-url" size="59">
+					</div>
+            </p>
+            <p>
+                <label for="slider-thumbnail">آدرس thumbnail</label>
+				
+				
+				
+				<div class="autocomplete-append">
+			    		<ul class="search-options">
+			    			<li><a data-original-title="Settings" href="mfm.php?mode=standalone&amp;field=slider-thumbnail" title="" class="settings-option tip browsefile"></a></li>
+			    		</ul>
+						 <input class="input-xlarge ltr" type="text" name="thumbnail" id="slider-thumbnail" size="59">
+					</div>
+					
+					
+            </p>
+            <label><input type="checkbox" value="on" name="thumbnailckbx" id="thumbnailckbx"> <span>ایجاد خودکار thumbnail</span></label>
+            <p class="buttons">
+                <button id="add-slider" class="button green small" type="submit">ثبت تصویر</button>
+            </p>
+        </form>
+    </section>
+</div>
+<div class="box">
+    <h2>تنظیمات اسلایدر</h2>
+    <section>
+        <form id="form-add-slider" action="" method="post">
+            <p>
+                <label for="slider-thn-width">عرض تصاویر thumbnail</label>
+                <input id="slider-thn-width" type="text" name="thnwidth" value="[thnwidth]">
+            </p>
+            <p>
+                <label for="slider-htn-height">ارتفاع تصاویر thumbnail</label>
+                <input id="slider-thn-height" type="text" name="thnheight" value="[thnheight]">
+            </p><br>
+            <div>قالب اسلایدر: 
+                <div style="direction:ltr;text-align:right">
+                    <tag:themetypes>
+
+                        <label for="themetype_[value]" class="menulabel">[title]<input [checked] style="opacity: 0;" name="themetype[]" id="themetype_[value]" class="styled slidertype menutype" rel="[value]" type="radio"></label>
+                    </tag:themetypes>
+                </div>
+                <br /><br />
+                <tag:sliderscreenshots>
+                    <div class="sliderscreenshot" style="display:[display]" rel="screenshot_[type]">
+                        <img src="[image]" class="shotimg" style="[border]" width="100px" height="100px" rel="[style]" />
+                    </div>
+                </tag:sliderscreenshots>
+            </div>
+            <input type="hidden" value="[slider_group_style]" id="slider-group-style" />
+            <p class="buttons">
+                <button id="save-slider-option" class="button green small" type="button">ثبت تنظیمات</button>
+            </p>
+        </form>
+    </section>
+</div>

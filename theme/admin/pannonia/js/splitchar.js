@@ -1,0 +1,1 @@
+$(document).ready(function(){var e=$("#slice"),t=$("#slice span"),n=t.text();e.empty().append("<span>"+n+"</span>","<span>"+n+"</span>","<span>"+n+"</span>","<span>"+n+"</span>","<span>"+n+"</span>")})

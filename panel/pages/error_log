@@ -1,0 +1,365 @@
+[17-Feb-2015 13:32:26 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[17-Feb-2015 13:32:26 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[17-Feb-2015 13:32:32 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[17-Feb-2015 13:32:32 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[24-Feb-2015 20:13:02 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[24-Feb-2015 20:13:02 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[24-Feb-2015 20:13:02 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[24-Feb-2015 20:50:32 asia/Tehran] PHP Notice:  Array to string conversion in /home/w1wwfamilweb/public_html/core/theme.php on line 258
+[24-Feb-2015 21:00:25 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[24-Feb-2015 21:00:25 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[24-Feb-2015 21:09:39 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[24-Feb-2015 21:09:39 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[25-Feb-2015 09:23:19 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[25-Feb-2015 09:23:19 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[25-Feb-2015 09:23:19 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[25-Feb-2015 09:23:32 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[25-Feb-2015 09:23:32 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[25-Feb-2015 09:23:32 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 11:46:11 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 11:46:11 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 11:46:11 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 11:46:14 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 11:46:14 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 11:46:14 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 11:46:17 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 11:46:17 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 11:46:17 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 11:46:20 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 11:46:20 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 11:46:20 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 12:23:34 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 12:23:34 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 12:23:35 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 12:38:04 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 12:38:04 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 12:38:04 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 13:08:27 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 13:08:27 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 13:08:28 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 13:30:57 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 13:30:57 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 13:30:59 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 13:30:59 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 13:47:44 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 13:47:44 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 13:47:44 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 13:49:16 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 13:49:16 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 13:49:16 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 13:50:04 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 13:50:04 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 13:50:04 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 15:05:21 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[26-Feb-2015 15:05:21 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[26-Feb-2015 15:05:21 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[26-Feb-2015 15:19:17 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 15:19:17 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 15:27:08 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 15:27:08 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 15:29:39 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 15:29:39 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 15:29:45 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 15:29:45 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 15:29:48 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[26-Feb-2015 15:29:48 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 01:41:47 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[28-Feb-2015 01:41:47 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[28-Feb-2015 01:41:47 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[28-Feb-2015 01:43:42 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[28-Feb-2015 01:43:42 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[28-Feb-2015 01:43:42 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[28-Feb-2015 10:06:39 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 10:06:39 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 10:06:41 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 10:06:41 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 10:06:43 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 10:06:43 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 10:06:45 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 10:06:45 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 10:52:37 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[28-Feb-2015 10:52:37 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 08:39:23 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[01-Mar-2015 08:39:23 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[01-Mar-2015 08:39:23 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[01-Mar-2015 08:44:17 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[01-Mar-2015 08:44:17 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[01-Mar-2015 08:44:19 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[01-Mar-2015 09:04:39 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[01-Mar-2015 09:04:39 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[01-Mar-2015 09:04:39 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[01-Mar-2015 09:11:58 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[01-Mar-2015 09:11:58 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[01-Mar-2015 09:11:59 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[01-Mar-2015 09:20:26 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[01-Mar-2015 09:20:26 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[01-Mar-2015 09:20:26 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[01-Mar-2015 10:16:22 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 10:16:22 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 10:16:30 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 10:16:30 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 10:16:48 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 10:16:48 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 11:17:12 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 11:17:12 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 11:19:08 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 11:19:08 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 14:35:22 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 14:35:22 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 14:40:35 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 14:40:35 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 14:40:47 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[01-Mar-2015 14:40:47 asia/Tehran] PHP Warning:  Invalid argument supplied for foreach() in /home/w1wwfamilweb/public_html/panel/pages/icons.php on line 23
+[05-Mar-2015 14:37:07 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[05-Mar-2015 14:37:07 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[05-Mar-2015 14:37:07 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[05-Mar-2015 19:08:33 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[05-Mar-2015 19:08:33 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[05-Mar-2015 19:08:33 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 17:17:11 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 17:17:11 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 17:17:11 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 17:26:31 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 17:26:31 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 17:26:31 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 17:30:28 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 17:30:28 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 17:30:28 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 17:41:09 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 17:41:09 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 17:41:09 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 17:41:49 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 17:41:49 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 17:41:49 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 17:49:56 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 17:49:56 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 17:49:56 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 17:57:05 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 17:57:05 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 17:57:05 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:02:41 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:02:41 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:02:41 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:09:48 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:09:48 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:09:48 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:17:23 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:17:23 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:17:23 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:23:31 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:23:31 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:23:31 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:27:20 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:27:20 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:27:20 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:37:20 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:37:20 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:37:20 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:39:37 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:39:37 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:39:37 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:45:20 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:45:20 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:45:20 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:51:55 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:51:55 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:51:55 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 18:56:15 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 18:56:15 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 18:56:15 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:02:47 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:02:47 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:02:47 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:03:18 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:03:18 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:03:18 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:07:45 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:07:45 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:07:45 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:12:55 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:12:55 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:12:55 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:19:02 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:19:02 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:19:02 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:28:38 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:28:38 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:28:38 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:37:03 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:37:03 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:37:03 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:46:23 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:46:23 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:46:23 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:51:53 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:51:53 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:51:53 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 19:56:26 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 19:56:26 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 19:56:26 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 23:16:33 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 23:16:33 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 23:16:33 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 23:22:54 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 23:22:54 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 23:22:54 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 23:26:56 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 23:26:56 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 23:26:56 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 23:32:48 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 23:32:48 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 23:32:48 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 23:38:42 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 23:38:42 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 23:38:42 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 23:38:45 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 23:38:45 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 23:38:45 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 23:51:56 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 23:51:56 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 23:51:56 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[07-Mar-2015 23:59:44 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[07-Mar-2015 23:59:44 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[07-Mar-2015 23:59:44 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 00:04:22 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 00:04:22 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 00:04:22 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 00:08:53 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 00:08:53 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 00:08:53 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 00:09:01 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 00:09:01 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 00:09:01 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 00:14:27 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 00:14:27 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 00:14:27 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 00:19:56 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 00:19:56 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 00:19:56 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 00:28:45 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 00:28:45 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 00:28:45 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 08:26:21 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 08:26:21 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 08:26:21 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 08:32:11 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 08:32:11 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 08:32:11 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 08:38:35 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 08:38:35 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 08:38:35 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 08:42:46 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 08:42:46 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 08:42:46 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 08:50:21 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 08:50:21 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 08:50:21 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 08:57:03 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 08:57:03 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 08:57:03 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 09:07:20 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 09:07:20 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 09:07:20 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 09:12:02 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 09:12:02 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 09:12:02 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 09:20:36 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 09:20:36 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 09:20:36 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 09:31:30 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 09:31:30 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 09:31:30 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 09:37:06 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 09:37:06 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 09:37:06 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 09:42:26 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 09:42:26 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 09:42:26 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 09:45:56 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 09:45:56 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 09:45:56 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 09:46:49 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 09:46:49 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 09:46:49 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 09:55:46 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 09:55:46 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 09:55:46 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 10:15:57 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 10:15:57 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 10:15:57 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 10:23:19 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 10:23:19 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 10:23:19 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 10:30:33 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 10:30:33 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 10:30:33 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 10:40:48 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 10:40:48 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 10:40:48 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 10:41:38 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 10:41:38 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 10:41:38 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 10:45:10 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 10:45:10 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 10:45:10 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 10:51:31 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 10:51:31 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 10:51:31 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[08-Mar-2015 11:02:14 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[08-Mar-2015 11:02:14 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[08-Mar-2015 11:02:14 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 10:58:47 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 10:58:47 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 10:58:47 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:09:30 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:09:30 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:09:30 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:15:44 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:15:44 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:15:44 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:18:44 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:18:44 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:18:44 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:23:08 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:23:08 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:23:08 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:26:29 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:26:29 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:26:29 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:28:44 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:28:44 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:28:44 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:32:04 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:32:04 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:32:04 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:36:32 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:36:32 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:36:32 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:39:24 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:39:24 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:39:24 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:41:31 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:41:31 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:41:31 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:43:42 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:43:42 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:43:42 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:53:25 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:53:25 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:53:25 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:57:01 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:57:01 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:57:01 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[09-Mar-2015 11:59:30 asia/Tehran] PHP Notice:  Undefined index: context in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 52
+[09-Mar-2015 11:59:30 asia/Tehran] PHP Notice:  Undefined index: hits in /home/w1wwfamilweb/public_html/panel/pages/postnew.php on line 53
+[09-Mar-2015 11:59:30 asia/Tehran] PHP Warning:  curl_setopt() [<a href='function.curl-setopt'>function.curl-setopt</a>]: CURLOPT_FOLLOWLOCATION cannot be activated when safe_mode is enabled or an open_basedir is set in /home/w1wwfamilweb/public_html/core/function.php on line 715
+[24-Jun-2015 12:49:51 UTC] PHP Warning:  POST Content-Length of 70686491 bytes exceeds the limit of 16777216 bytes in Unknown on line 0
+[24-Jun-2015 13:04:07 UTC] PHP Warning:  POST Content-Length of 40855231 bytes exceeds the limit of 16777216 bytes in Unknown on line 0
+[24-Jun-2015 13:16:54 UTC] PHP Warning:  POST Content-Length of 40855231 bytes exceeds the limit of 16777216 bytes in Unknown on line 0
+[24-Jun-2015 16:16:23 UTC] PHP Warning:  POST Content-Length of 21173828 bytes exceeds the limit of 16777216 bytes in Unknown on line 0
+[25-Jun-2015 07:00:17 UTC] PHP Warning:  POS[26-Jun-2015 07:18:35 UTC] PHP Warning:  POST Content-Length of 20855761 bytes exceeds the limit of 16777216 bytes in Unknown on line 0
+[26-Jun-2015 07:35:34 UTC] PHP Warning:  POST Content-Length of 18360486 bytes exceeds the limit of 16777216 bytes in Unknown on line 0
+[30-Jun-2015 14:11:18 UTC] PHP Warning:  POST Content-Length of 67356718 bytes exceeds the limit of 16777216 bytes in Unknown on line 0
+[02-Jul-2015 14:34:04 UTC] PHP Warning:  POST Content-Length of 29759623 bytes exceeds the limit of 16777216 bytes in Unknown on line 0
+[02-Jul-2015 14:45:59 UTC] PHP Warning:  POST Content-Length of 29759623 bytes exceeds the limit of 16777216 bytes in Unknown on line 0
+[07-Jul-2015 20:15:08 UTC] PHP Warning:  POST Content-Length of 19150983 bytes exceeds the limit of 16777216 bytes in Unknown on line 0

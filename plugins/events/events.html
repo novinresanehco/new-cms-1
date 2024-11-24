@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="../theme/admin/pannonia/css/bootstrap.css" rel="stylesheet" type="text/css"
+              />
+        <style>
+            body,td
+            {
+                direction:rtl;
+                font-family: tahoma;
+                font-size:12px;
+            }
+            .right
+            {
+                float:right;
+                width:150px;
+            }
+            .left
+            {
+                float:right;
+            }
+            textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input
+            {
+                background-color: #ffffff;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                border: 1px solid #dadada;
+                box-shadow: 0 0 0 2px #f8f8f8;
+                -webkit-box-shadow: 0 0 0 2px #f8f8f8;
+                -moz-box-shadow: 0 0 0 2px #f8f8f8;
+                -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+                -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+                -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+                transition: border linear 0.2s, box-shadow linear 0.2s;
+            }
+            select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input
+            {
+                font-family: Tahoma;
+                display: inline-block;
+                padding: 8px 7px 8px 7px;
+                font-size: 11px;
+                color: #555555;
+                vertical-align: middle;
+                height: 30px;
+            }
+            input {
+                width: 570px;
+                margin-right: 20px;
+                float: right;
+            }
+            select{
+                width:100px;
+                height:34px;
+            }
+            input, textarea, .uneditable-input {
+                margin-left: 0;
+                text-align: right;
+            }
+            label{
+                margin-top:10px;
+            }
+            .clear
+            {
+                clear:both;
+                padding-top:5px;
+            }
+            .control
+            {
+                margin-right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        با استفاده از این بخش می توانید آخرین آمار وب سایت خود را به صورت روزانه یا هفتگی یا ماهانه در تلفن همراه خود مشاهده کنید.<br />
+        هزینه ارسال هر پیامک فارسی 15 تومان می باشد که از اعتبار سامانه شما کسر خواهد شد.<br />
+        <hr />
+        <form action="" method="post">
+            <div class="right" style="width:20px">
+                <input type="checkbox" value="1" name="events[today]" id="events_today" [events_today] />
+            </div>
+            <div class="left"><label style="margin-top: 0" for="events_today">تعداد بازدید امروز</label></div>
+            <div class="clear"></div>
+            <div class="right" style="width:20px">
+                <input type="checkbox"  [events_all] value="1" name="events[all]" id="events_all" />
+            </div>
+            <div class="left"><label style="margin-top: 0" for="events_all">تعداد بازدید کل</label></div>
+            <div class="clear"></div>
+            <div class="right" style="width:20px">
+                <input type="checkbox" [events_unapprovedComments] value="1" name="events[unapprovedComments]" id="events_unapprovedComments" />
+            </div>
+            <div class="left"><label style="margin-top: 0"  for="events_unapprovedComments">تعداد نظرات تایید نشده</label></div>
+
+
+            <div class="clear"></div>
+            <div class="right"><label>ارسال به صورت</label></div>
+            <div class="left control">
+                <select name="events[date]">
+                    <option value="daily" [date_daily] >روزانه</option>
+                    <option value="weekly" [date_weekly]>هفتگی</option>
+                    <option value="monthly" [date_monthly]>ماهانه</option>
+                </select>
+            </div>
+            <div class="clear"></div>
+            <div class="right"><label>شماره تلفن های همراه</label></div>
+            <div class="left control">
+                <textarea style="width:300px;height:100px;direction: ltr;text-align: left" name="events[numbers]">[numberslist]</textarea>
+                <br />
+                هر شماره موبایل در یک خط
+            </div>
+            <div class="clear"></div>
+            <button type="submit" style="float:right" class="btn btn-success"><b class="icon-plus"></b> ذخیره تنظیمات</button>
+        </form>
+    </body>
+</html>

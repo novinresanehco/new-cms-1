@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'BYekan';
+  src: url("yekan/BYekan.eot");
+  src: url("yekan/BYekan.eot?#iefix") format("embedded-opentype"), url("yekan/BYekan.woff") format("woff"), url("yekan/BYekan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'yekan';
+    src: url('yekan/Yekan.eot');
+    src: url('yekan/Yekan.eot#iefix') format('embedded-opentype'),
+         url('yekan/Yekan.woff') format('woff'),
+         url('yekan/Yekan.ttf') format('truetype'),
+         url('yekan/Yekan.svg#CartoGothicStdBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: normal;
+	src: url('IRANSans/eot/IRANSansWeb.eot');
+	src: url('IRANSans/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('IRANSans/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('IRANSans/ttf/IRANSansWeb.ttf') format('truetype');
+}
+@font-face {
+	font-family: bIRANSans;
+	font-style: normal;
+	font-weight: bold;
+	src: url('IRANSans/eot/IRANSansWeb_Bold.eot');
+	src: url('IRANSans/eot/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('IRANSans/woff/IRANSansWeb_Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('IRANSans/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: IRANSans_Fa;
+	font-style: normal;
+	font-weight: normal;
+	src: url('IRANSans/eot/IRANSansWeb(FaNum).eot');
+	src: url('IRANSans/eot/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('IRANSans/woff/IRANSansWeb(FaNum).woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('IRANSans/ttf/IRANSansWeb(FaNum).ttf') format('truetype');
+}
+@font-face {
+	font-family: bIRANSans_Fa;
+	font-style: normal;
+	font-weight: bold;
+	src: url('bakh/Yekan-Bakh-Bold.eot');
+	src: url('bakh/Yekan-Bakh-Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('bakh/Yekan-Bakh-Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('bakh/Yekan-Bakh-Bold.ttf') format('truetype');
+}
+*{
+	font-family: IRANSans,IRANSans_Fa;
+}

@@ -1,0 +1,138 @@
+<style>
+
+.box {
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #E5E5E5;
+    margin-bottom: 10px;
+}
+
+.box h2 {
+    border-bottom: 1px solid #EEEEEE;
+    color: #902452;
+    font: bold 12px Tahoma,sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+section {
+    padding: 10px;
+}
+
+form p label {
+    color: #555555;
+    cursor: pointer;
+    display: block;
+    font: bold 11px Tahoma,sans-serif;
+    margin-left: 10px;
+    padding: 4px 2px;
+    vertical-align: middle;
+}
+#form-title, #form-url, #form-description, #form-thumbnail {
+    width: 90%;
+}
+
+form p {
+    clear: right;
+    margin-bottom: 0;
+    padding: 3px 0;
+    width: 100%;
+}
+form input[type="text"], form input[type="email"], form input[type="password"], form select, form textarea {
+    border: 1px solid #DDDDDD;
+    padding: 5px 4px;
+}
+form select, form input, form textarea
+{
+	width:90%;
+	background-color:#FFF;
+	color: #555555;
+}
+input, button, select, textarea {
+    font: 11px/15px Tahoma,sans-serif;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+form p {
+    clear: right;
+    margin-bottom: 0;
+    padding: 3px 0;
+    width: 100%;
+}
+.button.green {
+    background: linear-gradient(#75AE5C, #649552) repeat scroll 0 0 transparent;
+    border: 1px solid #3B6E22;
+}
+.button.red {
+    background: linear-gradient(#FC5555, #FF1C1C) repeat scroll 0 0 transparent;
+    border: 1px solid #D30000;
+}
+.button.small {
+    font-weight: normal;
+    padding: 4px 5px;
+    text-shadow: none;
+}
+.button {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.4) inset, 1px 1px 1px #EEEEEE;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font: bold 11px Tahoma,sans-serif;
+    margin: 0 3px 0 1px;
+    outline: medium none;
+    overflow: visible;
+    padding: 5px 6px;
+    text-align: center;
+    vertical-align: baseline;
+    width: auto;
+}
+.formscreenshot {
+    float: right;
+    margin: 8px;
+}
+.formscreenshot img {
+    border: 2px solid white;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.formscreenshot img:hover {
+    border: 2px solid red;
+}
+.activescreenshot {
+    border: 2px solid red;
+}
+
+</style>
+<form id="" action="" method="post">
+<div class="box">
+	<h2>توضیحات</h2>
+	<section>
+		<ul id="sortable" class="ui-sortable">
+		
+		</ul>
+		<p class="buttons">
+			از این بخش برای ایجاد مجموعه آکاردئون جدید استفاده می شود.
+		</p>
+	</section>
+</div>
+<div class="box">
+	<h2>ایجاد آکاردئون جدید</h2>
+	<section>
+                
+		<p>
+			<label for="accardeontitle">عنوان آکاردئون</label>
+			<input type="text" id="accardeontitle" name="accardeontitle" value="آکاردئون">
+		</p>
+		<p>
+			<label for="accardeontitle">قالب آکاردئون </label>
+			<select name="tabtemplate">
+				<tag:accardeonblock>
+				<option [select]>[name]</option>
+				</tag:accardeonblock>
+			</select>
+		</p>
+		<p class="buttons">
+			<button id="submit-setting" class="button green small" type="submit">ایجاد</button>
+		</p>
+	</section>
+</div>
+</form>

@@ -1,0 +1,52 @@
+<div id="div_1"> 
+<center>
+	<table border="0" width="95%" id="duplicate">
+<tr>
+
+<td bgcolor="#d1dde0" height="26">
+<strong>نام ماژول</strong></td>
+<td bgcolor="#d1dde0" height="26">
+<strong>وضعيت</strong></td>
+<td bgcolor="#d1dde0" height="26">
+<strong>عمليات</strong></td>
+<td bgcolor="#d1dde0" height="26">
+<strong>سازنده</strong></td>
+</tr>
+<tag:pluginslist>
+<tr>
+
+<td height="26">
+[name]</td>
+<td>
+[stat]</td>
+<td>
+<!-- IF Install -->
+<a href="plugins.php?plugin=[file]&task=install&return=plugins.php">نصب</a> -
+<!-- ENDIF Install -->
+<!-- IF UInstall -->
+<a href="plugins.php?plugin=[file]&task=uninstall&return=plugins.php">حذف</a> -
+<!-- ENDIF UInstall -->
+<!-- IF Activate -->
+<a href="plugins.php?plugin=[file]&task=activate&return=plugins.php">فعال سازي </a>-
+<!-- ENDIF Activate -->
+<!-- IF InActivate -->
+<a href="plugins.php?plugin=[file]&task=inactivate&return=plugins.php">غير فعال سازي
+<!-- ENDIF InActivate -->
+
+</a>
+
+</td>
+<td>
+<a href="[url]" target="_blank">[provider]
+</a>
+</td>
+</tr>
+</tag:pluginslist>
+</table>
+</center>
+</div>
+<tag:extra_div>
+<div id="div_[id]"  style="display:none" >
+[inside]
+</div>
+</tag:extra_div>

@@ -1,0 +1,403 @@
+
+/* -----------------------------------------
+   Fixed menu navigation
+----------------------------------------- */
+
+.header-navi-inner {
+    width: 980px;
+    margin: 0 auto;
+}
+
+
+.admin-bar .scroll-to-fixed-fixed{
+    padding-top: 32px;
+	}
+#small-logo {
+    display: none;
+}
+#header {margin-top: 1px}
+
+#header .row {
+    padding-bottom: 18px;
+}
+
+.scroll-to-fixed-fixed {
+    top: -120px;
+    margin-top: 0 !important;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    background: #ffffff;
+    background: rgba(255, 255, 255, .95);
+	padding:3px 0 0;
+}
+.droped-navi.active {
+    display: block;
+}
+.droped-navi-inner {
+	max-width:1200px;
+	margin:0 auto;
+}
+
+
+
+#drop-top-menu {
+	float:right;
+}
+.scroll-to-fixed-fixed .row,
+.scroll-to-fixed-fixed a > i,
+.scroll-to-fixed-fixed .desc{
+	display:none !important;
+}
+.scroll-to-fixed-fixed #small-logo {
+    display: block;
+    float: left;
+    padding: 5px 0;
+}
+.scroll-to-fixed-fixed #small-logo img {
+    max-height: 40px;
+}
+.scroll-to-fixed-fixed ul.menu-primary-navigation {
+    float: right;
+    margin-bottom: 0;
+}
+.scroll-to-fixed-fixed ul.menu-primary-navigation > li {
+	float:left;
+	font-size:14px;
+    margin-right: 60px;
+    padding-bottom: 0;
+    padding-top: 5px;
+}
+.scroll-to-fixed-fixed ul.menu-primary-navigation > li:last-child {
+    margin-right: 0;
+}
+.scroll-to-fixed-fixed .menu-primary-navigation > li > a {
+    min-height: 0;
+}
+/*------------------------------------*\
+    TOP MENU
+\*------------------------------------*/
+
+
+/**
+ * ICONS........................................
+ * DROPDOWN CONFIGURATION.......................
+ * DROPDOWNS TO LEFT SIDE.......................
+ * SUBMENU INDICATORS...........................
+ * MEGAMENU.....................................
+ * MEGAMENU LIST................................
+ * MEGAMENU LINKS...............................
+ * MEGAMENU WIDTH...............................
+ * MEGAMENU GRID SYSTEM.........................
+ * RIGHT ALIGNMENT (MENU ITEM)..................
+ * COLLAPSIBLE MENU.............................
+ */
+
+
+.main-nav {
+    padding-top: 10px;
+}
+
+.menu-primary-navigation{
+    padding: 0;
+    margin: 0px -5% 0px 0px;
+    position: relative;
+    float: right;
+    list-style: none;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    #logo img{
+width: 300px;
+position: absolute;
+}
+}
+
+.menu-primary-navigation li{
+display: inline-block;
+float: right;
+text-align: right;
+direction: rtl;
+}
+
+.menu-primary-navigation a{
+    -o-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+    outline: none;
+    z-index: 10;
+    color: inherit;
+
+}
+.menu-primary-navigation > li {padding-bottom: 10px}
+.menu-primary-navigation > li > a{
+    position: relative;
+    padding: 9px 10px 16px 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.menu-primary-navigation > li.has-submenu > a {
+    padding-right: 34px;
+}
+.menu-primary-navigation > li > a > .desc {
+    display: block;
+}
+.menu-primary-navigation > li.has-icon > a > .desc {
+    padding-left: 60px;
+}
+
+/*------------------------------------*\
+    $ICONS
+\*------------------------------------*/
+
+.menu-primary-navigation > li > a{
+    min-height: 60px;
+}
+.menu-primary-navigation > li > a > i{
+    font-size: 34px;
+    margin-right: 10px;
+    line-height: 1.2;
+    display: inline-block;
+    color: #d8d8d8;
+    float: right;
+}
+
+
+.menu-primary-navigation > li > a:hover > i {
+    color: #29beef;
+}
+
+.menu-primary-navigation > li > a > .name {
+   font: 400 20px/24px 'bIRANSans_Fa', sans-serif;
+    color: #565a5f;
+}
+.menu-primary-navigation li .desc {
+    font-weight: normal;
+    font-style: italic;
+    color: #bcc1c7;
+    font-size: 11px;
+    font-family:'bIRANSans_Fa', sans-serif;
+    line-height: 16px;
+    display: block;
+    white-space: nowrap;
+}
+
+
+/*------------------------------------*\
+    $DROPDOWN CONFIGURATION
+\*------------------------------------*/
+
+.menu-primary-navigation ul.dropdown,
+.menu-primary-navigation ul.dropdown li ul.dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background: #fff;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.1);
+    min-width: 220px;
+}
+.menu-primary-navigation ul.dropdown{
+    top: 100%;
+}
+.menu-primary-navigation ul.dropdown li ul.dropdown{
+    left: 100%;
+    top: inherit;
+}
+
+.menu-primary-navigation ul.dropdown li {
+    clear: both;
+    width: 100%;
+    font-size: 14px;
+    border-bottom: 1px solid #f5f5f5;
+    border-left: 1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+}
+.menu-primary-navigation ul.dropdown li:first-child {
+     border-top: 1px solid #f5f5f5;
+     border-left: 1px solid #f5f5f5;
+     border-right: 1px solid #f5f5f5;
+
+ }
+
+.menu-primary-navigation ul.dropdown li:last-child {
+     border-bottom: 1px solid #f5f5f5;
+ }
+
+.menu-primary-navigation ul.dropdown li:hover {
+     background: #fff;
+ }
+
+
+.menu-primary-navigation ul.dropdown li a{
+    width:100%;
+    padding: 10px  15px 10px 34px;
+    display:inline-block;
+    float:left;
+    clear:both;
+    text-decoration: none;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+
+/*------------------------------------*\
+    $DROPDOWNS TO LEFT SIDE
+\*------------------------------------*/
+
+.menu-primary-navigation ul.dropdown li ul.dropdown.left{
+    left: auto;
+    right: 100%;
+}
+
+/*------------------------------------*\
+    $SUBMENU INDICATORS
+\*------------------------------------*/
+
+.menu-primary-navigation .indicator{
+    position: absolute;
+    right: -10px;
+    top: 12px;
+    font-size: 14px;
+}
+
+.menu-primary-navigation ul li {
+    position: relative;
+}
+.menu-primary-navigation ul li .indicator{
+    font-size: 12px;
+    top: 12px;
+    right: 1px;
+}
+
+
+
+/*------------------------------------*\
+    $MEGAMENU
+\*------------------------------------*/
+
+.menu-primary-navigation > li > .megamenu{
+    position: absolute;
+    display: none;
+    width: 25%;
+    top: 100%;
+    font-size: 13px;
+    background: #fff;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.1);
+    z-index: 99;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.megamenu-content {
+    padding: 15px;
+    overflow: hidden;
+}
+.megamenu-content a {display: inline-block !important;}
+.megamenu-content p{
+    margin-bottom: 0;
+}
+
+/*------------------------------------*\
+    $MEGAMENU LINKS
+\*------------------------------------*/
+
+.menu-primary-navigation li > .megamenu a{
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    font-family:'bIRANSans_Fa', sans-serif;
+    line-height: 16px;
+}
+
+/* to fix right attribute on submenus (menu aligned to left (default)) */
+.menu-primary-navigation > li.fix-sub > .megamenu,
+.menu-primary-navigation > li.fix-sub > .megamenu.half-width,
+.menu-primary-navigation > li.fix-sub > .dropdown{
+    right: 0;
+}
+
+
+
+/*------------------------------------*\
+    $MEGAMENU WIDTH
+\*------------------------------------*/
+
+.menu-primary-navigation > li > .megamenu.half-width{
+    width: 50%;
+}
+.menu-primary-navigation > li > .megamenu.full-width{
+    width: 100%;
+    left: 0;
+}
+
+/*------------------------------------*\
+    $COLLAPSIBLE MENU
+\*------------------------------------*/
+
+.menu-primary-navigation > li.showhide{
+    display: none;
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    color: #fff;
+    background: #29beef;
+}
+.menu-primary-navigation > li.showhide span.title{
+    margin: 15px 0 0 25px;
+    font-family: 'Open Sans', sans-serif;
+    float: left;
+}
+.menu-primary-navigation > li.showhide span.icon{
+    margin: 17px 20px;
+    float: right;
+}
+.menu-primary-navigation > li.showhide .icon em{
+    margin-bottom: 3px;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+}
+
+
+/* blue */
+.menu-primary-navigation > li.active > a{color: #29beef; }
+.menu-primary-navigation > li:hover > a {color: #29beef; }
+.menu-primary-navigation ul.dropdown li:hover > a{ background: #29beef; color: #fff; }
+.menu-primary-navigation li > .megamenu form input[type="text"]:focus, .menu-primary-navigation li > .megamenu form textarea:focus{ border-color: #29beef; }
+.menu-primary-navigationli > .megamenu form input[type="submit"]:hover{ background: #29beef; color: #fff; }
+.menu-primary-navigation li > .megamenu a:hover{ color: #29beef; }
+
+
+
+
+
+#header .phone {font-weight: 400;}
+
+.twitter-row iframe { display:none; }
+
+.twitter-row .icon {width: 40px; margin-right:25px;}
+
+/*  Fix 28.05 
+2cols masonry blog
+  */
+
+.lost_password-link {
+	margin-top: 4px;
+}
+#grid-posts.col-2 article.small-news {
+	width: 49.9% !important;
+	margin-left: 0 !important;
+	padding-left: 10px;
+	padding-right: 10px;
+}

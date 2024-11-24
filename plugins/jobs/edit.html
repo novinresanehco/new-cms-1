@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="../theme/admin/pannonia/css/bootstrap.css" rel="stylesheet" type="text/css"
+              />
+        <style>
+            body,td
+            {
+                direction:rtl;
+                font-family: tahoma;
+                font-size:12px;
+            }
+            .right
+            {
+                float:right;
+                width:150px;
+            }
+            .left
+            {
+                float:right;
+            }
+            textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input
+            {
+                background-color: #ffffff;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                border: 1px solid #dadada;
+                box-shadow: 0 0 0 2px #f8f8f8;
+                -webkit-box-shadow: 0 0 0 2px #f8f8f8;
+                -moz-box-shadow: 0 0 0 2px #f8f8f8;
+                -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+                -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+                -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+                transition: border linear 0.2s, box-shadow linear 0.2s;
+            }
+            select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input
+            {
+                font-family: Tahoma;
+                display: inline-block;
+                padding: 8px 7px 8px 7px;
+                font-size: 11px;
+                color: #555555;
+                vertical-align: middle;
+                height: 30px;
+            }
+            input {
+                width: 570px;
+                margin-right: 20px;
+                float: right;
+            }
+            select{
+                width:100px;
+                height:34px;
+            }
+            input, textarea, .uneditable-input {
+                margin-left: 0;
+                text-align: right;
+            }
+            label{
+                margin-top:10px;
+            }
+            .clear
+            {
+                clear:both;
+                padding-top:5px;
+            }
+            .control
+            {
+                margin-right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="index.php#kar" target="_parent" method="post">
+            <input type="hidden" name="act" value="edit" />
+            <input type="hidden" name="editID" value="[jobID]" />
+            <div class="right"><label for="title">کار:</label></div>
+            <div class="left">
+                <input type="text" name="title" id="title" value='[title]' />
+            </div>
+            <div class="clear"></div>
+            <div class="right"><label>تاریخ:</label></div>
+            <div class="left control">
+                [date]
+            </div>
+            <div class="clear"></div>
+            <button type="submit" style="float:right" class="btn btn-success"><b class="icon-plus"></b>ویرایش کار</button>
+        </form>
+    </body>
+</html>

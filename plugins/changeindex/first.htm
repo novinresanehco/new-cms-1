@@ -1,0 +1,23 @@
+<form action="" method="post">
+    <div style="float:right;width:200px">نام صفحه</div>
+    <div style="float:right;">
+        <select name="pagetheme" class="select2">
+            <tag:themesfile>
+                <option [selected]>[name]</option>
+            </tag:themesfile>
+        </select>
+    </div>
+    <div style="clear:both;margin-bottom:20px;"></div>
+    <div style="float:right;width:200px">مطلب صفحه اصلی</div>
+    <div style="float:right;">
+        <select name="postid" class="select2">
+            <tag:posts>
+                <option value="[postid]" [selected]>[title]</option>
+            </tag:posts>
+        </select>
+    </div>
+    <div style="clear:both;margin-bottom:20px;"></div>
+    <center>
+        <input class="btn btn-success" type="submit" value="ثبت صفحه اصلی" />
+    </center>
+</form>

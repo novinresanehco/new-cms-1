@@ -1,0 +1,234 @@
+<script>
+function Mform(action){
+if(action == "saveautolinker")
+{
+var title     = gi("title").value;
+var url	      = gi("url").value;
+var form	  = gi("sform").value;
+var list	  = gi("list").value;
+var time2	  = gi("time2").value;
+var time3	  = gi("time3").value;
+var timeban	  = gi("timeban").value;
+connect('pages/autolinker.php',"task=save&title="+title+"&url="+url+"&list="+list+"&time2="+time2+"&time3="+time3+"&timeban="+timeban+"&sform="+form,'ajax_tabs_0_content',loadingt,'');
+}
+}
+function dellink(id){
+var msg = "آيا از حذف اين لینک اطمينان داريد؟\nعمليات حذف برگشت پذير نميباشد.";
+if(confirm(msg))
+{
+setTimeout('document.location.href="autolinker.php?del='+id+'"',1 );
+}
+}
+
+</script>
+<style type="text/css">
+.style3 {
+	color: #008000;
+	font-weight: bold;
+}
+</style>
+</head>
+<div id="div_1"> 
+
+<table border="0" width="95%" class="tbl" id="tabs_1_content">
+<tr>
+<td id="ajax_tabs_1_content"><div align="center" dir="rtl">[msgs]</div>
+<div align="right" dir="rtl">
+<table border="1" width="99%" id="table1">
+	<tr>
+		<td bgcolor="#C0C0C0"><span lang="fa">عنوان و لینک و توضیحات</span></td>
+		<td bgcolor="#C0C0C0"><span lang="fa">تاریخ ثبت</span></td>
+		<td bgcolor="#C0C0C0" width="103"><span lang="fa">بروز رسانی</span></td>
+		<td bgcolor="#C0C0C0" width="53"><span lang="fa">وضعیت</span></td>
+        <td bgcolor="#C0C0C0" width="53"><span lang="fa">کاربر</span></td>
+		<td bgcolor="#C0C0C0"><span lang="fa">عملیات</span></td>
+	</tr>
+
+
+<tag:linkerS>
+<tr>
+<td>&nbsp;<a title="[desc]" target="_blank" href="http://www.[url]?[id]">[title]</a></td>
+<td>&nbsp;[cdate]</td>
+<td>&nbsp;[update]</td>
+<td>&nbsp;[stats1]</td>
+<td>&nbsp;<a target="_blank" title="ارسال پیام به این کاربر" href="[site]index.php?module=member&action=sendpm&?task=send&user=[user]&title=autolinker">[user]</a></td>
+<td>&nbsp;<b><font color="red"><a title="حذف این لینک" onclick="dellink('[id]')" href="javascript:void([id])"> X </a></font></b>|<b><font color="red"><a title="مسدود کردن برای همیشه" href="[site]panel/autolinker.php?ban=[id]"> B </a></font></b>
+|<b><font color="red"><a title="غیرفعال کردن این لینک تا دریافت یک ورودی" href="[site]panel/autolinker.php?dis=[id]"> D </a></font></b>
+|<b><font color="red"><a title="مخفی کردن این لینک تا دریافت یک ورودی" href="[site]panel/autolinker.php?hid=[id]"> H </a></font></b>
+|<b><font color="red"><a title="فعال کردن این لینک" href="[site]panel/autolinker.php?sho=[id]"> E </a></font></b>
+</td>
+</tr>
+
+</tag:linkerS>
+</table><br />
+<br><span style="background-color: #00FF00" lang="fa">&nbsp;فعال</span><span style="background-color: #00FF00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> <span style="background-color: #00FF00" lang="fa">&nbsp;</span>= لینک فعال است
+<br><span style="background-color: #FF8C8C" lang="fa">&nbsp;مسدود</span><span style="background-color: #FF8C8C">&nbsp;&nbsp; </span> <span style="background-color: #FF8C8C" lang="fa">&nbsp;</span>= لینک مسدود شده است به علت تخلف ! قابل ادد و فعال شدن نیست الا توسط مدیر
+<br><span style="background-color: #00FFFF" lang="fa">&nbsp;در انتظار &nbsp;&nbsp;</span> = لینک مخفی است و با دریافت اولین ورودی مجاز فعال می شود
+<br><span style="background-color: #C0C0C0" lang="fa">&nbsp;غیر فعال</span><span style="background-color: #C0C0C0"> </span> 
+<span style="background-color: #C0C0C0" lang="fa">&nbsp;</span>= عنوان در حال نمایش است اما لینک ندارد و با اولین ورودی مجاز فعال می شود<br>
+</div>
+</td>
+</tr>
+</table>
+
+</div>
+
+<div id="div_2" style="display:none">
+<tag:setlinker>	
+<form onsubmit="Mform('saveautolinker');return false" method=post>
+<table border="0" width="90%" class="tbl" id="tabs_0_content">
+<tr>
+<td colspan="2" id="ajax_tabs_0_content"></td>
+</tr>
+<tr>
+<td colspan="2"><font size="1">
+آدرس سایت :<input id="url" name="url" type="text" dir="ltr" style="width: 253px; direction:ltr" value="[url]" /><br>
+عنوان سایت :<input id="title" name="title" type="text" dir="rtl" style="width: 253px" value="[title]" /><br>
+ فرم تبادل لینک: <select dir="rtl" id="sform" name="sform">
+ <option value="1" [sformch1]>فعال</option>
+ <option value="0" [sformch0]>غیرفعال</option>
+ </select><br>
+  نمایش لینک ها بر اساس: <select dir="rtl" id="list" name="list">
+ <option value="1" [listch1]>تعداد ورودی</option>
+ <option value="0" [listch0]>تاریخ ورودی</option>
+ </select>نوع و ترتیب نمایش لینک ها<br>
+	زمان فعال بودن لینک پس از آخرین ورودی مجاز:
+<select dir="rtl" id="time2" name="time2" style="height: 22px">
+	<option value="[time2]">[time2] روز</option>
+	<option value="1">1 روز</option>
+	<option value="2">2 روز</option>
+	<option value="3">3 روز</option>
+	<option value="4">4 روز</option>
+	<option value="5">5 روز</option>
+	<option value="6">6 روز</option>
+	<option value="7">7 روز</option>
+	<option value="8">8 روز</option>
+	<option value="9">9 روز</option>
+	<option value="10">10 روز</option>
+	<option value="11">11 روز</option>
+	<option value="12">12 روز</option>
+	<option value="13">13 روز</option>
+	<option value="14">14 روز</option>
+	<option value="15">15 روز</option>
+	<option value="16">16 روز</option>
+	<option value="17">17 روز</option>
+	<option value="18">18 روز</option>
+	<option value="19">19 روز</option>
+	<option value="20">20 روز</option>
+	<option value="21">21 روز</option>
+	<option value="22">22 روز</option>
+	<option value="23">23 روز</option>
+	<option value="24">24 روز</option>
+	<option value="25">25 روز</option>
+	<option value="26">26 روز</option>
+	<option value="27">27 روز</option>
+	<option value="28">28 روز</option>
+	<option value="29">29 روز</option>
+	<option value="30">30 روز</option>
+	<option value="40">40 روز</option>
+	<option value="50">50 روز</option>
+	<option value="60">60 روز</option>
+	<option value="70">70 روز</option>
+	<option value="80">80 روز</option>
+	<option value="90">90 روز</option>
+	<option value="9999">نامحدود</option>
+	</select> <span class="style3">&nbsp;</span><span class="style2">پس از گذشت 
+	این زمان لینک غیرفعال می شود تا ورودی مجازی دریافت شود</span><br>
+
+	زمان حذف لینک پس از آخرین ورودی مجاز:
+<select dir="rtl" id="time3" name="time3" style="height: 22px">
+<option value="[time3]">[time3] روز</option>
+	<option value="1">1 روز</option>
+	<option value="2">2 روز</option>
+	<option value="3">3 روز</option>
+	<option value="4">4 روز</option>
+	<option value="5">5 روز</option>
+	<option value="6">6 روز</option>
+	<option value="7">7 روز</option>
+	<option value="8">8 روز</option>
+	<option value="9">9 روز</option>
+	<option value="10">10 روز</option>
+	<option value="11">11 روز</option>
+	<option value="12">12 روز</option>
+	<option value="13">13 روز</option>
+	<option value="14">14 روز</option>
+	<option value="15">15 روز</option>
+	<option value="16">16 روز</option>
+	<option value="17">17 روز</option>
+	<option value="18">18 روز</option>
+	<option value="19">19 روز</option>
+	<option value="20">20 روز</option>
+	<option value="21">21 روز</option>
+	<option value="22">22 روز</option>
+	<option value="23">23 روز</option>
+	<option value="24">24 روز</option>
+	<option value="25">25 روز</option>
+	<option value="26">26 روز</option>
+	<option value="27">27 روز</option>
+	<option value="28">28 روز</option>
+	<option value="29">29 روز</option>
+	<option value="30">30 روز</option>
+	<option value="40">40 روز</option>
+	<option value="50">50 روز</option>
+	<option value="60">60 روز</option>
+	<option value="70">70 روز</option>
+	<option value="80">80 روز</option>
+	<option value="90">90 روز</option>
+	<option value="9999">نامحدود</option>
+	</select> <span class="style2">پس از گذشت این زمان لینک از لیست حذف میشود تا 
+	ورودی مجازی دریافت شود</span><br>
+	
+	
+زمان توقف برای ثبت لینک جدید:
+<select dir="rtl" id="timeban" name="timeban" style="height: 22px">
+<option value="[timeban]">[timeban] دقیقه</option>
+	<option value="1">1 دقیقه</option>
+	<option value="2">2 دقیقه</option>
+	<option value="3">3 دقیقه</option>
+	<option value="4">4 دقیقه</option>
+	<option value="5">5 دقیقه</option>
+	<option value="6">6 دقیقه</option>
+	<option value="7">7 دقیقه</option>
+	<option value="8">8 دقیقه</option>
+	<option value="9">9 دقیقه</option>
+	<option value="10">10 دقیقه</option>
+	<option value="11">11 دقیقه</option>
+	<option value="12">12 دقیقه</option>
+	<option value="13">13 دقیقه</option>
+	<option value="14">14 دقیقه</option>
+	<option value="15">15 دقیقه</option>
+	<option value="20">20 دقیقه</option>
+	<option value="25">25 دقیقه</option>
+	<option value="30">30 دقیقه</option>
+	<option value="40">40 دقیقه</option>
+	<option value="50">50 دقیقه</option>
+	<option value="60">1 ساعت</option>
+	<option value="120">2 ساعت</option>
+	<option value="180">3 ساعت</option>
+	<option value="360">6 ساعت</option>
+	<option value="720">12 ساعت</option>
+	<option value="1440">24 ساعت</option>
+	</select> <span class="style2">زمان توقف کاربر برای ثبت لینک بعدی&nbsp;
+	<strong>(این بخش&nbsp; همانند سیستم ضد اسپام عمل می کند)</strong></span><br></font><br />نکته:<font color="red">(زمان حذف نباید کمتر از زمان فعال باشد)</font>
+</td>
+
+
+
+
+</tr>
+<tr>
+<td colspan="2"><center><br />
+<input onclick="Mform('saveautolinker');return false;" type="submit" name="submit" value="ذخیره تنظیمات" class="inp"><br /></center></td>
+</tr>
+</table></form>
+
+</div>
+<div id="div_3" style="display: none;">
+<div align="right">
+شما در حال استفاده از ماژول <b>تبادل لینک هوشمند</b> نسخه:<b><font color="red"> [ver]</font></b> هستید<br />نویسنده: <b>حسن شیخعلیشاهی</b><br />
+وبلاگ نویسنده: <b><a target="_blank" href="http://www.blog.besttools.ir/?autolinker">کلیک کنید</a></b><br />
+انتقاد و پیشنهادات: <b><a target="_blank" href="http://www.besttools.ir/contact/?t=autolinker">کلیک کنید</a></b><br />
+پشتیبانی: <b><a target="_blank" href="http://rashcms.com/forum/forum-14.html">Rash CMS</a></b><br />پیامک: <span dir="ltr"><b>0935 935 9833</b></span><br /><br /><br /><br /><br />
+</div>
+</div>
+</tag:setlinker>

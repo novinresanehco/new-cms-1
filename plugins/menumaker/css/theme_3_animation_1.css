@@ -1,0 +1,144 @@
+
+/* ========== MAIN DIV THAT HOLDS THE ENTIRE MENU ========== */
+.menu{
+	width:100%; 
+	height:42px; 
+	/*margin:140px auto 0; */ 
+	background:#333; 
+	border-bottom:solid 4px #9C0;
+	-webkit-box-shadow:0 0 4px #BBBBBB;
+	-moz-box-shadow:0 0 4px #BBBBBB;
+	box-shadow:0 0 4px #BBBBBB;
+	}
+/* ========== DIV THAT HOLDS MAIN LINKS ========== */
+.menu ul{
+	margin:0; 
+	padding:0; 
+	float:right;  
+	right:0%;
+	list-style:none;
+	}
+	.menu ul img{float: right;
+padding: 8px;}
+/* ========== MAIN LINKS ========== */
+.menu ul li{
+	position:relative;
+	float:right;  
+
+	}
+.menu ul li a{
+	display:block;
+	height:42px; 
+	padding:0 35px; 
+	font:15px/45px weblogmayekan,tahoma,Arial,sans-serif !important; 
+	color:#777; 
+	text-transform:uppercase; 
+	text-decoration:none;
+	-webkit-transition:background 190ms ease-in, color 190ms ease-in;
+	-moz-transition:background 190ms ease-in, color 190ms ease-in;
+	-ms-transition:background 190ms ease-in, color 190ms ease-in;
+	-o-transition:background 190ms ease-in, color 190ms ease-in;
+	transition:background 190ms ease-in, color 190ms ease-in;
+	}
+/* ========== MAIN LINKS ON MOUSEOVER  ========== */
+.menu ul:hover li.active > a{
+	background:#333; 
+	color:#777; 
+	}	
+.menu ul li.active > a, .menu ul li:hover > a, .menu ul li.active:hover > a{
+	background:#9C0; 
+	color:#FFF; 
+	}
+/* ========== MAIN LINKS ON MOUSE CLICK ========== */	
+.menu ul li a:active, .menu ul li.active a:active{
+	color:#CCC;
+	}
+/* ========== DROPDOWN MENU ========== */
+.menu ul ul{
+	position:absolute;
+	visibility:hidden;
+	opacity:0;
+	padding-top:4px; 
+	background:#9C0; 
+	border-bottom:solid 2px #92c201;
+	-webkit-border-bottom-right-radius:3px;
+	-webkit-border-bottom-left-radius:3px;
+	-moz-border-radius:0 0 3px 3px;
+	border-radius:0 0 3px 3px;
+	-webkit-transition:all 210ms linear 20ms;
+	-moz-transition:all 210ms linear 20ms;
+	-ms-transition:all 210ms linear 20ms;
+	-o-transition:all 210ms linear 20ms;
+	transition:all 210ms linear 20ms;
+	}
+.menu ul li:hover > ul{
+	visibility:visible;
+	opacity:1;
+	}
+/* ========== LINKS IN DROPDOWN MENU ========== */
+.menu ul ul li{
+	cursor:pointer;
+	border:solid 1px #92c201;
+	border-bottom:none;
+	}
+.menu ul ul li a{
+	width:170px; 
+	height:45px;
+	padding-right:10px; 
+	font-size:13px; 
+	color:#FFF; 
+	line-height:32px;
+	text-transform:none;text-align: right;
+	}
+.menu ul ul li span{
+	position:absolute;
+	top:0;
+	right:10px;
+	font-size:16px; 
+	}
+/* ========== LINKS ON MOUSEOVER IN DROPDOWN MENU ========== */
+.menu ul ul li:hover > a{
+	background:#9ed201;
+	}
+/* ========== LINKS ON MOUSE CLICK IN DROPDOWN MENU ========== */
+.menu ul ul li a:active{
+	color:#CCC; 
+	}
+/* ========== DROPDOWN MENU LVL 2,3,4,... ========== */
+.menu ul ul ul{
+	top:-1px;
+	right:100%;
+	padding:0;
+	}
+/* ========== SEARCH BOX ========== */
+#search_box{
+	margin:6px 6px 0 0;
+	float:right; 
+	border:solid 1px #555;
+	}
+/* ========== SEARCH FIELD ========== */	
+#search_box input[type="text"]{
+	width:160px; 
+	height:24px; 
+	padding:3px 4px 0;
+	float:left; 
+	font:15px/25px 'Anaheim', sans-serif; 
+	color:#666; 
+	background:#333;
+	border:none;
+	-webkit-transition:color 200ms linear;
+	-moz-transition:color 200ms linear;
+	-ms-transition:color 200ms linear;
+	-o-transition:color 200ms linear;
+	transition:color 200ms linear;
+	}
+/* ========== SEARCH BUTTON ========== */
+#search_box input[type="submit"]{
+	width:28px; 
+	height:28px; 
+	float:left; 
+	background-image:url(../images/search_icon.png); 
+	background-color:#333; 
+	border:none;
+	cursor:pointer;
+	}/* LizardThemes/December2012 */

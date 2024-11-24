@@ -1,0 +1,27 @@
+ul, li,
+fieldset, form, label, legend { margin: 0; padding: 0; border: 0; outline: 0; font-size: 14px; vertical-align: baseline; background: transparent; }
+ol, ul { list-style: none; }
+.menuw64 li:hover ul, .menuw64 li.sfHover ul { top: 2.5em; z-index: 400; }
+ul.menuw64 li:hover li ul, ul.menuw64 li.sfHover li ul { top: -999em; z-index: 400; }
+ul.menuw64 li li:hover ul, ul.menuw64 li li.sfHover ul { top: 0; }
+ul.menuw64 li li:hover li ul, ul.menuw64 li li.sfHover li ul { top:	-999em; }
+ul.menuw64 li li li:hover ul, ul.menuw64 li li li.sfHover ul { top: 0; }
+
+
+.menuw64 { position: relative; margin: 0; padding: 0; list-style: none;clear:both; float: right; margin-top: 12px; padding-right: 9px; margin-bottom:	1em; background: url('../../images/wm/64menu_bg0.png') no-repeat; height: 51px; width: 960px; z-index: 400; }
+.menuw64 ul {  position: absolute; top:	-999em; margin-top: 20px; width: 212px; right: 7px; -moz-box-shadow: 3px 6px 8px 1px rgba(0, 0, 0, 0.3); -webkit-box-shadow: 3px 6px 8px 1px rgba(0, 0, 0, 0.3); background-image: url('../../images/wm/dropdown.png'); background-repeat: no-repeat; background-position: top; padding-top: 8px; z-index: 400; }
+.menuw64 a { display: block; position: relative; text-decoration:none; color: #fff; padding: 16px 23px 0px 20px;margin-right:auto; height: 30px; text-decoration: none; text-shadow: 1px 1px 1px #000; font-weight: normal; float :right; }
+.menuw64 li { float: right; position: relative; font-family: Arial, Helvetica, sans-serif; background: url('../../images/wm/menu_lin.png') no-repeat; background-position: right 5px; }
+.menuw64 li ul li ul { right: 212px; margin-top: 0px;}
+.menuw64 li li { background: #fff url('');background-position: 24px 15px; height: 36px ; margin: 0px; float: right; width: 212px; z-index: 10; }
+.menuw64 li a:hover { color: #00b4ff; }
+.menuw64 li:hover, .menuw64 a:focus, .menuw64 a:hover, .menuw64 a:active { outline: 0; }
+.menuw64 > li.sfHover.sf-ul { background: transparent url('../../images/wm/parent_l.png') no-repeat; background-position: 7px 11px; z-index: 200; }
+.menuw64 li.sfHover li a:hover, .menuw64 li ul li.sfHover a, .menuw64 li ul li ul li.sfHover a { background: #fff url('../../images/wm/submenu0.gif') no-repeat; background-position: 11px 0px;  }
+.menuw64 li.sfHover li a, .menuw64 li.sfHover li ul li a, .menuw64 li.sfHover li ul li ul li a  { background: url('../../images/wm/submenu0.gif') no-repeat ; background-position: -100px -100px; width: 172px; color: #404040; margin: 0px; padding: 14px 0px 0px 40px; text-shadow: 0px 1px 0px #cccccc; }
+.menuw64 > li.sfHover.sf-ul > a {  color: #000; text-shadow: 1px 1px 1px #fff; background: transparent url('../../images/wm/parent_m.png') no-repeat; background-position: right 11px; z-index: 301; }
+ul.menuw64 li.backLava { position: absolute; z-index: -1000; background: url('../../images/wm/hover.png') ; background-position: center 0px; padding: 0; height: 40px; margin:3px 0px 0px 0px; }
+.menuw64 li ul li.bottom_bg { background: transparent url(../../images/wm/dropdowo.png); background-position: bottom right; height: 15px; padding: 0; margin: 0; }
+
+
+

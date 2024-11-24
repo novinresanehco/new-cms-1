@@ -1,0 +1,283 @@
+body,table,td
+{
+    direction:rtl;
+    font-family:yekan,tahoma,Tahoma;
+
+}
+button
+{
+    font-family: yekan,tahoma, Tahoma;
+}
+.btn
+{
+    font-size: 16px;
+}
+.ltr
+{
+    direction:ltr;
+    text-align:left;
+}
+.red
+{
+    color:#FF0000
+}
+.related ul
+{
+    margin-right: 30px;
+}
+.colorpicker
+{
+    direction: ltr;
+    text-align: left;
+}
+optgroup
+{
+    color: #000;
+}
+/* === icons === */
+.iconmanagerarea
+{
+    position: relative;
+}
+.iconmanager
+{
+    float: left;
+    margin: 9px 0;
+    width: 98%;
+
+}
+.iconslist li
+{
+    float: left;
+    margin: 0 2px 1px 0;
+    padding: 2px;
+    border: 1px #FFFFFF solid;
+    cursor: pointer;
+    cursor: hand;
+    display: none;
+    background: #BEDF9F;
+}
+.iconslist li:hover
+{
+    border: 1px #869705 solid;
+    background: #4A8B0C;
+}
+.iconPagination
+{
+    margin-top: 5px;
+    text-align: center;
+    list-style-type: none;
+}
+.iconPagination li
+{
+    float: right;
+padding: 3px 10px 2px 10px; line-height: 21px; color: #454545; text-decoration: none; border: 1px solid #d5d5d5; margin-left: 1px;
+  background: #f7f7f7;
+  background: -moz-linear-gradient(top,  #ffffff 0%, #f7f7f7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f7f7f7));
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#f7f7f7 100%);
+  background: -o-linear-gradient(top,  #ffffff 0%,#f7f7f7 100%);
+  background: -ms-linear-gradient(top,  #ffffff 0%,#f7f7f7 100%);
+  background: linear-gradient(top,  #ffffff 0%,#f7f7f7 100%);
+}
+.iconPagination li:hover
+{
+color: #BBB; cursor: default; background: #FEFEFE; border-color: #E2E2E2; box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none;
+
+}
+.iconPagination li.iconselected
+{
+       background: #676d71;  color: #fff;  border-color: #585e63; 
+  box-shadow: 0 1px 6px rgba(0,0,0,0.2) inset, 0 1px 0 #fff; 
+  -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.2) inset, 0 1px 0 #fff; 
+  -moz-box-shadow: 0 1px 6px rgba(0,0,0,0.2) inset, 0 1px 0 #fff;
+}
+.icons24x24
+{
+    display: none;
+}
+.icongroup
+{
+    float:left;
+    width: 100%;
+}
+.tooltip-inner 
+{
+    max-width: 700px;
+    max-height: 700px;
+}
+.reseller{
+color: #FFF;
+text-shadow: 9px 11px 23px #FFF, 0px 0px 0px #FFF, 0px 0px 15px #FFF, 0px 0px 20px #FF2D95, 0px 0px 30px #FF2D95, 0px 0px 40px #FF2D95, 0px 0px 50px #FF2D95, 0px 0px 75px #FF2D95;
+letter-spacing: 2px;
+font: 18px "tahoma";
+
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.iconswither{
+padding: 3px 10px 2px 10px; line-height: 21px; color: #454545; text-decoration: none; border: 1px solid #d5d5d5; margin-left: 1px;
+  background: #f7f7f7;
+  background: -moz-linear-gradient(top,  #ffffff 0%, #f7f7f7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f7f7f7));
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#f7f7f7 100%);
+  background: -o-linear-gradient(top,  #ffffff 0%,#f7f7f7 100%);
+  background: -ms-linear-gradient(top,  #ffffff 0%,#f7f7f7 100%);
+  background: linear-gradient(top,  #ffffff 0%,#f7f7f7 100%);-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+  }
+  
+.iconswither:hover{
+  background: none repeat scroll 0% 0% #676D71;
+color: #FFF;
+border-color: #585E63;
+box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2) inset, 0px 1px 0px #FFF;
+  }
+  
+/* start half-style hs-base */
+ .halfStyle.hs-base {
+ font-family: 'odin';
+    position:relative;
+    display:inline-block;
+    font-size:80px; /* or any font size will work */
+    overflow:hidden;
+    white-space: pre; /* to preserve the spaces from collapsing */
+    color: #000; /* for demo purposes */
+}
+.halfStyle.hs-base:before {
+    display:block;
+    z-index:1;
+    position:absolute;
+    top:0;
+    width: 50%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    pointer-events: none; /* so the base char is selectable by mouse and the click handlers bound on it will fire */
+    overflow:hidden;
+    color: #f00; /* for demo purposes */
+}
+ /* end half-style hs-base */
+
+/* start half-style hs-horizontal-half */
+.halfStyle.hs-horizontal-half {
+    position:relative;
+    display:inline-block;
+    font-size:29px; /* or any font size will work */
+    color: transparent; /* hide the base character */
+    overflow:hidden;
+    white-space: pre; /* to preserve the spaces from collapsing */
+	line-height: 55px;
+}
+.halfStyle.hs-horizontal-half:before { /* creates the top part */
+    display:block;
+    z-index:2;
+    position:absolute;
+    top:0;
+    height: 50%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: #C300FF; /* for demo purposes */
+    text-shadow: 0px 2px 1px #000; /* for demo purposes */
+}
+.halfStyle.hs-horizontal-half:after { /* creates the bottom part */
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:0;
+    height: 100%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: rgba(172, 87, 198, 1); /* for demo purposes */
+    text-shadow: 0px 1px 0px rgba(8, 8, 8, 0.99); /* for demo purposes */
+	
+}
+/* end half-style hs-horizontal-half */
+
+/* start half-style hs-horizontal-third */
+.halfStyle.hs-horizontal-third { /* base char and also the bottom 1/3 */
+    position:relative;
+    display:inline-block;
+    font-size:80px; /* or any font size will work */
+    color: transparent;
+    overflow:hidden;
+    white-space: pre; /* to preserve the spaces from collapsing */
+    color: #f0f;
+    text-shadow: 2px 2px 0px #0af; /* for demo purposes */
+}
+.halfStyle.hs-horizontal-third:before { /* creates the top 1/3 */
+    display:block;
+    z-index:2;
+    position:absolute;
+    top:0;
+    height: 33.33%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: #f00; /* for demo purposes */
+    text-shadow: 2px -2px 0px #fa0; /* for demo purposes */
+}
+.halfStyle.hs-horizontal-third:after { /* creates the middle 1/3 */
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:0;
+    height: 66.66%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: #000; /* for demo purposes */
+    text-shadow: 2px 2px 0px #af0; /* for demo purposes */
+}
+/* end half-style hs-horizontal-third */
+.datef{
+font-family: yekan,tahoma,Tahoma;
+color: #FFF;
+display: inline-block;
+white-space: nowrap;
+text-shadow: 0px -1px 0px 
+border-radius: 2px;
+font-size: 15px;
+padding: 8px;
+line-height: 21px;
+margin-top: 5px;
+}
+.neon-text {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  -webkit-border-radius: 35px;
+  border-radius: 35px;
+  font: normal normal bold 35px/normal "Orbitron", Helvetica, sans-serif;
+  color: #8c0881;
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  letter-spacing: -2px;
+  text-shadow: 5px 4px 10px rgba(0,0,0,0.5) , 1px 1px 0 rgba(67,31,81,1) , -1px -1px 0 rgba(79,6,74,1) , 1px -1px 0 rgba(79,6,74,1) , -1px 1px 0 rgba(102,11,94,1) , 1px 1px 0 rgba(150,80,178,1) , -1px -1px 0 rgba(89,8,82,1) , 1px -1px 0 rgba(71,15,66,1) ;
+  -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);text-transform: capitalize;
+}
+
+.neon-text:hover {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  color: rgba(160,27,149,1);
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #373737 , -1px -1px 0 #373737 , 0 1px 1px #F7F7F7 , -1px 1px 10px #373737 ;
+  -webkit-transition: all 300ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -moz-transition: all 300ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -o-transition: all 300ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  transition: all 300ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transform: rotateX(-1.1459155902616465deg) rotateY(0.5729577951308232deg)   ;
+  transform: rotateX(-1.1459155902616465deg) rotateY(0.5729577951308232deg)   ;text-transform: capitalize;
+}

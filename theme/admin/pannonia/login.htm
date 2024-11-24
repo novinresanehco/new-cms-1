@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <title>ورود</title>
+        <link href="../theme/admin/pannonia/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="../theme/admin/pannonia/css/ltr.css" rel="stylesheet" type="text/css" />
+        <!--[if IE 8]><link href="../theme/admin/pannonia/css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+        <!--[if IE 9]><link href="../theme/admin/pannonia/css/ie9.css" rel="stylesheet" type="text/css" /><![endif]-->
+        <script type="text/javascript" src="../theme/admin/pannonia/js/jquery.min.js"></script>
+        <script type="text/javascript" src="../theme/admin/pannonia/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../theme/admin/pannonia/js/plugins/charts/jquery.sparkline.min.js"></script>
+        <script type="text/javascript" src="../theme/admin/pannonia/js/files/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../theme/admin/pannonia/js/functions/error.js"></script>
+    </head>
+
+    <body class="no-background">
+
+        <!-- Fixed top -->
+        <div id="top">
+            <div class="fixed">
+                <a href="[resellerurl]" style="float: left; margin: -10px;">
+                    <h1 ><span class="textToHalfStyle" data-halfstyle="hs-horizontal-half">[reseller]</span></h1>
+                </a>
+				
+				<!--
+				if set logo reseller
+				 <a href="[resellerurl]"  target="_blank" title="" class="logo"><img src="[resellerlogo]" alt="" /></a>
+				-->
+            </div>
+        </div>
+        <!-- /fixed top -->
+
+
+
+
+        <!-- Error wrapper -->
+        <div class="error-page">
+            <span class="reason">پنل مدیریت</span>
+            <div class="error-content">
+                <span class="reason-title">لطفا اطلاعات نام کاربری و رمز عبور خود را وارد نمایید.</span>
+
+                <!-- Search widget -->
+                <tag:ifmsg> <span class="reason-title red">[msg]</span></tag:ifmsg>
+                <form  action="login.php" method="post">
+                    <input type="text" class="ltr" placeholder="username" name="username" />
+                    <input type="password" class="ltr" placeholder="password" name="password" />
+                    <tag:ifsec>
+                        <input type="text" class="ltr" placeholder="secuirty code" name="img" />
+                        <img border="0" src="../img.php?code_section=[rand]">
+                    </tag:ifsec>
+                    <input type="submit" name="submit" class="btn btn-info" value="ورود" />
+                </form>
+                <!-- /search widget -->
+
+                <div class="row-fluid error-buttons">
+                    <a target="_blank" href="../index.php?plugins=member&amp;method=forget" title="" class="btn btn-info span6">بازیابی رمز عبور</a>
+                    <a href="[site]" title="" class="btn btn-success span6">بازگشت به سایت</a>
+                </div>
+            </div>
+        </div>  
+        <!-- /error wrapper -->
+
+
+        <!-- Footer -->
+	<div id="footer">
+		<div class="copyrights">[resellerurl]</div>
+	</div>
+        <!-- /footer -->
+
+    </body>
+</html>

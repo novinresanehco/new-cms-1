@@ -1,0 +1,43 @@
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+			<li style="float:right;padding:7px 5px;font-weight:bold">[plugin_name]</li>
+                <tag:tabs>
+                    <li class="[current]"><a id="tab_[id]" class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+				
+            </ul>
+            <div class="tab-content">
+                <tag:Success>
+                    <div class='alert margin'>[msg]</div>
+                </tag:Success>
+                <tag:Error>
+                    <div class='alert margin'>[msg]</div>
+                </tag:Error>
+                <tag:Info>
+                    <div class='alert margin'>[msg]</div>
+                </tag:Info>
+                <!-- IF Error -->
+                <div class='alert margin'>[msg]</div>
+                <!-- ENDIF Error -->
+                <!-- IF Success -->
+                <div class='alert margin'>[msg]</div>
+                <!-- ENDIF Success -->
+                <!-- IF Info -->
+                <div class='alert margin'>[msg]</div>
+                <!-- ENDIF Info -->
+                <div class="tab-pane active" id="tab1">
+                    [first]
+                </div>
+                <tag:extra_div>
+                    <div class="tab-pane" id="tab[id]">
+                        [inside]
+                    </div>
+                </tag:extra_div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿/*************************************************
+ * SOFT64 PhpAjaxWhois
+ *
+ * Version: 1.1
+ * Date: 1/29/2008
+ *
+ ****************************************************/
+*{ margin: 0; padding: 0; }*
+body		{ margin: 20px 0 0; font: .8em "Trebuchet MS", Arial, Sans-Serif; color: #262f5f; }
+a			{padding:5px;color:#5e699f; text-decoration: none;	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	font-size: 12px;}
+fieldset	{padding:10px; border:1px solid #CCCCCC; width: 600px;}
+legend		{font-size: 1.5em; color: #262f5f; font-weight: normal; font-family:"Trebuchet MS",'Times New Roman',Times,serif;}
+
+.td			{color: #000; font-weight: normal; font-family:"Trebuchet MS",'Times New Roman',Times,serif;}
+.green		{color: #009900;}
+
+#container	{ margin:0 200px; width: 640px; background-color: #FFFFFF;align="center";}
+
+/* search form */
+#domain		{padding:15px;}
+#domain	.l1	{float: left; width: 230px; margin: 0 5px 0 0;}
+#domain	.l2	{float: left; width: 190px; margin: 0 5px 0 0; }
+#domain	.r	{float: right; margin: 0; width: 80px;}
+#domain	.input	{ font-size:14px; background-color:#fff; padding:4px; border:1px solid #b5b6c4;}
+
+/*result table */
+#log		{width: 650px; margin-top: 5px;}
+#log_res	{overflow: auto;}
+#log_res.ajax-loading	{padding: 20px 0;background: url(../images/loading.gif) no-repeat center;}
+
+.tabel		{width:100%; margin:auto; border-collapse:collapse;}
+.tabel th	{padding:2px; background-repeat: repeat-x; color:#000;}
+.tabel td	{padding:2px;}
+.disponibil {width:50%; color:#009900; text-align:left;}
+.ocupat 	{color:#CC0000; text-align:left;}
+.alt 		{background-color:#F1F1F1}
+#footer		{padding:10px; background-color: #FFFFFF;}
+

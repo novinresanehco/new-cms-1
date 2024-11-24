@@ -1,0 +1,913 @@
+<script type="text/javascript" src="../theme/admin/pannonia/js/jqueryFunctions.js"></script>
+<script type="text/javascript" src="../theme/admin/pannonia/js/facebox/facebox.js"></script>
+<link href="../theme/admin/pannonia/js/facebox/facebox.css" rel="stylesheet" type="text/css" />
+<script>
+    var loadingSettingImg = '<center><img src="../theme/admin/pannonia/images/loading.gif" /></center>';
+    function appendSetting()
+    {
+        $( "ul.sortable li" ).not( ":has(.setting)" ).not( '.notremove' ).each( function( index, obj )
+        {
+            var url = 'thememanager.php?task=pluginSetting&plugin=' + $( obj ).attr( 'rel' );
+            if ( $( obj ).attr( 'id' ) )
+            {
+                var theID = 'postionDataBox_' + $( obj ).attr( 'id' ).split( "_" )[1];
+                url += '&id=' + $( obj ).attr( 'id' ).split( "_" )[1];
+                var optionValue = $( "#optionValue_" + $( obj ).attr( 'id' ).split( "_" )[1] ).val();
+            }
+            else
+            {
+                var theRandID = '1000200030009000' + Math.floor( ( Math.random() * 1000000000000 ) + 1 );
+                var theID = 'postionDataBox_' + theRandID;
+                var optionValue = '';
+                url += "&id=" + theRandID;
+                $( obj ).attr( "id", "plugin_" + theRandID );
+            }
+            $( obj ).append( '<input type="hidden" value="' + optionValue + '" id="' + theID + '" /><div class="setting"><a rel="' + theID + '" class="ajaxDialog" href="' + url + '"><img src="../theme/admin/pannonia/images/setting.png" /></a></div>' );
+        } );
+        appendAjaxDialogLinks();
+    }
+    function appendremove()
+    {
+        //$(".deleteplugin").remove();
+        $( "ul.sortable li" ).not( '.notremove' ).not( ":has(.deleteplugin)" ).append( '<div class="deleteplugin"><a href="#"><img src="../theme/admin/pannonia/images/delete.png" /></a></div>' );
+        $( ".notremove" ).unbind( 'click' );
+        $( ".notremove" ).click( function()
+        {
+            bootbox.alert( 'یک پلاگین از سمت راست انتخاب و در این محل درگ کنید.' );
+        } );
+        allowRemove();
+    }
+    function removeUnusablePositions()
+    {
+        $( "ul.sortable " ).each( function( index, value )
+        {
+            var id = $( value ).attr( 'id' );
+            if ( $( "#" + id + " li" ).length > 1 )
+            {
+                $( "#" + id + " li.notremove" ).remove();
+            }
+        } );
+    }
+    function allowRemove()
+    {
+        $( ".deleteplugin" ).unbind( 'click' );
+        $( ".deleteplugin" ).click( function() {
+            var regenerateHTML = '';
+            var ulparent = $( this ).parent().parent();
+            if ( ulparent.children().length <= 1 )
+            {
+                var id = ulparent.attr( "id" ).split( "position" )[1];
+                regenerateHTML = '<li rel="remove" class="notremove ui-state-highlight modulec">موقعیت ' + id + '</li>';
+                $( "#position" + id ).append( regenerateHTML );
+            }
+            if ( $( this ).parent().attr( "rel" ) === 'remove' )
+            {
+                bootbox.alert( 'امکان حذف موقعیت پیش فرض وجود ندارد.' );
+            }
+            else
+            {
+                $( this ).parent().remove();
+            }
+            return false;
+        } );
+    }
+    $( document ).ready( function()
+    {
+        $( '.sortablepanel td' ).each( function( index, item )
+        {
+            //$( item ).css( 'padding-top', '20px' );
+            $( item ).prepend( '&nbsp;&nbsp; ' + $( $( item ).find( 'ul' )[0] ).attr( 'id' ).replace( 'position', '' ) );
+            $( item ).prepend( '' );
+            $( item ).prepend( '<img class="handle" src="../theme/admin/pannonia/images/move.png" />' );
+
+        } );
+        appendremove();
+        appendSetting();
+        /*
+         $( ".resizable" ).resizable( {
+         animate: true,
+         minWidth: 130,
+         handles: 'n, e, s, w'
+         } );
+         */
+
+        $( '#savebtn' ).on( 'click', function()
+        {
+            var obj = $( '.sortable' );
+            var arr = $.makeArray( obj );
+            var senddata = 'theme=[editingtheme]';
+            for ( var i = 0; i < arr.length; i++ )
+            {
+                var ul = arr[i];
+                var orderID = 0;
+                $( ul ).find( "li" ).each( function()
+                {
+                    var id = $( this ).attr( 'id' );
+                    if ( id )
+                    {
+                        senddata += "&posdata[" + $( ul ).attr( "id" ) + "][" + orderID + "][plugin]= " + $( this ).attr( "rel" );
+                        senddata += "&posdata[" + $( ul ).attr( "id" ) + "][" + orderID + "][data]= " + $( "#postionDataBox_" + id.split( "_" )[1] ).val();
+                        orderID = orderID + 1;
+                    }
+                } );
+            }
+
+            var panelObj = $( '.sortablepanel' );
+            var panelArr = $.makeArray( panelObj );
+            for ( var i = 0; i < panelArr.length; i++ )
+            {
+                var div = panelArr[i];
+                var posID = 0;
+                $( div ).find( ".position" ).not( '.removed' ).each( function()
+                {
+                    //var pos = $( this ).attr( 'data-pos' );
+                    var id = $( this ).attr( 'data-id' );
+                    senddata += '&siderBars[' + id + ']=' + posID;
+                    posID = posID + 1;
+                } );
+            }
+            $.ajax( {
+                data : senddata,
+                type : "post",
+                dataType : "json",
+                url : "pages/thememanager.php",
+                success : function( msg )
+                {
+                    if ( msg.success )
+                    {
+                        $( "#ajaxresult" ).html( msg.value );
+                        location.reload( true );
+                    }
+                    else
+                    {
+                        alert( msg.value );
+                    }
+
+                },
+                error : function()
+                {
+                    alert( "error" );
+                }
+            } );
+        } );
+        $( '#resetSideBars' ).click( function()
+        {
+            $( '.removed' ).removeClass( 'removed' );
+        } );
+        $( '#modulesbtn' ).on( 'click', function() {
+            $( '.allmodulespanel' ).slideToggle();
+            /*$('#listModules').animate({
+             'width': 'show'
+             }, 1000, function() {
+             $('#moduleManager').fadeIn(500);
+             });*/
+        } );
+        $( 'span.close' ).on( 'click', function() {
+            $( '.allmodulespanel' ).slideToggle();
+            /*$('#moduleManager').fadeOut(500, function() {
+             $('#listModules').animate({
+             'width': 'hide'
+             }, 1000);
+             });*/
+        } );
+        //$( "ul, li" ).disableSelection();
+        $( '.sortable .modulec' ).not( '.mainposition' ).on( "mousedown", ( function( event )
+        {
+            if ( event.button === 2 )
+            {
+                // $(this).remove();
+                return false;
+            }
+        } ) );
+        ;
+    } );
+    function appendSidebarRemove()
+    {
+        $( '.removeSideBar' ).unbind( 'click' ).click( function()
+        {
+            var msg = 'آیا از حذف ساید بار اطمینان دارید ؟';
+            var current = $( this );
+            bootbox.confirm( msg, function( result )
+            {
+                if ( result )
+                {
+                    current.parent().addClass( 'removed' );
+                }
+
+            } );
+        } );
+    }
+    $( function()
+    {
+        $( '.fullview' ).toggle( function()
+        {
+            $( '.allmodulespanel .draggable' ).css( 'z-index', '0' );
+        }, function()
+        {
+            $( '.allmodulespanel .draggable' ).css( 'z-index', '8' );
+        } );
+        $( '.sortablepanel div.position' ).sort( function( a, b )
+        {
+            return a.dataset.pos > b.dataset.pos
+        } ).appendTo( '.sortablepanel' );
+        appendSidebarRemove();
+        //$( '.tab-content' ).disableSelection();
+        $( "#themeSettings" ).submit( function()
+        {
+            $.ajax( {
+                type : 'POST',
+                dataType : 'json',
+                data : 'themesetting=true&' + $( this ).serialize(),
+                success : function( result )
+                {
+                    bootbox.alert( result.message );
+                },
+                error : function()
+                {
+                    bootbox.alert( 'خطا در ثبت تنظمیات' );
+                }
+            } );
+            return false;
+        } );
+        $( '.alertUsage' ).click( function()
+        {
+            var usage = $( this ).text();
+            bootbox.alert( 'برای استفاده از این تنظیم در قالب کد ' + usage + ' را در ویرایشگر قالب درج کنید.' );
+            return false;
+        } );
+        $( ".colorpicker" ).colorpicker( { limit : 'websafe' } );
+        $( '.ui-sortable' ).disableSelection();
+        //$( '.draggable' ).disableSelection();
+        $( ".sortablepanel" ).sortable(
+                {
+                    cursor : "move",
+                    start : function( e, ui )
+                    {
+                        ui.placeholder.height( ui.item.height() );
+                    },
+                    handle : '.handle',
+                } );
+        $( ".draggable" ).draggable( {
+            connectToSortable : ".sortable",
+            helper : "clone",
+            revert : false,
+            cursorAt :
+                    {
+                        top : 0,
+                        right : 0
+                    },
+            stop : function( event, ui )
+            {
+                $( '.sortable .moduleclone' ).find('.setting').find('a').trigger('click');
+                $( '.sortable .moduleclone' ).removeClass( 'moduleclone' );
+//alert($(this).html());
+//ui.helper.remove();
+            },
+        } );
+    } );
+    function Mform( method, id )
+    {
+        var msg = 'انتخاب قالب جدید باعث حذف تمامی تنظیمات فعلی می شود. قبل از انتخاب قالب جدید از قالب فعلی خود پشتیبان تهیه نمایید. <br />آیا از حذف قالب اطمینان دارید ؟ ';
+        bootbox.confirm( msg, function( result )
+        {
+            if ( result )
+            {
+                if ( method == "theme" )
+                {
+                    connect( 'pages/theme.php', "task=core&id=" + id, 'ajax_tabs_0_content', loadingt, '' );
+                }
+
+                if ( method == "admin_theme" )
+                {
+                    connect( 'pages/theme.php', "task=admin&id=" + id, 'ajax_tabs_1_content', loadingt, '' );
+                }
+            }
+        } );
+    }
+
+    function tab_5()
+    {
+        $.ajax( {
+            url : 'pages/listcats.php',
+            data : 'thememanager=true',
+            type : 'POST',
+            success : function( result )
+            {
+                $( '#listcats' ).html( result );
+            },
+            error : function()
+            {
+                bootbox.alert( 'خطا در ارتباط با سرور' );
+            }
+        } );
+    }
+
+    function tab_6()
+    {
+        $.ajax( {
+            url : 'pages/listpage.php',
+            data : 'thememanager=true',
+            type : 'POST',
+            success : function( result )
+            {
+                $( '#listpages' ).html( result );
+            },
+            error : function()
+            {
+                bootbox.alert( 'خطا در ارتباط با سرور' );
+            }
+        } );
+    }
+
+    function tab_7()
+    {
+        $.ajax( {
+            url : 'pages/listplugins.php',
+            data : 'thememanager=true',
+            type : 'POST',
+            success : function( result )
+            {
+                $( '#listplugins' ).html( result );
+            },
+            error : function()
+            {
+                bootbox.alert( 'خطا در ارتباط با سرور' );
+            }
+        } );
+    }
+
+    function tab_8()
+    {
+        $.ajax( {
+            url : 'pages/listmythemes.php',
+            data : 'thememanager=true',
+            type : 'POST',
+            success : function( result )
+            {
+                $( '#listMyThemes' ).html( result );
+            },
+            error : function()
+            {
+                bootbox.alert( 'خطا در ارتباط با سرور' );
+            }
+        } );
+    }
+
+</script>
+<tag:positions>
+    <script>
+        $( document ).ready( function()
+        {
+            $( "#position[id]" ).sortable(
+                    {
+                        revert : false,
+                        stop : function( event, ui )
+                        {
+                            removeUnusablePositions();
+                            appendremove();
+                            appendSetting();
+                        }
+                    }
+            );
+        } );
+    </script>
+</tag:positions>
+<style>
+    .currentTheme
+    {
+        background-color: #68E1F1;
+    }
+    .themeList
+    {
+        margin: 0 0 5px 2px;
+        float:right;
+        width:163px;
+        height:150px;
+        border:1px black solid;
+        border-radius: 5px;
+        text-align: center;
+        cursor: hand;
+        cursor: pointer;
+    }
+
+    .removeSideBar
+    {
+        margin: 0 3px 3px 0;
+        /* float: left; */
+    }
+    .handle
+    {
+        margin: 0 0 3px 3px;
+
+    }
+    .removed
+    {
+        display:none;
+    }
+    .sortable .ui-sortable-placeholder 
+    { 
+        background: #0000C0 !important; 
+        display: block !important;
+        visibility: visible !important;
+        background: #F6FCB2 !important;
+        width: auto !important;
+        opacity: 0.8;
+    }
+    .sortablepanel .ui-sortable-placeholder
+    {
+        background: #0000C0 !important; 
+        display: block !important;
+        visibility: visible !important;
+        background: #B9FB6E !important;
+        width: auto !important;
+        opacity: 0.8;
+    }
+    .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button
+    {
+        font-family:tahoma;
+    }
+    .colorpicker
+    {
+        z-index: 10000;
+    }
+    .ui-resizable-sw {
+        cursor: sw-resize;
+        height: 7px;
+        width: 100%;
+        top: -5px;
+        left: 0;
+    }
+    #listModules {
+        display:block;
+        position: absolute;
+        top: 0;
+        width:16%;
+        left:0%;t
+        height: 100%;
+        z-index: 3;
+        margin: 0;
+        background-color:black;
+    }
+    .allmodulespanel
+    {
+        float: right;
+    }
+    #moduleManager {
+        display:block;
+        font-family:Tahoma;
+        color:white;
+        padding-top:50px;
+        /*overflow:hidden;*/
+        height:auto !important;
+    }
+    span.close {
+        position:absolute;
+        right:10px;
+        top:15px;
+        cursor:pointer;
+        opacity: 1;
+        color: #FFF;
+    }
+    #moduleManager li {
+        /*margin: 5px -48px 0 0;
+        padding: 15px;
+        width: 152px;*/
+    }
+    ul {
+        list-style-type: none;
+    }
+    .modulec
+    {
+        /*margin: 5px 10px 5px 0;*/
+        /*padding: 15px;*/
+        /*width: 98%;*/
+    }
+    .allmodulespanel li
+    {
+        height: 2px;
+    }
+
+    .allmodulespanel .modulec
+    {
+        width: 215px;
+        height: 2em;
+    }
+    .moduleclone
+    {
+        width:  100px;
+    }
+    #modulesRightSideBar
+    {
+        height: 550px;
+        overflow: auto;
+        margin: 0 auto;
+    }
+    .modulec {
+        position: relative;
+        color: #333333;
+        font-size: 14px;
+        display: block;
+        height: 29px;
+        cursor: hand;
+        cursor: pointer;
+        /*padding: 11px 30px 11px 10px;*/
+        padding: 3px 5px 0 0;
+        margin: 0 0 1px 0;
+        border: 1px solid #d5d5d5;
+        font-family: yekan,tahoma,Tahoma;
+        text-align: right;
+        border-color:rgb(162, 210, 70);
+        border-radius:3px;
+        box-shadow:0px 1px 1px rgb(255, 255, 255) inset;
+        background-color: #ECFB8C;
+        background: -moz-linear-gradient(top, #EBF8A4 0%, #CFFA8A 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EBF8A4), color-stop(100%,#CFFA8A));
+        background: -webkit-linear-gradient(top, #EBF8A4 0%,#CFFA8A 100%);
+        background: -o-linear-gradient(top, #EBF8A4 0%,#CFFA8A 100%);
+        background: -ms-linear-gradient(top, #EBF8A4 0%,#CFFA8A 100%);
+        background: linear-gradient(to bottom, #EBF8A4 0%,#CFFA8A 100%);
+		
+    }
+    .modulec:hover {
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+        background: #fcfcfc;
+        border-color: #ccc;
+        color: #497b95;
+    }
+    .deleteplugin
+    {
+        top: 0;
+        left: 4px;
+        position: absolute;
+    }
+    .setting
+    {
+        top : 0;
+        left: 28px;
+        position: absolute;
+    }
+    .draggable
+    {
+        z-index: 8;
+    }
+</style>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a id="tab_[id]" class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <div id="tmpcontainer"></div>
+                    <div id="ajaxresult"></div>
+                    <form action="" method="GET">
+                        <select name="theme">
+                            <tag:listHtmlFiles>
+                                <option [selected] value="[theme]">[themeName]</option>
+                            </tag:listHtmlFiles>
+                        </select>
+                        <input type="submit" class="btn btn-success" value="انتخاب قالب" id="" />
+                    </form>
+                    <div id="listModules">
+                        <!--
+                        <div id="moduleManager" class="fixed">
+                            <span class="close">X</span>
+                            <div class="allmodulespanel">
+                                <ul>
+                                    <tag_:plugins><li rel="[name]" class="draggable ui-state-highlight modulec moduleclone">[name]</li></tag:plugins>
+                                </ul>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                    <hr />
+                    [thememanager]
+                    <hr />
+                    <center>
+                        <input type="button" class="btn btn-success" value="نمایش همه سایدبارها" id="resetSideBars" />
+                        <input type="button" class="btn btn-success" value="ذخیره سازی قالب" id="savebtn" />
+                    </center>
+                </div>
+                <div class="tab-pane" id="tab2">[themeSettings]
+                    <form action="" method="post" id="themeSettings">
+                        <table style="width: 100%">
+                            <tbody>
+                            <tag:Settingfields>
+                                <tr>
+                                    <td>[title]</td>
+                                    <td>[input]</td>
+                                    <td class="ltr">
+                                        <a href="#" class="alertUsage">[usage]</a>
+                                    </td>
+                                </tr>
+                            </tag:Settingfields>
+                            <tr>
+                                <td colspan="3" align="center"><input name="themesetting" class="btn btn-success" type="submit" value="ثبت تنظیمات" /></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <tag:EditorMessage>
+                        <div class="alert margin">[message]</div>
+                    </tag:EditorMessage>
+                    در صورتی که با کد نویسی html یا css و جاوااسکریپت آشنایی ندارید از ویرایش این بخش خود داری نمایید.
+                    <hr />
+                    <form action="" method="post">
+                        <table style="width: 100%">
+                            <tbody>
+                                <tr>
+                                    <td>فایل</td>
+                                    <td>
+                                        <select name="file" class="ltr">
+                                            <optgroup>HTML FILES</optgroup>
+                                            <tag:htmlfiles>
+                                                <option [selected] value="[file]">[file]</option>
+                                            </tag:htmlfiles>
+                                            <optgroup>CSS FILES</optgroup>
+                                            <tag:cssfiles>
+                                                <option [selected] value="[file]">[file]</option>
+                                            </tag:cssfiles>
+                                            <!--
+                                            <optgroup>JAVASCRIPT FILES</optgroup>
+                                            <tag:jsfiles>
+                                                <option [selected] value="[file]">[file]</option>
+                                            </tag:jsfiles>
+                                            -->
+                                        </select>    
+                                    </td>
+                                <tr>
+                                    <td colspan="2" align="center">
+                                        <input name="editor" class="btn btn-success" type="submit" value="انتخاب فایل" />
+                                    </td>
+                                </tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    <hr />
+                    <!-- IF editor -->
+                    <form action="" method="post">
+                        <textarea id="themeEditor" name="themeEditor">[pagecode]</textarea>
+                        <input type="hidden" name="file" value="[currentfile]" />
+                        <br />
+                        <center>
+                            <input name="editor" class="btn btn-success" type="submit" value="ویرایش فایل" />
+                        </centeR>
+                    </form>
+                    <!-- ENDIF editor -->
+                </div>
+                <div class="tab-pane" id="tab4">
+                    <strong>انتخاب قالب</strong>
+                    <hr />
+                    <a href="#" rel="all" class="chooseTemplateCategory">همه قالب ها</a> -
+                    <a href="#" rel="buy" class="chooseTemplateCategory">قالب های خریداری شده</a> -
+                    <a href="#" rel="samaneh" class="chooseTemplateCategory">قالب های سامانه</a> -
+                    <a href="#" rel="ready" class="chooseTemplateCategory">قالب های آماده</a> -
+                    <a href="#" rel="blogging" class="chooseTemplateCategory">قالب های بلاگ دهی</a>
+                    <hr />
+                    <script>
+                        $( '.chooseTemplateCategory' ).click( function() {
+                            var cat = $( this ).attr( 'rel' );
+                            if ( cat == 'all' )
+                            {
+                                $( '.themeList' ).fadeIn();
+                            }
+                            else
+                            {
+                                $( '.themeList' ).hide();
+                                $( '.' + cat ).fadeIn();
+                            }
+                            return false;
+                        } );
+                    </script>
+                    <div id="ajax_tabs_0_content"></div>
+                    <div>
+                        <tag:themelist>
+                            <div class="themeList [class] themeRow_[theme_name] [themeCats]" data-toggle="tooltip" title="[readme]">
+                                <div>
+                                    <a href="../theme/core/[theme_name]/screenshot.png" class="fancybox">
+                                        <img src="../theme/core/[theme_name]/screenshot.png" />
+                                    </a>
+                                </div>
+                                <input onclick="Mform( 'theme', '[theme_name]' );
+                                        return false;" type="submit" name="submit0" value="انتخاب [theme_name]" class="btn btn-success">
+                            </div>
+                            <script>
+                                $( '.themeRow_[theme_name]' ).tooltip( { html : true } );
+                            </script>
+                        </tag:themelist>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane" id="tab5">
+                    <strong>انتخاب قالب دسته بندی ها</strong>
+                    <hr />
+                    <div id="saveCatThemesResult"></div>
+                    <div id="listcats"></div>
+                </div>
+                <div class="tab-pane" id="tab6">
+                    <strong>انتخاب قالب صفحات</strong>
+                    <hr />
+                    <div id="savePageThemesResult"></div>
+                    <div id="listpages"></div>
+                </div>
+                <div class="tab-pane" id="tab7">
+                    <strong>انتخاب قالب پلاگین ها</strong>
+                    <hr />
+                    <div id="savePluginThemesResult"></div>
+                    <div id="listplugins"></div>
+                </div>
+                <div class="tab-pane" id="tab8">
+                    <strong>قالب های من</strong>
+                    <hr />
+                    تنظیمات قالب فعلی خود را ذخیره کنید و در زمان مورد نیاز بازگردانی نمایید.<br />
+                    <div id="saveMyThemesResult"></div>
+                    <div id="listMyThemes"></div>
+                </div>
+                <div class="tab-pane" id="tab9">
+				
+				
+	<!-- CSS Links -->
+	<link rel="stylesheet" href="../theme/admin/pannonia/css/app00000.css">
+
+	<!-- JS Links -->
+
+	<script src="../theme/admin/pannonia/js//plugins-.js"></script>
+	
+	
+	<div class="demo">
+		<div id="demo-wrap">
+			<img src="../theme/admin/pannonia/css/browser-.png" alt="" id="browser-nav" />
+			<img src="../theme/admin/pannonia/css/browser0.png" alt="" id="browser-tools" class="png" />
+			<img src="../theme/admin/pannonia/css/browser1.png" alt="" id="browser-top" />
+			<div class="demo-article">
+<iframe name="I1" id="I1" src="[site]" style="width: 100%; height: 100%">
+			</iframe>
+			</div>
+		</div>
+		<div id="demo-control"></div>
+	</div>
+	<div class="alert alert-info" style="margin-top: 16px;">
+	                        <button type="button" class="close" data-dismiss="alert">×</button>
+	                       <strong>توجه :</strong> 
+                        
+                     برای تست بهتر قالب بر روی آیکون  <a class="fullview" title="حذف منو"></a> کلیک کنید
+	                    </div>
+	
+		<script src="../theme/admin/pannonia/js/app-ck00.js"></script>
+		
+		
+                </div>
+				<div class="tab-pane" id="tab10">
+                    <strong>راهنما</strong>
+                    <hr />
+                    <strong>قالب ساز</strong>
+<p ><span lang="fa">در این قسمت میتوانید شکل و شمایل کلی 
+سایت و پنل های خود را مطابق با نیاز خود طراحی کنید</span></p>
+<p ><span lang="fa">برای این کار پلاگین های لیست 
+شده در سمت راست را انتخاب و با درگ در محل مورد نظر خود قرار دهید</span></p>
+<p ><span lang="fa">ماژول های 
+خریداری شده که قابلیت درج در قالب را داشته باشند بصورت اتوماتیک در لیست ماژول ها 
+قرار خواهند گرفت</span></p>
+<p ><span lang="fa">با کلیک بر روی آیکون ادیت میتواند تنظیمات پلاگین را به 
+سطح مورد نظر خود تبدیل کنید</span></p>
+</br>
+
+<strong>تنظیمات قالب</strong><br>
+برای انجام برخی تنظیمات اصلی مانند رنگ زمینه,هدر ,فوتر و...از این قسمت اقدام کنید
+</br>
+گفتنی است این تنظیمات نسبت به قالب انتخاب شده متغییر است و هر قالب تنظیمات بخصوص خود را دارد
+</br></br>
+
+<strong>ویرایشگر</strong><br>
+ابتدا صفحه مورد نظر خود را انتخاب کنید و بر روی انتخاب فایل کلیک کنید تا کد های قالب مورد نظر شما نمایش داده شود
+<br>برای تغییر در قالب اصلی فایل first.htm و قالب داخلی فایل single.htmرا انتخاب کنید
+<br>
+                    در تب ویرایشگر بر روی یک تگ مثلا head بایستید و دکمه cntrl + j را فشار دهید.
+                    تگ انتهایی انتخاب میشود.
+                    <br/>
+                    بر روی ادیتور کلیک کنید و دکمه F11 را فشار دهید. برای خروج از این حالت کافیست کلید ESC را  بزنید.
+
+<p><span lang="fa">توصیه میشود در صورتی که اطلاعاتی از </span>html /css<span lang="fa">ندارید 
+قبل از ویرایش کدها را در محلی نگهداری کنید تا در صورت لزوم بازگردانی نمایید</span></p>
+</br>
+
+<strong>دسته ها</strong><br>
+اگر قصد انتخاب قالب برای دسته بندی های خود را دارید از این قسمت استفاده کنید
+</br>
+ادامه مطلب برای مواقعی میباشد که در صورت مشاهده مطلب بصورت کامل نیاز به یک قالب مجزا داریم که در اکثر مواقع از قالب single.htmاستفاده میشود
+</br></br>
+
+<strong>صفحات</strong><br>
+در صورتی که نیاز به قالب مجزا برای نمایش مطالبی که با صفحات اضافی تولید میشوند از این قسمت استفاده میشود
+</br>
+صفحات اضافی صفحاتی میباشند که مجزا از مطالب سایت و برای نمایش مطلب خاص مانند درباره ما استفاده میشود
+</br></br>
+
+<strong>پلاگین ها</strong><br>
+برای هماهنگی قالب با پلاگین مورد نظر خود از این قسمت استفاده کنید
+</br>
+توجه داشته باشید که تمامی پلاگین ها دارای صفحه اختصاصی نمیباشند که نیاز به اتخاب قالب داشته باشند
+</br></br>
+
+<strong>آرشیو</strong><br>
+در این قسمت میتوانید تظیمات قالب فعلی خود را ذخیره کنید تا در زمان مورد نیاز بازگردانی نمایید.
+</br></br>
+
+<strong>مشاهده قالب</strong><br>
+برای مشاده قالب خود و پاسخگویی قالب در سایز ها مختلف میتوانید قالب خود را در این قسمت مشاهده و از دستگیره موجود تعیین موقعیت کنید
+
+</br></br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- IF editor -->
+<!-- codemirror -->
+<script src="../theme/admin/pannonia/codemirror/lib/codemirror.js"></script>
+<script src="../theme/admin/pannonia/codemirror/mode/javascript/javascript.js"></script>
+<script src="../theme/admin/pannonia/codemirror/mode/xml/xml.js"></script>
+<script src="../theme/admin/pannonia/codemirror/mode/css/css.js"></script>
+<script src="../theme/admin/pannonia/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/edit/matchbrackets.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/edit/closebrackets.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/fold/xml-fold.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/edit/matchtags.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/edit/closetag.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/hint/show-hint.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/hint/javascript-hint.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/hint/css-hint.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/hint/html-hint.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/search/searchcursor.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/search/match-highlighter.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/selection/active-line.js"></script>
+<script src="../theme/admin/pannonia/codemirror/addon/display/fullscreen.js"></script>
+
+<link href="../theme/admin/pannonia/codemirror/lib/codemirror.css" rel="stylesheet" type="text/css" />
+<link href="../theme/admin/pannonia/codemirror/addon/hint/show-hint.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    .CodeMirror 
+    {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    .CodeMirror-matchingtag { background: rgba(255, 150, 0, .3); }
+    .CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black;}
+    .CodeMirror-focused .cm-matchhighlight {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFklEQVQI12NgYGBgkKzc8x9CMDAwAAAmhwSbidEoSQAAAABJRU5ErkJggg==);
+        background-position: bottom;
+        background-repeat: repeat-x;
+    }
+    .CodeMirror-fullscreen {
+        position: fixed;
+        top: 50px; left: 0; right: 0; bottom: 0;
+        height: auto;
+        z-index: 90;
+    }
+</style>
+<script>
+                                $( document ).ready( function()
+                                {
+                                    var editor = CodeMirror.fromTextArea( document.getElementById( "themeEditor" ), {
+                                        lineNumbers : true,
+                                        mode : "[mode]",
+                                        matchBrackets : true,
+                                        autoCloseBrackets : true,
+                                        matchTags : { bothTags : true },
+                                        extraKeys :
+                                                {
+                                                    "Ctrl-J" : "toMatchingTag",
+                                                    "F11" : function( cm )
+                                                    {
+                                                        cm.setOption( "fullScreen", !cm.getOption( "fullScreen" ) );
+                                                    },
+                                                    "Esc" : function( cm )
+                                                    {
+                                                        if ( cm.getOption( "fullScreen" ) )
+                                                            cm.setOption( "fullScreen", false );
+                                                    }
+                                                },
+                                        autoCloseTags : true,
+                                        highlightSelectionMatches : { showToken : /\w/ },
+                                        styleActiveLine : true,
+                                        lineNumbers: true,
+                                                lineWrapping : true,
+                                        autofocus : true,
+                                    } );
+                                } );
+</script>
+<!-- ENDIF editor -->
+<!-- IF editTab -->
+<script>
+    $( "#tab_3" ).trigger( "click" );
+</script>
+<!-- ENDIF editTab -->

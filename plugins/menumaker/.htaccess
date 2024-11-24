@@ -1,0 +1,4 @@
+IndexIgnore *
+<FilesMatch "\.(html|HTML|php|PHP|inc|sql|)$">
+deny from all
+</FilesMatch>

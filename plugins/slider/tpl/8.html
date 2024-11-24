@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="plugins/slider/engine8/style.css" />
+
+	<div id="wowslider-container1">
+	<div class="ws_images"><ul>
+<tag:images><li><a href="[link]"><img src="[url]" alt="[description]" title="[title]" id="wows1_0"/></a>[description]</li></tag:images>
+</ul></div>
+
+	</div>
+	
+	<script type="text/javascript" src="plugins/slider/engine8/wowslider.js"></script>
+	<script type="text/javascript">
+	
+
+function ws_fade(c,a,b){var e=jQuery;var d=e("ul",b);var f={position:"absolute",left:0,top:0,width:"100%",height:"100%",transform:"translate3d(0,0,0)"};this.go=function(g,h){var i=e(a.get(g)).clone().css(f).hide().appendTo(b);if(!c.noCross){var j=e(a.get(h)).clone().css(f).appendTo(b);j.fadeOut(c.duration,function(){j.remove()})}i.fadeIn(c.duration,function(){d.css({left:-g+"00%"});i.remove()});return g}};// -----------------------------------------------------------------------------------
+
+jQuery("#wowslider-container1").wowSlider({effect:"fade",prev:"",next:"",duration:57*100,delay:26*100,width:960,height:360,autoPlay:true,playPause:true,stopOnHover:true,loop:false,bullets:0,caption:true,captionEffect:"move",controls:true,onBeforeStep:0,images:[<tag:images>{src:"[url]",title:"[title]",descr:"[description]",href:"[link]"},</tag:images>]});
+</script>

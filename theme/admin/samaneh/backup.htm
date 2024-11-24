@@ -1,0 +1,71 @@
+<script>
+function tab_2()
+{
+	connect('pages/listbacks.php',"r",'ajax_tabs_1_content',loadingt,'');
+}
+function Mform(method){
+hideid("editing_area");
+connect('pages/backup.php',"task=new",'ajax_tabs_0_content',loadingt,'');
+}
+function delback(id){
+hideid("editing_area");
+var msg = "آيا از حذف اين فايل پشتيبان اطمينان داريد؟\n عمليات حذف برگشت پذير نمي باشد.";
+if(confirm(msg))
+{
+connect('pages/backup.php',"task=del&id="+id,'ajax_tabs_1_content_1',loadingt,'delete_back');
+}
+}
+function restore(id){
+var msg = "آيا از بازگرداني اين فايل پشتيبان اطمينان داريد؟\nبا بازگرداني اين فايل ، اطلاعات بك آپ جايگزين اطلاعات فعلي خوهند شد.\nاكيدا توصيه مي شود قبل از بازگرداني فايل ، يك پشتيبان از اطلاعات فعلي دريافت كنيد تا در صورت بروز مشكل در حين اجراي عمليات اطلاعات شما آسيب نبيند.";
+
+if(confirm(msg))
+{
+connect('pages/backup.php',"task=doback&id="+id,'ajax_tabs_1_content_1',loadingt,'');
+}
+
+}
+function dl(id)
+{
+gi("id").value = id;
+document.rezashfrm.submit() ;
+gv('ajax_tabs_1_content_1') = loadingt;
+}
+</script>		
+<div id="div_1"> 
+<form onsubmit="Mform('backup');return false" method=post>
+<table border="0" width="100%" class="tbl" id="tabs_0_content">
+<tr>
+<td id="ajax_tabs_0_content"></td>
+</tr>
+<tr>
+<td><center>
+<input onclick="Mform('backup');return false;" type="submit" name="submit" value="گرفتن پشتيبان از ديتابيس" class="inp"></center></td>
+</tr>
+</table></form>
+
+</div>
+<div id="div_2"  style="display:none" >
+<table border="0" width="100%" class="tbl" id="tabs_1_content">
+<tr>
+<td>
+<div class='MsgHead info'><div class='MsgBody'>اكيدا توصيه مي شود قبل از بازگرداني فايل پشتيبان از اطلاعات فعلي پشتيبان گيري كنيد.</div></div>
+
+<iframe style="display:none" name="rezash" marginwidth="0" marginheight="0" border="0" frameborder="0" height="1" width="1" src="pages/index.html" scrolling="no">
+</iframe>
+<form name=rezashfrm action="pages/download.php" method=post target=rezash>
+<input type="hidden" name="id" id="id" value="" class="inp"></center></td>
+
+</form>
+<div id=edit>
+<div id="ajax_tabs_1_content_1"></div>
+</div>
+</tr><tr>
+</td>
+<td id="ajax_tabs_1_content">
+</td>
+
+</tr>
+
+</table>
+
+</div>

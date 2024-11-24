@@ -1,0 +1,61 @@
+<table border="0" width="100%">
+<tr>
+<td width="29%">دسترسي به پنل مديريت : <font color="#FF0000">*</font></td>
+<td width="70%">
+<select name="accsess_admin_acc" id="accsess_admin_acc" class="select2" size="1" onchange="priv();" onfilterchange="priv();">
+<option id="accsess_admin_1" value="1" [samaneh_admin_acc_1]>بله -- كاربر به عنوان مدير معرفي شود</option>
+<option id="accsess_admin_2" value="0" [samaneh_admin_acc_0]>خير - كاربر حق دسترسي به بخش مديريت را ندارد</option>
+
+</select></td>
+</tr>
+</table>
+<table border="0" width="100%" class="tbl" id="samaneh_admin_tbl" style="display:[admin_display]">
+<tag:samaneh_per>
+<tr>
+<td width="29%">
+
+[samaneh_name]</td>
+<td width="70%">
+<select name="[CMS]" id="[CMS]" class="select2" size="1">
+<option value="1" [samaneh_admin_[id]_1]>بله</option>
+<option value="0" [samaneh_admin_[id]_2]>خير</option>
+
+</select>
+</td>
+</tr>
+</tag:samaneh_per>
+<tr>
+<td width="99%" colspan="2">&nbsp;</td>
+</tr>
+
+</table>
+
+<table border="0" width="100%" class="tbl" id="samaneh_user_tbl" style="display:[CMS_display]">
+<tr>
+<td width="29%">ارسال مطلب : <font color="#FF0000">*</font></td>
+<td width="70%">
+<select name="sendpost" id="sendpost" class="select2" size="1">
+<option value="1" [samaneh_admin_2_1]>بله</option>
+<option value="0" [samaneh_admin_2_2]>خير</option>
+
+</select></td>
+</tr>
+<tr>
+<td width="29%">ارسال نظر : <font color="#FF0000">*</font></td>
+<td width="70%"><select name="sendcomment" id="sendcomment" class="select2" size="1">
+<option value="1" [samaneh_admin_4_1]>بله</option>
+<option value="0" [samaneh_admin_4_2]>خير</option>
+
+</select></td>
+</tr>
+</table>
+<table border="0" width="100%" class="tbl">
+<tr>
+<td colspan="2"><center>
+<input onclick="Mform('edit_user');return false;" type="submit" name="submit" value="ويرايش اختيارات كاربر" class="btn btn-success">
+<input type=hidden id="samaneh_usr_id" name="samaneh_usr_id" value="[samaneh_usr_id]">
+</center></td>
+</tr>
+</table>
+<input type="hidden" name="edit_user_id" id="edit_user_id" value="">
+</form>

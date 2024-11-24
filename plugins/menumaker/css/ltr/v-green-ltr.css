@@ -1,0 +1,69 @@
+/* v-green-ltr Dropdown Menu
+-----------------------------------*/
+.v-green-ltr, .v-green-ltr ul {
+    list-style: none;
+	width: 160px;
+	margin: 0;
+	padding: 0;
+}
+.v-green-ltr {
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+.v-green-ltr li {
+	position: relative;
+}
+.v-green-ltr ul {
+	position: absolute;
+	top: 0;
+	left: 159px;
+	width: 160px;
+	display: none;
+	z-index: 999;
+}
+.v-green-ltr a {
+	display: block;
+	height: 2.9em;
+	line-height: 2.9em;
+	padding: 0 0.8em;
+}
+.v-green-ltr ul li a {
+	overflow: hidden;
+}
+.v-green-ltr li:hover > ul {
+	display: block;
+}
+.v-green-ltr li.parent > a {
+	background-image: url(../images/arrow-right2.gif);
+	background-position: 148px center;
+	background-repeat: no-repeat;
+}
+
+.v-green-ltr, .v-green-ltr ul {
+	-webkit-box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+	-moz-box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+	box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+}
+
+.v-green-ltr, .v-green-ltr ul {
+	border-bottom: 1px solid #AABF5D;
+}
+.v-green-ltr li {
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#CBE86B), to(#B9D164));
+	background: -moz-linear-gradient(#CBE86B, #B9D164);
+	background: linear-gradient(#CBE86B, #B9D164);
+	background: #CBE86B;
+}
+.v-green-ltr li a {
+	color: #444;
+	border: 1px solid #AABF5D;
+	border-bottom: none;
+	font-family: Tahoma;
+	text-decoration: none;
+}
+.v-green-ltr li:hover {
+	background: #B9D164;
+}
+.v-green-ltr li.parent > a {
+	background-image: url(../images/arrow-right1.gif);
+}

@@ -1,0 +1,36 @@
+این فایل قالب به صورت استاتیک در قالب امده است
+<b>pluginName</b>_oldThemeFileName
+را در پوشه plugins قرار دهید
+<hr />
+<!-- IF todayArea --><b>»</b>  امروز : [today]<br><!-- ENDIF todayArea -->
+<!-- IF yesterdayArea --><b>»</b> دیروز : [yes]<br> <!-- ENDIF yesterdayArea -->
+<!-- IF monthArea --><b>»</b> ماه : [month] <br><!-- ENDIF monthArea -->
+<!-- IF pmonthArea --><b>»</b> ماه قبل : [pmonth] <br><!-- ENDIF pmonthArea -->
+<!-- IF yearArea --><b>»</b> سال : [year] <br><!-- ENDIF yearArea -->
+<!-- IF pyearArea --><b>»</b>
+سال قبل : [pyear] <br><!-- ENDIF pyearArea -->
+<!-- IF totalArea -->
+<b>»</b>
+کل : [total]<!-- ENDIF totalArea -->
+<!-- IF siteInfo -->
+<hr style="border: 1px dotted rgb(0, 0, 0);" width="90%" align="center" size="1">
+
+<b>اطلاعات سايت:</b><br><!-- IF newsArea -->
+<b>»</b> اخبار :[total_news]<br><!-- ENDIF newsArea -->
+<!-- IF commentsArea -->
+<b>»</b>&nbsp; نظرات : <font color="#008000">[ncom]</font><br>
+<!-- ENDIF commentsArea -->
+<!-- IF rssArea -->
+<b>»</b>
+<a href="[siteurl]rss.xml">خروجي rss</a><!-- ENDIF rssArea -->
+<!-- ENDIF siteInfo -->
+<!-- IF memberInfo -->
+<hr style="border: 1px dotted rgb(0, 0, 0);" width="90%" align="center" size="1">
+<b>كاربران:</b><br>
+<!-- IF totalmembersArea -->
+<b>»</b> اعضا :<font color="#008000">
+<a href="memberlist.html">[tmem]</a></font><br><!-- ENDIF totalmembersArea -->
+<!-- IF onlinesArea -->
+<b>»</b>&nbsp; كاربران آنلاين : <font color="#ff0000">[ons]</font>
+<!-- ENDIF onlinesArea -->
+<!-- ENDIF memberInfo -->

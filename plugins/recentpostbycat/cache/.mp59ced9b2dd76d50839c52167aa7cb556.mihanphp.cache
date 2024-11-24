@@ -1,0 +1,53 @@
+                  <li>
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="row">
+
+                                        <!-- Item Work-->
+                                        <div class="col-md-6" style="float: right;">
+                                            <div class="item-work">
+                                                <div class="hover">
+                                                    <img src="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg" alt="" />                               
+                                                     <a href="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg" class="fancybox" title="Zoom Image"><div class="overlay"></div></a>
+                                                </div>                                   
+                                                <div class="info-work">
+                                                   <a target="_blank"  href="http://127.0.0.1/cms2/post/54-چند+ویژگی+یک+وبلاگ+نویس+موفق.php" title="1394-10-21"> <h4>چند ویژگی یک وبلاگ نویس موفق</h4></a>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <!-- End Item Work-->
+
+                                        <!-- Item Work-->
+                                        <div class="col-md-6" style="float: right;">
+                                            <div class="item-work">
+                                                <div class="hover">
+                                                    <img src="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg" alt="" />                               
+                                                     <a href="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg" class="fancybox" title="Zoom Image"><div class="overlay"></div></a>
+                                                </div>                                   
+                                                <div class="info-work">
+                                                   <a target="_blank"  href="http://127.0.0.1/cms2/post/53-4+روش+مهم+درآمدزایی+برندهای+مهم.php" title="1394-10-21"> <h4>4 روش مهم درآمدزایی برندهای مهم</h4></a>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <!-- End Item Work-->
+
+                                    </div>
+
+                                </div><!-- if first-->
+
+                                 <div class="col-md-6 padding-top-mini">
+                                   <h2 class="title-subtitle">
+                                      چند ویژگی یک وبلاگ نویس موفق
+                                        <span>1394-10-21</span>
+                                   </h2>
+                                    <p class="delay2"><p>وبلاگ نویسی هم همانند سایر مشاغل یک حرفه میباشد که برای موفق شدن در آن باید فرد دارای ویژگی هایی باشد.<br /><br />&nbsp;<br /><br /></p></p>
+                                 
+                                </div><!-- End if first-->
+
+
+                           </div> 
+                        </div> 
+                    </li>

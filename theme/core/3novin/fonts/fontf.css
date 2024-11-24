@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'weblogmayekan';
+    src: url('Yekan.eot');
+    src: url('Yekan.eot#iefix') format('embedded-opentype'),
+         url('Yekan.woff') format('woff'),
+         url('Yekan.ttf') format('truetype'),
+         url('Yekan.svg#CartoGothicStdBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'BTitrBold';
+  src: url('BTitrBold.eot?#') format('eot'),  /* IE6–8 */
+       url('BTitrBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('BTitrBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+  font-family: 'BKoodakBold';
+  src: url('BKoodakBold.eot?#') format('eot'),  /* IE6–8 */
+       url('BKoodakBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('BKoodakBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+  font-family: 'BMitra';
+  src: url('BMitra.eot?#') format('eot'),  /* IE6–8 */
+       url('BMitra.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('BMitra.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+  font-family: 'BNazanin';
+  src: url('BNazanin.eot?#') format('eot'),  /* IE6–8 */
+       url('BNazanin.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('BNazanin.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+@font-face {
+  font-family: 'BRoya';
+  src: url('BRoya.eot?#') format('eot'),  /* IE6–8 */
+       url('BRoya.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('BRoya.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+  font-family: 'BTraffic';
+  src: url('BTraffic.eot?#') format('eot'),  /* IE6–8 */
+       url('BTraffic.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('BTraffic.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}

@@ -1,0 +1,66 @@
+/* v-blue-ltr Dropdown Menu
+-----------------------------------*/
+.v-blue-ltr, .v-blue-ltr ul {
+    list-style: none;
+	width: 160px;
+	margin: 0;
+	padding: 0;
+}
+.v-blue-ltr {
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+.v-blue-ltr li {
+	position: relative;
+}
+.v-blue-ltr ul {
+	position: absolute;
+	top: 0;
+	left: 159px;
+	width: 160px;
+	display: none;
+	z-index: 999;
+}
+.v-blue-ltr a {
+	display: block;
+	height: 2.9em;
+	line-height: 2.9em;
+	padding: 0 0.8em;
+}
+.v-blue-ltr ul li a {
+	overflow: hidden;
+}
+.v-blue-ltr li:hover > ul {
+	display: block;
+}
+.v-blue-ltr li.parent > a {
+	background-image: url(../images/arrow-right2.gif);
+	background-position: 148px center;
+	background-repeat: no-repeat;
+}
+
+.v-blue-ltr, .v-blue-ltr ul {
+	-webkit-box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+	-moz-box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+	box-shadow: 2px 3px 0 rgba(100, 100, 100, 0.1);
+}
+
+.v-blue-ltr, .v-blue-ltr ul {
+	border-bottom: 1px solid #588BAD;
+}
+.v-blue-ltr li {
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#6FB9E8), to(#6AAAD6));
+	background: -moz-linear-gradient(#6FB9E8, #6AAAD6);
+	background: linear-gradient(#6FB9E8, #6AAAD6);
+	background: #6FB9E8;
+}
+.v-blue-ltr li a {
+	color: #fff;
+	border: 1px solid #588BAD;
+	border-bottom: none;
+	font-family: Tahoma;
+	text-decoration: none;
+}
+.v-blue-ltr li:hover {
+	background: #6AAAD6;
+}

@@ -1,0 +1,81 @@
+<script>
+    function Mform(method) {
+        hideid("editing_area");
+        var ip = gi("ip_add").value;
+        var pm = gi("ip_desc").value;
+        connect('pages/banned.php', "task=new&ip=" + ip + "&pm=" + pm,
+            'ajax_tabs_0_content', loadingt, '');
+    }
+
+    function delip(id) {
+        hideid("editing_area");
+        var msg = "آيا از حذف اين آدرس آي پي از ليست سياه اطمينان داريد؟";
+        if (confirm(msg)) {
+            connect('pages/banned.php', "task=delete&id=" + id,
+                'ajax_tabs_1_content_1', loadingt, 'delete_ip');
+        }
+    }
+
+    function tab_2() {
+        connect('pages/listips.php', "r", 'ajax_tabs_1_content', loadingt, '');
+    }
+</script>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <form onsubmit="Mform('new_ip');return false" method=post>
+                        <table border="0" width="100%" class="tbl" id="tabs_0_content">
+                            <tr>
+                                <td colspan="2" id="ajax_tabs_0_content"></td>
+                            </tr>
+                            <tr>
+                                <td width="100px">آدرس آي پي :</td>
+                                <td>
+                                    <input class="input-xlarge ltr" type="text" name="ip_add" id="ip_add" size="59">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>پيام :</td>
+                                <td>
+                                    <textarea class="input-xlarge" type="text" name="ip_desc" id="ip_desc" cols="10"
+                                    rows="10"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>
+                                        <input onclick="Mform('new_ip');return false;" type="submit" name="submit" value="افزودن آي پي به ليست سياه"
+                                        class="btn btn-success">
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <table border="0" width="100%" class="tbl" id="tabs_1_content">
+                        <tr>
+                            <td>
+                                <div id=edit>
+                                    <div id="ajax_tabs_1_content_1"></div>
+                                </div>
+                        </tr>
+                        <tr>
+                            </td>
+                            <td id="ajax_tabs_1_content"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<br><div class="container clearfix">
+		<div class="sixteen columns m-bot-20">
+			<div class="our-clients-caption-container">
+				<div class="caption-main-container clearfix">
+					<div class="caption-text-container" style="float: right; margin-bottom: 1px; right: 10px; padding: 10px; text-align: center; direction: rtl;">
+						<span class="bold">اخبار تکنولوژی</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="container clearfix">
+		<div class="sixteen columns">
+			<ul class="our-clients-container content-container-white clearfix " style="border-style: double;">
+				<li style="padding-left: 5px; float: right;">
+					<a href="http://127.0.0.1/cms2/post/54-چند+ویژگی+یک+وبلاگ+نویس+موفق.php">
+						<div class="bw-wrapper">
+							<img src="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg" alt="چند ویژگی یک وبلاگ نویس موفق" style="width: 150px;">
+						</div>
+					</a>
+				</li><li style="padding-left: 5px; float: right;">
+					<a href="http://127.0.0.1/cms2/post/53-4+روش+مهم+درآمدزایی+برندهای+مهم.php">
+						<div class="bw-wrapper">
+							<img src="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg" alt="4 روش مهم درآمدزایی برندهای مهم" style="width: 150px;">
+						</div>
+					</a>
+				</li>
+            </ul>
+		</div>	
+	</div>

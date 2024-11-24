@@ -1,0 +1,133 @@
+﻿.amazon_scroller{
+	border:none !important;
+	background:none !important;
+	margin:0px 0px 0 0
+	
+}
+.amazon_scroller .amazon_scroller_nav{
+    position: absolute;
+}
+.amazon_scroller .amazon_scroller_nav li{
+    cursor: pointer;
+    position: absolute;
+}
+.amazon_scroller .amazon_scroller_mask{
+    position: absolute;
+    overflow: hidden;
+	height:307px !important;
+	top:0px;
+	right:40px
+}
+
+.amazon_scroller ul{
+    padding: 0px;
+    float: right;
+}
+.amazon_scroller_mask ul li{
+    padding: 0px;
+    margin: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    list-style: none;
+    float: left;
+    text-align: center;
+    display:inline;
+	width:195px !important;
+	height:307px;
+	position:relative
+
+}
+
+.amazon_scroller ul li .span0{
+	position:absolute;
+	width:160px;
+	height:25px;
+	top:15px;
+	left:13px;
+	text-align:center;
+	line-height:23px;
+    font-weight:bold;
+	color:#fff;
+	text-shadow:1px 2px rgba(5, 6, 6, 0.33);	font: 20px 'beirut', tahoma;
+}
+
+.amazon_scroller ul li .span1{
+	position:absolute;
+	width:160px;
+	height:25px;
+	top:77px;
+	right:20px;
+	text-align:right;
+	line-height:23px;
+	color:#343434;
+	text-shadow:1px 1px #fff
+}
+
+.amazon_scroller ul li .span2{
+	position:absolute;
+	width:160px;
+	height:25px;
+	top:110px;
+	right:20px;
+	text-align:right;
+	line-height:23px;
+	color:#343434;
+	text-shadow:1px 1px #fff
+}
+
+.amazon_scroller ul li .span3{
+	position:absolute;
+	width:160px;
+	height:25px;
+	top:148px;
+	right:20px;
+	text-align:right;
+	line-height:23px;
+	color:#343434;
+	text-shadow:1px 1px #fff
+}
+
+.amazon_scroller ul li .span4{
+	position:absolute;
+	width:160px;
+	height:25px;
+	top:185px;
+	right:20px;
+	text-align:right;
+	line-height:23px;
+	color:#343434;
+	text-shadow:1px 1px #fff
+}
+
+.amazon_scroller ul li a{
+    text-decoration: none;
+	width:178px;
+	height:36px;
+	position:absolute;
+	top:226px;
+	right:8px;
+	display:block;
+        z-index:10
+
+}
+
+.amazon_scroller ul li a img {
+	z-index:1;
+	width:178px !important;
+	height:36px !important;
+
+	}
+.left_arrow {
+	background:url(left0000.png) no-repeat !important;
+	top:-125px;
+	left:-45px !important;
+	width:65px !important;
+
+}
+.right_arrow {
+	background:url(right000.png) no-repeat !important;
+	top:-125px;
+	right:-45px !important;
+	width:65px !important;
+}
+

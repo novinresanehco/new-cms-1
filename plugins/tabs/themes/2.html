@@ -1,0 +1,78 @@
+<style type="text/css">
+#page-wrap {
+  width:95%; 
+}
+	   .tabsv {
+      position: relative;   
+      min-height: 200px; /* This part sucks */
+      clear: both;
+      margin: 25px 0;      
+    }
+    .tab2 {
+      /*float: left; */     
+       height: 41px; 
+    }
+    .tab2 label {
+      background: #eee; 
+      padding: 0%; 
+      border: 1px solid #ccc; 
+      margin-left:1.7%; 
+      position: relative;
+      left: 1px;        
+      width:15%;
+      display: block;
+    }
+	.tab2 label:hover {
+      background:#d7d4d4; 
+      padding: 0%; 
+      border: 1px solid #ccc; 
+      margin-left:1.7%; 
+      position: relative;
+      left: 1px;        
+      width:15%;
+      display: block; transition: all .3s ease-in;         
+    }
+    .tab2 [type=radio] {
+      display: none;   
+    }
+    .content2 {
+      position: absolute;
+      top: 0px;
+      left: 16.8%;
+      background: white;
+      right: 0;
+      bottom: 0;
+      padding: 5px;
+      border: 1px solid #ccc;  width: 85%;     
+    }
+    [type=radio]:checked ~ label {
+      background: white;
+      border-bottom: 0px solid white;
+	  box-shadow: inset 2.5px 0 #f05451;
+	  color: #060606;
+      z-index: 2;font-weight: 300;
+    }
+    [type=radio]:checked ~ label ~ .content2 {
+      z-index: 1;
+    }
+	.tab2 img
+	{margin: 4px 2px -3px 3px}
+  </style>
+  <div id="page-wrap">
+	
+    <div class="tabs2">
+        
+       <tag:tabs><div class="tab2">
+           <input type="radio" id="tab2-[id]" name="tab2-group-1" checked>
+           <label for="tab2-[id]">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[title]<img src="[icon]"></label>
+           <div class="content2">
+               <p>[text]</p>
+           </div> 
+       </div></tag:tabs>
+        
+        
+    </div>
+	
+	</div>
+	
+	

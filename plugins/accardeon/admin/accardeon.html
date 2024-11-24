@@ -1,0 +1,329 @@
+<style>
+
+.box {
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #E5E5E5;
+    margin-bottom: 10px;
+}
+
+.box h2 {
+    border-bottom: 1px solid #EEEEEE;
+    color: #902452;
+    font: bold 12px Tahoma,sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+section {
+    padding: 10px;
+}
+
+form p label {
+    color: #555555;
+    cursor: pointer;
+    display: block;
+    font: bold 11px Tahoma,sans-serif;
+    margin-left: 10px;
+    padding: 4px 2px;
+    vertical-align: middle;
+	width: 56px;
+}
+#form-title, #form-url, #form-description, #form-thumbnail {
+    width: 90%;
+}
+
+form p {
+    clear: right;
+    margin-bottom: 0;
+    padding: 3px 0;
+    width: 100%;
+}
+form input[type="text"], form input[type="email"], form input[type="password"], form select, form textarea {
+    border: 1px solid #DDDDDD;
+    padding: 5px 4px;
+}
+form select, form input, form textarea
+{
+	width:90%;
+	background-color:#FFF;
+	color: #555555;
+}
+input, button, select, textarea {
+    font: 11px/15px Tahoma,sans-serif;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+form p {
+    clear: right;
+    margin-bottom: 0;
+    padding: 3px 0;
+    width: 100%;
+}
+.button.green {
+    background: linear-gradient(#75AE5C, #649552) repeat scroll 0 0 transparent;
+    border: 1px solid #3B6E22;
+}
+.button.red {
+    background: linear-gradient(#FC5555, #FF1C1C) repeat scroll 0 0 transparent;
+    border: 1px solid #D30000;
+}
+.button.blue {
+    background: linear-gradient(#5C75AE, #527695) repeat scroll 0 0 transparent;
+    border: 1px solid #222B6E;
+}
+.button.small {
+    font-weight: normal;
+    padding: 4px 5px;
+    text-shadow: none;
+}
+.button {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.4) inset, 1px 1px 1px #EEEEEE;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font: bold 11px Tahoma,sans-serif;
+    margin: 0 3px 0 1px;
+    outline: medium none;
+    overflow: visible;
+    padding: 5px 6px;
+    text-align: center;
+    vertical-align: baseline;
+    width: auto;
+}
+.formscreenshot {
+    float: right;
+    margin: 8px;
+}
+.formscreenshot img {
+    border: 2px solid white;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+.formscreenshot img:hover {
+    border: 2px solid red;
+}
+.activescreenshot {
+    border: 2px solid red;
+}
+.search-options
+{
+	right: auto;
+	left: 37px;
+}
+#accardeonIcon
+{
+	direction: ltr;
+	text-align: left;
+	padding-left: 30px;
+}
+#accardeon ul
+{
+	list-style-type: none;
+}
+
+</style>
+<script>
+function escapeRegExp(str) {
+    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
+//$("#accardeon").sortable({});
+function addEditor( id )
+{
+	tinyMCE.init( {
+			language : "fa", // change language here
+                selector : "#" + id,
+                editor_deselector : "noeditor",
+                content_css : "../theme/admin/samaneh/fonts.css",
+                direction : "rtl",
+                plugins : [
+                    "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+                    "searchreplace wordcount visualblocks visualchars code fullscreen",
+                    "insertdatetime media nonbreaking save table contextmenu directionality",
+                    "emoticons template paste textcolor"
+                ],
+                relative_urls : false,
+                convert_urls : false,
+                remove_script_host : false,
+                toolbar1 : "fontselect fontsizeselect insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+                toolbar2 : "print preview media | forecolor backcolor emoticons",
+                //Mad File Manager
+                relative_urls: true,
+                        file_browser_callback : MadFileBrowser
+            } );
+
+}
+function bindicons()
+{
+	$( ".browseicon" ).unbind('click').click( function()
+    {
+		var id = $( this ).attr( 'id' ).replace( 'ictab_', '' );
+		id = "accardeonIcon_" + id;
+        var theme = '<div class="iconmanagerarea"><div id="icons-202020" class="iconmanager"></div><div style="clear:both"></div></div>';
+        jQuery.fancybox( theme.replace( '202020', id ) );
+        addIcon( id, '[site]', true );
+        return false;
+    } );
+}
+function bindRemove()
+{
+	$('.removeTab').unbind('click').click( function(){
+		var id = $( this ).attr( 'id' ).replace( 'remove_', '' );
+		$( '#tab_' + id ).remove();
+	});
+}
+</script>
+<form id="accardeon_frm" action="" method="post">
+<input type="hidden" name="saveaccardeon" />
+<div class="box">
+	<h2>تنظیمات آکاردئون [tab]</h2>
+	<section>
+		<p>
+			<label for="eaccardeontitle">عنوان آکاردئون</label>
+			<input type="text" id="eaccardeontitle" name="eaccardeontitle" value="[tab]">
+		</p>
+		<p>
+			<label for="eaccardeontemplate">قالب آکاردئون </label>
+			<select name="eaccardeontemplate">
+				<tag:accardeonblock>
+				<option [select]>[name]</option>
+				</tag:accardeonblock>
+			</select>
+		</p>
+	</section>
+</div>
+<div class="box">
+	<h2>مدیریت آکاردئون های [tab]</h2>
+	<section>
+		<div id="tabajax"></div>
+        <div id="accardeon">
+			<tag:accardeon>
+			<div id="tab_[rand]">
+			<p>
+				<label for="accardeontitle_[rand]">عنوان آکاردئون</label>
+				<div class='autocomplete-append'>
+						<ul class='search-options'>
+						<li><a data-original-title='حذف' id="remove_[rand]" class='tip removeTab' style="background-image: url(../theme/admin/pannonia/images/1delete.png"></a></li>
+					</ul>
+						<input type="text" id="accardeontitle_[rand]" name="accardeontitle[]" value="[title]">
+
+				</div>
+			</p>
+			<p>
+				<label for="accardeonIcon_[rand]">عکس آکاردئون</label>
+				<div class='autocomplete-append'>
+						<ul class='search-options'>
+						<li><a data-original-title="افزودن فایل از مرکز فایلها" href="mfm.php?mode=standalone&amp;field=accImage_[rand]" title="" class="settings-option tip browsefile"></a></li>
+					</ul>
+					<input name='accardeonimage[]' id='accImage_[rand]' type='text' value='[image]' class='' />
+
+				</div>
+			</p>
+			<p>
+				<label for="accardeonIcon_[rand]">آیکن آکاردئون</label>
+				<div class='autocomplete-append'>
+						<ul class='search-options'>
+						<li><a data-original-title='settings' id="ictab_[rand]" href="iconmanager.php?field=accardeonIcon_[rand]" class='settings-option tip browseicon'></a></li>
+					</ul>
+					<input name='accardeonIcon[]' id='accardeonIcon_[rand]' type='text' value='[icon]' class='' />
+
+				</div>
+			</p>
+			<p>
+				<label for="accardeontext_[rand]">محتوای آکاردئون</label>
+				<textarea id="accardeontext_[rand]" name="accardeontext[]" class="ceditor">[text]</textarea>
+			</p>
+	</div>
+	<script>
+	addEditor( 'accardeontext_[rand]' );
+	</script>
+			</tag:accardeon>
+		</div>   
+		
+		<p class="buttons">
+			<button id="add-accardeon" class="button blue small" type="button">افزودن آکاردئون جدید</button>
+			<button id="save-accardeon" class="button green small" type="button">ذخیره تنظیمات</button>
+			<button id="save-accardeon" href="plugins.php?plugin=accardeon&accardeon=[accardeon_id]&remove" class="button red small confirm" type="button">حذف آکاردئون</button>
+		</p>
+	</section>
+</div>
+	<div style="display:none" id="sampletab">
+		<div id="tab_rand2020">
+				<p>
+					<label for="accardeontitle_rand2020">عنوان آکاردئون</label>
+					<div class='autocomplete-append'>
+							<ul class='search-options'>
+							<li><a data-original-title='حذف' id="remove_rand2020" class='tip removeTab' style="background-image: url(../theme/admin/pannonia/images/1delete.png"></a></li>
+						</ul>
+							<input type="text" id="accardeontitle_rand2020" name="accardeontitle[]" value="">
+
+					</div>
+				</p>
+				<p>
+				<label for="accardeonIcon_rand2020">عکس آکاردئون</label>
+				<div class='autocomplete-append'>
+						<ul class='search-options'>
+						<li><a data-original-title="افزودن فایل از مرکز فایلها" href="mfm.php?mode=standalone&amp;field=accImage_rand2020" title="" class="settings-option tip browsefile"></a></li>
+					</ul>
+					<input name='accardeonimage[]' id='accImage_rand2020' type='text' value='' class='' />
+
+				</div>
+			</p>
+				<p>
+					<label for="accardeonIcon_rand2020">آیکن آکاردئون</label>
+					<div class='autocomplete-append'>
+							<ul class='search-options'>
+							<li><a data-original-title='settings' id="ictab_rand2020" href="iconmanager.php?field=accardeonIcon_rand2020" class='settings-option tip browseicon'></a></li>
+						</ul>
+						<input name='accardeonIcon[]' id='accardeonIcon_rand2020' type='text' value='' class='' />
+
+					</div>
+				</p>
+				<p>
+					<label for="accardeontext_rand2020">محتوای آکاردئون</label>
+					<textarea id="accardeontext_rand2020" name="accardeontext[]" class="ceditor"></textarea>
+				</p>
+		</div>
+	</div>
+</form>
+<script>
+$('#save-accardeon').click(function(){
+	tinymce.triggerSave();
+	$.ajax({
+		url : '',
+		data : $('#accardeon_frm').serialize(),
+		type: 'post',
+		success: function( result )
+		{
+			$("#tabajax").html('').show();
+			$("#tabajax").html( result );
+			$(function() {
+			// setTimeout() function will be fired after page is loaded
+			// it will wait for 5 sec. and then will fire
+			// $("#successMessage").hide() function
+			setTimeout(function() {
+				$("#tabajax").hide('blind', {}, 500)
+			}, 5000);
+			});
+		},
+		error: function()
+		{
+			alert( 'error' );
+		}
+	});
+});
+$('#add-accardeon').click(function(){
+	var id = Math.floor( Math.random() * 99999999 ) + 100000
+	var sample = $('#sampletab').html();
+	sample = replaceAll( sample, "rand2020", id  );
+	$('#accardeon').append( sample );
+	bindicons();
+	bindRemove();
+	addEditor('accardeontext_' + id);
+});
+bindicons();
+bindRemove();
+</script>

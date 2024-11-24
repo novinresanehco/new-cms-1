@@ -1,0 +1,174 @@
+<script>
+    function tab_2() {
+        connect( 'pages/listpms.php', "task=inbox&page=[ipage]",
+                'ajax_tabs_1_content', loadingt, '' );
+    }
+
+    function tab_3() {
+        connect( 'pages/listpms.php', "task=outbox&page=[opage]",
+                'ajax_tabs_2_content', loadingt, '' );
+    }
+
+    function Mform( method ) {
+        var title = gi( "msg_title" ).value;
+        var reciver = gi( "msg_reciver" ).value;
+        var text = gi( "msg_text" ).value;
+        connect( 'pages/pm.php', "task=post_msg&title=" + title + "&reciver=" +
+                reciver + "&text=" + text, 'ajax_tabs_0_content', loadingt, '' );
+    }
+
+    function readpm( id, type ) {
+        place = ( type == 'inbox' ) ? 'ajax_tabs_1_content_1' :
+                'ajax_tabs_2_content_2';
+        connect( 'pages/pm.php', "task=read_pm&id=" + id + "&folder=" + type,
+                place, loadingt, '' );
+    }
+
+    function delpm( id ) {
+        var msg =
+                "آيا از حذف اين پيام اطمينان داريد؟\nعمليات حذف برگشت پذير نميباشد.";
+        bootbox.confirm( msg, function( result ) {
+            if ( result ) {
+                connect( 'pages/pm.php', "task=delete_pm&id=" + id,
+                        'ajax_tabs_1_content_1', loadingt, 'edit_pm_in' );
+            }
+        } );
+    }
+
+    function delpmo( id ) {
+        var msg =
+                "آيا از حذف اين پيام اطمينان داريد؟\nعمليات حذف برگشت پذير نميباشد.";
+        bootbox.confirm( msg, function( result ) {
+            if ( result ) {
+                connect( 'pages/pm.php', "task=delete_pmo&id=" + id,
+                        'ajax_tabs_2_content_2', loadingt, 'edit_pm_out' );
+            }
+        } );
+    }
+</script>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <form onsubmit="Mform( 'post_msg' );
+        return false" method=post>
+                        <table border="0" width="100%" class="tbl" id="tabs_0_content">
+                            <tr>
+                                <td colspan="3" id="ajax_tabs_0_content"></td>
+                            </tr>
+                            <tr>
+							
+                                <td width="23%">
+								عنوان پيام :</td>
+                                <td width="76%" colspan="2">
+                                    <input class="input-xlarge" type="text" name="msg_title" id="msg_title" dir="rtl">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="23%">
+								<label data-original-title="برای دریافت نام کاربری اعضا از منو  لیست اعضا/لیست کاربران استفاده کنید"  data-placement="left" class="tip" for="webdir">نام كاربري دريافت كننده</label>
+								
+								</td>
+                                <td width="76%" colspan="2">
+                                    <input class="input-xlarge" type="text" name="msg_reciver" id="msg_reciver" dir="ltr">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="23%" valign=top>متن پيام :</td>
+                                <td width="38%" rowspan="2">
+                                    <textarea dir=rtl class="input-xlarge" name="msg_text" id="msg_text" cols="10" rows="10"></textarea>
+                                </td>
+                                <td width="38%" rowspan="2" valign=top>
+                                    
+                            </tr>
+                            <tr>
+                                <td width="23%">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>
+                            <center>
+                                &nbsp;</center>
+                            </td>
+                            <td>
+                                <input onclick="Mform( 'post_msg' );
+        return false;" type="submit" name="submit" value="ارسال پيغام خصوصي"
+                                       class="btn btn-success">
+                            </td>
+                            <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                    </form>
+					
+					<div class="alert alert-info" style="margin-top: 16px;">
+	                        <button type="button" class="close" data-dismiss="alert">×</button>
+	                       <strong>توجه :</strong> 
+						    براي ارسال به بيش از يك كاربر ؛ نام هاي كاربري را با
+                                    <span
+                                        lang="en-us">,</span>
+                                    از يكديگر جدا كنيد.
+                                    <br>براي ارسال پيام به تمام كاربران از عبارت
+                                    <font
+                                        color="#DDFB70"> <span lang="en-us">[samaneh::all]</span>
+                                    </font>
+                                    استفاده كنيد.
+</div><div  class="control-group" style="padding: 0px;"></div>
+<div class="alert alert-info" style="margin-top: 16px;">
+	                        <button type="button" class="close" data-dismiss="alert">×</button>
+	                       <strong>توجه :</strong> 
+						    متن پيام مي تواند شامل متغير هايي مانند عنوان و آدرس سايت و ... باشد.
+</div>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <table border="0" width="100%" class="tbl" id="tabs_1_content">
+                        <tr>
+                            <td colspan="8">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8" id="ajax_tabs_1_content_1"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8" id="ajax_tabs_1_content"></td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <table border="0" width="100%" class="tbl" id="tabs_2_content">
+                        <tr>
+                            <td colspan="8">
+                                &nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8" id="ajax_tabs_2_content_2"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8" id="ajax_tabs_2_content"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<tag:inbox>
+    <script>
+        $( "#tab_2" ).trigger( "click" );
+    </script>
+</tag:inbox>
+<tag:outbox>
+    <script>
+
+        $( "#tab_3" ).trigger( "click" );
+    </script>
+</tag:outbox>

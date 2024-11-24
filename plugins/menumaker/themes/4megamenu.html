@@ -1,0 +1,54 @@
+	<link rel="stylesheet" href="[site]/plugins/menumaker/css/normalize.min.css">
+    <link rel="stylesheet" href="[site]/plugins/menumaker/css/4megamenu.css">
+    <link rel="stylesheet" href="[site]/plugins/menumaker/css/ionicons.min.css">
+    <!--   <script src="[site]/plugins/menumaker/js/modernizr.min.js"></script> -->
+    <script>
+        window.Modernizr || document.write('<script src="[site]/plugins/menumaker/js/modernizr-2.8.3.min.js"><\/script>')
+    </script>
+
+	
+<div class="menu-container">
+        <div class="imegamenu">
+		<ul> 
+    <tag:menu1>
+        <li><a href="[link1]"><img src="[icon1]" style="display: block; margin: 2px auto 5px;">[label1]</a>
+            <ul>
+                <tag:menu2[id]>
+                    <li><a href="[link2]">[label2]</a>
+                        <ul>
+                            <tag:menu3[id2]>
+                                <li><a href="[link3]">[label3]</a>
+                                    <ul>
+                                        <tag:menu4[id3]>
+                                            <li><a href="[link4]">[label4]</a>
+                                                <ul>
+                                                    <tag:menu5[id4]>
+                                                        <li><a href="[link5]">[label5]</a></li>
+                                                    </tag:menu5[id4]>
+                                                </ul>
+                                            </li>
+                                        </tag:menu4[id3]>
+                                    </ul>
+                                </li>
+                            </tag:menu3[id2]>
+                        </ul>
+                    </li>
+                </tag:menu2[id]>
+            </ul>
+        </li>
+    </tag:menu1>
+</ul>
+</div></div>
+    <script src="[site]/plugins/menumaker/js/megamenu.js"></script>
+	        <script>
+$(document).ready(function(){
+$("ul").each(
+function() {
+var elem = $(this);
+if (elem.children().length == 0) {
+elem.remove();
+}
+}
+);
+});
+</script>

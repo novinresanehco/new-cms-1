@@ -1,0 +1,94 @@
+/* start half-style hs-base */
+ .halfStyle.hs-base {
+ font-family: 'odin';
+    position:relative;
+    display:inline-block;
+    font-size:80px; /* or any font size will work */
+    overflow:hidden;
+    white-space: pre; /* to preserve the spaces from collapsing */
+    color: #000; /* for demo purposes */
+}
+.halfStyle.hs-base:before {
+    display:block;
+    z-index:1;
+    position:absolute;
+    top:0;
+    width: 50%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    pointer-events: none; /* so the base char is selectable by mouse and the click handlers bound on it will fire */
+    overflow:hidden;
+    color: #f00; /* for demo purposes */
+}
+ /* end half-style hs-base */
+
+/* start half-style hs-horizontal-half */
+.halfStyle.hs-horizontal-half {
+    position:relative;
+    display:inline-block;
+    font-size:80px; /* or any font size will work */
+    color: transparent; /* hide the base character */
+    overflow:hidden;
+    white-space: pre; /* to preserve the spaces from collapsing */
+}
+.halfStyle.hs-horizontal-half:before { /* creates the top part */
+    display:block;
+    z-index:2;
+    position:absolute;
+    top:0;
+    height: 50%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: #f00; /* for demo purposes */
+    text-shadow: 2px -2px 0px #af0; /* for demo purposes */
+}
+.halfStyle.hs-horizontal-half:after { /* creates the bottom part */
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:0;
+    height: 100%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: #000; /* for demo purposes */
+    text-shadow: 2px 2px 0px #0af; /* for demo purposes */
+}
+/* end half-style hs-horizontal-half */
+
+/* start half-style hs-horizontal-third */
+.halfStyle.hs-horizontal-third { /* base char and also the bottom 1/3 */
+    position:relative;
+    display:inline-block;
+    font-size:80px; /* or any font size will work */
+    color: transparent;
+    overflow:hidden;
+    white-space: pre; /* to preserve the spaces from collapsing */
+    color: #f0f;
+    text-shadow: 2px 2px 0px #0af; /* for demo purposes */
+}
+.halfStyle.hs-horizontal-third:before { /* creates the top 1/3 */
+    display:block;
+    z-index:2;
+    position:absolute;
+    top:0;
+    height: 33.33%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: #f00; /* for demo purposes */
+    text-shadow: 2px -2px 0px #fa0; /* for demo purposes */
+}
+.halfStyle.hs-horizontal-third:after { /* creates the middle 1/3 */
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:0;
+    height: 66.66%;
+    content: attr(data-content); /* dynamic content for the pseudo element */
+    overflow:hidden;
+    pointer-events: none; /* so the base char is selectable by mouse */
+    color: #000; /* for demo purposes */
+    text-shadow: 2px 2px 0px #af0; /* for demo purposes */
+}
+/* end half-style hs-horizontal-third */

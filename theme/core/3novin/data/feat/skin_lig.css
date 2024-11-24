@@ -1,0 +1,225 @@
+﻿/* ********** RESET ********** */
+/* ********** RESET ********** */
+
+
+
+
+/* MAIN TAGS ################################### */	
+	
+#full-screen-background-image {
+	z-index: -999;
+	min-height: 100%;
+	min-width: 1024px;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	}	
+	
+#ehsan {
+	width: 960px;
+	position: absolute;
+	}
+	
+#ehsan .inner {
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	}
+	
+#bottom {
+	width: 100%;
+	height: 40px;
+	background:#333;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	}
+
+
+
+/* horizontal ##############################*/
+.horizontal {
+	background-image:url('../02000.jpg');
+	
+	width: 100%;
+	margin: 0 auto;
+	height: 140px;
+		-moz-border-radius:23px 23px 0px 0px;
+	border-radius:23px 23px 0px 0px;
+	}
+	
+.horizontal .carousel {
+	width: 960px;
+	height: 140px;
+	margin: 0 auto;
+	position: relative;
+	}
+	
+.horizontal .carousel_container {
+	width: 663px; /* 3x220 + 3x1px margin */
+	height: 130px;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 50px;
+	position: relative;
+	}
+	
+.horizontal ul  { 
+	height: 140px;
+	width: 1980px;
+}
+	
+.horizontal ul li {
+	width: 220px;
+	height: 140px;
+	display: block;
+	float: left;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	position: relative;
+	}
+	
+.horizontal ul li .text_content {
+	padding: 10px;
+	color: #fff;
+	}
+	
+.horizontal ul li a {
+	width: 220px;
+	height: 140px;
+	background: #CCC;
+	display: block;
+	color: #fff;
+	}
+	
+.horizontal ul li a.normal {
+	width: auto;
+	height: auto;
+	color: #fff;
+	background: none;
+	}
+	
+.horizontal ul li .caption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	}
+	
+	
+	
+
+/* vertical ##############################*/
+.vertical {
+	background: #1a1a1a;
+	width: 220px;
+	height: 100%;
+	margin: 0 auto;
+	}
+	
+.vertical .carousel {
+	width: 220px;
+	height: 423px;
+	margin: 0 auto;
+	position: relative;
+	padding: 100px 0;
+	}
+	
+.vertical .carousel_container {
+	width: 220px; /* 3x220 + 3x1px margin */
+	height: 423px;
+	overflow: hidden;
+	/*padding: 0 50px;*/
+	position: relative;
+	}
+	
+.vertical ul  { 
+	height: 1980px;
+	width: 220px;
+}
+	
+.vertical ul li {
+	width: 220px;
+	height: 140px;
+	display: block;
+	float: left;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	position: relative
+	}
+	
+.vertical ul li .text_content {
+	padding: 10px;
+	color: #fff;
+	}
+	
+.vertical ul li a {
+	width: 220px;
+	height: 140px;
+	background: #CCC;
+	display: block;
+	color: #fff;
+	}
+	
+.vertical ul li a.normal {
+	width: auto;
+	height: auto;
+	color: #fff;
+	background: none;
+	}
+	
+.vertical ul li .caption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	}
+	
+
+
+
+	
+.carousel_right, .carousel_left {
+	position: absolute;
+	width: 26px;
+	height: 51px;
+	display: block;
+	text-indent: -9999px;
+	}
+	
+.carousel_left { 
+	top: 45px; left:0px;
+	background: url(prev0000.png) top left;
+	}
+.carousel_right { 
+	top: 45px; right:0px;
+	background: url(next0000.png) top left;
+	}
+.carousel_right:hover, .carousel_left:hover {
+	background-position: bottom left;
+	}
+	
+.carousel_up, .carousel_down {
+	position: absolute;
+	width: 51px;
+	height: 26px;
+	display: block;
+	text-indent: -9999px;
+	}
+	
+.carousel_up { 
+	top: 20px; left:85px;
+	background: url(http://www.spab-rice.com/codecanyon/elegantcarousel/files/images/up.png) top left;
+	}
+.carousel_down { 
+	bottom: 20px; left:85px;
+	background: url(http://www.spab-rice.com/codecanyon/elegantcarousel/files/images/down.png) top left;
+	}
+.carousel_up:hover, .carousel_down:hover {
+	background-position: bottom left;
+	}
+	
+.disable { display: none; }

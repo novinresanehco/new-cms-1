@@ -1,0 +1,63 @@
+<!-- IF Error -->
+<div class=error>[Msg]</div><!-- ENDIF Error -->
+<!-- IF Succeed --><div class=success>[Msg]</div><!-- ENDIF Succeed -->
+<script language="javascript">
+function del(id){
+if(confirm("آیا می خواهید این پیام حذف شود؟  » عملیات حذف برگشت پذیر نیست"))
+setTimeout('document.location.href="index.php?plugins=member&method=inbox&task=delete&id='+id+'"',1 )
+}
+
+</script>
+<!-- IF Inbox -->
+
+<center><br><b>صندوق ورودی</b> |&nbsp;
+<a href="index.php?plugins=member&method=outbox">صندوق خروجی</a>
+<table border="0" bordercolor="#425e6c" cellpadding="3" cellspacing="5" width="80%">
+<tbody><tr>
+<td bgcolor="#d1dde0" height="26">
+<p align="center"><b>عنوان</b></td>
+<td bgcolor="#d1dde0" height="26">
+<p align="center"><b>نویسنده</b></td>
+<td bgcolor="#d1dde0" height="26">
+<p align="center"><b>نام کاربری نویسنده</b></td>
+<td align="center" bgcolor="#d1dde0" height="26" width="40"><b>
+حذف</b></td>
+</tr><tag:mp><tr><td bgcolor="#f3f7f8">
+		<a href="index.php?plugins=member&method=inbox&task=read&id=[id]">[title]</a></td><td bgcolor="#f3f7f8">
+		<p align="center">[author]</td><td bgcolor="#f3f7f8">
+		<p align="center">[senduser]</td><td align="center" bgcolor="#f3f7f8" width="40">
+		<a href="javascript:void(0);" onclick="del('[id]');">
+		<img src="[theme_url]/img/delete.gif" border="0"></a></td></tr>
+</tag:mp></tbody></table>
+<!-- ENDIF Inbox -->
+<!-- IF Read -->
+<br><center>
+<table   border="1" cellpadding="2" cellspacing="1" width="80%" bordercolordark="#000000" style="border-collapse: collapse" bordercolorlight="#000000">
+<tr>
+<td  width="30%" >عنوان:</td>
+<td  width="70%" >
+[title]</td>
+</tr>
+<tr>
+<td  width="30%">نویسنده:</td>
+<td  width="70%" >[author] </td>
+	</tr>
+<tr>
+<td  width="30%">نام کاربری نویسنده:</td>
+<td  width="70%" >[senduser] </td>
+</tr>
+<tr>
+<td  width="30%" >متن پیام:</td>
+<td  width="70%" >[text]</td>
+</tr>
+<tr>
+<td  width="100%"  colspan="2">
+<p align="center">
+&nbsp;<INPUT type=button name=ans tabindex="1" size="13" value="ارسال پاسخ" onclick="document.location.href='index.php?plugins=member&method=sendpm&?task=send&user=[senduser]&title=[title]'">&nbsp; 
+|
+		<a href="javascript:void(0);" onclick="del('[id]');">
+		<img src="[theme_url]/img/delete.gif" border="0"></a></td>
+</tr>
+</table></center>
+<!-- ENDIF Read -->
+

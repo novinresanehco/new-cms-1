@@ -1,0 +1,111 @@
+<hr />
+<form id="addNewMyTheme">
+    <input type="text" class="input-xlarge"  name="myThemeName" /> 
+    <input type="submit" class="btn btn-success" value="ذخیره سازی قالب فعلی">
+</form>
+<hr />
+<table border="0" width="95%" id="duplicate" class="table table-striped">
+    <tbody>
+        <tr>
+            <td>ردیف</td>
+            <td>نام قالب</td>
+            <td>تاریخ ایجاد</td>
+            <td>بارگزاری</td>
+            <td>حذف</td>
+        </tr>
+    <tag:mythemes>
+        <tr>
+            <td>[row]</td>
+            <td>[title]</td>
+            <td>[date]</td>
+            <td>
+                <a href="" rel="[id]" class="confirmUseSaveTHeme">
+                    بارگزاری
+                </a>
+            </td>
+            <td>
+                <a href="#" rel="[id]" class="confirmMyThemeDelete">
+                    حذف
+                </a>
+            </td>
+        </tr>
+    </tag:mythemes>
+</tbody>
+</table>
+<script>
+    $( '#addNewMyTheme' ).submit( function()
+    {
+        $.ajax( {
+            url: 'pages/thememanager.php',
+            type: 'post',
+            data: 'themeAction=saveNewTheme&' + $( '#addNewMyTheme' ).serialize(),
+            success: function( result )
+            {
+                $( '#saveMyThemesResult' ).html( result );
+                tab_8();
+            },
+            error: function()
+            {
+                bootbox.alert( 'network error' );
+            }
+        } );
+        return false;
+    } );
+
+    $( '.confirmMyThemeDelete' ).click( function()
+    {
+        var id = $( this ).attr( 'rel' );
+        var msg = 'آیا از حذف قالب و تنظیمات آن اطمینان دارید ؟';
+        bootbox.confirm( msg, function( result )
+        {
+            if ( result )
+            {
+                $.ajax( {
+                    url: 'pages/thememanager.php',
+                    type: 'post',
+                    data: 'themeAction=deleteMyTheme&delete=' + id,
+                    success: function( result )
+                    {
+                        $( '#saveMyThemesResult' ).html( result );
+                        tab_8();
+                    },
+                    error: function()
+                    {
+                        bootbox.alert( 'network error' );
+                    }
+                } );
+            }
+        } );
+        return false;
+    } );
+    $( '.confirmUseSaveTHeme' ).click( function()
+    {
+        var id = $( this ).attr( 'rel' );
+        var msg = 'آیا از نصب تنظیمات قالب ذخیره شده اطمینان دارید ؟<br />بارگذاری قالب جدید موجب حذف تنظیمات فعلی قالب شما خواهد.<br />پیشنهاد میشود قبل از بارگزاری تنظیمات قالب از قالب فعلی خود پشتیبان تهیه کنید.';
+        bootbox.confirm( msg, function( result )
+        {
+            if ( result )
+            {
+                $.ajax( {
+                    url: 'pages/thememanager.php',
+                    type: 'post',
+                    data: 'themeAction=saveMyTheme&id=' + id,
+                    success: function( result )
+                    {
+                        if ( result.substr( 0, 2 ) == 'ok' )
+                        {
+                            document.location.reload();
+                        }
+                        $( '#saveMyThemesResult' ).html( result );
+                        tab_8();
+                    },
+                    error: function()
+                    {
+                        bootbox.alert( 'network error' );
+                    }
+                } );
+            }
+        } );
+        return false;
+    } );
+</script>

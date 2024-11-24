@@ -1,0 +1,22 @@
+.FormGenerator .label
+{
+	float: right;
+	width: 150px;
+	cursor: hand;
+	cursor: pointer;
+}
+.FormGenerator input[type=text],.FormGenerator input[type=password], .FormGenerator textarea, .FormGenerator select
+{
+	float: right;
+	width: 200px;
+}
+.FormGenerator textarea
+{
+	width: 200px;
+	height: 100px;
+}
+.FormGenerator .clear
+{
+	clear: both;
+	padding-top: 10px;
+}

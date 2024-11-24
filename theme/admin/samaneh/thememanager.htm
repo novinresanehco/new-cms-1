@@ -1,0 +1,214 @@
+<script>
+	var loadingSettingImg = '<center><img src="/theme/admin/samaneh/images/loading.gif" /></center>';
+	function appendSetting()
+	{
+		$("ul.sortable li:not([rel=remove])").not(":has(.setting)").each( function( index, obj ) 
+		{
+			var url = 'thememanager.php?task=pluginSetting&plugin=' + $( obj ).attr('rel');
+			if( $( obj ).attr('id') )
+			{
+				var theID = 'postionDataBox_' + $( obj ).attr('id').split("_")[1];
+				url += '&id=' + $( obj ).attr('id').split("_")[1];
+				var optionValue = $("#optionValue_" + $( obj ).attr('id').split("_")[1]).val();
+			}
+			else
+			{
+				var theRandID = '1000200030009000' + Math.floor( ( Math.random() * 1000000000000 ) + 1 );
+				var theID = 'postionDataBox_' + theRandID;
+				var optionValue = '';
+				url += "&id=" +  theRandID;
+				$( obj ).attr("id", "plugin_" + theRandID );
+			}
+			$( obj ).append('<input type="hidden" value="'+optionValue+'" id="'+theID+'" /><div class="setting"><center>[<a rel="'+theID+'" class="ajaxDialog" href="' + url + '">تنظیمات</a>]</center></div>');
+		});
+		
+		appendAjaxDialogLinks();
+	}
+	function appendremove()
+	{
+		//$(".deleteplugin").remove();
+		$("ul.sortable li").not(":has(.deleteplugin)").append('<div class="deleteplugin"><a href="#"><img src="/theme/admin/samaneh/images/list-remove.png" /></a></div>');
+		allowRemove();
+	}
+	function allowRemove()
+	{
+		$(".deleteplugin").click(function(){
+			var regenerateHTML = '';
+			var ulparent = $(this).parent().parent();
+			if( ulparent.children().length < 2 )
+			{
+				var id = ulparent.attr("id").split("position")[1];
+				regenerateHTML = '<li rel="remove" class="ui-state-highlight modulec">موقعیت '+id+'<div class="deleteplugin"><a href="#"><img src="/theme/admin/samaneh/images/list-remove.png"></a></div></li>';
+			}
+			if( $(this).parent().attr("rel") == 'remove')
+			{
+				alert('امکان حذف موقعیت پیش فرض وجود ندارد.');
+			}
+			else
+			{
+				$(this).parent().remove();
+			}
+			return false;
+		});
+	}
+$(document).ready(function() {
+	
+	appendremove();
+	appendSetting();
+    $( ".resizable" ).resizable({
+	animate: true,
+	minWidth : 130,
+	});
+	$('#savebtn').on('click', function() 
+	{
+        var obj = $('.sortable');
+		var arr = $.makeArray(obj);
+		var senddata = '';
+		for(var i =0;i < arr.length;i++)
+		{
+			var ul = arr[i];
+			var orderID = 0;
+			$( ul ).find("li").each(function() 
+			{
+				var id = $(this).attr("id");
+				if( id )
+				{
+					senddata += "&posdata[" + $(ul).attr("id") + "][" + orderID + "][plugin]= " + $(this).attr("rel");
+					senddata += "&posdata[" + $(ul).attr("id") + "][" + orderID + "][data]= " + $( "#postionDataBox_" + id.split("_")[1] ).val();
+					orderID   = orderID + 1;
+				}
+			});
+		}
+		$.ajax({
+        data: senddata,
+        type: "post",
+        dataType: "json",
+        url: "pages/thememanager.php",
+			success: function(msg)
+			{
+				if( msg.success )
+				{
+					$("#ajaxresult").html(msg.value);
+					location.reload( true );
+				}
+				else
+				{
+					alert( msg.value );
+				}
+				
+			},
+           error: function()
+			{
+				alert("error");
+		   }
+		});
+    });
+    $('#modulesbtn').on('click', function() {
+        $('#listModules').animate({
+            'width': 'show'
+        }, 1000, function() {
+            $('#moduleManager').fadeIn(500);
+        });
+    });
+
+    $('span.close').on('click', function() {
+        $('#moduleManager').fadeOut(500, function() {
+            $('#listModules').animate({
+                'width': 'hide'
+            }, 1000);
+        });
+    });
+	$( "ul, li" ).disableSelection();
+	$('.sortable .modulec').not('.mainposition').on("mousedown",(function(event) {
+	if( event.button == 2 ) { 
+		// $(this).remove();
+      return false; 
+    } 
+	}));;
+});
+$(function() {
+<tag:positions>$( "#position[id]" ).sortable({revert: true,stop: function( event, ui ) {appendremove();appendSetting();}});</tag:positions>
+
+$( ".draggable" ).draggable({
+connectToSortable: ".sortable",
+ helper: "clone",
+revert: "invalid",
+stop : function( event, ui ){
+//alert($(this).html());
+//ui.helper.remove()
+},
+});
+
+
+});
+</script>
+<style>
+.ui-resizable-sw {
+cursor: sw-resize;
+height: 7px;
+width: 100%;
+top: -5px;
+left: 0;
+}
+#listModules {
+  display:block;
+  position: absolute;
+  top: 0;
+  width:16%;
+  left:0%;t
+  height: 100%;
+  z-index: 3;
+  margin: 0;
+  background-color:black;
+}
+#moduleManager {
+    display:block;
+    font-family:Tahoma;
+    color:white;
+    padding:50px;
+    overflow:hidden;
+}
+span.close {
+    position:absolute;
+    right:10px;
+    top:15px;
+    cursor:pointer;
+}
+#moduleManager li {
+    margin: 5px;
+    padding: 15px;
+    width: 150px;
+}
+ul {
+    list-style-type: none;
+}
+.modulec
+{
+	margin: 5px -36px 5px 0;
+    padding: 15px;
+    width: 100%;
+}
+
+.deleteplugin
+{
+	bottom: 27px;
+    left: 14px;
+    position: relative;
+}
+</style>
+<div id="tmpcontainer"></div>
+<div id="div_1">
+<div id="ajaxresult"></div>
+<input type="button" value="مشاهده لیست ماژول ها" id="modulesbtn" />
+<input type="button" value="ذخیره سازی قالب" id="savebtn" />
+<div id="listModules">
+	<div id="moduleManager">
+		 <span class="close">X</span>
+		<ul>
+			<tag:plugins><li rel="[name]" class="draggable ui-state-highlight modulec">[name]</li></tag:plugins>
+		</ul>
+	</div>
+</div>
+<hr />
+[thememanager]
+</div>

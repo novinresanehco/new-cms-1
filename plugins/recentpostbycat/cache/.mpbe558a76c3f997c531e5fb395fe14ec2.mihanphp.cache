@@ -1,0 +1,45 @@
+<h3>اخبار تکنولوژی</h3>
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+
+							<div class="item active">
+								<div class="row">
+
+									<div class="col-md-3">
+										<div class="work-post">
+											<div class="work-post-gal">
+												<img alt="" src="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg">
+												<div class="hover-box">
+													<a class="zoom" href="http://127.0.0.1/cms2/files/sample/57B8E97E-026F-4824-80B8-3D7C21CE21E5_w974_n_s_s.jpg"></a>
+													<a class="page" href="http://127.0.0.1/cms2/post/54-چند+ویژگی+یک+وبلاگ+نویس+موفق.php"></a>
+												</div>
+											</div>
+											<div class="work-post-content">
+												<h5>چند ویژگی یک وبلاگ نویس موفق</h5>
+												<span>1394-10-21</span>
+											</div>
+										</div>
+									</div><div class="col-md-3">
+										<div class="work-post">
+											<div class="work-post-gal">
+												<img alt="" src="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg">
+												<div class="hover-box">
+													<a class="zoom" href="http://127.0.0.1/cms2/files/sample/51bba689dbd0cb1f390001e4._w.1000_s.fit_.jpg"></a>
+													<a class="page" href="http://127.0.0.1/cms2/post/53-4+روش+مهم+درآمدزایی+برندهای+مهم.php"></a>
+												</div>
+											</div>
+											<div class="work-post-content">
+												<h5>4 روش مهم درآمدزایی برندهای مهم</h5>
+												<span>1394-10-21</span>
+											</div>
+										</div>
+									</div>
+
+									
+									
+
+								</div></div></div>
+
+					</div>

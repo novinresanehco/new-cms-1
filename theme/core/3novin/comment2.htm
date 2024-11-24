@@ -1,0 +1,215 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="fa">
+<title>:: Comments ::</title>
+<link rel="stylesheet" type="text/css" href="style/comment.css">
+<link rel="stylesheet" type="text/css" href="theme/core/blue/style/comment.css">
+<script language="javascript" src="theme/core/blue/java/ajax.js" type="text/javascript"></script>
+<script type="text/javascript">
+var ns6=document.getElementById&&!document.all
+function restrictinput(maxlength,e,placeholder){
+if (window.event&&event.srcElement.value.length>=maxlength)
+return false
+else if (e.target&&e.target==eval(placeholder)&&e.target.value.length>=maxlength){
+var pressedkey=/[a-zA-Z0-9\.\,\/]/ //detect alphanumeric keys
+if (pressedkey.test(String.fromCharCode(e.which)))
+e.stopPropagation()
+}
+}
+function countlimit(maxlength,e,placeholder){
+var theform=eval(placeholder)
+var lengthleft=maxlength-theform.value.length
+var placeholderobj=document.all? document.all[placeholder] : document.getElementById(placeholder)
+if (window.event||e.target&&e.target==eval(placeholder)){
+if (lengthleft<0)
+theform.value=theform.value.substring(0,maxlength)
+placeholderobj.innerHTML=lengthleft
+}
+}
+function displaylimit(thename, theid, thelimit){
+var theform=theid!=""? document.getElementById(theid) : thename
+var limit_text="<b><span id=\""+theform.toString()+"\">"+thelimit+"</b> کاراکتر"
+if (document.all||ns6)
+document.write(limit_text)
+if (document.all){
+eval(theform).onkeypress=function(){ return restrictinput(thelimit,event,theform)}
+eval(theform).onkeyup=function(){ countlimit(thelimit,event,theform)}
+}
+else if (ns6){
+document.body.addEventListener("keypress", function(event) { restrictinput(thelimit,event,theform) }, true); 
+document.body.addEventListener("keyup", function(event) { countlimit(thelimit,event,theform) }, true); 
+}
+}
+</script>
+<script language="javascript">function insertSmiley(smiley){var textArea = document.getElementById("comment");var canCreateTextRange = textArea.createTextRange;if (canCreateTextRange){textArea.focus(textArea.caretPos);textArea.caretPos = document.selection.createRange().duplicate();selectedTextLength = textArea.caretPos.text.length};smiley = " " + smiley + " ";if (canCreateTextRange){textArea.caretPos.text = smiley}else{textArea.value += smiley}};function hoverSmiley(smiley, state){if (state == "in"){smiley.style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=&#1776;)"}else{smiley.style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=&#1777;)"}}</script>
+
+<style type="text/css">
+.style1 {
+	color: #FF0000;
+}
+.style2 {
+	color: #008000;
+}
+.reply{
+border-top:1px solid #aaa;
+background:#F4F4F4;
+margin: 5px;
+padding: 5px;
+}
+
+</style>
+
+</head>
+
+<body>
+<div align="center">
+<div class="core">
+<div class="umenu">نظرات مربوط به مطلب [ 
+	<a href="index.php?plugins=cat&amp;postid=[poid]" target="_blank" title="مشاهده مطلب">[title]</a> ]</div>
+<div class="dmenu">
+<tag:comments>
+<div class="comments">
+	<p align="right">نويسنده :‌ [name] - سطح كاربري :‌ [level] - نام كاربري :‌ [user]</p>
+	<p align="right"><hr color="#660033" size="1">
+	<p align="right">[body]<br><br>
+	<!-- IF Ans -->
+	<div class=reply style="display: block;" align="right"><strong>»</strong> جواب از <strong>[reply_name] </strong>[نام كاربري :‌ 
+	<span class="style2">[reply_user]</span>] : [answer]
+</div>
+	<!-- ENDIF Ans --></div>
+</tag:comments>
+</div>
+<div class="formc">
+<!-- IF Error -->
+<div class="error">[msg]</div>
+<!-- ENDIF Error -->
+<!-- IF Success -->
+<div class="success">[msg]</div>
+<!-- ENDIF Success -->
+
+<!-- IF Guest -->
+<form name="Loginform" method="comment.php?login&id=[poid]" method=POST>
+	<table cellpadding="0" cellspacing="3">
+			<tr>
+			<td height="13" colspan="5">
+			شما در حال ارسال نظر به صورت مهمان هستيد.
+			<a href="#login" onclick="showid('loginfrm');hideid('cform');return false;">
+			<strong>ورود به سيستم</strong></a><br><br><center>
+			<div id="loginfrm" style="display:none">
+			<input name="username" id="username" type="text" value="نام كاربري">  <input name="password" id="password" type="password">  
+				<input name="submit" type="submit" value="ورود">  <input name="cancel" type="button" onclick="hideid('loginfrm');showid('cform');return false;" value="انصراف">
+
+			</div></center>
+			</td>
+			</tr>
+			</table>
+			</form>
+<!-- ENDIF Guest -->
+<!-- IF Form -->
+<form name="Contactform" method="comment.php?task=new&id=[poid]" method=POST>
+	<table cellpadding="0" cellspacing="3" width="568" height="259" id="cform">
+		<tr>
+			<td height="13" style="width: 119px">نام و نام خانوادگي :</td>
+			<td width="481" height="13" colspan="4">
+			<input name="name" value="[fullname]" [disable]>
+			<!-- IF Member --> كاربر : [user] - <a href="comment.php?logout&id=[poid]">خروج
+			</a> <!-- ENDIF Member -->
+			</td>
+		</tr>
+		<tr>
+			<td height="13" style="width: 119px">پست الکترونیک :</td>
+			<td width="481" height="13" colspan="4">
+			<input name="email" size="20" dir="ltr" value="[email]" [disable]></td>
+		</tr>
+		<tr>
+			<td height="13" style="width: 119px">وب سایت :</td>
+			<td width="481" height="13" colspan="4">
+			<input name="site" size="20"></td>
+		</tr>
+		<tr>
+			<td height="181" style="width: 119px">پیام :</td>
+			<td width="481" height="181" colspan="4">
+			<textarea rows="12" cols="50" name="comment" id="comment"></textarea><br><script>displaylimit("document.Contactform.comment","",1000)</script>
+
+			</td>
+		</tr>
+				<tr>
+			<td>كد امنيتي :</td>
+			<td >
+			<INPUT  name=mihancms  tabindex="5">  
+			</td>
+			<td >
+				<span id="CMSimg" onclick="CMSimg('New')" class="hand">
+<img border="0" src="img.php?rand=[rand]" id="imageCMS"></span></td>
+			<td >
+			&nbsp;</td>
+			<td >
+		</td>
+		</tr>
+
+		<tr>
+<center><td colspan="5" align="center"><table border="0" cellpadding="5" cellspacing="0" width="100"><tr align="center" valign="middle"><td width="4">
+	<font face="Tahoma"><a href=javascript:insertSmiley(":D")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_biggrin.gif" alt="Very Happy" title="Very Happy" border="0"></span></a></font></td>
+	<td width="26">
+	<font face="Tahoma"><a href=javascript:insertSmiley(":x")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_mad.gif" alt="Mad" title="Mad" border="0"></span></a></font></td><td>
+	<font face="Tahoma"><a href=javascript:insertSmiley(":shock:")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_eek.gif" alt="Shocked" title="Shocked" border="0"></span></a></font></td><td>
+	<font face="Tahoma"><a href=javascript:insertSmiley(":P")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_razz.gif" alt="Razz" title="Razz" border="0"></span></a></font></td><td>
+	<font face="Tahoma"><a href=javascript:insertSmiley(":)")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_smile.gif" alt="Smile" title="Smile" border="0"></span></a></font></td><td>
+	<font face="Tahoma"><a href=javascript:insertSmiley(":roll:")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_rolleyes.gif" alt="Rolling Eyes" title="Rolling Eyes" border="0"></span></a></font></td><td>
+	<font face="Tahoma"><a href=javascript:insertSmiley(":?")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_confused.gif" alt="Confused" title="Confused" border="0"></span></a></font></td><td>
+	<font face="Tahoma"><a href=javascript:insertSmiley(":idea:")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_idea.gif" alt="Idea" title="Idea" border="0"></span></a></font></td><td>
+	<font face="Tahoma"><a href=javascript:insertSmiley(":(")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_sad.gif" alt="Sad" title="Sad" border="0"></span></a></font></td><td>
+	<font face="Tahoma"><a href=javascript:insertSmiley(":?:")>
+	<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_question.gif" alt="Question" title="Question" border="0"></span></a></font></td></tr><tr align="center" valign="middle"><td width="4">
+		<font face="Tahoma"><a href=javascript:insertSmiley(":oops:")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_redface.gif" alt="Embarassed" title="Embarassed" border="0"></span></a></font></td>
+		<td width="26">
+		<font face="Tahoma"><a href=javascript:insertSmiley(":cry:")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_cry.gif" alt="Crying or Very sad" title="Crying or Very sad" border="0"></span></a></font></td><td>
+		<font face="Tahoma"><a href=javascript:insertSmiley(":evil:")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_evil.gif" alt="Evil or Very Mad" title="Evil or Very Mad" border="0"></span></a></font></td><td>
+		<font face="Tahoma"><a href=javascript:insertSmiley(":kuss:")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_twisted.gif" alt="Kuss" title="Kuss" border="0"></span></a></font></td><td>
+		<font face="Tahoma"><a href=javascript:insertSmiley(":lol:")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_lol.gif" alt="Laughing" title="Laughing" border="0"></span></a></font></td><td>
+		<font face="Tahoma"><a href=javascript:insertSmiley(":o")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_surprised.gif" alt="Surprised" title="Surprised" border="0"></span></a></font></td><td>
+		<font face="Tahoma"><a href=javascript:insertSmiley(":wink:")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_wink.gif" alt="Wink" title="Wink" border="0"></span></a></font></td><td>
+		<font face="Tahoma"><a href=javascript:insertSmiley(":arrow:")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_arrow.gif" alt="Arrow" title="Arrow" border="0"></span></a></font></td><td>
+		<font face="Tahoma"><a href=javascript:insertSmiley(":!:")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_exclaim.gif" alt="Exclamation" title="Exclamation" border="0"></span></a></font></td><td>
+		<font face="Tahoma"><a href=javascript:insertSmiley("8)")>
+		<span style="font-size: 9pt"><img src="theme/core/blue/smilies/icon_cool.gif" alt="Cool" title="Cool" border="0"></span></a></font></td></tr></table></td></td></tr>
+
+			<tr>
+			<td>
+			<!-- IF activation --><span class="style1">*</span> نظرات اين مطلب بعد از تاييد نمايش داده خواهند شد.<!-- ENDIF activation -->
+			</td>
+			</tr>
+			<td height="23" style="width: 119px">&nbsp;</td>
+			<td width="481" height="23" colspan="4">
+			<p align="center"><input name="T3" type="submit" value="ارسال" size="20"><span lang="en-us">
+			</span><input name="T3" type="reset" value="پاک کن" size="20"></td>
+		</tr>
+	</table>
+	</form>
+<!-- ENDIF Form -->
+</div>
+</div>
+</div>
+</body>
+
+</html>

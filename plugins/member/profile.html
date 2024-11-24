@@ -1,0 +1,123 @@
+<!-- IF Error --><div class=error>[Msg]</div><!-- ENDIF Error -->
+<!-- IF Succeed --><div class=success>[Msg]</div><!-- ENDIF Succeed -->
+<!-- IF User -->
+	<div class="row"  style="width: 70%; text-align: center; direction: rtl; margin: 0px auto;">
+	<div class="col-md-3">
+		<a href="index.php?plugins=member&method=logout"><img src="[theme_url]/img/def/out.png" alt="خروج از سيستم" title="خروج از سيستم" border="0"></a><br>
+<a href="index.php?plugins=member&method=logout">خروج از سيستم</a>
+		</div>
+		<div class="col-md-3">
+		<a href="index.php?plugins=member&method=inbox"><img src="[theme_url]/img/def/mail-incoming.png" alt="پيغام هاي شخصي شما" title="پيغام هاي شخصي شما" border="0"></a><br>
+<a href="index.php?plugins=member&method=inbox">پيغام ها</a>
+		</div>
+		<div class="col-md-3">
+		<a href="index.php?plugins=member&method=profile&task=edit">
+<img src="[theme_url]/img/def/compose-3.png" alt="ویرایش پروفایل" title="ویرایش پروفایل" border="0"></a>
+<br>
+<a href="index.php?plugins=member&method=profile&task=edit">ويرايش پروفایل</a>
+		</div>
+		<div class="col-md-3">
+		<a href="index.php?plugins=member&method=sendpm"><img src="[theme_url]/img/def/pencil.png" alt="ارسال پیام خصوصی جدید" title="ارسال پیام خصوصی جدید" border="0"></a><br>
+<a href="index.php?plugins=member&method=sendpm">ارسال پیام</a>
+		</div>
+	</div>
+<!-- ENDIF User -->
+<!-- IF avatar -->
+<img src="[avatarurl]" style="width: 30%; height: 30%; margin-right: 35%; padding: 10px; max-height: 250px; max-width: 250px; overflow: hidden;"/>
+<!-- ENDIF avatar -->
+<!-- IF core -->
+
+<br><center>
+<table   border="0" cellpadding="2" cellspacing="1" width="50%">
+<tr>
+<td  width="30%">نام واقعی</td>
+<td  width="70%"><b>[name]</b></td>
+</tr>
+<tr>
+<td  width="30%">نام کاربری</td>
+<td  width="70%"><b>[username]</b></td>
+</tr>
+<tr>
+<td  width="30%">ايميل</td>
+<td  width="70%"><b>[email]</b></td>
+
+</tr>
+<tr>
+<td  width="30%">تاريخ عضويت</td>
+<td  width="70%"><b>[signup_date]</b></td>
+</tr>
+<tr>
+<td  width="30%">پروفایل عمومی</td>
+<td  width="70%"><a href="[site]index.php?plugins=member&method=profile&user=[username]" />لینک</td>
+</tr>
+</table>
+
+</center>
+<!-- ENDIF core -->
+<!-- IF Edit -->
+<br><center>
+<form action="index.php?plugins=member&method=profile&task=doedit" enctype="multipart/form-data" autocomplete="off" method="post" name="profile">
+<table   border="0" cellpadding="2" cellspacing="1" width="60%">
+<tr>
+<td  width="30%" height="26" style="height: 13px">نام واقعی : *</td>
+<td  width="70%" height="26" style="height: 13px">
+
+<INPUT  name="name" id="name" value="[pro_name]"></td>
+</tr>
+<tr>
+<td  width="30%" height="26" style="height: 13px">نام قابل نمايش :</td>
+<td  width="70%" height="26" style="height: 13px">
+
+<INPUT  name="showname" id="showname" value="[pro_showname]"></td>
+</tr>
+<tr>
+<td  width="30%">نام کاربری : *</td>
+<td  width="70%"><INPUT name="user" id="user" value="[pro_username]" dir="ltr" disabled></td>
+</tr>
+<tr>
+<td  width="30%">پست الكترونيك : *</td>
+<td  width="70%"><INPUT  name="email" id="email" value="[pro_email]" dir="ltr"></td>
+</tr>
+<tr>
+<td  width="30%">شناسه ياهو : </td>
+<td  width="70%"><INPUT  name="yid" id="yid" value="[pro_yid]" dir="ltr"></td>
+</tr>
+<tr>
+<td  width="30%">شناسه گوگل :</td>
+<td  width="70%"><INPUT  name="gid" id="gid" value="[pro_gid]" dir="ltr"></td>
+</tr>
+<tr>
+<td  width="30%">تلفن : </td>
+<td  width="70%"><INPUT  name="tell" id="tell" value="[pro_tell]" dir="ltr"></td>
+</tr>
+<tr>
+<td  width="30%">تصوير :</td>
+<td  width="70%"><INPUT name="avatar" id="avatar" value="" dir="ltr" type="file"></td>
+</tr>
+<tr>
+<td  width="30%">درباره من :</td>
+<td  width="70%">
+<textarea dir="rtl" name="about" style="width: 234px; height: 101px">[pro_about]</textarea>&nbsp;</td>
+</tr>
+<tr>
+<td  width="30%">تاريخ عضويت</td>
+<td  width="70%"><b>[signup_date]</b></td>
+
+</tr>
+<tr>
+<td colspan="2">در صورتی که تمایل به تغییر گذر واژه خود ندارید فیلدهای زیر را خالی بگذارید.</td>
+</tr>
+<tr>
+<td  width="30%">کلمه عبور قدیم</td>
+<td  width="70%"><INPUT type="password"  name="pro_pass" value="" onkeyup="this.form.pro_new_pass.disabled = this.value == '';"  dir="ltr"></td>
+</tr>
+<tr>
+<td  width="30%">کلمه عبور جدید</td>
+<td  width="70%"><INPUT disabled type="password"  name="pro_new_pass" dir="ltr"></td>
+</tr>
+<tr>
+<td  width="100%" colspan="2"><center><input type="submit"  value="ویرایش پروفایل" name="profile"></center></td>
+
+</tr>
+</table></center></form>
+<!-- ENDIF Edit -->

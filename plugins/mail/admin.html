@@ -1,0 +1,279 @@
+<style>
+
+    .box {
+        background: none repeat scroll 0 0 #FAFAFA;
+        border: 1px solid #E5E5E5;
+        margin-bottom: 10px;
+    }
+
+    .box h2 {
+        border-bottom: 1px solid #EEEEEE;
+        color: #902452;
+        font: bold 12px Tahoma,sans-serif;
+        margin: 0;
+        padding: 10px;
+    }
+    section {
+        padding: 10px;
+    }
+
+    form p label {
+        color: #555555;
+        cursor: pointer;
+        display: block;
+        font: bold 11px Tahoma,sans-serif;
+        margin-left: 10px;
+        padding: 4px 2px;
+        vertical-align: middle;
+    }
+    #mail-title, #mail-url, #mail-description, #mail-thumbnail {
+        width: 90%;
+    }
+
+    form p {
+        clear: right;
+        margin-bottom: 0;
+        padding: 3px 0;
+        width: 100%;
+    }
+    form input[type="text"], form input[type="email"], form input[type="password"], form select, form textarea {
+        border: 1px solid #DDDDDD;
+        padding: 5px 4px;
+    }
+    input, button, select, textarea {
+        font: 11px/15px Tahoma,sans-serif;
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+    form p {
+        clear: right;
+        margin-bottom: 0;
+        padding: 3px 0;
+        width: 100%;
+    }
+    .button.green {
+        background: linear-gradient(#75AE5C, #649552) repeat scroll 0 0 transparent;
+        border: 1px solid #3B6E22;
+    }
+    .button.small {
+        font-weight: normal;
+        padding: 4px 5px;
+        text-shadow: none;
+    }
+    .button {
+        box-shadow: 0 1px 1px rgba(255, 255, 255, 0.4) inset, 1px 1px 1px #EEEEEE;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font: bold 11px Tahoma,sans-serif;
+        margin: 0 3px 0 1px;
+        outline: medium none;
+        overflow: visible;
+        padding: 5px 6px;
+        text-align: center;
+        vertical-align: baseline;
+        width: auto;
+    }
+    .mailscreenshot {
+        float: right;
+        margin: 8px;
+    }
+    .mailscreenshot img {
+        border: 2px solid white;
+        border-radius: 5px 5px 5px 5px;
+        cursor: pointer;
+    }
+    .mailscreenshot img:hover {
+        border: 2px solid red;
+    }
+    .activescreenshot {
+        border: 2px solid red;
+    }
+    .ns-row {
+        background: linear-gradient(#F9F9F9, #F5F5F5) repeat scroll 0 0 transparent;
+        border: 1px solid #D5D5D5;
+        border-radius: 3px 3px 3px 3px;
+        box-shadow: 0 1px 0 #FFFFFF inset;
+        font: 11px/18px Tahoma,sans-serif;
+        padding: 7px 10px;
+        position: relative;
+    }
+    #ns-header {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: medium none;
+        color: #555555;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 8px 10px;
+    }
+    .ns-class {
+        left: 60px;
+        width: 100px;
+    }
+    ul#sortable
+    {
+        list-style-type:none;
+        margin: 0;
+        padding: 0;
+    }
+    ul#sortable li
+    {
+        margin-top: 2px;
+    }
+    .mp-thumb
+    {
+        border: 1px solid #D5D5D5;
+        border-radius:5px;
+        width:100px;
+        float:right;
+        display:block;
+    }
+    .mp-url
+    {
+        float:right;
+        padding-right:20px;
+        text-align:left;
+        width:300px;
+    }
+    .mp-actions
+    {
+        float:left;
+    }
+    .mp-thumb img
+    {
+        width:100px;
+        height:100px;
+        border-radius:5px;
+    }
+    .h100
+    {
+        height:110px;
+    }
+    .mail:focus::-webkit-input-placeholder {
+        text-align: right;
+        opacity: 1;
+    }
+</style>
+<script>
+    $( document ).ready( function()
+    {
+        $( '#newmail' ).submit( function()
+        {
+            if ( !$( '#mailusername' ).val() )
+            {
+                bootbox.alert( 'نام کاربری وارد نشده است.' );
+                $( '#mailusername' ).focus();
+                return false;
+            }
+            if ( !$( '#mailpassword' ).val() )
+            {
+                bootbox.alert( 'رمز عبور وارد نشده است.' );
+                $( '#mailpassword' ).focus();
+                return false;
+            }
+            if ( !$( '#size' ).val() )
+            {
+                $( '#size' ).val( '0' );
+            }
+            $.ajax( {
+                url : 'plugins.php?plugin=mail',
+                data : $( this ).serialize(),
+                dataType : 'json',
+                type : 'post',
+                success : function( result )
+                {
+                    if ( result.success )
+                    {
+                        bootbox.alert( 'اکانت با موفقیت ایجاد شد.' );
+                        //window.location.reload( true );
+                    }
+                    else
+                    {
+                        if ( result.error )
+                        {
+                            bootbox.alert( result.error );
+                        }
+                        else
+                        {
+                            bootbox.alert( 'اکانت ایجاد نشد.' );
+                        }
+                    }
+                },
+                error : function()
+                {
+                    bootbox.alert( 'خطا در برقراری ارتباط با سرور' );
+                }
+            } );
+            return false;
+        } );
+    } );
+</script>
+<div class="box">
+    <h2>ساخت اکانت جدید</h2>
+    <section>
+        <form id="newmail" action="" method="post">
+            <p>
+                <label for="mailusername">نام کاربری</label>
+                <input id="mailusername" type="text" name="mailusername" placeholder="@[domain]" class="ltr input-xlarge mail">
+            </p>
+            <p>
+                <label for="mailpassword">رمز عبور</label>
+                <input id="mailpassword" type="text" name="mailpassword" class="input-xlarge">
+            </p>
+            <p>
+                <label for="size">حجم</label>
+                <input id="size" type="text" name="size" value='0' class="input-xlarge"> مگابایت - 
+                0 برای بی نهایت
+            </p>
+            <p class="buttons">
+                <button id="add-mail" class="button green small" type="submit">ایجاد اکانت</button>
+            </p>
+        </form>
+    </section>
+</div>
+<div class="box">
+    <h2>لیست اکانت ها</h2>
+    <section>
+        <table width="95%" border="0" id="accounts" class="table table-striped">
+            <tbody>
+                <tr>
+                    <td width="26%" height="26" align="center">
+                        <b>ردیف</b>
+                    </td>
+                    <td width="14%" height="26" align="center">
+                        <b>نام کاربری</b>
+                    </td>
+                    <td width="14%" height="26" align="center">
+                        <b>حجم</b>
+                    </td>
+                    <td height="26" align="center" style="width: 20%" colspan="2">
+                        <b>صندوق پیام</b>
+                    </td>
+                    <td width="9%" height="26" align="center">
+                        <b>عملیات</b>
+                    </td>
+                </tr>
+            <tag:mails>
+                <tr>
+                    <td width="26%" height="26" align="center">
+                        [row]
+                    </td>
+                    <td width="14%" height="26" align="center">
+                        [username]
+                    </td>
+                    <td width="14%" height="26" align="center">
+                        [size]
+                    </td>
+                    <td height="26" align="center" style="width: 20%" colspan="2">
+                        <b><a href="plugins.php?plugin=mail&read=[username]">صندوق پیام</a></b>
+                    </td>
+                    <td width="9%" height="26" align="center">
+                        <a class='confirm' href='plugins.php?plugin=mail&del=[user]'>حذف</a>
+                    </td>
+                </tr>
+            </tag:mails>
+            </tbody>
+        </table>
+    </section>
+</div>

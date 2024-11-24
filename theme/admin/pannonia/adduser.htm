@@ -1,0 +1,77 @@
+<script>
+    function Mform()
+    {
+        var username = gi("new_user_name").value;
+        var email = gi("new_user_email").value;
+        var password = gi("new_user_password").value;
+        var repassword = gi("new_user_repassword").value;
+        connect('pages/adduser.php', "task=adduser&username=" + username + "&email=" + email + "&password=" + password + "&repassword=" + repassword, 'ajax_tabs_2_content', loadingt, '');
+    }
+</script>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a id="tab_[id]" class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="tab1">
+                    <form onsubmit="Mform();
+                            return false" method=post>
+                        <table border="0" width="100%" class="tbl" id="tabs_2_content">
+                            <tr>
+                                <td colspan="2" id="ajax_tabs_2_content"></td>
+                            </tr>
+                            <tr>
+                                <td width="29%">نام كاربري : <font color="#FF0000">*</font>
+                                </td>
+                                <td width="69%">
+                                    <input class="input-xlarge" type="text" name="new_user_name" id="new_user_name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="29%">پست الكترونيك : <font color="#FF0000">*</font>
+                                </td>
+                                <td width="69%">
+                                    <input class="input-xlarge" type="text" name="new_user_email" id="new_user_email">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="29%">رمز عبور : <font color="#FF0000">*</font>
+                                </td>
+                                <td width="69%">
+                                    <input class="input-xlarge" type="text" name="new_user_password" id="new_user_password"
+                                           dir="ltr" size="20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="29%">تکرار رمز عبور : <font color="#FF0000">*</font>
+                                </td>
+                                <td width="69%">
+                                    <input class="input-xlarge" type="text" name="new_user_repassword" id="new_user_repassword" dir="ltr">
+                                </td>
+
+                            <tr>
+                                <td colspan="2">
+                            <center>
+                                <input onclick="Mform('edit_user');
+                                                return false;" type="submit" name="submit" value="افزودن مدیر"
+                                       class="btn btn-success">
+                            </center>
+                            </td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="edit_user_id" id="edit_user_id"
+                               value="">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

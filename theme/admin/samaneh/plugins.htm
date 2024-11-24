@@ -1,0 +1,21 @@
+<tag:Success><div class='MsgHead Success'><div class='MsgBody'>[msg]</div></div></tag:Success>				
+<tag:Error><div class='MsgHead error'><div class='MsgBody'>[msg]</div></div></tag:Error>				
+<tag:Info><div class='MsgHead info'><div class='MsgBody'>[msg]</div></div></tag:Info>				
+<!-- IF Error -->
+<div class='MsgHead error'><div class='MsgBody'>[msg]</div></div>
+<!-- ENDIF Error -->
+<!-- IF Success -->
+<div class='MsgHead Success'><div class='MsgBody'>[msg]</div></div>
+<!-- ENDIF Success -->
+<!-- IF Info -->
+<div class='MsgHead info'><div class='MsgBody'>[msg]</div></div>
+<!-- ENDIF Info -->
+
+<div id="div_1"> 
+[first]
+</div>
+<tag:extra_div>
+<div id="div_[id]"  style="display:none" >
+[inside]
+</div>
+</tag:extra_div>

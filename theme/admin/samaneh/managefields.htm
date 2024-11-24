@@ -1,0 +1,125 @@
+<script>
+    var editing = false;
+
+    function tab_2() 
+	{
+        connect('pages/fields.php', "task=listing", 'ajax_tabs_2_content', sload, '');
+    }
+
+    function Mform(method) 
+	{
+        if (method == "new") 
+		{
+            hideid("editing_area");
+            var title = gi("title").value;
+            var name  = gi("name").value;
+            connect('pages/fields.php', "task=new&title=" + title + "&name=" + name, 'ajax_tabs_0_content', loadingt, '');
+        }
+        if (method == "edit") 
+		{
+            showid("editing_area");
+            var title = gi("edit1").value;
+            var name = gi("edit2").value;
+            var editing_id = gi("edit_id").value;
+            connect('pages/fields.php', "task=edit&name=" + name + "&title=" + title + "&editing_id=" + editing_id, 'ajax_tabs_2_content_2', loadingt, 'edit_field');
+        }
+    }
+
+    function editfield(id, coreid) 
+	{
+        showid("editing_area");
+        var title = $("#ajax_edit_title_" + id).val();
+        var name = $("#ajax_edit_name_" + id).val();
+        $("#edit1").val( title );
+        $("#edit2").val( name );
+        gi("edit_id").value = id;
+    }
+
+    function delfield(id, coreid) 
+	{
+        hideid("editing_area");
+        var msg = "آیا از حذف این فیلد اطمینان دارید ؟ حذف فیلد منجر به حذف کلیه داده های این فیلد می باشد و قابل بازگشت نمی باشد.";
+        if (confirm(msg)) 
+		{
+            connect('pages/fields.php', "task=delete&id=" + id, 'ajax_tabs_2_content_2', loadingt, 'edit_field');
+        }
+    }
+	function down(id)
+	{
+		document.location = '?movedown='+id;
+		//window.location = '?movedown='+id;
+	}
+	function up(id)
+	{
+		document.location = '?moveup='+id;
+		//window.location = '?moveup='+id;
+	}
+</script>
+<div id="div_1">
+    <table border="0" width="100%" class="tbl" id="tabs_0_content">
+        <tr>
+            <td colspan="2" id="ajax_tabs_0_content"></td>
+        </tr>
+        <tr>
+            <td width="48%">عنوان فیلد :</td>
+            <td width="51%">
+                <input class="srinput" type="text" name="title" id="title" size="20">
+            </td>
+        </tr>
+        <tr>
+            <td width="48%">نام فیلد :</td>
+            <td width="51%">
+                <input class="srinput" type="text" name="name" id="name" size="20">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <center>
+                    <input onclick="Mform('new');return false;" type="submit" name="submit" value="ثبت فیلد" class="inp">
+                </center>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="div_2" style="display:none">
+    <table border="0" width="100%" class="tbl" id="tabs_2_content">
+        <tr>
+            <td>
+                <div id=edit>
+                    <div id="ajax_tabs_2_content_2"></div>
+                    <form onsubmit="Mform('edit_subject');return false" method=post>
+                        <table border="0" width="100%" class="tbl" id="editing_area" style=display:none>
+                            <tr>
+                                <td width="48%">عنوان فیلد&nbsp;:</td>
+                                <td width="50%">
+                                    <input class="srinput" type="text" name="edit1" id="edit1" size="20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="48%">نام فیلد :</td>
+                                <td width="50%">
+                                    <input class="srinput" type="text" name="edit2" id="edit2" size="20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>
+                                        <input type="hidden" name="edit_id" id="edit_id" value="">
+                                        <input onclick="Mform('edit');return false;" type="submit" name="submitnews" value="ثبت تغييرات" class="inp">
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+        </tr>
+        <tr>
+            </td>
+            <td id="ajax_tabs_2_content"></td>
+        </tr>
+    </table>
+</div>
+<script>
+$(document).ready(function(){
+<tag:move>$('#tab_2').trigger('click');</tag:move>
+});
+</script>

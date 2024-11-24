@@ -1,0 +1,180 @@
+
+  <style type="text/css">
+  
+#page-wrap {
+  width: 90%; 
+  height: 768px;
+}
+    .tabs {
+      position: relative;   
+      min-height: 200px; /* This part sucks */
+      clear: both;
+      margin: 25px 0;      
+    }
+    .tab {
+      float: right;
+text-align: right; 
+    }
+    .tab label {
+      background: #eee; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      margin-left: 0px; 
+      position: relative;
+      left: 0px;  color: rgba(0, 0, 0, 0.38);           
+    }
+	.tab label:hover {
+      background:#d7d4d4; 
+      padding: 10px; 
+      border: 1px solid #c6c6c6; 
+      margin-left: 0px; 
+      position: relative;
+      left:0px;    transition: all .3s ease-in;         
+    }
+    .tab [type=radio] {
+      display: none;   
+    }
+    .content {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      background: white;
+      right: 0;
+      bottom: 0;
+      padding: 5px;
+      border: 1px solid #ccc;       
+    }
+    [type=radio]:checked ~ label {
+      background: white;
+      border-bottom: 1px solid white;
+      z-index: 2;
+    }
+    [type=radio]:checked ~ label ~ .content {
+      z-index: 1;
+    }
+
+	
+	
+	
+	   .tabsv {
+      position: relative;   
+      min-height: 200px; /* This part sucks */
+      clear: both;
+      margin: 25px 0;      
+    }
+    .tabv {
+      /*float: left; */     
+       height: 41px; 
+    }
+    .tabv label {
+      background: #eee; 
+      padding: 0%; 
+      border: 1px solid #ccc; 
+      margin-left:1.7%; 
+      position: relative;
+      left: 1px;        
+      width:15%;
+      display: block;
+    }
+    .tabv [type=radio] {
+      display: none;   
+    }
+    .contentv {
+      position: absolute;
+      top: 0px;
+      left: 16.8%;
+      background: white;
+      right: 0;
+      bottom: 0;
+      padding: 5px;
+      border: 1px solid #ccc;  width: 85%;     
+    }
+    [type=radio]:checked ~ label {
+      background: white;
+      border-bottom: 0px solid white;
+	  box-shadow: inset 0 2.5px 0 #f05451;
+	  color: #060606;
+      z-index: 2;font-weight: 300;
+    }
+    [type=radio]:checked ~ label ~ .contentv {
+      z-index: 1;
+    }
+	.tabv img
+	{margin: 6px 2px -3px 3px}
+	
+	
+	
+	
+  </style>
+
+
+
+   
+
+
+
+
+
+  <div id="page-wrap">
+		
+		 <div class="tabsv">
+        
+       <div class="tabv">
+           <input type="radio" id="tabv-1" name="tabv-group-1" checked>
+           <label for="tabv-1"><img src="https://i.stack.imgur.com/dccvs.jpg?s=32&amp;g=1" height="32" width="32"> Tab One Tab One</label>
+           <div class="contentv">
+               <p>Stuff for Tab One</p>
+           </div> 
+       </div>
+        
+       <div class="tabv">
+           <input type="radio" id="tabv-2" name="tabv-group-1">
+           <label for="tabv-2"><img src="https://i.stack.imgur.com/dccvs.jpg?s=32&amp;g=1" height="32" width="32">Tab Two</label>           
+           <div class="contentv">
+               <p>Stuff for Tab Two</p>
+           </div> 
+       </div>
+        
+        <div class="tabv">
+           <input type="radio" id="tabv-3" name="tabv-group-1">
+           <label for="tabv-3"><img src="https://i.stack.imgur.com/dccvs.jpg?s=32&amp;g=1" height="32" width="32">Tab Three</label>
+           <div class="contentv">
+               <p>Stuff for Tab Three</p>
+           </div> 
+       </div>
+        
+    </div>
+	
+	
+	
+	
+	
+    <div class="tabs">
+        
+       <div class="tab">
+           <input type="radio" id="tab-1" name="tab-group-1" checked>
+           <label for="tab-1">Tab One</label>
+           <div class="content">
+               <p>Stuff for Tab One</p>
+           </div> 
+       </div>
+        
+       <div class="tab">
+           <input type="radio" id="tab-2" name="tab-group-1">
+           <label for="tab-2">Tab Two</label>           
+           <div class="content">
+               <p>Stuff for Tab Two</p>
+           </div> 
+       </div>
+        
+        <div class="tab">
+           <input type="radio" id="tab-3" name="tab-group-1">
+           <label for="tab-3">Tab Three</label>
+           <div class="content">
+               <p>Stuff for Tab Three</p>
+           </div> 
+       </div>
+        
+    </div>
+	
+	</div>

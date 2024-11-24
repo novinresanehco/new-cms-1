@@ -1,0 +1,68 @@
+<!-- IF Contact_Error -->
+<div class="error">[ErrorMsg]</div>
+<!-- ENDIF Contact_Error -->
+<!-- IF Contact_success --><div class="success" align="right">
+	[Msg]</div>
+<!-- ENDIF Contact_success -->
+
+<!-- IF Contact_Form 
+[contacttxt]
+<form action="" method="post">-->
+<TABLE  dir=rtl height=250 cellPadding=0 width=590>
+<TBODY>
+<TR>
+<TD vAlign=top align=middle><TABLE  width="100%" border=0>
+<TBODY>
+<tr>
+<TD width="16%" height=22>نام و نام خانوادگی :</TD>
+<TD width="84%" colspan="3">
+<INPUT  name=name tabindex="1" lang=fa-ir value="[contact_name]" ></TD>
+</tr>
+<tr>
+<TD width="16%" height=22 style="height: 11px">آدرس ایمیل:</TD>
+<TD colspan="3">
+<INPUT   name=email tabindex="2" value="[contact_email]" dir="ltr" ></TD>
+</tr>
+<tr>
+<TD width="16%" style="height: 8px">سايت :</TD>
+<TD colspan="3">
+<INPUT   name=site tabindex="3" dir="ltr" value="[contact_site]" ></TD>
+</tr>
+<tr>
+<TD width="16%" height=22 style="height: 7px">تلفن :</TD>
+<TD colspan="3">
+<INPUT   name=tell tabindex="4" dir="ltr" value="[contact_tell]" ></TD>
+</tr>
+<tr>
+<TD width="16%" height=22 style="height: 7px">دريافت كننده :</TD>
+<TD colspan="3"><select name="reciver" tabindex="5">
+<tag:users>
+<option value="[id]">[name]</option>
+</tag:users>
+</select>&nbsp;</TD>
+</tr>
+<tr>
+<TD width="16%" height=22>متن :</TD>
+<TD colspan="3">
+<textarea rows="5" name="text" cols="32" lang=fa-ir dir="rtl" tabindex="6">[contact_text]</textarea></TD>
+</tr>
+<TR>
+<TD width="14%" height=22>کد امنیتی :</TD>
+<TD><INPUT  name=samaneh  tabindex="7"></TD>
+<TD><span id=CMSimg>
+<img border="0" src="img.php" id="imageCMS"></span></TD>
+<TD><p align="center"><a href="#samaneh" onclick=CMSimg('New')>تغییر</a></TD>
+</TR>
+
+</TBODY></TABLE>
+<TABLE  cellPadding=0 width="100%" border=0>
+<TBODY>
+<tr>
+<TD height=22> <hr color="#008000"></TD>
+</tr>
+</TBODY></TABLE>
+<INPUT    type=submit name=submit value="ارسال پیام" tabindex="8" ></TR>
+<TR>
+<TD vAlign=top align=middle>&nbsp;</TR></TBODY></TABLE>
+<!--</form>
+ ENDIF Contact_Form -->

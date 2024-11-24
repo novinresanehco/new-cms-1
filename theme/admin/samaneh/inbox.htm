@@ -1,0 +1,194 @@
+<script>
+function tab_2()
+{
+	connect('pages/listpms.php',"task=inbox&page=[ipage]",'ajax_tabs_1_content',loadingt,'');
+}
+function tab_3()
+{
+	connect('pages/listpms.php',"task=outbox&page=[opage]",'ajax_tabs_2_content',loadingt,'');
+}
+function Mform(method){
+var title  	= gi("msg_title").value;
+var reciver = gi("msg_reciver").value;
+var text  	= gi("msg_text").value;
+connect('pages/pm.php',"task=post_msg&title="+title+"&reciver="+reciver+"&text="+text,'ajax_tabs_0_content',loadingt,'');
+}
+function readpm(id,type)
+{
+place = (type == 'inbox') ? 'ajax_tabs_1_content_1' : 'ajax_tabs_2_content_2';
+connect('pages/pm.php',"task=read_pm&id="+id+"&folder="+type,place,loadingt,'');
+}
+function delpm(id){
+var msg = "آيا از حذف اين پيام اطمينان داريد؟\nعمليات حذف برگشت پذير نميباشد.";
+if(confirm(msg))
+{
+connect('pages/pm.php',"task=delete_pm&id="+id,'ajax_tabs_1_content_1',loadingt,'edit_pm_in');
+}
+}
+function delpmo(id){
+var msg = "آيا از حذف اين پيام اطمينان داريد؟\nعمليات حذف برگشت پذير نميباشد.";
+if(confirm(msg))
+{
+connect('pages/pm.php',"task=delete_pmo&id="+id,'ajax_tabs_2_content_2',loadingt,'edit_pm_out');
+}
+}
+</script>
+<div id="div_1"> 
+<form onsubmit="Mform('post_msg');return false" method=post>
+<table border="0" width="100%" class="tbl" id="tabs_0_content">
+<tr>
+<td colspan="3" id="ajax_tabs_0_content"></td>
+</tr>
+<tr>
+<td width="23%">عنوان پيام :</td>
+<td width="76%" colspan="2">
+<input class="rinput" type="text" name="msg_title" id="msg_title"  dir="rtl" ></td>
+</tr>
+<tr>
+<td width="23%">نام كاربري دريافت كننده :</td>
+<td width="76%" colspan="2">
+<input class="rinput" type="text" name="msg_reciver" id="msg_reciver"  dir="ltr" ></td>
+</tr>
+<tr>
+<td width="23%">&nbsp;</td>
+<td width="76%" colspan="2">
+براي ارسال به بيش از يك كاربر ؛ نام هاي كاربري را با <span lang="en-us">,</span> 
+از يكديگر جدا كنيد.<br>
+براي ارسال پيام به تمام كاربران از عبارت <font color="#008000"> <span lang="en-us">[samaneh::all]</span></font> 
+استفاده كنيد.</td>
+</tr>
+<tr>
+<td width="23%" valign=top>متن پيام :</td>
+<td width="38%" rowspan="2">
+<textarea dir=rtl class="srtarea" name="msg_text" id="msg_text" cols="10" rows="10"></textarea></td>
+<td width="38%" rowspan="2" valign=top>
+متن پيام مي توانيد شامل متغير هايي مانند عنوان و آدرس سايت و ... باشد.<br>
+اطلاعات بيشتر</td>
+</tr>
+<tr>
+<td width="23%">&nbsp;</td>
+</tr>
+<tr>
+<td><center>
+&nbsp;</center></td>
+<td>
+<input onclick="Mform('post_msg');return false;" type="submit" name="submit" value="ارسال پيغام خصوصي" class="inp"></td>
+<td>&nbsp;</td>
+</tr>
+</table></form>
+
+</div>
+<div id="div_2" style="display:none">
+<table border="0" width="100%" class="tbl" id="tabs_1_content">
+<tr>
+<form action="inbox.php?task=view&inbox=true&page=1" method=post>
+
+<td width="161">
+<legend>پيام ها در صفحه : </td>
+<td colspan="4">
+<select class="select" name=number size="1">
+<option>5</option>
+<option selected>10</option>
+<option>15</option>
+<option>20</option>
+<option>30</option>
+<option>50</option>
+<option>75</option>
+<option>100</option>
+</select></td>
+<td colspan="3">
+<input type="button" onclick="document.location='inbox.php?reset=true&inbox&page=1'" name="reset" size="22" class=inp value="بازگشت به حالت پيشفرض">
+</td><input type="hidden" name="act" value="1">
+
+</tr>
+<tr>
+<td width="161">
+ترتیب نمایش : </td>
+<td colspan="3">
+<select class="select" name="type" size="1">
+<option value="ASC">صعودی</option>
+<option value="DESC" selected>نزولی</option>
+<option value="notread">خوانده نشده ها اول</option>
+</select>
+<input type="submit" name="show" size="22" class=inp value="نمایش"></td></form>
+<form action="inbox.php" method=get>
+<td colspan="2">
+صفحه :</td>
+<td>
+<input type="text" name="page" size="9" class=inp></td>
+<td>
+<input type="hidden" name="inbox" size="22" class=inp value="true">
+<input type="submit" name="show" size="22" class=inp value="نمایش"></td></form>
+</tr>
+<tr>
+<td colspan="8">
+</td>
+</tr>
+
+<tr>
+<td  colspan="8" id="ajax_tabs_1_content_1"></td>
+</tr><tr>
+<td colspan="8"  id="ajax_tabs_1_content"></td>
+</tr>
+</table>
+
+</div>
+<div id="div_3" style="display:none">
+<table border="0" width="100%" class="tbl" id="tabs_2_content">
+<tr>
+<form action="inbox.php?task=view&outbox=true&page=1" method=post>
+
+<td width="161">
+<legend>پيام ها در صفحه : </td>
+<td colspan="4">
+<select class="select" name=number size="1">
+<option>5</option>
+<option selected>10</option>
+<option>15</option>
+<option>20</option>
+<option>30</option>
+<option>50</option>
+<option>75</option>
+<option>100</option>
+</select></td>
+<td colspan="3">
+<input type="button" onclick="document.location='inbox.php?reset=true&outbox&page=1'" name="reset" size="22" class=inp value="بازگشت به حالت پيشفرض">
+</td><input type="hidden" name="act" value="1">
+
+</tr>
+<tr>
+<td width="161">
+ترتیب نمایش : </td>
+<td colspan="3">
+<select class="select" name="type" size="1">
+<option value="ASC">صعودی</option>
+<option value="DESC" selected>نزولی</option>
+<option value="notread">خوانده نشده ها اول</option>
+</select>
+<input type="submit" name="show" size="22" class=inp value="نمایش"></td></form>
+<form action="inbox.php" method=get>
+<td colspan="2">
+صفحه :</td>
+<td>
+<input type="text" name="page" size="9" class=inp></td>
+<td>
+<input type="hidden" name="outbox" size="22" class=inp value="true">
+<input type="submit" name="show" size="22" class=inp value="نمایش"></td></form>
+</tr>
+<tr>
+<td colspan="8">
+&nbsp;</td>
+</tr>
+
+<tr>
+<td  colspan="8" id="ajax_tabs_2_content_2"></td>
+</tr><tr>
+<td colspan="8"  id="ajax_tabs_2_content"></td>
+</tr>
+</table>
+
+</div>
+<script>
+<tag:inbox>$("#tab_2").trigger("click");</tag:inbox>
+<tag:outbox>$("#tab_3").trigger("click");</tag:outbox>
+</script>

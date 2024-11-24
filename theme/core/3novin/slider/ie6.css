@@ -1,0 +1,20 @@
+ul#menu li a {
+    height:1px;
+}
+
+.content .portfolio_con{
+    width:675px; 
+}
+
+#contact_form input, #contact_form select, #contact_form textarea{
+    width:470px;
+}
+
+#contact_form .button{
+    width:100px;
+}
+
+.box.content-two.left{ 
+    margin-right:5px;
+    padding-right:8px; 
+}

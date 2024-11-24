@@ -1,0 +1,33 @@
+<!-- IF todayArea --><img src="[theme_url]/img/li.gif">  امروز : [today]<br><!-- ENDIF todayArea -->
+<!-- IF yesterdayArea --><img src="[theme_url]/img/li.gif"> دیروز : [yes]<br> <!-- ENDIF yesterdayArea -->
+<!-- IF monthArea --><img src="[theme_url]/img/li.gif"> ماه : [month] <br><!-- ENDIF monthArea -->
+<!-- IF pmonthArea --><img src="[theme_url]/img/li.gif"> ماه قبل : [pmonth] <br><!-- ENDIF pmonthArea -->
+<!-- IF yearArea --><img src="[theme_url]/img/li.gif"> سال : [year] <br><!-- ENDIF yearArea -->
+<!-- IF pyearArea --><img src="[theme_url]/img/li.gif">
+سال قبل : [pyear] <br><!-- ENDIF pyearArea -->
+<!-- IF totalArea -->
+<img src="[theme_url]/img/li.gif">
+کل : [total]<!-- ENDIF totalArea -->
+<!-- IF siteInfo -->
+<hr style="border: 1px dotted rgb(0, 0, 0);" width="90%" align="center" size="1">
+<img src="[theme_url]/img/siteinf.gif">
+<b>اطلاعات سايت:</b><br><!-- IF newsArea -->
+<img src="[theme_url]/img/li.gif"> اخبار :[total_news]<br><!-- ENDIF newsArea -->
+<!-- IF commentsArea -->
+<img src="[theme_url]/img/li.gif">&nbsp; نظرات : <font color="#008000">[ncom]</font><br>
+<!-- ENDIF commentsArea -->
+<!-- IF rssArea -->
+<img src="[theme_url]/img/li.gif">
+<a href="[siteurl]rss.xml">خروجي rss</a><!-- ENDIF rssArea -->
+<!-- ENDIF siteInfo -->
+<!-- IF memberInfo -->
+<hr style="border: 1px dotted rgb(0, 0, 0);" width="90%" align="center" size="1">
+<img src="[theme_url]/img/group.gif">
+<b>كاربران:</b><br>
+<!-- IF totalmembersArea -->
+<img src="[theme_url]/img/li.gif"> اعضا :<font color="#008000">
+<a href="memberlist.html">[tmem]</a></font><br><!-- ENDIF totalmembersArea -->
+<!-- IF onlinesArea -->
+<img src="[theme_url]/img/li.gif">&nbsp; كاربران آنلاين : <font color="#ff0000">[ons]</font>
+<!-- ENDIF onlinesArea -->
+<!-- ENDIF memberInfo -->

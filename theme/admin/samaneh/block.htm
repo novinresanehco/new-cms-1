@@ -1,0 +1,196 @@
+<script>
+var CurrentStep = 1;
+var samanehfirst = false;
+var editing = false;
+function tab_3()
+{
+	if(!editing)
+	{
+		return "prevent|ابتدا يك بلوك را جهت ويرايش انتخاب كنيد.";
+	}
+}
+function tab_2()
+{
+	connect('pages/listblock.php',"task=listing",'ajax_tabs_1_content',loadingt,'');
+}
+function Mform(method)
+{
+	if(method == "new_block")
+	{
+		var title     = gv("block_title");
+		var position  = gv("block_pos");
+		var show	  = gv("block_show");
+		var plugins	  = gv("plugins");
+		var text	  = rajax(tinyMCE.get('text').getContent());
+		connect('pages/block.php',"task=add_block&title="+title+"&position="+position+"&show="+show+"&text="+text+"&plugins="+plugins,'ajax_tabs_0_content',loadingt,'');
+	}
+	if(method == "edit_block")
+	{
+		var title     = gi("edit_block_title").value;
+		var position  = gi("edit_block_pos").value;
+		var show	  = gi("edit_block_show").value;
+		var text	  = rajax(tinyMCE.get('edit_text').getContent());
+		var id		  = gi("edit_block_id").value;
+		var plugins	  = gv("edit_block_plugins");
+		connect('pages/block.php',"task=edit_block&title="+title+"&position="+position+"&show="+show+"&text="+text+"&id="+id+"&plugins="+plugins,'ajax_tabs_2_content',loadingt,'');
+		editing = false;
+	}
+}
+function editblock(id)
+{
+	editing = true;
+	$('#tab_3').trigger('click');
+	var title   = gv("ajax_edit_title_"+id);
+	var pos 	= gv("ajax_edit_pos_"+id);
+	var show 	= gv("ajax_edit_users_"+id);
+	var text 	= gi("ajax_edit_text_"+id).value;
+	var plugins 	= gv("ajax_edit_plugins_"+id);
+	gi("edit_block_title").value = title;
+	gi("edit_block_id").value = id;
+	tinyMCE.get('edit_text').setContent(text);
+	gi("edit_block_pos_"+pos).selected = true;
+	gi("edit_block_show_"+show).selected = true;
+	gi("edit_block_plugins_"+plugins).selected = true;
+	editing = false;
+}
+function delblock(id)
+{
+	hideid("editing_area");
+	var msg = "آيا از حذف اين بلوك اطمينان داريد؟\nعمليات حذف برگشت پذير نميباشد.";
+	if(confirm(msg))
+	{
+		connect('pages/block.php',"task=delete_block&id="+id,'ajax_tabs_1_content_1',loadingt,'edit_block');
+	}
+}
+function down(id)
+{
+	document.location = '?movedown='+id;
+	//window.location = '?movedown='+id;
+}
+function up(id)
+{
+	document.location = '?moveup='+id;
+	//window.location = '?moveup='+id;
+}
+
+</script>
+<div id="div_1"> 
+<form onsubmit="Mform('new_block');return false" method=post>
+<table border="0" width="100%" class="tbl" id="tabs_0_content">
+<tr>
+<td colspan="2" id="ajax_tabs_0_content"></td>
+</tr>
+<tr>
+<td width="29%">عنوان بلاك :</td>
+<td width="69%"><input class="rinput" type="text" name="block_title" id="block_title"></td>
+</tr>
+<tr>
+<td width="29%">موقعيت :</td>
+<td width="69%">
+<select name="block_pos" id="block_pos" class="select" size="1">
+<option selected value="1">بالای صفحه</option>
+<option value="2">پایین صفحه</option>
+<option value="3">سمت راست</option>
+<option value="4">سمت چپ</option>
+<option value="5">مخفي</option>
+
+
+</select>
+</td>
+</tr>
+<tr>
+<td width="29%">قابل نمایش برای: </td>
+<td width="69%">
+<select name="block_show" id="block_show" class="select" size="1">
+<option selected value="2">برای عموم کاربران</option>
+<option value="3">فقط کاربران مهمان</option>
+<option value="1">فقط برای کاربران عضو</option>
+</select>
+</td>
+</tr>
+<tr>
+<td width="29%">ماژول :</td>
+<td width="69%">
+<select name="plugins" id="plugins" class="select" size="1">
+<option id='plugins_none' value="none">هيچ كدام</option>
+<tag:pluginss>
+<option value="[name]">[title]</option>
+</tag:pluginss>
+</select></td>
+</tr>
+<tr>
+<td width="99%" id="nofull" colspan="2"  class=""><textarea dir=rtl class="editor" name="text" id="text" style="height: 193; width: 428;" cols="10" rows="10"></textarea></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<center>
+<input onclick="Mform('new_block');return false;" type="submit" name="submit" value="ايجاد بلوك" class="inp"></center>
+</td>
+</tr>
+</table></form>
+
+</div>
+<div id="div_2" style="display:none">
+<table border="0" width="100%" id="tabs_1_content">
+<tr>
+<td id="ajax_tabs_1_content_1"></td>
+</tr><tr>
+<td id="ajax_tabs_1_content"></td>
+</tr>
+</table>
+</div>
+<div id="div_3" style="display:none">
+<form onsubmit="Mform('edit_block');return false" method=post>
+<table border="0" width="100%" class="tbl" id="tabs_2_content">
+<tr>
+<td colspan="2" id="ajax_tabs_2_content"></td>
+</tr>
+<tr>
+<td width="29%">عنوان بلاك :</td>
+<td width="69%"><input class="rinput" type="text" name="edit_block_title" id="edit_block_title"></td>
+</tr>
+<tr>
+<td width="29%">موقعيت :</td>
+<td width="69%">
+<select name="edit_block_pos" id="edit_block_pos" class="select" size="1">
+<option selected value="1" id="edit_block_pos_1">بالای صفحه</option>
+<option value="2" id="edit_block_pos_2">پایین صفحه</option>
+<option value="3" id="edit_block_pos_3">سمت راست</option>
+<option value="4" id="edit_block_pos_4">سمت چپ</option>
+<option value="5" id="edit_block_pos_5">مخفي</option>
+
+
+</select>
+</td>
+</tr>
+<tr>
+<td width="29%">قابل نمایش برای: </td>
+<td width="69%">
+<select name="edit_block_show" id="edit_block_show" class="select" size="1">
+<option value="1" id="edit_block_show_1">فقط برای کاربران عضو</option>
+<option selected value="2" id="edit_block_show_2">برای عموم کاربران</option>
+<option value="3" id="edit_block_show_3">فقط کاربران مهمان</option>
+
+</select>
+</td>
+</tr>
+<tr>
+<td width="29%">ماژول :</td>
+<td width="69%">
+<select name="edit_block_plugins" id="edit_block_plugins" class="select" size="1">
+<option id='edit_block_plugins_none' value="none">هيچ كدام</option>
+<tag:pluginss>
+<option id='edit_block_plugins_[name]' value="[name]">[title]</option>
+</tag:pluginss>
+</select></td>
+</tr>
+<tr>
+<td width="99%" colspan="2"><textarea dir=rtl class="editor" name="edit_text" id="edit_text" style="height: 193; width: 428;" cols="10" rows="10"></textarea></td>
+</tr>
+<tr>
+<td colspan="2"><center>
+<input onclick="Mform('edit_block');return false;" type="submit" name="submit" value="ويرايش بلوك" class="inp"></center></td>
+</tr>
+</table><input type="hidden" name="edit_block_id" id="edit_block_id" value=""></form>
+</div>

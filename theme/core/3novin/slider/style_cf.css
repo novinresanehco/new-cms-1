@@ -1,0 +1,40 @@
+
+ /* Slider */
+ 
+    /* Home Page Slider */
+    #slider{
+	border:1px solid #dddddd;
+	background:#fff; 
+    }
+
+    .sub#slider{
+	margin-left:-10px;
+    }    
+        
+    /* slider right side */
+    #slider_area .desc{ 
+	background-color: #f1433e;
+	color: #FFFFFF; 
+	border-left:1px solid #fff;
+	border-right:1px solid #fff;
+	border-bottom:1px solid #fff;
+    }
+        
+    #slider_area .desc a{
+	color: #fff; 
+    }
+
+    #slider_area .desc a:hover{ 
+    }
+    
+    /* prev and next buttons*/
+    .prev, 
+    .next {
+	background-color: #f1433e;
+	color: #FFFFFF;
+    }
+
+    .slider_shadow{
+       background:url(slider_s.png) center top no-repeat;
+    }
+ 

@@ -1,0 +1,202 @@
+<style>
+
+.icomment {
+    color: #626262;
+    background-color: #ebf8a4;
+	margin: .5em 0 1.3em;
+border: 1px solid;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+background-repeat: no-repeat;
+background-position: 10px 50%;
+padding: 10px 10px 10px 10px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+-moz-box-shadow: 0 1px 1px #fff inset;
+-webkit-box-shadow: 0 1px 1px #fff inset;
+box-shadow: 0 1px 1px #fff inset;
+border-color: #a2d246;
+}
+.icomment::before {
+    content: "";
+position: absolute;
+left: -8px;
+top: 15px;
+width: 0;
+height: 0;
+border-top: 6px solid transparent;
+border-right: 8px solid #a2d246;
+border-bottom: 6px solid transparent;
+
+}
+
+.success {
+    color: #626262;
+    background-color: #ebf8a4;
+	margin: .5em 0 1.3em;
+border: 1px solid;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+background-repeat: no-repeat;
+background-position: 10px 50%;
+padding: 10px 10px 10px 10px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+-moz-box-shadow: 0 1px 1px #fff inset;
+-webkit-box-shadow: 0 1px 1px #fff inset;
+box-shadow: 0 1px 1px #fff inset;
+border-color: #a2d246;
+}
+.error {
+    color: #626262;
+    background-color: #ff988c;
+    margin: .5em 0 1.3em;
+    border: 1px solid;
+        border-top-color: currentcolor;
+        border-right-color: currentcolor;
+        border-bottom-color: currentcolor;
+        border-left-color: currentcolor;
+    border-top-color: currentcolor;
+    border-right-color: currentcolor;
+    border-bottom-color: currentcolor;
+    border-left-color: currentcolor;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+    padding: 10px 10px 10px 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 1px #fff inset;
+    -webkit-box-shadow: 0 1px 1px #fff inset;
+    box-shadow: 0 1px 1px #fff inset;
+    border-color: #ff5946;
+}
+</style>
+<div class="panel panel-primary">
+
+<div style="text-align: right;direction: rtl;" class="panel-body">
+            <div class="dmenu">
+<tag:comments>
+		<li class="comments__item" style="list-style: none;">
+
+							<div class="comment-entry comment comments__article">
+
+								<div class="comment-content comment" style="width: 75%;float: right;">
+									<p>[body]</p>
+								</div>
+
+								<div class="comments__body display-flex" style="width: 20%;float: left;">
+
+									<div class="comments__avatar">
+
+										<img src="[site]theme/core/novin/data/i1.png" alt="avatar">
+
+									</div>
+
+									<header class="comment-meta comments__header">
+<a href="[url]" rel="nofollow"  >
+										<cite class="fn url comments__author">
+											 [name]
+										</cite></a>
+
+
+									</header>
+
+								</div>
+
+							</div>
+ <!-- IF Ans -->
+							<ol class="children">
+
+								<li class="comments__item">
+
+									<div class="comment-entry comment comments__article adminre" >
+
+										<div class="comment-content icomment" style="width: 60%;float: right;">
+											<p>[answer]</p>
+										</div>
+
+										<div class="comments__body display-flex" style="width: 35%;float: left;">
+
+
+											<div class="comments__avatar">
+
+												<img src="[site]theme/core/novin/data/i10.png">
+
+											</div>
+
+											<header class="comment-meta comments__header" >
+
+												<cite class="fn url comments__author">
+													<a -href="#" rel="external">[reply_user]</a>
+													<span class="replied" style="color: #636363;font-weight: 600;"> [reply_name] </span>
+												</cite>
+
+
+											</header>
+
+										</div>
+
+									</div>
+
+								
+								</li>
+
+							</ol><br><hr><br><!-- ENDIF Ans -->
+						</li>
+</tag:comments></div>
+            <!-- IF Error -->
+                <div class="error">[msg]</div>
+                <!-- ENDIF Error -->
+                <!-- IF Success -->
+                <div class="success">[msg]</div>
+                <!-- ENDIF Success -->
+            <div class="formc"><hr><br>
+			<div class="heading">
+									<span>حالا نوبت شماست </span><br>
+									<span>شما هم نظرتان را بیان کنید </span>
+									
+								</div>
+			<hr><hr><b><br>
+                
+                <!-- IF CommentForm -->
+                <div class="ttcf7" id="ttcf7-f5-p261-o2" dir="ltr" lang="en-US">
+							
+                            <div class="screen-reader-response"></div>
+							
+                            <form name="" action="" method="post" class="ttcf7-form" novalidate="">				
+
+ <div class="commentform-inner">
+                <input type="text" style="text-align: right;direction: rtl;" placeholder="نام و نام خانوادگي" class="text" name="name" id="author" value="[fullname]" size="22" tabindex="1" aria-required='true'><input type='hidden' name="task" value="new" id="author"/>
+                <input type="text" placeholder="پست الکترونیک" class="text" name="email" id="email" value="[email]" size="22" tabindex="2" aria-required='true' [disable] >
+                <input type="text" placeholder="وب سایت" class="text" name="url" id="url"  value="[url]" size="22" tabindex="3">
+            </div>
+
+			
+
+			
+								<p>پیام<br>
+									<span class="ttcf7-form-control-wrap your-message">
+									<textarea name="comment" id="comment" cols="40" rows="10" class="ttcf7-form-control ttcf7-textarea" aria-invalid="false"></textarea></span> </p>
+									
+								<p>كد امنيتي<br><span id="CMSimg" class="hand">
+                                    <img border="0" src="[site]img.php?rand=[rand]" id="imageCMS"></span>
+									<span class="ttcf7-form-control-wrap your-name"><input name="samaneh" id="comment" cols="40" rows="10" class="text"></name></span> 
+									
+									</p>
+								
+						
+						<p><input value="ارسال نظر" class="button" type="submit"></p>
+							</form>
+						
+                        </div>
+                <!-- ENDIF CommentForm -->
+            </div>
+        </div>
+    </div>

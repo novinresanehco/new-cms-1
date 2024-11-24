@@ -1,0 +1,282 @@
+<script>
+    var editing = false;
+
+    function Mform( method ) {
+        if ( method == "move" ) {
+            var cid = gv( "c_id" );
+            var pid = gv( "p_id" );
+            connect( 'pages/comment.php', "task=move&cid=" + cid + "&pid=" + pid, 'ajax_tabs_1_content', loadingt, '' );
+        }
+        if ( method == "edit" ) {
+            var name = gv( "edit_comment_name" );
+            var email = gv( "edit_comment_email" );
+            var website = gv( "edit_comment_website" );
+            var comment = gv( "edit_comment_comment" );
+            var reply = gv( "edit_comment_reply" );
+            var id = gv( "edit_id" );
+            connect( 'pages/comment.php', "task=edit&name=" + name + "&email=" + email + "&website=" + website + "&comment=" + comment + "&reply=" + reply + "&id=" +
+                    id, 'ajax_tabs_2_content_1', loadingt, '' );
+        }
+
+    }
+
+    function activate( id ) {
+        connect( 'pages/comment.php', "task=activate&id=" + id, 'ajax_tabs_0_content', loadingt, '' );
+    }
+
+    function hide( id ) {
+        connect( 'pages/comment.php', "task=hide&id=" + id, 'ajax_tabs_0_content', loadingt, '' );
+    }
+
+    function deletec( id ) {
+        bootbox.confirm( 'آیا از حذف نظر اطمینان دارید ؟', function( result ) {
+            if ( result )
+            {
+                connect( 'pages/comment.php', "task=delete&id=" + id, 'ajax_tabs_0_content', loadingt, '' );
+            }
+        } );
+    }
+
+    function edit( id ) {
+        editing = true;
+        $( '#tab_3' )
+                .removeClass( "disabled" );
+        $( '#tab_3' )
+                .trigger( 'click' );
+        gi( "edit_comment_name" )
+                .value = gv( 'comment_name_' + id );
+        gi( "edit_comment_email" )
+                .value = gv( 'comment_email_' + id );
+        gi( "edit_comment_website" )
+                .value = gv( 'comment_website_' + id );
+        gi( "edit_comment_comment" )
+                .value = gv( 'comment_comment_' + id );
+        gi( "edit_comment_reply" )
+                .value = gv( 'comment_reply_' + id );
+        gi( "edit_id" )
+                .value = id;
+    }
+
+    function showcm() {
+        var type = gv( "ctype" );
+        document.location = '?type=' + type;
+
+    }
+
+    function domethod( task ) {
+        var msg = ( task == 'delete' ) ? "شما در حال حذف تمامي نظرات پست هستيد.اين عمليات بر گشت ناپذير است.آيا از ادامه اطمينان داريد؟" :
+                "شما در حال اعمال يك تغيير بر روي تمامي مطالب يك پست هستيد<br /> آيا ميخواهيد ادامه دهيد؟";
+        if ( task == 'show' ) {
+            var postid = gv( "posts" );
+            document.location = '?postid=' + postid;
+            return;
+        }
+        bootbox.confirm( msg, function( result ) {
+            if ( result )
+            {
+                connect( 'pages/comment.php', "task=method&do=" + task + "&postid=" + postid, 'ajax_tabs_1_content_1', loadingt, '' );
+            }
+        } );
+    }
+    function tab_3()
+    {
+        if ( editing == false )
+        {
+            return 'prevent|ابتدا یک نظر را برای ویرایش انتخاب کنید.';
+        }
+    }
+</script>
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a id="tab_[id]" class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <table border="0" width="100%" class="tbl" id="tabs_0_content">
+                        <tr>
+                            <td colspan="3" id="ajax_tabs_0_content"></td>
+                        </tr>
+                        <tr>
+                            <td width="25%">نمايش</td>
+                            <td width="37%">
+                                <select class="select2" name="ctype" id="ctype" size="1" dir="rtl">
+                                    <option value="3" [ctype_3]>همه</option>
+                                    <option value="0" [ctype_0]>تاييد نشده</option>
+                                    <option value="1" [ctype_1]>تاييد شده</option>
+                                    <option value="2" [ctype_2]>پنهان</option>
+                                </select>
+                            </td>
+                            <td width="36%">
+                                <input onclick="showcm();" type=button name="show" value="نمايش" class="btn btn-success">
+                            </td>
+                        </tr>
+                        <tag:comment>
+                            <tr>
+                                <td width="25%">نام و نام خانوادگي&nbsp; :</td>
+                                <td width="73%" colspan="2">
+                                    <input type=hidden value="[name]" id=comment_name_[id]>
+                                    <input type=hidden value="[email]" id=comment_email_[id]>
+                                    <input type=hidden value="[website]" id=comment_website_[id]>[name] - <a href="mailto:[email]">پست الكترونيك</a> [<a href="sendmail.php?email=[email]">ارسال نامه</a>] -
+                                    <a target="_blank" href="[website]">وب سايت</a> - آي پي : [ip]</td>
+                            </tr>
+                            <tr>
+                                <td>گروه كاربري&nbsp; :</td>
+                                <td colspan="2">[member_name] - نام كاربري : [member_user] | ارسال شده در [comment_date]</td>
+                            </tr>
+                            <tr>
+                                <td>مطلب :</td>
+                                <td colspan="2">
+                                    <input type=hidden value="[posttitle]" id=comment_posttitle_[id]>[posttitle]<span lang="en-us"> -- </span>شماره اختصاصي مطلب : <b>[pnum]</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="25%">عمليات :</td>
+                                <td width="73%" colspan="2">
+                                    <a href="javascript:activate('[id]');">تاييد نظر</a> -
+                                    <a href="javascript:hide('[id]');">پنهان سازي نظر</a> -
+                                    <a href="javascript:deletec('[id]');">حذف نظر</a> -
+                                    <a href="javascript:edit('[id]');">ويرايش نظر</a> - شماره اختصاصي نظر : <b>[id]</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="98%" colspan="3">
+                                    <input type=hidden value="[comment]" id=comment_comment_[id]>
+                                    <input type=hidden value="[reply_txt]" id=comment_reply_[id]>
+                                    <div style="border: 0pt none; height: auto; width: 642px; overflow: auto">
+                                        <font color="#FF0000">
+                                        <b>»</b></font> [comment] [reply]</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                            <center>
+                                <hr style="border: 1px dotted rgb(0, 150, 0);" size="1">
+                            </center>
+                            </td>
+                            </tr>
+                        </tag:comment>
+                        <tr>
+                            <td bgcolor="#d1dde0" height="26" align="center" colspan="3">
+                        <tag:pages>[<a href="[pagelink]">[page]</a>]</tag:pages>
+                        </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <table border="0" width="100%" class="tbl" id="tabs_1_content">
+                        <tr>
+                            <td colspan=6>
+                                <div id="ajax_tabs_1_content"></div>
+                                <div id="ajax_tabs_1_content_1"></div>
+                        <tr>
+                            <td>پست</td>
+                            <td colspan="2">
+                                <select class="select2" name="posts" id="posts" size="1" dir="rtl">
+                                    <tag:listposts>
+                                        <option selected value="[postid]">[postname]</option>
+                                    </tag:listposts>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="select2" name="task" id="task" size="1" dir="rtl">
+                                    <option value="show">نمايش نظرات</option>
+                                    <option value="activate">تاييد همه نظرات</option>
+                                    <option value="deactivate">غير فعال سازي همه نظرات</option>
+                                    <option value="hide">پنهان سازي همه نظرات</option>
+                                    <option value="delete">حذف تمامي نظرات</option>
+                                </select>
+                            </td>
+                            <td colspan="2">
+                                <input onclick="domethod( gv( 'task' ) );
+                            return false;" type="button" name="do" value="انجام" class="btn btn-success">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="45">&nbsp;</td>
+                            <td colspan="2" height="45">&nbsp;</td>
+                            <td colspan="3" height="45">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td valign=middle height="22">انتقال نظر&nbsp; :</td>
+                            <td valign=middle height="22">
+                                <input class="input-xlarge" onblur="clickrecall( this, 'شماره اختصاصي نظر' );" onfocus="clickclear( this, 'شماره اختصاصي نظر' );" type="text" name="c_id" id="c_id" size="59"
+                                       dir="rtl" value="شماره اختصاصي نظر">
+                            </td>
+                            <td colspan="2" height="22">&nbsp;به پست شماره</td>
+                            <td height="22">
+                                <input class="input-xlarge" onblur="clickrecall( this, 'شماره اختصاصي مطلب' );" onfocus="clickclear( this, 'شماره اختصاصي مطلب' );" type="text" name="p_id" id="p_id" size="59"
+                                       dir="rtl" value="شماره اختصاصي مطلب">
+                            </td>
+                            <td height="22">
+                                <input onclick="Mform( 'move' );
+                            return false;" type="submit" name="do_move" value="انجام عمليات" class="btn btn-success">
+                            </td>
+                        </tr>
+                </div>
+                </tr>
+                </table>
+            </div>
+            <div class="tab-pane" id="tab3">
+                <form onsubmit="Mform( 'edit_one_comment' );
+                return false" method=post>
+                    <table border="0" width="100%" class="tbl" id="tabs_2_content">
+                        <tr>
+                            <td colspan=2>
+                                <div id="ajax_tabs_2_content"></div>
+                                <div id="ajax_tabs_2_content_1"></div>
+                        <tr>
+                            <td width="25%">نام و نام خانوادگي :</td>
+                            <td width="74%">
+                                <input class="input-xlarge" type="text" name="edit_comment_name" id="edit_comment_name" size="59" dir="rtl">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%">پست الكترونيك :</td>
+                            <td width="74%">
+                                <input class="input-xlarge" type="text" name="edit_comment_email" id="edit_comment_email" size="59" dir="rtl">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%">وب سايت :</td>
+                            <td width="74%">
+                                <input class="input-xlarge" type="text" name="edit_comment_website" id="edit_comment_website" size="59" dir="ltr">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%" valign=top>متن پيام</td>
+                            <td width="74%">
+                                <textarea rows="2" name="edit_comment_comment" id="edit_comment_comment" cols="20" class="input-xlarge"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%" valign=top>پاسخ :</td>
+                            <td width="74%">
+                                <textarea rows="2" name="edit_comment_reply" id="edit_comment_reply" cols="20" class="input-xlarge"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="25%">&nbsp;</td>
+                            <td width="74%">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                        <center>
+                            <input type="hidden" name="edit_id" id="edit_id" value="">
+                            <input onclick="Mform( 'edit' );
+                              return false;" type="submit" name="show" value="ويرايش" class="btn btn-success">
+                        </center>
+                        </td>
+                        </tr>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

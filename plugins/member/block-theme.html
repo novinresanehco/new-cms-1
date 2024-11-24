@@ -1,0 +1,64 @@
+<!-- IF Member -->
+<center>
+<img src="files/avatars/[avatar]"  style="width: 50%;height: 50%;"></center><br>
+<b>[name]</b> خوش آمديد! 
+
+<hr style="border: 1px dotted rgb(0, 0, 0);" width="90%" align="center" size="1">
+<img src="[theme_url]/img/li.gif">  
+<a href="index.php?plugins=member&method=profile">صفحه كاربري</a><br>
+<img src="[theme_url]/img/li.gif">  
+<a href="index.php?plugins=member&method=profile&task=edit">ويرايش پروفايل</a><br>
+<img src="[theme_url]/img/li.gif">  
+<a title="شما [msg] پیام خوانده نشده دارید!" href="index.php?plugins=member&method=inbox">پیام 
+های خصوصی (<b>[msg]</b>)</a><br>
+<img src="[theme_url]/img/li.gif">  
+<a href="index.php?plugins=member&method=outbox">صندوق خروجی</a><br>
+<img src="[theme_url]/img/li.gif"><a href="index.php?plugins=member&method=sendpm"> 
+ارسال پیغام خصوصی</a><br>
+<img src="[theme_url]/img/li.gif">  
+<a href="index.php?plugins=member&method=logout">خروج از سیستم</a>
+<!-- ENDIF Member -->
+<!-- IF Guest -->
+<font class="content">
+<img src="[theme_url]/img/user.gif">
+<b>كاربر مهمان</b> خوش آمديد! 
+</font>
+<hr style="border: 1px dotted rgb(0, 0, 0);" width="90%" align="center" size="1">
+<form autocomplete="on" method="post" action="index.php?plugins=member&method=login">
+<table  width="146">
+<tbody>
+<tr>
+<td width="65">نام کاربری</td>
+<td><input size="13" tabindex="1" name="user" class="inp1"></td>
+</tr>
+<tr>
+<td width="65" height="26">کلمه عبور</td>
+<td height="26">
+
+<input size="13" tabindex="1" name="pass" class="inp1" type="password"></td>
+
+</tr>
+<!-- IF LoginSec -->
+<tr>
+<td width="65" height="26">كد امنيتي:</td>
+<td height="26"><INPUT  name="samaneh"  tabindex="3" size="13"></td>
+</td>
+</tr>
+<tr>
+<td colspan=2><center><span id="CMSimg" style="cursor:hand"  onclick=CMSimg("New") colspan=2>
+<img style="cursor:hand" onclick=CMSimg("New") border="0" src="img.php" id="imageCMS" ></td></td>
+</span></center>
+</tr>
+<!-- ENDIF LoginSec -->
+<tr>
+<td colspan="2" height="26">
+<center><input value="ورود" name="submit" class="inp1" type="submit"></center>
+</td>
+<img src="[theme_url]/img/li.gif">
+<a href="index.php?plugins=member&method=signup">عضويت در سايت</a><br>
+<img src="[theme_url]/img/li.gif">
+<a href="index.php?plugins=member&method=forget">كلمه عبور را فراموش كرده ام</a></tr>
+</tbody>
+</table>
+</form>
+<!-- ENDIF Guest -->

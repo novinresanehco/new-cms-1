@@ -1,0 +1,71 @@
+<script>
+    function Mform( method, id )
+    {
+        var msg = 'انتخاب قالب جدید باعث حذف تمامی تنظیمات فعلی می شود. قبل از انتخاب قالب جدید از قالب فعلی خود پشتیبان تهیه نمایید. <br />آیا از حذف قالب اطمینان دارید ؟ ';
+        bootbox.confirm( msg, function( result )
+        {
+            if ( result )
+            {
+                if ( method == "theme" )
+                {
+                    connect( 'pages/theme.php', "task=core&id=" + id, 'ajax_tabs_0_content', loadingt, '' );
+                }
+
+                if ( method == "admin_theme" )
+                {
+                    connect( 'pages/theme.php', "task=admin&id=" + id, 'ajax_tabs_1_content', loadingt, '' );
+                }
+            }
+        } );
+    }
+</script>
+
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="tabbable">
+            <!-- default tabs -->
+            <ul class="nav nav-tabs right-aligned-tabs">
+                <tag:tabs>
+                    <li class="[current]"><a class='tabshandler' href="[url]" data-toggle="tab"><i class="icon-pencil"></i>[title]</a>
+                    </li>
+                </tag:tabs>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <table border="0" width="100%" class="tbl" id="tabs_0_content">
+                        <tr>
+                            <td colspan="3" id="ajax_tabs_0_content"></td>
+                        </tr>
+                        <tag:themelist>
+                            <tr class="themeRow_[theme_name]" data-toggle="tooltip" title="[readme]" >
+                                <td width="200px">
+                                    نام قالب :</td>
+                                <td width="100px">
+                                    [theme_name]</td>
+                                <td width="200px">
+                                    <input onclick="Mform( 'theme', '[theme_name]' );
+                                            return false;" type="submit" name="submit0" value="انتخاب قالب پيش فرض" class="btn btn-success">
+                                </td>
+                                <td style="text-align: left;height:100px">
+                                    <a  href="../theme/core/[theme_name]/screenshot.png" class="fancybox">
+                                        <img src="../theme/core/[theme_name]/screenshot.png" width="100px" height="100px" />
+                                    </a>
+                                    <script>
+                                        $( '.themeRow_[theme_name]' ).tooltip( { html : true } );
+                                    </script>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                            <center>
+                                <hr color="#0000FF">
+                            </center>
+                            </td>
+                            </tr>
+                        </tag:themelist>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

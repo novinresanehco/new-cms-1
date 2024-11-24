@@ -1,0 +1,87 @@
+<style type="text/css">
+#page-wrap {
+  width:100%; 
+}
+    .tabs {
+      position: relative;   
+      min-height: 200px; /* This part sucks */
+      clear: both;
+      margin: 25px 0;      
+    }
+    .tab {
+      float: right;
+text-align: right; 
+    }
+    .tab label {
+      background: #eee; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      margin-left: 0px; 
+      position: relative;
+      left: 0px;  color: rgba(0, 0, 0, 0.38);           
+    }
+	.tab label:hover {
+      background:#d7d4d4; 
+      padding: 10px; 
+      border: 1px solid #c6c6c6; 
+      margin-left: 0px; 
+      position: relative;
+      left:0px;    transition: all .3s ease-in;         
+    }
+    .tab [type=radio] {
+      display: none;   
+    }
+    .content {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      background: white;
+      right: 0;
+      bottom: 0;
+      padding: 5px;
+      border: 1px solid #ccc;       
+    }
+    [type=radio]:checked ~ label {
+      background: white;
+      border-bottom: 0px solid white;
+	  box-shadow: inset 0 2.5px 0 #f05451;
+	  color: #060606;
+      z-index: 2;font-weight: 300;
+    }
+    [type=radio]:checked ~ label ~ .content {
+      z-index: 1;
+    }
+	.tab img
+	{margin:-6px -5px -7px 5px}
+  </style>
+  <div id="page-wrap">
+	
+    <div class="tabs">
+        
+       <div class="tab">
+           <input type="radio" id="tab-1" name="tab-group-1" checked>
+           <label for="tab-1">Tab One<img src="https://i.stack.imgur.com/dccvs.jpg?s=32&amp;g=1" height="24" width="24"></label>
+           <div class="content">
+               <p>Stuff for Tab One</p>
+           </div> 
+       </div>
+        
+       <div class="tab">
+           <input type="radio" id="tab-2" name="tab-group-1">
+           <label for="tab-2">Tab Two<img src="https://i.stack.imgur.com/dccvs.jpg?s=32&amp;g=1" height="24" width="24"></label>           
+           <div class="content">
+               <p>Stuff for Tab Two</p>
+           </div> 
+       </div>
+        
+        <div class="tab">
+           <input type="radio" id="tab-3" name="tab-group-1">
+           <label for="tab-3">Tab Three<img src="https://i.stack.imgur.com/dccvs.jpg?s=32&amp;g=1" height="24" width="24"></label>
+           <div class="content">
+               <p>Stuff for Tab Three</p>
+           </div> 
+       </div>
+        
+    </div>
+	
+	</div>

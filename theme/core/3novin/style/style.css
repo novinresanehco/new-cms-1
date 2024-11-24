@@ -1,0 +1,63 @@
+body,table,td      { font-size: 8pt; font-family: Tahoma; color: #006699 }
+input,submit,textarea,select       { font-size: 8pt; font-family: Tahoma; border: 1px solid #006699; 
+               background-color: #D7F2FF }
+.inp1        { font-size: 8pt; font-family: Tahoma; border: 1px solid #006699 }
+a, a:visited {
+			color:#247EAC; TEXT-DECORATION: none;
+			}
+a:hover {
+			color:#00CC66; TEXT-DECORATION: none
+}
+.hed         { font-size: 8pt; border: 1px solid #0099CC; padding: 3px; height:100; background-image:url('../img/hed.gif') }
+.topp        { font-size: 8pt; font-family: Tahoma; border-left: 1px solid #0099CC; 
+               border-right: 1px solid #0099CC; border-top-width: 1px; 
+               border-bottom: 1px solid #0099CC; padding: 3px; margin-bottom:5 }
+.page        { font-size: 8pt; font-family: Tahoma; border: 1px solid #0099CC; padding: 3px; text-align:center }
+.top         { font-size: 8pt; font-family: Tahoma; border: 1px solid #0099CC; padding-left:3px; padding-right:25px; padding-top:2px; padding-bottom:3px; background-image:url('../img/bgtop.gif') }
+.blockp      { font-size: 8pt; font-family: Tahoma; border-left: 1px solid #0099CC; 
+               border-right: 1px solid #0099CC; border-top-width: 1px; 
+               border-bottom: 1px solid #0099CC; padding: 3px; margin-bottom:5 }
+.block       { font-size: 8pt; border: 1px solid #0099CC; padding-left:3px; padding-right:20px; padding-top:1px; padding-bottom:3px; background-image:url('../img/bg.gif') }
+.mbox        { padding:3px; font-size: 8pt;  border: 1px solid #0099CC; background-image:url('../img/mbox.gif') }
+.reglink {
+	background:#EFF9FB;border:1px solid #A8BECA;padding-right:6px;padding-left:6px;font-family: tahoma;font-size: 8pt;line-height:1.5em;
+	text-align: center;margin-bottom:8px;
+}
+.box,.success { border:1px solid #CCFF00; padding:3px; BACKGROUND: #F4FFBE; MARGIN-BOTTOM: 2px; COLOR: #74834A; DIRECTION: rtl; TEXT-ALIGN: right;Font-Family:Tahoma;Font-Size:9pt}
+.box1 { border:1px solid #9900FF; padding:3px; BACKGROUND: #DDCCFF; MARGIN-BOTTOM: 2px; COLOR: #9900CC; DIRECTION: rtl; TEXT-ALIGN: right;Font-Family:Tahoma;Font-Size:9pt}
+.box2,.error { border:1px solid #FF0000; padding:3px; BACKGROUND: #FFCCD7; MARGIN-BOTTOM: 2px; COLOR: #FF0000; DIRECTION: rtl; TEXT-ALIGN: right;Font-Family:Tahoma;Font-Size:9pt}
+.question {
+	border:1px solid #9900FF;height:24px;width=65%;BACKGROUND: #DDCCFF;DIRECTION: rtl; TEXT-ALIGN: right;
+}
+.answer{
+	background:#fff;border:1px solid #9900FF;border-top: 0px;padding:3px;font-family: tahoma;font-size: 8pt;border-top:0px;line-height:1.5em;
+	text-align:justify;margin-bottom:8px;width=65%;
+}
+.text-menu{
+	font-family: tahoma;font-size: 8pt;padding-top:5px;padding-right:3px;color:#9900CC;
+}
+@font-face {
+  font-family: 'BYekan';
+  src: url('../fonts/BYekan.eot?#') format('eot'),  /* IE6–8 */
+       url('../fonts/BYekan.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('../fonts/BYekan.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+  font-family: 'BTitrBold';
+  src: url('../fonts/BTitrBold.eot?#') format('eot'),  /* IE6–8 */
+       url('../fonts/BTitrBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('../fonts/BTitrBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+
+@font-face {
+  font-family: 'BTitrTGEBold';
+  src: url('../fonts/BTitrTGEBold.eot?#') format('eot'),  /* IE6–8 */
+       url('../fonts/BTitrTGEBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('../fonts/BTitrTGEBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}
+@font-face {
+  font-family: 'BKoodakBold';
+  src: url('../fonts/BKoodakBold.eot?#') format('eot'),  /* IE6–8 */
+       url('../fonts/BKoodakBold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+       url('../fonts/BKoodakBold.ttf') format('truetype');  /* Saf3—5, Chrome4+, FF3.5, Opera 10+ */
+}

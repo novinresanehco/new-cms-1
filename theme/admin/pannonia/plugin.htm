@@ -1,0 +1,66 @@
+<div class="actions-wrapper">
+    <div class="widget">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <h6>پلاگین ها</h6>
+            </div>
+        </div>
+        <div class="well body">
+            <div id="div_1">
+                <center>
+                    <table border="0" width="95%" id="duplicate" class="table table-striped">
+                        <thead>
+						<tr>
+                            <th>
+                                نام ماژول
+                            </th>
+                            <th>
+                                <strong>وضعيت</strong>
+                            </th>
+                            <th>
+                                <strong>عمليات</strong>
+                            </th>
+                        </tr>
+						</thead>
+                        <tag:pluginslist>
+                            <tr>
+
+                                <td >
+                                    [name]</td>
+                                <td>
+                                    [stat]</td>
+                                <td>
+                                    <!-- IF Install -->
+                                    <a class="confirm" href="plugins.php?plugin=[file]&task=install&return=plugins.php">نصب</a>-
+                                    <!-- ENDIF Install -->
+                                    <!-- IF UInstall -->
+                                    <a class="confirm" href="plugins.php?plugin=[file]&task=uninstall&return=plugins.php">حذف</a>-
+                                    <!-- ENDIF UInstall -->
+                                    <!-- IF Activate -->
+                                    <a class="confirm" href="plugins.php?plugin=[file]&task=activate&return=plugins.php">فعال
+                                                            سازي
+                                                            </a>-
+                                    <!-- ENDIF Activate -->
+                                    <!-- IF InActivate -->
+                                    <a class="confirm" href="plugins.php?plugin=[file]&task=inactivate&return=plugins.php">غير
+                                                                فعال
+                                                                سازي
+                                                                <!-- ENDIF InActivate -->
+
+                                                                </a>
+
+                                </td>
+                            </tr>
+                        </tag:pluginslist>
+                    </table>
+                </center>
+            </div>
+            <tag:extra_div>
+                <div id="div_[id]" style="display:none">
+                    [inside]
+                </div>
+            </tag:extra_div>
+
+        </div>
+    </div>
+</div>
