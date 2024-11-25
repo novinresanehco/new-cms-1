@@ -1,0 +1,44 @@
+<tag:field>
+<li class="sortable" id="field_[id]">
+				<div class="ns-row h17" id="row_[id]">
+					<div class="mp-title">
+						<a class="fieldSettingOpener" id="fieldSettingOpener_[id]" rel="[id]" href="">[name]</a>
+					</div>
+					<div class="mp-type">[type]</div>
+					<div class="mp-actions">
+						<a class="delete-field" rel="[id]" href="#">
+							<img alt="حذف" rel="[id]" class="delfield" src="[site]plugins/form/images/cross.png">
+						</a>
+					</div>
+					<div id="fieldSettingArea_[id]" class="fieldSetting">
+						<div id="fieldSetting_[id]" rel="input">
+							<hr style="clear:both;margin-top:7px;" />
+							<p>
+							<label for="field-title-[id]">عنوان فیلد *</label>
+							<input id="field-title-[id]" type="text" class="fieldName" rel="[id]" name="fields[[id]][fieldname]" value="[name]" />
+							<input type="hidden" name="fields[[id]][fieldtype]" value="selectbox" />
+							</p>
+							<p>
+							<label for="field-pvalue-[id]">گزینه های مجاز - هر گزینه در یک سطر</label>
+							<textarea id="field-pvalue-[id]" class="possibleValues" rel="[id]" name="fields[[id]][pvalue]" style="height:100px">[fieldValue]</textarea>
+							</p>
+							<p>
+							<label for="field-value-[id]">مقدار پیش فرض</label>
+							<select id="field-value-[id]" name="fields[[id]][value]">
+							<tag:options>
+							<option [selected]>[value]</option>
+							</tag:options>
+							</select>
+							</p>
+							<p>
+							<label for="field-require-[id]">اجباری</label>
+								<select id="field-require-[id]" name="fields[[id]][required]" />
+									<option [required_1] value="1">بله</option>
+									<option [required_0] value="0">خیر</option>
+								</select>
+							</p>
+						</div>
+					</div>
+				</div>
+			</li>
+		</tag:field>

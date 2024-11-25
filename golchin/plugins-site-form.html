@@ -1,0 +1,16 @@
+<script>
+	$( document ).ready( function()
+	{
+		$( '#form_[formID]' ).submit( function()
+		{
+			return( $( '#form_[formID]' ).validationEngine( 'validate' ) );
+		});
+		
+	});
+</script>
+<form action='' method='post' id='form_[formID]' class='FormGenerator'>
+<tag:error><div class='error'>[msg]</div></tag:error>
+<tag:success><div class='success'>[msg]</div></tag:success>
+[fields]
+<center><input type='submit' value='ارسال' name='submit_form_[formID]' /></center>
+</form>
